@@ -195,6 +195,32 @@ jobs:
       - name: Type-check updater and tests
         run: bunx tsc --noEmit --target es2022 --module esnext --moduleResolution bundler --types bun,node --skipLibCheck scripts/update-data.ts scripts/update-data.test.ts
 
+      - name: Probe issuer endpoints (temporary diagnostics)
+        continue-on-error: true
+        run: |
+          probe() {
+            echo "== $1"
+            shift
+            curl -sS -m 40 -o /tmp/probe.out -w "status=%{http_code} type=%{content_type} bytes=%{size_download}\n" "$@" || echo "curl failed"
+            head -c 300 /tmp/probe.out | tr '\n' ' '; echo
+          }
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+          F="https://www.schwabassetmanagement.com/product-finder?combine=&field_product_solution_target_id%5B0%5D=291&field_product_solution_target_id%5B1%5D=291"
+          P="https://www.schwabassetmanagement.com/products/schd"
+          C="https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHD/SCHD_Fund_Distributions.CSV"
+          probe "direct finder browser UA" -A "$UA" -H "Accept: text/html" -H "Accept-Language: en-US,en;q=0.9" "$F"
+          probe "direct product browser UA" -A "$UA" -H "Accept: text/html" "$P"
+          probe "direct csv browser UA" -A "$UA" -H "Accept: text/csv,*/*" "$C"
+          probe "direct csv no UA" "$C"
+          probe "jina https product" "https://r.jina.ai/$P"
+          probe "jina http product" "https://r.jina.ai/http://www.schwabassetmanagement.com/products/schd"
+          probe "jina csv" "https://r.jina.ai/$C"
+          probe "jina finder" "https://r.jina.ai/$F"
+          probe "jina with browser UA" -A "$UA" "https://r.jina.ai/$P"
+          probe "jina markdown header" -H "X-Return-Format: markdown" "https://r.jina.ai/$P"
+          probe "yahoo chart" -A "Mozilla/5.0" "https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=5d&interval=1d"
+          probe "sec tickers" -A "DaggerOk Schwab ETF feed admin@daggerok.example.com" "https://www.sec.gov/files/company_tickers_mf.json"
+
       - name: Generate api/schwab static data
         run: bun ./scripts/update-data.ts
 

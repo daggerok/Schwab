@@ -718,7 +718,10 @@ async function fetchText(url: string, label: string, config: UpdaterConfig, head
     try {
       await paceRequests(proxy);
       const response = await fetch(url, { headers: { 'User-Agent': SEC_UA, Accept: '*/*', ...headers }, redirect: 'follow' });
-      if (!response.ok) throw new HttpError(response.status, `${response.status} ${response.statusText}`);
+      if (!response.ok) {
+        const snippet = cleanText((await response.text().catch(() => '')).replace(/<[^>]+>/g, ' ')).slice(0, 160);
+        throw new HttpError(response.status, `${response.status} ${response.statusText}${snippet ? ` — ${snippet}` : ''}`);
+      }
       return await response.text();
     } catch (error) {
       lastError = error;
