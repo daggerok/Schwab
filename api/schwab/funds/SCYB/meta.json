@@ -33,8 +33,8 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$9.00",
-    "value": 9,
+    "display": "$25.71",
+    "value": 25.71,
     "asOfDate": "Sep 18 2026"
   },
   "marketPrice": {
@@ -50,24 +50,24 @@
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$9.00",
-    "value": 9,
+    "display": "$2.84 B",
+    "value": 2840450606.15,
     "asOfDate": "Sep 18 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
-    "sharesOutstanding": 9,
-    "portfolioTurnover": 8,
-    "publishedTotalHoldings": 9,
+    "sharesOutstanding": 110500000,
+    "portfolioTurnover": 22.71,
+    "publishedTotalHoldings": 1846,
     "bidAskMidpoint": 25.72
   },
   "yields": {
-    "dividendYield": 8,
-    "dividendYieldText": "8.00%",
+    "dividendYield": 6.89,
+    "dividendYieldText": "6.89%",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
-    "distributionRate": 8,
-    "secYield": 9,
-    "secYieldText": "9.00%",
+    "distributionRate": 6.89,
+    "secYield": 7.12,
+    "secYieldText": "7.12%",
     "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 17 2026"
   },
   "returns": {
@@ -320,7 +320,7 @@
     "asOf": "Sep 17 2026",
     "source": "schwabassetmanagement.com full holdings CSV export (SCYB_FundHoldings_2026-09-17.CSV, via read-only rendering proxy)",
     "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
-    "publishedTotalHoldings": 9
+    "publishedTotalHoldings": 1846
   },
   "history": {
     "pages": [
