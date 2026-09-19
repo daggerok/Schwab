@@ -1,14 +1,6 @@
 name: Update Schwab ETF data
 
 on:
-  # TEMPORARY bootstrap trigger (removed once api/schwab exists): the build
-  # sandbox cannot reach schwabassetmanagement.com/Yahoo/SEC, and the branch
-  # token cannot dispatch workflows, so the first feed is generated on push.
-  push:
-    branches: [arena/01a0b8a6-schwab]
-    paths:
-      - scripts/update-data.ts
-      - .github/workflows/update-data.yml
   workflow_dispatch:
     inputs:
       max_fetches:

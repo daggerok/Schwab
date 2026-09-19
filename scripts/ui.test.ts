@@ -436,7 +436,7 @@ test("9. reload restores selection, active fund and rebuilds the Watchlist", asy
   expect(app.run("state.activeFundTicker")).toBe("SCHG");
 
   const reloaded = await bootFresh(app.storage);
-  expect(selectedTickers(reloaded)).toEqual(["SCHX", "SCHG"]);
+  expect(selectedTickers(reloaded)).toEqual(["SCHG", "SCHX"]);
   expect(reloaded.run("state.activeFundTicker")).toBe("SCHG");
 
   // background loading completes without any checkbox interaction
@@ -696,19 +696,19 @@ test("15. index.json / meta.json / page manifests stay consistent", () => {
 test("16. per-tab filter persistence: each tab keeps its own search query independently", async () => {
   const app = await bootFresh();
 
-  // 1. On "All ETFs", search for "treasury" (matches 3 ETFs: SCHO, SCHQ, SCHR)
-  setSearch(app, "treasury");
-  expect(app.run<number>("visibleCatalogRows().length")).toBe(3);
-  expect(app.el("ticker-count").textContent).toBe("3 ETFs");
+  // 1. On "All ETFs", search for "large" (matches 4 ETFs: SCHX, SCHG, SCHV, FNDX)
+  setSearch(app, "large");
+  expect(app.run<number>("visibleCatalogRows().length")).toBe(4);
+  expect(app.el("ticker-count").textContent).toBe("4 ETFs");
   expect(JSON.parse(app.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "treasury",
+    All: "large",
   });
 
   // select SCHX so detail tabs and Watchlist appear
   toggleRow(app, "SCHX");
   await until(() => app.el("selected-tabs-bar").innerHTML.includes("SCHX Overview"));
 
-  // 2. Overview tab: search must NOT carry over "treasury"
+  // 2. Overview tab: search must NOT carry over "large"
   await clickTab(app, "detail:overview");
   expect(app.el("search-input").value).toBe("");
   expect(bodyRowHtml(app)).toContain("Holdings Rows");
@@ -720,12 +720,12 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(bodyRowHtml(app)).toContain("YTD (ME)");
   expect(bodyRowHtml(app)).not.toContain("Fund Name");
   expect(JSON.parse(app.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "treasury",
+    All: "large",
     "detail:overview": "returns",
   });
   // site-state mirror stays in sync
   expect(JSON.parse(app.storage.getItem(SITE_STATE_KEY)!).sheetFilter).toEqual({
-    All: "treasury",
+    All: "large",
     "detail:overview": "returns",
   });
 
@@ -743,11 +743,11 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(app.el("search-input").value).toBe("alphabet");
   expect(bodyRowCount(app)).toBe(alphabetRows);
 
-  // 5. Switch back to All ETFs: restores "treasury"
+  // 5. Switch back to All ETFs: restores "large"
   allTabButton(app).click();
   await waitForTab(app, "All");
-  expect(app.el("search-input").value).toBe("treasury");
-  expect(app.el("ticker-count").textContent).toBe("3 ETFs");
+  expect(app.el("search-input").value).toBe("large");
+  expect(app.el("ticker-count").textContent).toBe("4 ETFs");
 
   // 6. Switch back to Overview: restores "returns"
   await clickTab(app, "detail:overview");
@@ -766,7 +766,7 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(reloaded.run("state.activeTab")).toBe("watchlist");
   expect(reloaded.el("search-input").value).toBe("SCHX");
   expect(JSON.parse(reloaded.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "treasury",
+    All: "large",
     "detail:overview": "returns",
     "detail:holdings": "alphabet",
     watchlist: "SCHX",
@@ -779,7 +779,7 @@ test("16. per-tab filter persistence: each tab keeps its own search query indepe
   expect(reloaded.el("search-input").value).toBe("");
   expect(searchClear.classList.contains("hidden")).toBe(true);
   expect(JSON.parse(reloaded.storage.getItem(FILTERS_KEY)!)).toEqual({
-    All: "treasury",
+    All: "large",
     "detail:overview": "returns",
     "detail:holdings": "alphabet",
   });

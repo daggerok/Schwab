@@ -27,11 +27,17 @@ differ.
 | `https://query1.finance.yahoo.com/v8/finance/chart/<TICKER>?period1=0&period2=…&interval=1d&events=div%7Csplit&includeAdjustedClose=true` | Daily history + dividends + splits | Same public chart endpoint as every sibling feed |
 | `https://www.sec.gov/files/company_tickers_mf.json` → `browse-edgar?action=getcompany&CIK=<seriesId>&type=NPORT-P&output=atom` → `Archives/edgar/data/<cik>/<acc>/<accession>.txt` | SEC EDGAR Form N-PORT-P holdings fallback (Schwab Strategic Trust, CIK 1454889) | Same resolver as `daggerok/WisdomTree`; used only when the issuer CSV is unavailable |
 
-Connectivity note: `www.schwabassetmanagement.com` answers browser-like
-requests directly; the updater also carries the same read-only
-`r.jina.ai` rendering fallback as `daggerok/WisdomTree` (verified to return the
-product page as markdown and the CSV files verbatim) for the case where a
-non-browser client is blocked. Yahoo and SEC requests stay direct.
+Connectivity note (verified in GitHub Actions on 2026-09-19): the issuer CDN
+answers every request from the Actions network with HTTP 403 `Access Denied`
+regardless of User-Agent, while the read-only `r.jina.ai` rendering of the same
+public URLs (product finder, product pages, CSV exports) returns them intact
+(the CSV files verbatim under its `Markdown Content:` preamble). The proxy is
+itself behind Cloudflare and challenges browser User-Agents, so proxy requests
+declare the plain feed User-Agent. The updater therefore makes one direct
+browser-like attempt per document, switches to the proxy after two denials in a
+run, and records the rendering that supplied each block in `meta.json`
+(`source.productPageRendering`, `holdings.source`, `distributions.source`).
+Yahoo and SEC requests stay direct (both answered HTTP 200 from Actions).
 
 ## 2. Metric → source table
 
@@ -78,7 +84,26 @@ non-browser client is blocked. Yahoo and SEC requests stay direct.
   `mo1` is the official 1-month figure, `qtd` is derived from Yahoo adjusted
   closes (the page publishes 3-month, not quarter-to-date).
 
-## 4. Stages
+## 4. Live results (first full pass, GitHub Actions run 35432545495)
+
+- 33 funds / 52,495 holdings rows / 94,523 history rows (`api/schwab/index.json`
+  `generatedAt 2026-09-19T08:44:30Z`), every fund with NAV, Total Net Assets,
+  TER, CUSIP (+ derived ISIN), exchange, official month-end and quarter-end NAV
+  returns, SEC Yield (30 Day), Distribution Yield (TTM), premium/discount,
+  official distribution history and a coded frequency.
+- `—` cells, all period-based and all because the fund is younger than the
+  period (official table publishes `--`, Yahoo cannot compute either):
+  - CAGR 3Y / TR 3Y: SCCR, SCUS, SGVT, SMBS;
+  - CAGR 5Y / TR 5Y: SCCR, SCMB, SCUS, SCYB, SGVT, SMBS, STCE;
+  - CAGR 10Y / TR 10Y: SCCR, SCHI, SCHJ, SCHK, SCHQ, SCHY, SCMB, SCUS, SCYB,
+    SGVT, SMBS, STCE.
+- Quarter-end YTD is `null` for every fund (not published in the quarterly
+  table); `mo3` (official 3 Month) is an extra field.
+- Frequencies inferred from the official ex-dates: Monthly for the bond and
+  money-market funds, Quarterly for the U.S. equity funds and SCHY/SCHH,
+  Semi-annually for the international equity funds and STCE.
+
+## 5. Stages
 
 S1 skeleton · S2 `index.html` · S3 `app.tsx` · S4 UI harness + acceptance
 suite · S5 `scripts/update-data.ts` · S6 updater tests · S7 workflow + README
