@@ -264,9 +264,12 @@ export function numberOrNull(value: unknown): number | null {
   return negative ? -parsed : parsed;
 }
 
-/** First number-looking token of a free-text cell ("3.25% As of 09/17/2026" -> 3.25). */
+/**
+ * First number-looking token of a free-text cell, ignoring date tokens
+ * ("09/18/2026 | $23.88" -> 23.88, "3.25% As of 09/17/2026" -> 3.25).
+ */
 export function firstNumber(value: unknown): number | null {
-  const raw = cleanText(value);
+  const raw = cleanText(value).replace(/\d{1,2}\/\d{1,2}\/\d{2,4}/g, ' ').replace(/\d{4}-\d{2}-\d{2}/g, ' ');
   const match = /(\(?[-+]?\$?\d[\d,]*(?:\.\d+)?%?\)?)/.exec(raw);
   return match ? numberOrNull(match[1]) : null;
 }
@@ -839,15 +842,30 @@ export function parseOfficialReturns(lines: TextLine[], ticker: string): Officia
   return result;
 }
 
+/**
+ * Official fund name: the page heading (`# Schwab … ETF`, with or without the
+ * ticker prefix) first, then the document title (which carries a site suffix).
+ */
+export function parseFundName(source: string, ticker: string): string | null {
+  const upper = ticker.toUpperCase();
+  const patterns = [
+    new RegExp(`^#{1,3}\\s+(?:\\*\\*)?(?:${upper}\\s+)?(Schwab[^\\n|]*?\\bETF\\b[^\\n|]*)$`, 'im'),
+    new RegExp(`^Title:\\s*(?:${upper}\\s+)?(Schwab[^\\n|]*?\\bETF\\b[^\\n|]*)`, 'im'),
+  ];
+  for (const pattern of patterns) {
+    const match = pattern.exec(source);
+    if (!match) continue;
+    const cleaned = cleanText(match[1].replace(/\*\*/g, '')).replace(/\s*Schwab Asset Management$/i, '');
+    if (cleaned) return cleaned;
+  }
+  return null;
+}
+
 export function parseProductPage(text: string, ticker: string): ProductPageSummary {
   const source = htmlToText(stripProxyPreamble(text));
   const lines = toTextLines(source);
   const upper = ticker.toUpperCase();
-  let name: string | null = null;
-  const namePattern = new RegExp(`^(?:Title:\\s*)?${upper}\\s+(Schwab.+)$`, 'i');
-  // Prefer the page heading over the <title> (which carries a site suffix).
-  const nameLines = lines.filter((line) => namePattern.test(line.cells[0] || '')).sort((a, b) => Number(/^Title:/i.test(a.cells[0])) - Number(/^Title:/i.test(b.cells[0])));
-  if (nameLines.length) name = cleanText(namePattern.exec(nameLines[0].cells[0])?.[1] || '').replace(/\s*Schwab Asset Management$/i, '') || null;
+  const name = parseFundName(source, upper);
   const inception = lookupLabel(lines, 'Fund Inception');
   const netAssets = lookupLabel(lines, 'Total Net Assets');
   const ter = lookupLabel(lines, 'Total Expense Ratio');

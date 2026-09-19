@@ -25,6 +25,7 @@ import {
   parseCsv,
   parseDistributionsCsv,
   parseEdgarAtomFilings,
+  parseFundName,
   parseFundTickerMap,
   parseHoldingsCsv,
   parseNport,
@@ -94,7 +95,11 @@ const PRODUCT_PAGE_MARKDOWN = [
   'URL Source: https://www.schwabassetmanagement.com/products/scho',
   '',
   'Markdown Content:',
-  '# SCHO Schwab Short-Term U.S. Treasury ETF',
+  '# Schwab Short-Term U.S. Treasury ETF',
+  '',
+  'Type: ETFs Symbol: SCHO Total Expense Ratio: 0.030%',
+  '',
+  '## Schwab Market Talk',
   '',
   'Quote Details',
   '',
@@ -118,13 +123,13 @@ const PRODUCT_PAGE_MARKDOWN = [
   '|  |  |  |',
   '| --- | --- | --- |',
   '| **Fund Inception** |  | 08/05/2010 |',
-  '| **Total Net Assets (as of 09/17/2026)** |  | $15,193,857,213.48 |',
+  '| **Total Net Assets** As of 09/17/2026 | 09/17/2026 | $15,193,857,213.48 |',
   '| **Total Expense Ratio** |  | 0.030% |',
   '| **Index Name** |  | Bloomberg US Treasury 1-3 Year Index |',
-  '| **Shares Outstanding** |  | 635,570,000 |',
-  '| **NAV (as of 09/18/2026)** |  | $23.91 |',
-  '| **Total Holdings (as of 09/17/2026)** |  | 96 |',
-  '| **Portfolio Turnover Rate** |  | 63% |',
+  '| **Shares Outstanding** As of 09/18/2026 | 09/18/2026 | 635,570,000 |',
+  '| **NAV** As of 09/18/2026 | 09/18/2026 | $23.91 |',
+  '| **Total Holdings** As of 09/17/2026 | 09/17/2026 | 96 |',
+  '| **Portfolio Turnover Rate** As of 08/31/2026 | 08/31/2026 | 63% |',
   '| **Morningstar Category** |  | Short Government |',
   '| **Management Style** |  | Passive |',
   '| **CUSIP** |  | 808524805 |',
@@ -134,9 +139,9 @@ const PRODUCT_PAGE_MARKDOWN = [
   '',
   '|  |  |  |  |',
   '| --- | --- | --- | --- |',
-  '| **SEC Yield (30 Day)** |  | 3.62% | 09/17/2026 |',
-  '| **Distribution Yield (TTM)** |  | 3.91% | 08/31/2026 |',
-  '| **Average Yield to Maturity** |  | 3.55% | 09/17/2026 |',
+  '| **SEC Yield (30 Day)** As of 09/17/2026 | 09/17/2026 | 3.62% |',
+  '| **Distribution Yield (TTM)** As of 08/31/2026 | 08/31/2026 | 3.91% |',
+  '| **Average Yield to Maturity** As of 06/30/2026 | 06/30/2026 | 3.55% |',
   '',
   '## Performance',
   '',
@@ -280,6 +285,9 @@ describe('scalar helpers', () => {
     expect(firstNumber('3.25% As of 09/17/2026')).toBe(3.25);
     expect(firstNumber('$15,193,857,213.48 ')).toBe(15_193_857_213.48);
     expect(firstNumber('--')).toBeNull();
+    expect(firstNumber('09/18/2026 | $23.88')).toBe(23.88);
+    expect(firstNumber('09/17/2026 | 97')).toBe(97);
+    expect(firstNumber('08/31/2026 | 61.57%')).toBe(61.57);
     expect(firstDate('Total Net Assets (as of 09/17/2026)')).toBe('2026-09-17');
     expect(firstDate('no date here')).toBeNull();
   });
@@ -432,6 +440,14 @@ describe('Schwab product page parser', () => {
     expect(summary.officialReturns.monthEnd.nav).toEqual({ asOfDate: '2026-08-31', mo1: 4.28, mo3: 8.24, ytd: 29.31, yr1: 29.56, cagr3y: 16.21, cagr5y: 10.02, cagr10y: 13.18, siAnn: 13.67 });
     expect(summary.officialReturns.monthEnd.marketPrice!.ytd).toBe(29.29);
     expect(summary.officialReturns.quarterEnd.nav).toEqual({ asOfDate: '2026-06-30', mo1: null, mo3: null, ytd: null, yr1: 24.03, cagr3y: 13.52, cagr5y: 8.51, cagr10y: 12.37, siAnn: 13.09 });
+  });
+
+  test('parseFundName prefers the heading and tolerates the ticker prefix / title suffix', () => {
+    expect(parseFundName('# Schwab U.S. Dividend Equity ETF\n\n## Schwab Market Talk', 'SCHD')).toBe('Schwab U.S. Dividend Equity ETF');
+    expect(parseFundName('### SCHD Schwab U.S. Dividend Equity ETF', 'SCHD')).toBe('Schwab U.S. Dividend Equity ETF');
+    expect(parseFundName('Title: SCHD Schwab U.S. Dividend Equity ETF | Schwab Asset Management', 'SCHD')).toBe('Schwab U.S. Dividend Equity ETF');
+    expect(parseFundName('Title: Schwab Crypto Thematic Natural Language Processing ETF (formerly known as Schwab Crypto Thematic ETF)', 'STCE')).toBe('Schwab Crypto Thematic Natural Language Processing ETF (formerly known as Schwab Crypto Thematic ETF)');
+    expect(parseFundName('## Schwab Market Talk\n\nAdvisors, join our monthly webcast', 'SCHD')).toBeNull();
   });
 
   test('young funds keep -- cells as null and missing sections as null', () => {
