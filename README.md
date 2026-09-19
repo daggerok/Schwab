@@ -135,20 +135,3 @@ The header toolbar includes the same integrated drag-and-drop upload as `daggero
 ## TypeScript
 
 The browser app is intentionally single-file: `index.html` loads `app.tsx` as TypeScript compiled in the browser with Babel standalone, following the `daggerok/youtube` no-src-files approach used by the sibling applications.
-
-## Brands table
-
-| Бренд                        | Фонды | Где брать данные |
-|------------------------------|---|---|
-| **Schwab** (33) ✅ | SCHD, SCHX, SCHG, SCHV, SCHB, SCHA, SCHM, SCHK, SCHF, SCHC, SCHE, SCHY, SCHH, FNDB, FNDX, FNDA, FNDF, FNDC, FNDE, STCE, SCHZ, SCHO, SCHR, SCHQ, SCHP, SCHI, SCHJ, SCYB, SCMB, SMBS, SCUS, SCCR, SGVT — весь каталог Schwab ETF | [schwabassetmanagement.com/products/{ticker}](https://www.schwabassetmanagement.com/products/schd) · каталог: [product-finder (ETFs)](https://www.schwabassetmanagement.com/product-finder?combine=&field_product_solution_target_id%5B0%5D=291&field_product_solution_target_id%5B1%5D=291) — весь каталог Schwab ETF уже интегрирован в наше приложение [daggerok/Schwab](https://github.com/daggerok/Schwab) |
-| **Invesco** ✅ | QQQM, RSP, SPLV, SPHD, SPMO, SPHQ, SPGP, RPV, RPG, RWL, DBA, IDMO, IDHQ, IDLV (+ QQQ и весь каталог ~245 ETF) | [daggerok/Invesco](https://github.com/daggerok/Invesco) — весь каталог Invesco ETF |
-| **SPDR / State Street** ✅ | SPYM, SPYG, SPYD, SDY, XLK, XLF… | [daggerok/SPDR](https://github.com/daggerok/SPDR) — весь каталог SSGA (179 фондов) |
-| **iShares / BlackRock** ✅ | IVV, SGOV, DGRO, SOXX… | [daggerok/iShares](https://github.com/daggerok/iShares) — весь каталог, XLS-экспорт |
-| **Amplify** ✅ | DIVO, IDVO, SILJ… | [daggerok/Amplify](https://github.com/daggerok/Amplify) — Firestore-фид данных |
-| **Fidelity** ✅ | FTEC, FDVV, FDIS, FCOM + каталог Fidelity ETF | [daggerok/Fidelity](https://github.com/daggerok/Fidelity) — holdings из SEC EDGAR N-PORT |
-| **WisdomTree** ✅ | USFR, DGRW, DHS, DON, EPI… | [daggerok/WisdomTree](https://github.com/daggerok/WisdomTree) — каталог + SEC EDGAR N-PORT |
-
-## Brands list
-
-#	Бренд	Фонды из списка (кол-во)	Официальный сайт / страницы фондов
-1	Schwab — 33 ✅	SCHD, SCHX, SCHG, SCHV, SCHB, SCHA, SCHM, SCHK, SCHF, SCHC, SCHE, SCHY, SCHH, FNDB, FNDX, FNDA, FNDF, FNDC, FNDE, STCE, SCHZ, SCHO, SCHR, SCHQ, SCHP, SCHI, SCHJ, SCYB, SCMB, SMBS, SCUS, SCCR, SGVT	https://www.schwabassetmanagement.com/products/{ticker} (паттерн /products/{ticker} в нижнем регистре) · каталог: https://www.schwabassetmanagement.com/product-finder?combine=&field_product_solution_target_id%5B0%5D=291&field_product_solution_target_id%5B1%5D=291 — весь каталог Schwab ETF (33 фонда) уже интегрирован в наше приложение https://github.com/daggerok/Schwab
