@@ -742,23 +742,41 @@ async function fetchJson(url: string, label: string, config: UpdaterConfig, head
   }
 }
 
+let issuerDirectDenials = 0;
+const ISSUER_DIRECT_DENIAL_LIMIT = 2;
+
 /**
- * Issuer documents: direct request with a browser-like User-Agent first, then
- * the same public URL through the read-only rendering proxy. `validate` rejects
+ * Issuer documents: one direct request with a browser-like User-Agent first,
+ * then the same public URL through the read-only rendering proxy. The issuer
+ * CDN answers datacenter clients with "Access Denied" (HTTP 403); after two
+ * such denials in a run the direct attempt is skipped to keep the run short.
+ * The proxy itself sits behind Cloudflare and challenges browser User-Agents,
+ * so proxy requests declare the plain feed User-Agent. `validate` rejects
  * bot-wall/HTML error pages so that the fallback is taken instead of parsing
  * garbage.
  */
-async function fetchIssuerText(url: string, label: string, config: UpdaterConfig, validate: (text: string) => boolean, accept = 'text/html,application/xhtml+xml,text/csv,text/plain;q=0.9,*/*;q=0.8'): Promise<{ text: string; via: 'direct' | 'proxy' }> {
-  let lastError: unknown;
-  try {
-    const text = await fetchText(url, label, config, { 'User-Agent': BROWSER_UA, Accept: accept, 'Accept-Language': 'en-US,en;q=0.9' });
-    if (validate(text)) return { text, via: 'direct' };
-    lastError = new Error('direct response did not contain the expected content');
-  } catch (error) {
-    lastError = error;
+async function fetchIssuerText(url: string, label: string, config: UpdaterConfig, validate: (text: string) => boolean, accept = 'text/html,application/xhtml+xml,text/csv,text/plain;q=0.9,*/*;q=0.8', options: { cache?: boolean } = {}): Promise<{ text: string; via: 'direct' | 'proxy' }> {
+  let lastError: unknown = new Error('direct request skipped (issuer CDN denies this network)');
+  if (issuerDirectDenials < ISSUER_DIRECT_DENIAL_LIMIT) {
+    try {
+      const text = await fetchText(url, label, { ...config, maxRetries: 0 }, { 'User-Agent': BROWSER_UA, Accept: accept, 'Accept-Language': 'en-US,en;q=0.9' });
+      if (validate(text)) {
+        issuerDirectDenials = 0;
+        return { text, via: 'direct' };
+      }
+      lastError = new Error('direct response did not contain the expected content');
+    } catch (error) {
+      lastError = error;
+      if (/\b403\b/.test(error instanceof Error ? error.message : String(error))) {
+        issuerDirectDenials += 1;
+        if (issuerDirectDenials === ISSUER_DIRECT_DENIAL_LIMIT) console.warn('[issuer  ] direct requests are denied from this network; using the read-only rendering proxy for the rest of the run');
+      }
+    }
   }
   try {
-    const text = stripProxyPreamble(await fetchText(proxyUrl(url), `${label} (proxy)`, config, { 'User-Agent': BROWSER_UA, Accept: 'text/markdown,text/plain;q=0.9,*/*;q=0.8', 'X-Return-Format': 'markdown' }));
+    const headers: Record<string, string> = { 'User-Agent': SEC_UA, Accept: 'text/plain,text/markdown;q=0.9,*/*;q=0.8' };
+    if (options.cache === false) headers['X-No-Cache'] = 'true';
+    const text = stripProxyPreamble(await fetchText(proxyUrl(url), `${label} (proxy)`, config, headers));
     if (validate(text)) return { text, via: 'proxy' };
     throw new Error('proxy response did not contain the expected content');
   } catch (error) {
@@ -1576,7 +1594,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   let productVia: 'direct' | 'proxy' | null = null;
   if (!config.skipSchwab && fund.fundPage) {
     try {
-      const page = await fetchIssuerText(fund.fundPage, `[product ] ${fund.ticker}`, config, (text) => /Total Expense Ratio|Fund Inception|Total Net Assets/i.test(text));
+      const page = await fetchIssuerText(fund.fundPage, `[product ] ${fund.ticker}`, config, (text) => /Total Expense Ratio|Fund Inception|Total Net Assets/i.test(text), undefined, { cache: false });
       productVia = page.via;
       summary = parseProductPage(page.text, fund.ticker);
       if (config.storeRawDownloads) {
@@ -1666,7 +1684,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   let distributionsDownload: string | null = summary?.distributionsCsvUrl || distributionsCsvUrl(fund.ticker);
   if (!config.skipSchwab) {
     try {
-      const csv = await fetchIssuerText(distributionsDownload, `[distrib ] ${fund.ticker}`, config, isDistributionsCsv, 'text/csv,text/plain;q=0.9,*/*;q=0.8');
+      const csv = await fetchIssuerText(distributionsDownload, `[distrib ] ${fund.ticker}`, config, isDistributionsCsv, 'text/csv,text/plain;q=0.9,*/*;q=0.8', { cache: false });
       dividends = parseDistributionsCsv(csv.text);
       if (dividends.length) distributionsSource = `schwabassetmanagement.com distribution history CSV export (Total Distribution per share${csv.via === 'proxy' ? ', via read-only rendering proxy' : ''})`;
     } catch (error) {
@@ -1892,6 +1910,7 @@ async function main(): Promise<void> {
   requestSleepSeconds = config.requestSleep;
   requestGateAt = 0;
   proxyGateAt = 0;
+  issuerDirectDenials = 0;
   console.log('Schwab ETF static data updater');
   console.log('Sources: Schwab Asset Management product finder + product pages + holdings/distribution CSV exports + SEC EDGAR N-PORT-P fallback + Yahoo Finance public chart API');
   for (const line of configLines(config)) console.log(`  ${line}`);
@@ -1901,7 +1920,7 @@ async function main(): Promise<void> {
   let catalogSource = 'previous api/schwab/index.json';
   if (!config.skipSchwab) {
     try {
-      const fetched = await fetchIssuerText(SCHWAB_CATALOG_URL, '[catalog ] product finder', config, (text) => /\/products\/[a-z0-9]{3,5}/i.test(text) && /Asset Class|Expense Ratio/i.test(text));
+      const fetched = await fetchIssuerText(SCHWAB_CATALOG_URL, '[catalog ] product finder', config, (text) => /\/products\/[a-z0-9]{3,5}/i.test(text) && /Asset Class|Expense Ratio/i.test(text), undefined, { cache: false });
       const parsed = parseCatalogText(fetched.text);
       for (const fund of parsed) catalog.set(fund.ticker, fund);
       catalogSource = fetched.via === 'proxy' ? 'Schwab Asset Management product finder via read-only rendering proxy' : 'Schwab Asset Management product finder';
