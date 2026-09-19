@@ -1,0 +1,512 @@
+{
+  "ticker": "SCHQ",
+  "name": "Schwab Long-Term U.S. Treasury ETF",
+  "category": "Fixed Income",
+  "categoryPath": "Fixed Income / Long Government",
+  "source": {
+    "fundPage": "https://www.schwabassetmanagement.com/products/schq",
+    "officialProductPage": "https://www.schwabassetmanagement.com/products/schq",
+    "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
+    "productPageAsOf": "Sep 18 2026",
+    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_FundHoldings_2026-09-17.CSV",
+    "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_Fund_Distributions.CSV",
+    "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_NAV_History.CSV",
+    "pricesDownload": null,
+    "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/SCHQ",
+    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCHQ_FundHoldings_2026-09-17.CSV, via read-only rendering proxy)",
+    "historySource": "Yahoo Finance public chart API (adjusted close)",
+    "distributionsSource": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
+    "provider": "Schwab Asset Management product finder + official product page + per-fund holdings/distribution CSV exports + SEC EDGAR Form N-PORT-P fallback + Yahoo Finance public chart API"
+  },
+  "identifiers": {
+    "cusip": "808524680",
+    "isin": "US8085246804",
+    "isinBasis": "derived from the published CUSIP (US prefix + check digit)",
+    "indexTicker": "Bloomberg US Long Treasury Index",
+    "exchange": "NYSE Arca, Inc.",
+    "morningstarCategory": "Long Government"
+  },
+  "expenseRatio": {
+    "display": "0.03%",
+    "value": 0.03,
+    "gross": 0.03,
+    "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
+  },
+  "nav": {
+    "display": "$29.55",
+    "value": 29.55,
+    "asOfDate": "Sep 18 2026"
+  },
+  "marketPrice": {
+    "display": "$29.54",
+    "value": 29.54,
+    "asOfDate": "Sep 18 2026",
+    "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
+  },
+  "premiumDiscount": {
+    "display": "0.02%",
+    "value": 0.02,
+    "asOfDate": "Sep 18 2026",
+    "source": "official product page Quote Details"
+  },
+  "aum": {
+    "display": "$916.04 M",
+    "value": 916039470.33,
+    "asOfDate": "Sep 18 2026",
+    "source": "official product page Total Net Assets"
+  },
+  "fundFacts": {
+    "sharesOutstanding": 31000000,
+    "portfolioTurnover": 20.32,
+    "publishedTotalHoldings": 102,
+    "bidAskMidpoint": 29.75
+  },
+  "yields": {
+    "dividendYield": 4.9,
+    "dividendYieldText": "4.90%",
+    "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
+    "distributionRate": 4.9,
+    "secYield": 5.31,
+    "secYieldText": "5.31%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 17 2026"
+  },
+  "returns": {
+    "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
+    "monthEnd": {
+      "asOfDate": "Aug 31 2026",
+      "mo1": 0.83,
+      "mo1Text": "0.83%",
+      "mo3": -2.22,
+      "mo3Text": "-2.22%",
+      "qtd": -4.02,
+      "qtdText": "-4.02%",
+      "ytd": -2.42,
+      "ytdText": "-2.42%",
+      "yr1": 0.12,
+      "yr1Text": "0.12%",
+      "yr3": 0.1,
+      "yr3Text": "0.10%",
+      "yr5": -6.87,
+      "yr5Text": "-6.87%",
+      "yr10": null,
+      "yr10Text": "—",
+      "sinceInception": -4.15,
+      "sinceInceptionText": "-4.15%"
+    },
+    "quarterEnd": {
+      "asOfDate": "Jun 30 2026",
+      "ytd": null,
+      "yr1": 2.87,
+      "yr3": -0.49,
+      "yr5": -5.62,
+      "yr10": null,
+      "sinceInception": -3.79
+    }
+  },
+  "officialMarketPriceReturns": {
+    "monthEnd": {
+      "asOfDate": "Aug 31 2026",
+      "mo1": 0.79,
+      "mo1Text": "0.79%",
+      "mo3": -2.22,
+      "mo3Text": "-2.22%",
+      "ytd": -2.48,
+      "ytdText": "-2.48%",
+      "yr1": 0.06,
+      "yr1Text": "0.06%",
+      "yr3": 0.11,
+      "yr3Text": "0.11%",
+      "yr5": -6.86,
+      "yr5Text": "-6.86%",
+      "yr10": null,
+      "yr10Text": "—",
+      "sinceInception": -4.16,
+      "sinceInceptionText": "-4.16%"
+    },
+    "quarterEnd": {
+      "asOfDate": "Jun 30 2026",
+      "mo1": null,
+      "mo1Text": "—",
+      "mo3": null,
+      "mo3Text": "—",
+      "ytd": null,
+      "ytdText": "—",
+      "yr1": 2.84,
+      "yr1Text": "2.84%",
+      "yr3": -0.52,
+      "yr3Text": "-0.52%",
+      "yr5": -5.61,
+      "yr5Text": "-5.61%",
+      "yr10": null,
+      "yr10Text": "—",
+      "sinceInception": -3.79,
+      "sinceInceptionText": "-3.79%"
+    }
+  },
+  "distributions": {
+    "frequency": "Monthly",
+    "frequencyCode": "01 - Monthly",
+    "paymentsPerYear": 12,
+    "source": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
+    "headers": [
+      "Ex-Date",
+      "Amount"
+    ],
+    "rows": [
+      [
+        "11/01/2019",
+        "0.0582"
+      ],
+      [
+        "12/02/2019",
+        "0.0793"
+      ],
+      [
+        "12/19/2019",
+        "0.0686"
+      ],
+      [
+        "02/03/2020",
+        "0.0738"
+      ],
+      [
+        "03/02/2020",
+        "0.061"
+      ],
+      [
+        "04/01/2020",
+        "0.0719"
+      ],
+      [
+        "05/01/2020",
+        "0.0773"
+      ],
+      [
+        "06/01/2020",
+        "0.0873"
+      ],
+      [
+        "07/01/2020",
+        "0.0697"
+      ],
+      [
+        "08/03/2020",
+        "0.0641"
+      ],
+      [
+        "09/01/2020",
+        "0.0652"
+      ],
+      [
+        "10/01/2020",
+        "0.0622"
+      ],
+      [
+        "11/02/2020",
+        "0.0716"
+      ],
+      [
+        "12/01/2020",
+        "0.0626"
+      ],
+      [
+        "12/17/2020",
+        "0.0625"
+      ],
+      [
+        "02/01/2021",
+        "0.0687"
+      ],
+      [
+        "03/01/2021",
+        "0.0667"
+      ],
+      [
+        "04/01/2021",
+        "0.073"
+      ],
+      [
+        "05/03/2021",
+        "0.0763"
+      ],
+      [
+        "06/01/2021",
+        "0.0617"
+      ],
+      [
+        "07/01/2021",
+        "0.0649"
+      ],
+      [
+        "08/02/2021",
+        "0.0737"
+      ],
+      [
+        "09/01/2021",
+        "0.0764"
+      ],
+      [
+        "10/01/2021",
+        "0.0804"
+      ],
+      [
+        "11/01/2021",
+        "0.0724"
+      ],
+      [
+        "12/01/2021",
+        "0.0742"
+      ],
+      [
+        "12/17/2021",
+        "0.0785"
+      ],
+      [
+        "02/01/2022",
+        "0.0842"
+      ],
+      [
+        "03/01/2022",
+        "0.0688"
+      ],
+      [
+        "04/01/2022",
+        "0.0805"
+      ],
+      [
+        "05/02/2022",
+        "0.0679"
+      ],
+      [
+        "06/01/2022",
+        "0.0763"
+      ],
+      [
+        "07/01/2022",
+        "0.1102"
+      ],
+      [
+        "08/01/2022",
+        "0.0802"
+      ],
+      [
+        "09/01/2022",
+        "0.0906"
+      ],
+      [
+        "10/03/2022",
+        "0.0929"
+      ],
+      [
+        "11/01/2022",
+        "0.0688"
+      ],
+      [
+        "12/01/2022",
+        "0.092"
+      ],
+      [
+        "12/16/2022",
+        "0.1032"
+      ],
+      [
+        "02/01/2023",
+        "0.1157"
+      ],
+      [
+        "03/01/2023",
+        "0.1096"
+      ],
+      [
+        "04/03/2023",
+        "0.1219"
+      ],
+      [
+        "05/01/2023",
+        "0.0893"
+      ],
+      [
+        "06/01/2023",
+        "0.1129"
+      ],
+      [
+        "07/03/2023",
+        "0.1196"
+      ],
+      [
+        "08/01/2023",
+        "0.0839"
+      ],
+      [
+        "09/01/2023",
+        "0.1185"
+      ],
+      [
+        "10/02/2023",
+        "0.1129"
+      ],
+      [
+        "11/01/2023",
+        "0.1112"
+      ],
+      [
+        "12/01/2023",
+        "0.1228"
+      ],
+      [
+        "12/15/2023",
+        "0.1109"
+      ],
+      [
+        "02/01/2024",
+        "0.1302"
+      ],
+      [
+        "03/01/2024",
+        "0.1105"
+      ],
+      [
+        "04/01/2024",
+        "0.1252"
+      ],
+      [
+        "05/01/2024",
+        "0.1205"
+      ],
+      [
+        "06/03/2024",
+        "0.1268"
+      ],
+      [
+        "07/01/2024",
+        "0.1131"
+      ],
+      [
+        "08/01/2024",
+        "0.1173"
+      ],
+      [
+        "09/03/2024",
+        "0.1183"
+      ],
+      [
+        "10/01/2024",
+        "0.1124"
+      ],
+      [
+        "11/01/2024",
+        "0.1355"
+      ],
+      [
+        "12/02/2024",
+        "0.1153"
+      ],
+      [
+        "12/20/2024",
+        "0.1156"
+      ],
+      [
+        "02/03/2025",
+        "0.1337"
+      ],
+      [
+        "03/03/2025",
+        "0.1052"
+      ],
+      [
+        "04/01/2025",
+        "0.1023"
+      ],
+      [
+        "05/01/2025",
+        "0.1213"
+      ],
+      [
+        "06/02/2025",
+        "0.1443"
+      ],
+      [
+        "07/01/2025",
+        "0.1191"
+      ],
+      [
+        "08/01/2025",
+        "0.1244"
+      ],
+      [
+        "09/02/2025",
+        "0.1148"
+      ],
+      [
+        "10/01/2025",
+        "0.1322"
+      ],
+      [
+        "11/03/2025",
+        "0.1208"
+      ],
+      [
+        "12/01/2025",
+        "0.0944"
+      ],
+      [
+        "12/19/2025",
+        "0.127"
+      ],
+      [
+        "02/02/2026",
+        "0.148"
+      ],
+      [
+        "03/02/2026",
+        "0.1066"
+      ],
+      [
+        "04/01/2026",
+        "0.1277"
+      ],
+      [
+        "05/01/2026",
+        "0.1168"
+      ],
+      [
+        "06/01/2026",
+        "0.1496"
+      ],
+      [
+        "07/01/2026",
+        "0.1085"
+      ],
+      [
+        "08/03/2026",
+        "0.127"
+      ],
+      [
+        "09/01/2026",
+        "0.1093"
+      ]
+    ]
+  },
+  "holdings": {
+    "pages": [
+      "holdings/001.json"
+    ],
+    "pageSize": 250,
+    "totalRows": 102,
+    "asOfDate": "2026-09-17",
+    "asOf": "Sep 17 2026",
+    "source": "schwabassetmanagement.com full holdings CSV export (SCHQ_FundHoldings_2026-09-17.CSV, via read-only rendering proxy)",
+    "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
+    "publishedTotalHoldings": 102
+  },
+  "history": {
+    "pages": [
+      "history/001.json",
+      "history/002.json"
+    ],
+    "pageSize": 1000,
+    "totalRows": 1743,
+    "asOf": "Sep 18 2026",
+    "source": "Yahoo Finance public chart API (adjusted close)"
+  }
+}
