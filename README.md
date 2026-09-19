@@ -10,13 +10,13 @@ The common interaction and data-state rules are documented in [`docs/ui-contract
 
 | Application | Data provider | Repository |
 | --- | --- | --- |
-| Amplify ETF Holdings to Watchlist | Amplify ETFs (Firestore data feed) | [daggerok/Amplify](https://github.com/daggerok/Amplify) · [published app](https://daggerok.github.io/Amplify/) |
-| iShares Excel .xls to Watchlist | iShares (BlackRock) product workbooks | [daggerok/iShares](https://github.com/daggerok/iShares) · [published app](https://daggerok.github.io/iShares/) |
-| SPDR ETF Holdings to Watchlist | SSGA / State Street public feeds | [daggerok/SPDR](https://github.com/daggerok/SPDR) · [published app](https://daggerok.github.io/SPDR/) |
-| Fidelity ETF Holdings to Watchlist | SEC EDGAR N-PORT-P + Yahoo Finance | [daggerok/Fidelity](https://github.com/daggerok/Fidelity) · [published app](https://daggerok.github.io/Fidelity/) |
-| Invesco ETF Holdings to Watchlist | Invesco public downloads + Yahoo Finance | [daggerok/Invesco](https://github.com/daggerok/Invesco) · [published app](https://daggerok.github.io/Invesco/) |
-| WisdomTree ETF Holdings to Watchlist | WisdomTree U.S. product table + SEC EDGAR N-PORT-P + Yahoo Finance | [daggerok/WisdomTree](https://github.com/daggerok/WisdomTree) · [published app](https://daggerok.github.io/WisdomTree/) |
-| Schwab ETF Holdings to Watchlist | schwabassetmanagement.com product pages + CSV exports + Yahoo Finance | [daggerok/Schwab](https://github.com/daggerok/Schwab) · [published app](https://daggerok.github.io/Schwab/) |
+| Amplify ETF Holdings to Watchlist | Amplify ETFs (Firestore data feed) | [repo](https://github.com/daggerok/Amplify) · [pages](https://daggerok.github.io/Amplify/) |
+| iShares Excel .xls to Watchlist | iShares (BlackRock) product workbooks | [repo](https://github.com/daggerok/iShares) · [pages](https://daggerok.github.io/iShares/) |
+| SPDR ETF Holdings to Watchlist | SSGA / State Street public feeds | [repo](https://github.com/daggerok/SPDR) · [pages](https://daggerok.github.io/SPDR/) |
+| Fidelity ETF Holdings to Watchlist | SEC EDGAR N-PORT-P + Yahoo Finance | [repo](https://github.com/daggerok/Fidelity) · [pages](https://daggerok.github.io/Fidelity/) |
+| Invesco ETF Holdings to Watchlist | Invesco public downloads + Yahoo Finance | [repo](https://github.com/daggerok/Invesco) · [pages](https://daggerok.github.io/Invesco/) |
+| WisdomTree ETF Holdings to Watchlist | WisdomTree U.S. product table + SEC EDGAR N-PORT-P + Yahoo Finance | [repo](https://github.com/daggerok/WisdomTree) · [pages](https://daggerok.github.io/WisdomTree/) |
+| Schwab ETF Holdings to Watchlist | schwabassetmanagement.com product pages + CSV exports + Yahoo Finance | [repo](https://github.com/daggerok/Schwab) · [pages](https://daggerok.github.io/Schwab/) |
 
 ## Using Bun
 
