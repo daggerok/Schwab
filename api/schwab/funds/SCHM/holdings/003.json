@@ -1,0 +1,62 @@
+{
+  "ticker": "SCHM",
+  "page": 3,
+  "pageSize": 250,
+  "totalRows": 505,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "X-ENERGY INC CLASS A",
+      "Ticker": "XE",
+      "Identifier": "BBG021GML3P2",
+      "Weight": "0.015701",
+      "Market Value": "2273846.36",
+      "Shares Held": "145095",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "ISHARES CORE S&P MID-CAP ETF",
+      "Ticker": "IJH",
+      "Identifier": "BBG000BWCBM4",
+      "Weight": "0.01502",
+      "Market Value": "2175158.81",
+      "Shares Held": "30000",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "MCCORMICK & CO VOTING",
+      "Ticker": "MKC V",
+      "Identifier": "BBG000FJ5648",
+      "Weight": "0.012413",
+      "Market Value": "1797610.39",
+      "Shares Held": "36450",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "US DOLLAR",
+      "Ticker": "USD",
+      "Identifier": "-",
+      "Weight": "0.011145",
+      "Market Value": "1613973.95",
+      "Shares Held": "1618975.94",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "S&P MID 400 EMINI DEC 26",
+      "Ticker": "FAZ6",
+      "Identifier": "BBG01X9RPHD8",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "6400",
+      "Asset Category": "-"
+    }
+  ]
+}

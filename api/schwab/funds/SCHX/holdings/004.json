@@ -1,0 +1,62 @@
+{
+  "ticker": "SCHX",
+  "page": 4,
+  "pageSize": 250,
+  "totalRows": 755,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "LINEAGE",
+      "Ticker": "LINE",
+      "Identifier": "BBG01NJDR1F1",
+      "Weight": "0.002515",
+      "Market Value": "1868875.18",
+      "Shares Held": "51759",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "SAILPOINT",
+      "Ticker": "SAIL",
+      "Identifier": "BBG01RW30QL6",
+      "Weight": "0.002382",
+      "Market Value": "1770346.44",
+      "Shares Held": "80195",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "CNA FINANCIAL CORP",
+      "Ticker": "CNA",
+      "Identifier": "BBG000BFYCD5",
+      "Weight": "0.001238",
+      "Market Value": "920345.64",
+      "Shares Held": "20000",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "MCCORMICK & CO VOTING",
+      "Ticker": "MKC V",
+      "Identifier": "BBG000FJ5648",
+      "Weight": "0.000767",
+      "Market Value": "569884.01",
+      "Shares Held": "11543",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "S&P500 EMINI DEC 26",
+      "Ticker": "ESZ6",
+      "Identifier": "BBG012FFK314",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "10700",
+      "Asset Category": "-"
+    }
+  ]
+}

@@ -7,13 +7,13 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/fndx",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/fndx",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Sep 18 2026",
-    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDX/FNDX_FundHoldings_2026-09-17.CSV",
+    "productPageAsOf": "Sep 24 2026",
+    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDX/FNDX_FundHoldings_2026-09-24.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDX/FNDX_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDX/FNDX_NAV_History.CSV",
     "pricesDownload": null,
     "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/FNDX",
-    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (FNDX_FundHoldings_2026-09-17.CSV, via read-only rendering proxy)",
+    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (FNDX_FundHoldings_2026-09-24.CSV, via read-only rendering proxy)",
     "historySource": "Yahoo Finance public chart API (adjusted close)",
     "distributionsSource": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
     "provider": "Schwab Asset Management product finder + official product page + per-fund holdings/distribution CSV exports + SEC EDGAR Form N-PORT-P fallback + Yahoo Finance public chart API"
@@ -33,42 +33,42 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$32.12",
-    "value": 32.12,
-    "asOfDate": "Sep 18 2026"
+    "display": "$31.84",
+    "value": 31.84,
+    "asOfDate": "Sep 24 2026"
   },
   "marketPrice": {
-    "display": "$32.10",
-    "value": 32.1,
-    "asOfDate": "Sep 18 2026",
+    "display": "$31.85",
+    "value": 31.85,
+    "asOfDate": "Sep 24 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.02%",
-    "value": 0.02,
-    "asOfDate": "Sep 18 2026",
+    "display": "0.03%",
+    "value": 0.03,
+    "asOfDate": "Sep 24 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$28.32 B",
-    "value": 28323176209.75,
-    "asOfDate": "Sep 18 2026",
+    "display": "$27.37 B",
+    "value": 27367864108.01,
+    "asOfDate": "Sep 24 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
-    "sharesOutstanding": 881800000,
+    "sharesOutstanding": 859450000,
     "portfolioTurnover": 11.97,
-    "publishedTotalHoldings": 734,
-    "bidAskMidpoint": 32.26
+    "publishedTotalHoldings": 735,
+    "bidAskMidpoint": 31.89
   },
   "yields": {
     "dividendYield": 1.42,
     "dividendYieldText": "1.42%",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
     "distributionRate": 1.42,
-    "secYield": 1.5,
-    "secYieldText": "1.50%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 17 2026"
+    "secYield": 1.52,
+    "secYieldText": "1.52%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 23 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
@@ -78,8 +78,8 @@
       "mo1Text": "2.11%",
       "mo3": 4.95,
       "mo3Text": "4.95%",
-      "qtd": 3.18,
-      "qtdText": "3.18%",
+      "qtd": 2.38,
+      "qtdText": "2.38%",
       "ytd": 19.97,
       "ytdText": "19.97%",
       "yr1": 27.87,
@@ -316,6 +316,10 @@
       [
         "06/24/2026",
         "0.118"
+      ],
+      [
+        "09/23/2026",
+        "0.1196"
       ]
     ]
   },
@@ -326,12 +330,12 @@
       "holdings/003.json"
     ],
     "pageSize": 250,
-    "totalRows": 734,
-    "asOfDate": "2026-09-17",
-    "asOf": "Sep 17 2026",
-    "source": "schwabassetmanagement.com full holdings CSV export (FNDX_FundHoldings_2026-09-17.CSV, via read-only rendering proxy)",
+    "totalRows": 735,
+    "asOfDate": "2026-09-24",
+    "asOf": "Sep 24 2026",
+    "source": "schwabassetmanagement.com full holdings CSV export (FNDX_FundHoldings_2026-09-24.CSV, via read-only rendering proxy)",
     "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
-    "publishedTotalHoldings": 734
+    "publishedTotalHoldings": 735
   },
   "history": {
     "pages": [
@@ -341,8 +345,8 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3293,
-    "asOf": "Sep 18 2026",
+    "totalRows": 3296,
+    "asOf": "Sep 24 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }
