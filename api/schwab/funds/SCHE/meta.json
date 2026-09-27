@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/sche",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/sche",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Sep 24 2026",
+    "productPageAsOf": "Sep 25 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHE/SCHE_FundHoldings_2026-09-24.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHE/SCHE_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHE/SCHE_NAV_History.CSV",
@@ -33,42 +33,42 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$36.81",
-    "value": 36.81,
-    "asOfDate": "Sep 24 2026"
+    "display": "$36.76",
+    "value": 36.76,
+    "asOfDate": "Sep 25 2026"
   },
   "marketPrice": {
-    "display": "$36.80",
-    "value": 36.8,
-    "asOfDate": "Sep 24 2026",
+    "display": "$36.99",
+    "value": 36.99,
+    "asOfDate": "Sep 25 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "-0.68%",
-    "value": -0.68,
-    "asOfDate": "Sep 24 2026",
+    "display": "-0.03%",
+    "value": -0.03,
+    "asOfDate": "Sep 25 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$12.91 B",
-    "value": 12905542194.94,
-    "asOfDate": "Sep 24 2026",
+    "display": "$12.89 B",
+    "value": 12888891382.85,
+    "asOfDate": "Sep 25 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
     "sharesOutstanding": 350600000,
     "portfolioTurnover": 4.42,
     "publishedTotalHoldings": 2234,
-    "bidAskMidpoint": 36.93
+    "bidAskMidpoint": 36.79
   },
   "yields": {
     "dividendYield": 2.57,
     "dividendYieldText": "2.57%",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
     "distributionRate": 2.57,
-    "secYield": 2.01,
-    "secYieldText": "2.01%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 23 2026"
+    "secYield": 2.02,
+    "secYieldText": "2.02%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 24 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
@@ -78,8 +78,8 @@
       "mo1Text": "2.83%",
       "mo3": 1.71,
       "mo3Text": "1.71%",
-      "qtd": 2.25,
-      "qtdText": "2.25%",
+      "qtd": 2.78,
+      "qtdText": "2.78%",
       "ytd": 13.12,
       "ytdText": "13.12%",
       "yr1": 22.32,
@@ -264,8 +264,8 @@
       "history/005.json"
     ],
     "pageSize": 1000,
-    "totalRows": 4198,
-    "asOf": "Sep 24 2026",
+    "totalRows": 4200,
+    "asOf": "Sep 25 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }
