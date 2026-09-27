@@ -1512,7 +1512,7 @@ export function inferDistributionFrequency(dividends: Array<{ epoch: number; amo
 export function frequencyCodeLabel(value: unknown): string {
   const raw = String(value ?? '').trim();
   const normalized = raw.toLowerCase().replace(/[‐‑‒–—]/g, '-').replace(/\s+/g, ' ');
-  if (!normalized || normalized === '-' || normalized === '—') return '00 - —';
+  if (!normalized || normalized === '-' || normalized === '—') return '00 - None';
   if (normalized === 'monthly') return '01 - Monthly';
   if (normalized === 'quarterly') return '04 - Quarterly';
   if (normalized === 'semi-annual' || normalized === 'semi-annually' || normalized === 'semiannual') return '06 - Semi-annually';
