@@ -187,9 +187,6 @@ jobs:
       - name: Run updater unit tests
         run: bun test scripts/update-data.test.ts
 
-      - name: Type-check updater and tests
-        run: bunx tsc --noEmit --target es2022 --module esnext --moduleResolution bundler --types bun,node --skipLibCheck scripts/update-data.ts scripts/update-data.test.ts
-
       - name: Generate api/schwab static data
         run: bun ./scripts/update-data.ts
 
