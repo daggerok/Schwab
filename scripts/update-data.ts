@@ -335,7 +335,12 @@ type UpdaterConfig = {
 const EMPTY_RETURNS: CatalogReturns = { ytd: null, yr1: null, yr3: null, yr5: null, yr10: null, sinceInception: null };
 const EMPTY_PRICE_RETURNS: PriceReturns = { asOfDate: '', mo1: null, qtd: null, ytd: null, yr1: null, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null };
 
-let requestGateAt = 0;
+// One pacing lane per concurrent worker (sized from config.concurrency in
+// main()). A single shared gate capped total throughput at one request per
+// requestSleepSeconds no matter how high CONCURRENCY was set; CONCURRENCY
+// workers now each get their own paced lane, so concurrency actually
+// multiplies throughput as documented instead of only overlapping wait time.
+let requestGates: number[] = [0];
 let proxyGateAt = 0;
 let requestSleepSeconds = 1.5;
 let fundTickerMap: Map<string, SecSeriesRef> | null = null;
@@ -813,8 +818,10 @@ async function paceRequests(proxy = false): Promise<void> {
     if (wait) await sleep(wait);
     return;
   }
-  const wait = Math.max(0, requestGateAt - now);
-  requestGateAt = Math.max(now, requestGateAt) + Math.max(0, requestSleepSeconds * 1000);
+  let lane = 0;
+  for (let i = 1; i < requestGates.length; i++) if (requestGates[i] < requestGates[lane]) lane = i;
+  const wait = Math.max(0, requestGates[lane] - now);
+  requestGates[lane] = Math.max(now, requestGates[lane]) + Math.max(0, requestSleepSeconds * 1000);
   if (wait) await sleep(wait);
 }
 
@@ -2072,7 +2079,7 @@ Examples:
 async function main(): Promise<void> {
   const config = readConfig();
   requestSleepSeconds = config.requestSleep;
-  requestGateAt = 0;
+  requestGates = new Array(Math.max(1, config.concurrency)).fill(0);
   proxyGateAt = 0;
   issuerDirectDenials = 0;
   outputPrintConfig('Schwab', config);
