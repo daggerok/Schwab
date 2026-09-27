@@ -2,29 +2,29 @@
   "ticker": "FNDA",
   "name": "Schwab Fundamental U.S. Small Company ETF",
   "category": "U.S. Equities",
-  "categoryPath": "U.S. Equities / Small Blend",
+  "categoryPath": "U.S. Equities",
   "source": {
     "fundPage": "https://www.schwabassetmanagement.com/products/fnda",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/fnda",
-    "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Sep 24 2026",
+    "productPageRendering": "not fetched in this run",
+    "productPageAsOf": null,
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDA/FNDA_FundHoldings_2026-09-24.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDA/FNDA_Fund_Distributions.CSV",
-    "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDA/FNDA_NAV_History.CSV",
+    "navHistoryDownload": null,
     "pricesDownload": null,
     "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/FNDA",
     "holdingsSource": "schwabassetmanagement.com full holdings CSV export (FNDA_FundHoldings_2026-09-24.CSV, via read-only rendering proxy)",
     "historySource": "Yahoo Finance public chart API (adjusted close)",
-    "distributionsSource": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
+    "distributionsSource": "Yahoo Finance chart dividend events (issuer distribution CSV unavailable)",
     "provider": "Schwab Asset Management product finder + official product page + per-fund holdings/distribution CSV exports + SEC EDGAR Form N-PORT-P fallback + Yahoo Finance public chart API"
   },
   "identifiers": {
-    "cusip": "808524763",
-    "isin": "US8085247638",
-    "isinBasis": "derived from the published CUSIP (US prefix + check digit)",
-    "indexTicker": "RAFI Fundamental High Liquidity US Small Index",
-    "exchange": "NYSE Arca, Inc.",
-    "morningstarCategory": "Small Blend"
+    "cusip": null,
+    "isin": null,
+    "isinBasis": null,
+    "indexTicker": null,
+    "exchange": null,
+    "morningstarCategory": null
   },
   "expenseRatio": {
     "display": "0.25%",
@@ -33,273 +33,278 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$35.41",
-    "value": 35.41,
-    "asOfDate": "Sep 24 2026"
+    "display": "$35.53",
+    "value": 35.53,
+    "asOfDate": "Sep 22 2026"
   },
   "marketPrice": {
-    "display": "$35.42",
-    "value": 35.42,
-    "asOfDate": "Sep 24 2026",
+    "display": "$35.53",
+    "value": 35.53,
+    "asOfDate": "Sep 25 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.03%",
-    "value": 0.03,
-    "asOfDate": "Sep 24 2026",
-    "source": "official product page Quote Details"
+    "display": "0.00%",
+    "value": 0,
+    "asOfDate": "Sep 22 2026",
+    "source": "computed from Yahoo last price / product-page NAV"
   },
   "aum": {
-    "display": "$8.69 B",
-    "value": 8692578758.83,
-    "asOfDate": "Sep 24 2026",
-    "source": "official product page Total Net Assets"
+    "display": "$8.73 B",
+    "value": 8726606253.31,
+    "asOfDate": "Sep 22 2026",
+    "source": "previous run"
   },
   "fundFacts": {
-    "sharesOutstanding": 245450000,
-    "portfolioTurnover": 24.41,
-    "publishedTotalHoldings": 916,
-    "bidAskMidpoint": 35.52
+    "sharesOutstanding": null,
+    "portfolioTurnover": null,
+    "publishedTotalHoldings": null,
+    "bidAskMidpoint": null
   },
   "yields": {
-    "dividendYield": 1.12,
-    "dividendYieldText": "1.12%",
-    "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
-    "distributionRate": 1.12,
-    "secYield": 1.21,
-    "secYieldText": "1.21%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Sep 23 2026"
+    "dividendYield": 1.5,
+    "dividendYieldText": "1.50%",
+    "dividendYieldKind": "indicated (latest distribution x inferred payments per year / NAV)",
+    "distributionRate": null,
+    "secYield": null,
+    "secYieldText": "—",
+    "secYieldKind": "not published on the official product page for this fund"
   },
   "returns": {
-    "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
+    "derivedFrom": "adjusted market-price closes (Yahoo chart API), not official Schwab NAV returns",
     "monthEnd": {
-      "asOfDate": "Aug 31 2026",
-      "mo1": -0.3,
-      "mo1Text": "-0.30%",
-      "mo3": 2.9,
-      "mo3Text": "2.90%",
-      "qtd": -6.59,
-      "qtdText": "-6.59%",
-      "ytd": 18.06,
-      "ytdText": "18.06%",
-      "yr1": 20.36,
-      "yr1Text": "20.36%",
-      "yr3": 14.58,
-      "yr3Text": "14.58%",
-      "yr5": 8.03,
-      "yr5Text": "8.03%",
-      "yr10": 10.62,
-      "yr10Text": "10.62%",
-      "sinceInception": 10.18,
-      "sinceInceptionText": "10.18%"
-    },
-    "quarterEnd": {
-      "asOfDate": "Jun 30 2026",
-      "ytd": null,
-      "yr1": 34.32,
-      "yr3": 16.26,
-      "yr5": 8.45,
-      "yr10": 11.53,
-      "sinceInception": 10.54
-    }
-  },
-  "officialMarketPriceReturns": {
-    "monthEnd": {
-      "asOfDate": "Aug 31 2026",
-      "mo1": -0.27,
-      "mo1Text": "-0.27%",
-      "mo3": 2.93,
-      "mo3Text": "2.93%",
-      "ytd": 18.17,
-      "ytdText": "18.17%",
-      "yr1": 20.44,
-      "yr1Text": "20.44%",
-      "yr3": 14.62,
-      "yr3Text": "14.62%",
-      "yr5": 8.06,
-      "yr5Text": "8.06%",
-      "yr10": 10.61,
-      "yr10Text": "10.61%",
-      "sinceInception": 10.18,
-      "sinceInceptionText": "10.18%"
-    },
-    "quarterEnd": {
-      "asOfDate": "Jun 30 2026",
-      "mo1": null,
-      "mo1Text": "—",
+      "asOfDate": "Sep 25 2026",
+      "mo1": -5,
+      "mo1Text": "-5.00%",
       "mo3": null,
       "mo3Text": "—",
+      "qtd": -5.96,
+      "qtdText": "-5.96%",
+      "ytd": 13.68,
+      "ytdText": "13.68%",
+      "yr1": 15.59,
+      "yr1Text": "15.59%",
+      "yr3": 15.1,
+      "yr3Text": "15.10%",
+      "yr5": 7.46,
+      "yr5Text": "7.46%",
+      "yr10": 10.22,
+      "yr10Text": "10.22%",
+      "sinceInception": 9.89,
+      "sinceInceptionText": "9.89%"
+    },
+    "quarterEnd": {
+      "asOfDate": "Jun 30 2026",
       "ytd": null,
-      "ytdText": "—",
-      "yr1": 34.53,
-      "yr1Text": "34.53%",
-      "yr3": 16.28,
-      "yr3Text": "16.28%",
-      "yr5": 8.48,
-      "yr5Text": "8.48%",
-      "yr10": 11.55,
-      "yr10Text": "11.55%",
-      "sinceInception": 10.55,
-      "sinceInceptionText": "10.55%"
+      "yr1": null,
+      "yr3": null,
+      "yr5": null,
+      "yr10": null,
+      "sinceInception": null
     }
   },
+  "officialMarketPriceReturns": null,
   "distributions": {
     "frequency": "Quarterly",
     "frequencyCode": "04 - Quarterly",
     "paymentsPerYear": 4,
-    "source": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
+    "source": "Yahoo Finance chart dividend events (issuer distribution CSV unavailable)",
     "headers": [
       "Ex-Date",
       "Amount"
     ],
     "rows": [
       [
+        "10/01/2013",
+        "0.0105"
+      ],
+      [
+        "12/23/2013",
+        "0.035"
+      ],
+      [
+        "03/31/2014",
+        "0.032"
+      ],
+      [
+        "06/30/2014",
+        "0.0385"
+      ],
+      [
+        "09/29/2014",
+        "0.0405"
+      ],
+      [
+        "12/22/2014",
+        "0.0475"
+      ],
+      [
+        "03/30/2015",
+        "0.039"
+      ],
+      [
+        "06/29/2015",
+        "0.0435"
+      ],
+      [
+        "09/28/2015",
+        "0.0525"
+      ],
+      [
+        "12/21/2015",
+        "0.0515"
+      ],
+      [
+        "06/27/2016",
+        "0.0515"
+      ],
+      [
         "10/03/2016",
-        "0.1148"
+        "0.0575"
       ],
       [
         "12/19/2016",
-        "0.1166"
+        "0.0585"
       ],
       [
         "04/03/2017",
-        "0.1109"
+        "0.0555"
       ],
       [
         "06/26/2017",
-        "0.0914"
+        "0.0455"
       ],
       [
         "09/18/2017",
-        "0.1103"
+        "0.055"
       ],
       [
         "12/18/2017",
-        "0.1745"
+        "0.0875"
       ],
       [
         "12/27/2017",
-        "0.0058"
+        "0.003"
       ],
       [
         "03/16/2018",
-        "0.0695"
+        "0.035"
       ],
       [
         "06/26/2018",
-        "0.1081"
+        "0.054"
       ],
       [
         "09/25/2018",
-        "0.1488"
+        "0.0745"
       ],
       [
         "12/12/2018",
-        "0.2105"
+        "0.1055"
       ],
       [
         "12/28/2018",
-        "0.01"
+        "0.005"
       ],
       [
         "03/20/2019",
-        "0.075"
+        "0.0375"
       ],
       [
         "06/26/2019",
-        "0.1407"
+        "0.0705"
       ],
       [
         "09/25/2019",
-        "0.1511"
+        "0.0755"
       ],
       [
         "12/12/2019",
-        "0.1889"
+        "0.0945"
       ],
       [
         "03/25/2020",
-        "0.0827"
+        "0.0415"
       ],
       [
         "06/24/2020",
-        "0.124"
+        "0.062"
       ],
       [
         "09/23/2020",
-        "0.14"
+        "0.07"
       ],
       [
         "12/10/2020",
-        "0.163"
+        "0.0815"
       ],
       [
         "12/30/2020",
-        "0.0511"
+        "0.0255"
       ],
       [
         "03/24/2021",
-        "0.0364"
+        "0.018"
       ],
       [
         "06/23/2021",
-        "0.1157"
+        "0.058"
       ],
       [
         "09/22/2021",
-        "0.149"
+        "0.0745"
       ],
       [
         "12/08/2021",
-        "0.3409"
+        "0.1705"
       ],
       [
         "03/23/2022",
-        "0.0466"
+        "0.0235"
       ],
       [
         "06/22/2022",
-        "0.1632"
+        "0.0815"
       ],
       [
         "09/21/2022",
-        "0.1731"
+        "0.0865"
       ],
       [
         "12/07/2022",
-        "0.2606"
+        "0.1305"
       ],
       [
         "03/22/2023",
-        "0.1402"
+        "0.07"
       ],
       [
         "06/21/2023",
-        "0.185"
+        "0.0925"
       ],
       [
         "09/20/2023",
-        "0.1795"
+        "0.09"
       ],
       [
         "12/06/2023",
-        "0.2536"
+        "0.127"
       ],
       [
         "03/20/2024",
-        "0.1557"
+        "0.078"
       ],
       [
         "06/26/2024",
-        "0.2112"
+        "0.1055"
       ],
       [
         "09/25/2024",
-        "0.2148"
+        "0.1075"
       ],
       [
         "12/11/2024",
-        "0.1643"
+        "0.164"
       ],
       [
         "03/26/2025",
@@ -307,27 +312,27 @@
       ],
       [
         "06/25/2025",
-        "0.0735"
+        "0.074"
       ],
       [
         "09/24/2025",
-        "0.1078"
+        "0.108"
       ],
       [
         "12/10/2025",
-        "0.1521"
+        "0.152"
       ],
       [
         "03/25/2026",
-        "0.0603"
+        "0.06"
       ],
       [
         "06/24/2026",
-        "0.0966"
+        "0.097"
       ],
       [
         "09/23/2026",
-        "0.1329"
+        "0.133"
       ]
     ]
   },
@@ -343,8 +348,7 @@
     "asOfDate": "2026-09-24",
     "asOf": "Sep 24 2026",
     "source": "schwabassetmanagement.com full holdings CSV export (FNDA_FundHoldings_2026-09-24.CSV, via read-only rendering proxy)",
-    "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
-    "publishedTotalHoldings": 916
+    "marketValueBasis": "not derivable: Total Net Assets unavailable in this run"
   },
   "history": {
     "pages": [
@@ -354,8 +358,8 @@
       "history/004.json"
     ],
     "pageSize": 1000,
-    "totalRows": 3296,
-    "asOf": "Sep 24 2026",
+    "totalRows": 3298,
+    "asOf": "Sep 25 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }
