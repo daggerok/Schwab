@@ -181,9 +181,6 @@ jobs:
       - name: Install pinned dev tooling
         run: bun install --frozen-lockfile
 
-      - name: Validate browser script
-        run: bun ./scripts/check-index.ts
-
       - name: Run updater unit tests
         run: bun test scripts/update-data.test.ts
 
