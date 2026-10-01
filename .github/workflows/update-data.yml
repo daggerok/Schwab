@@ -1,200 +1,190 @@
 name: Update Schwab ETF data
 
 on:
-  # Weekly refresh (every Sunday at 00:00 UTC) plus manual runs.
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:
     inputs:
       max_fetches:
-        description: "Batch size; continue after the saved ticker cursor; empty or 0 means a full pass over every catalog fund"
+        description: "Batch size; continue after the saved ticker cursor; empty or 0 means a full pass over every catalog fund; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       request_sleep:
-        description: "Seconds between outgoing request starts; keep requests polite to Schwab, SEC and Yahoo (rendering-proxy requests are paced at 3.2s or slower)"
+        description: "Seconds between outgoing request starts; keep requests polite to Schwab, SEC and Yahoo (rendering-proxy requests are paced at 3.2s or slower); blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       aum:
-        description: "AUM min:max; bounds may be amounts or K/M/B/T suffixes, or nano/micro/small/mid/large"
+        description: "AUM min:max; bounds may be amounts or K/M/B/T suffixes, or nano/micro/small/mid/large; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       ter:
-        description: "Net expense ratio range in percent: min:max"
+        description: "Net expense ratio range in percent: min:max; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       concurrency:
-        description: "Parallel fund workers (keep low)"
+        description: "Parallel fund workers (keep low); blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       holdings_page_size:
-        description: "Rows in each generated holdings JSON page"
+        description: "Rows in each generated holdings JSON page; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       history_page_size:
-        description: "Rows in each generated history JSON page"
-        required: false
-        default: ""
-        type: string
-      store_raw_downloads:
-        description: "Store the official product finder and product pages under api/schwab/raw"
+        description: "Rows in each generated history JSON page; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       max_retries:
-        description: "Retries after the initial request"
+        description: "Retries after the initial request; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       tickers:
-        description: "Only update these tickers, separated by spaces or commas"
+        description: "Only update these tickers, separated by spaces or commas; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       dividend_yield:
-        description: "Distribution Yield (TTM) percentage range; colon required"
+        description: "Distribution Yield (TTM) percentage range; colon required; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       history_range:
-        description: "Yahoo chart range for history rows (max, 10y, 5y, ...)"
+        description: "Yahoo chart range for history rows (max, 10y, 5y, ...); blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       edgar_fallback:
-        description: "Use SEC EDGAR Form N-PORT-P when the issuer holdings CSV is unavailable (default on)"
+        description: "Use SEC EDGAR Form N-PORT-P when the issuer holdings CSV is unavailable (default on); blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       skip_yahoo:
-        description: "Keep previous history and distributions while refreshing catalog/holdings"
+        description: "Keep previous history and distributions while refreshing catalog/holdings; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       skip_schwab:
-        description: "Keep the previously published catalog, product-page data, holdings and distributions"
+        description: "Keep the previously published catalog, product-page data, holdings and distributions; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       performance_ytd:
-        description: "YTD total return range: min:max (official NAV return where published)"
+        description: "YTD total return range: min:max (official NAV return where published); blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       performance_1y:
-        description: "1Y total return range"
+        description: "1Y total return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       performance_3y:
-        description: "Annualized 3Y return range"
+        description: "Annualized 3Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       performance_5y:
-        description: "Annualized 5Y return range"
+        description: "Annualized 5Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       performance_10y:
-        description: "Annualized 10Y return range"
+        description: "Annualized 10Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       total_return_ytd:
-        description: "Cumulative YTD return range"
+        description: "Cumulative YTD return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       total_return_1y:
-        description: "Cumulative 1Y return range"
+        description: "Cumulative 1Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       total_return_3y:
-        description: "Cumulative 3Y return range"
+        description: "Cumulative 3Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       total_return_5y:
-        description: "Cumulative 5Y return range"
+        description: "Cumulative 5Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
         type: string
       total_return_10y:
-        description: "Cumulative 10Y return range"
+        description: "Cumulative 10Y return range; blank inherits scripts/update-data.config.json"
         required: false
         default: ""
+        type: string
+      advanced:
+        description: 'JSON object of supported control overrides not exposed above (keys are UPPER_CASE control names, values are scalars); nonblank individual inputs win'
+        required: false
+        default: '{}'
         type: string
 
 permissions:
   contents: write
 
 concurrency:
-  group: update-schwab-data
+  group: update-data
   cancel-in-progress: false
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    env:
-      MAX_FETCHES: ${{ inputs.max_fetches || '' }}
-      REQUEST_SLEEP: ${{ inputs.request_sleep || '' }}
-      AUM: ${{ inputs.aum || '' }}
-      TER: ${{ inputs.ter || '' }}
-      CONCURRENCY: ${{ inputs.concurrency || '' }}
-      HOLDINGS_PAGE_SIZE: ${{ inputs.holdings_page_size || '' }}
-      HISTORY_PAGE_SIZE: ${{ inputs.history_page_size || '' }}
-      STORE_RAW_DOWNLOADS: ${{ inputs.store_raw_downloads || '' }}
-      MAX_RETRIES: ${{ inputs.max_retries || '' }}
-      TICKERS: ${{ inputs.tickers || '' }}
-      DIVIDEND_YIELD: ${{ inputs.dividend_yield || '' }}
-      HISTORY_RANGE: ${{ inputs.history_range || '' }}
-      EDGAR_FALLBACK: ${{ inputs.edgar_fallback || '' }}
-      SKIP_YAHOO: ${{ inputs.skip_yahoo || '' }}
-      SKIP_SCHWAB: ${{ inputs.skip_schwab || '' }}
-      PERFORMANCE_YTD: ${{ inputs.performance_ytd || '' }}
-      PERFORMANCE_1Y: ${{ inputs.performance_1y || '' }}
-      PERFORMANCE_3Y: ${{ inputs.performance_3y || '' }}
-      PERFORMANCE_5Y: ${{ inputs.performance_5y || '' }}
-      PERFORMANCE_10Y: ${{ inputs.performance_10y || '' }}
-      TOTAL_RETURN_YTD: ${{ inputs.total_return_ytd || '' }}
-      TOTAL_RETURN_1Y: ${{ inputs.total_return_1y || '' }}
-      TOTAL_RETURN_3Y: ${{ inputs.total_return_3y || '' }}
-      TOTAL_RETURN_5Y: ${{ inputs.total_return_5y || '' }}
-      TOTAL_RETURN_10Y: ${{ inputs.total_return_10y || '' }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
-      - name: Install pinned dev tooling
+      - name: Install dependencies
         run: bun install --frozen-lockfile
-
       - name: Run updater unit tests
-        run: bun test scripts/update-data.test.ts
-
+        run: bun test
+      - name: Resolve file defaults and manual overrides
+        env:
+          DISPATCH_INPUTS: ${{ toJSON(inputs) }}
+          PROTECTED_SEC_UA: ${{ vars.SEC_UA }}
+        run: |
+          bun --eval '
+            import { resolveControls } from "./scripts/update-data.ts";
+            import { appendFile } from "node:fs/promises";
+            // schedule runs have no dispatch inputs: file defaults apply as-is
+            const inputs = JSON.parse(process.env.DISPATCH_INPUTS || "{}");
+            const advanced = JSON.parse(inputs.advanced || "{}");
+            const individual = Object.fromEntries(Object.entries(inputs)
+              .filter(([key]) => key !== "advanced")
+              .map(([key, value]) => [key.toUpperCase(), value]));
+            const file = await Bun.file("scripts/update-data.config.json").json();
+            // Protected repository Actions variable: highest precedence, applied only when nonblank (never printed).
+            const protectedVars = {};
+            if ((process.env.PROTECTED_SEC_UA ?? "").trim()) protectedVars.SEC_UA = process.env.PROTECTED_SEC_UA.trim();
+            const controls = resolveControls(file, advanced, individual, protectedVars);
+            await appendFile(process.env.GITHUB_ENV,
+              Object.entries(controls).map(([key, value]) => `${key}=${value}\n`).join(""));
+          '
       - name: Generate api/schwab static data
         run: bun ./scripts/update-data.ts
-
       - name: Commit updated data
+        if: ${{ !cancelled() }}
         run: |
-          if [ -z "$(git status --porcelain -- api/schwab)" ]; then
+          git add api/schwab
+          if git diff --cached --quiet -- api/schwab; then
             echo "api/schwab is already up to date"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add api/schwab
-          git commit -m "Update Schwab ETF data"
+          git commit -m "chore(data): update Schwab ETF data"
           git push
