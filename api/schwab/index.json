@@ -45,6 +45,7 @@
       },
       "returns": {
         "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
+        "performanceAsOf": "2026-08-31",
         "monthEnd": {
           "asOfDate": "Aug 31 2026",
           "mo1": 4.28,
@@ -90,7 +91,8 @@
         "dividendYieldText": "3.00%",
         "secYield": 3.39,
         "secYieldText": "3.39%",
-        "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values"
+        "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
+        "performanceAsOf": "2026-08-31"
       },
       "holdings": 102,
       "history": 3758
