@@ -23,7 +23,7 @@ bun test
 
 Run `./scripts/update-data.ts -h` (or `--help`) to print every configuration variable with its default and usage examples.
 
-Defaults live in `scripts/update-data.config.json` (every control as a string). Explicit environment variables override the file. The **Update Schwab ETF data** GitHub Actions workflow uses the same resolver (`resolveControls` in `scripts/update-data.ts`): individual `workflow_dispatch` inputs are blank by default and inherit the file, and the `advanced` input accepts a JSON object with any control (for example `{"VERBOSE":"true"}`). Precedence: file defaults < advanced JSON < nonblank inputs < protected Actions variable or environment. GitHub allows at most 25 inputs, so `STORE_RAW_DOWNLOADS`, `VERBOSE` and `SEC_UA` are set through `advanced`, and `SEC_UA` is also taken from the protected `SEC_UA` repository Actions variable when it is nonblank. The workflow always writes to `api/schwab` only. All supplied filters use **AND** logic.
+Defaults live in `scripts/update-data.config.json` (every control as a string). An explicitly set environment variable overrides the file, even when it is empty. The **Update Schwab ETF data** GitHub Actions workflow uses the same resolver (`resolveControls` in `scripts/update-data.ts`): individual `workflow_dispatch` inputs are blank by default and inherit the file, and the `advanced` input accepts a JSON object with any control (for example `{"VERBOSE":"true"}`). Precedence: file defaults < advanced JSON < nonblank inputs < protected Actions variable or environment. GitHub allows at most 25 inputs, so `STORE_RAW_DOWNLOADS`, `VERBOSE`, `SEC_UA` and `TOTAL_RETURN_10Y` are set through `advanced`, and `SEC_UA` is also taken from the protected `SEC_UA` repository Actions variable when it is nonblank. The workflow always writes to `api/schwab` only. All supplied filters use **AND** logic.
 
 ### Data sources
 
@@ -55,7 +55,7 @@ Caveats:
 
 ### Update controls
 
-Keep this table, `scripts/update-data.config.json`, `CONTROL_NAMES` and `--help` in sync (covered by `scripts/config-docs.test.ts`)
+Keep this table, `scripts/update-data.config.json`, `CONTROL_NAMES` and `--help` in sync
 
 | Control | Default | Meaning |
 | --- | --: | --- |
@@ -65,16 +65,17 @@ Keep this table, `scripts/update-data.config.json`, `CONTROL_NAMES` and `--help`
 | `AUM` | `:` | Net Assets range; each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large` |
 | `TER` | `:` | Expense ratio range in % (strict `min:max`) |
 | `DIVIDEND_YIELD` | `:` | Dividend-yield percentage range |
+| `SEC_YIELD` | `:` | 30-day SEC yield percentage range (`min:max`); funds without a published SEC yield do not match an active range |
 | `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `SCHB SCHX SCHG SCHV SCHD` |
 | `HOLDINGS_PAGE_SIZE` | `250` | Rows in each generated current-holdings JSON page |
 | `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the official product finder and product pages under `api/schwab/raw` |
-| `MAX_RETRIES` | `2` | Retries after the initial request; only network errors and HTTP 408/425/429/5xx are retried with exponential backoff |
+| `MAX_RETRIES` | `2` | Integer >= 1; retries after the initial request; only network errors and HTTP 408/425/429/5xx are retried with exponential backoff |
 | `HISTORY_RANGE` | `max` | Yahoo chart range for history rows (`max`, `10y`, `5y`, ...) |
 | `EDGAR_FALLBACK` | `true` | Use SEC EDGAR Form N-PORT-P when the issuer holdings CSV is unavailable |
 | `SKIP_YAHOO` | `false` | Keep previous history and distributions while refreshing catalog and holdings |
 | `SKIP_SCHWAB` | `false` | Keep the previously published catalog, product-page data, holdings and distributions |
-| `SEC_UA` | empty (built-in descriptor) | SEC User-Agent override; SEC policy requires automated tools to declare a contact; the protected `SEC_UA` Actions variable wins when nonblank |
+| `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent override; SEC policy requires automated tools to declare a contact; the protected `SEC_UA` Actions variable wins when nonblank |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices |
 | `PERFORMANCE_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Annualized return ranges (`min:max`); YTD and 1Y are the official returns where published |
 | `TOTAL_RETURN_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Cumulative return ranges (`min:max`) |
@@ -86,7 +87,7 @@ Keep this table, `scripts/update-data.config.json`, `CONTROL_NAMES` and `--help`
 ```bash
 MAX_FETCHES=10 ./scripts/update-data.ts
 TICKERS="SCHB SCHX SCHG SCHV SCHD" ./scripts/update-data.ts
-AUM="1B:" TER=":0.5" ./scripts/update-data.ts
+AUM="1B:" TER=":0.5" SEC_YIELD="3:" ./scripts/update-data.ts
 PERFORMANCE_1Y="15:" ./scripts/update-data.ts
 ```
 
@@ -103,7 +104,7 @@ bun build --target=bun scripts/update-data.ts --outfile=/dev/null
 git diff --check
 ```
 
-`bun test` also covers the README controls table, the config file, `--help` and the workflow (`scripts/config-docs.test.ts`).
+`bun test` also covers the README controls table, the config file, `--help` and the workflow.
 
 ## Brands table
 
@@ -128,7 +129,7 @@ git diff --check
 | **ProShares** | [proshares.com](https://www.proshares.com/our-etfs/find-proshares-etfs) \| [ProShares](https://daggerok.github.io/ProShares/) |
 | **Schwab** | [schwabassetmanagement.com](https://www.schwabassetmanagement.com/products) \| [Schwab](https://daggerok.github.io/Schwab/) |
 | **SPDR** | [ssga.com](https://www.ssga.com/us/en/intermediary/etfs/fund-finder) \| [SPDR](https://daggerok.github.io/SPDR/) |
-| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) (deployment pending) |
+| **Sprott ETFs** | [sprottetfs.com](https://sprottetfs.com/) \| [Sprott](https://daggerok.github.io/Sprott/) |
 | **Tema ETFs** | [temaetfs.com](https://temaetfs.com/funds) \| [Tema](https://daggerok.github.io/Tema/) |
 | **Themes ETFs** | [themesetfs.com/etfs](https://themesetfs.com/etfs) \| [Themes](https://daggerok.github.io/Themes/) |
 | **VanEck** | [vaneck.com](https://www.vaneck.com/us/en/etf-mutual-fund-finder/) \| [VanEck](https://daggerok.github.io/VanEck/) |
