@@ -44,6 +44,8 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `siAnn` - since-inception annualized -> *SI Ann.*
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price), an estimate when derived from market price
 - `secYield` - 30-day SEC yield when published; `-` otherwise
+- `returnsBasis` - mandatory non-empty text saying how the returns were computed: official Schwab product-page NAV total returns (month-end) with Yahoo adjusted closes filling gaps, or adjusted market-price closes from Yahoo only (an estimate, not official NAV)
+- `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the product-page performance table date, or the last Yahoo close date when derived; not the NAV date, `null` only when truly unknown
 
 Caveats:
 

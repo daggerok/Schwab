@@ -15,6 +15,7 @@ import {
   distributionsCsvUrl,
   firstDate,
   firstNumber,
+  deriveMetrics,
   frequencyCodeLabel,
   holdingsCsvCandidates,
   htmlToText,
@@ -38,6 +39,7 @@ import {
   parseHoldingsCsv,
   parseNport,
   parseOfficialReturns,
+  performanceAsOf,
   parseProductPage,
   parseRange,
   priceReturns,
@@ -476,6 +478,22 @@ describe('Schwab product page parser', () => {
     const merged = mergeOfficialReturns(derived, { asOfDate: '2026-08-31', mo1: 0.25, mo3: 0.43, ytd: 1.04, yr1: 2.47, cagr3y: 4.23, cagr5y: null, cagr10y: 1.77, siAnn: 1.37 });
     expect(merged).toEqual({ asOfDate: '2026-08-31', mo1: 0.25, qtd: 2, ytd: 1.04, yr1: 2.47, cagr3y: 4.23, cagr5y: 6, cagr10y: 1.77, siAnn: 1.37 });
     expect(mergeOfficialReturns(derived, null)).toBe(derived);
+  });
+
+  test('metrics end with returnsBasis and performanceAsOf (official table date vs last Yahoo close)', () => {
+    const fund = { dividendYield: 3, secYield: 3.39 } as never;
+    const derived = { asOfDate: '2026-09-18', mo1: 1, qtd: 2, ytd: 3, yr1: 4, cagr3y: 5, cagr5y: 6, cagr10y: 7, siAnn: 8 };
+    const official = mergeOfficialReturns(derived, { asOfDate: '2026-08-31', mo1: 0.25, mo3: 0.43, ytd: 1.04, yr1: 2.47, cagr3y: 4.23, cagr5y: null, cagr10y: 1.77, siAnn: 1.37 });
+    const a = deriveMetrics(official, fund, [], { paymentsPerYear: 4 }, 30, true);
+    expect(a.performanceAsOf).toBe('2026-08-31');
+    expect(String(a.returnsBasis)).toContain('official Schwab');
+    expect(Object.keys(a).slice(-2)).toEqual(['returnsBasis', 'performanceAsOf']);
+    const b = deriveMetrics(derived, fund, [], { paymentsPerYear: 4 }, 30, false);
+    expect(b.performanceAsOf).toBe('2026-09-18');
+    expect(String(b.returnsBasis)).toContain('Yahoo');
+    expect(deriveMetrics(priceReturns([]), fund, [], { paymentsPerYear: 4 }, 30, false).performanceAsOf).toBeNull();
+    expect(performanceAsOf('')).toBeNull();
+    expect(performanceAsOf('n/a')).toBeNull();
   });
 });
 
