@@ -83,7 +83,7 @@ Keep this table, `scripts/update-data.config.json`, `CONTROL_NAMES` and `--help`
 | `PERFORMANCE_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Annualized return ranges (`min:max`); YTD and 1Y are the official returns where published |
 | `TOTAL_RETURN_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Cumulative return ranges (`min:max`) |
 
-`TICKERS` combines with the AUM, TER and yield filters using AND logic; it does not override them. Funds not selected for a successful update keep their prior published metadata and data files
+`TICKERS` combines with the AUM, TER and yield filters using AND logic; it does not override them. Filtered or bounded runs (`TICKERS`, `MAX_FETCHES`, any range filter, `SKIP_SCHWAB`, `SKIP_YAHOO`) never shrink the feed: funds that are not selected, are skipped by a filter or fail keep their published row and data files, and `api/schwab/index.json` always lists every fund known from the previous index or `funds/*/meta.json`, even one missing from the live catalog
 
 ### Examples
 

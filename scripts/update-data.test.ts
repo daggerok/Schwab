@@ -1,10 +1,17 @@
 // Bun's test runner provides these globals at runtime.
 // @ts-ignore the repository intentionally keeps runtime dependencies at zero.
 import { describe, expect, test } from 'bun:test';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import {
   CONTROL_NAMES,
+  main,
+  readMissingRows,
+  rowFromMeta,
+  useApiRoot,
   installSystemCa,
   isCertError,
   readConfig,
@@ -976,4 +983,115 @@ test('installSystemCa wraps fetch only in auto mode and restarts once on cert er
   } finally {
     globalThis.fetch = original;
   }
+});
+
+// ---------------------------------------------------------------------------
+// Filtered and bounded runs never shrink the published feed
+// ---------------------------------------------------------------------------
+
+function sampleMeta(ticker: string): Record<string, any> {
+  const me = { asOfDate: 'Aug 31 2026', ytd: 10, yr1: 12, yr3: 8, yr5: 7, yr10: 9, sinceInception: 8.5 };
+  return {
+    ticker, name: `Schwab ${ticker} ETF`, category: 'U.S. Equities', categoryPath: 'U.S. Equities',
+    source: { fundPage: `https://www.schwabassetmanagement.com/products/${ticker.toLowerCase()}` },
+    identifiers: { cusip: '808524797', isin: 'US8085247976', exchange: 'NYSE Arca, Inc.' },
+    expenseRatio: { display: '0.06%', value: 0.06 }, nav: { display: '$30.00', value: 30, asOfDate: 'Sep 1 2026' },
+    marketPrice: { display: '$30.01', value: 30.01 }, premiumDiscount: { display: '0.03%', value: 0.03 },
+    aum: { display: '$1.00 B', value: 1e9 }, yields: { dividendYield: 2, secYield: 1.5 },
+    returns: { derivedFrom: 'official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values', performanceAsOf: '2026-08-31', monthEnd: me },
+    distributions: { frequency: 'Quarterly', frequencyCode: '04 - Quarterly', rows: [['06/20/2026', '0.2'], ['09/23/2026', '0.25']] },
+    holdings: { pages: [], totalRows: 5 }, history: { pages: ['history/001.json'], totalRows: 7 },
+  };
+}
+
+async function withSampleFeed(tickers: string[], listed: string[], env: Record<string, string>, fetchImpl: typeof fetch, run: (api: string, calls: string[]) => Promise<void>): Promise<void> {
+  const dir = mkdtempSync(join(tmpdir(), 'schwab-feed-'));
+  const api = join(dir, 'api');
+  const savedEnv = { ...process.env };
+  const savedFetch = globalThis.fetch;
+  const calls: string[] = [];
+  const quiet = console.log;
+  const quietWarn = console.warn;
+  try {
+    for (const ticker of tickers) {
+      mkdirSync(join(api, 'funds', ticker, 'history'), { recursive: true });
+      writeFileSync(join(api, 'funds', ticker, 'meta.json'), JSON.stringify(sampleMeta(ticker)));
+      writeFileSync(join(api, 'funds', ticker, 'history', '001.json'), JSON.stringify({ ticker, page: 1, rows: [{ Date: 'Oct 20 2011', Close: '10', 'Adj Close': '10', Volume: '1' }] }));
+    }
+    writeFileSync(join(api, 'index.json'), JSON.stringify({ funds: listed.map((ticker) => rowFromMeta(sampleMeta(ticker), 'Oct 20 2011')) }));
+    useApiRoot(pathToFileURL(api));
+    for (const key of Object.keys(process.env)) if (CONTROL_NAMES.includes(key) || key === 'GITHUB_STEP_SUMMARY') delete process.env[key];
+    Object.assign(process.env, { REQUEST_SLEEP: '0', MAX_RETRIES: '1', CONCURRENCY: '1', EDGAR_FALLBACK: '0' }, env);
+    globalThis.fetch = (async (input: any, init?: any) => { calls.push(String(input?.url ?? input)); return fetchImpl(input, init); }) as typeof fetch;
+    console.log = () => {};
+    console.warn = () => {};
+    await run(api, calls);
+  } finally {
+    console.log = quiet;
+    console.warn = quietWarn;
+    globalThis.fetch = savedFetch;
+    for (const key of Object.keys(process.env)) if (!(key in savedEnv)) delete process.env[key];
+    Object.assign(process.env, savedEnv);
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+const readIndexRows = (api: string): Array<Record<string, any>> => JSON.parse(readFileSync(join(api, 'index.json'), 'utf8')).funds;
+const offline = (async () => { throw new Error('offline'); }) as unknown as typeof fetch;
+
+describe('filtered and bounded runs keep the whole feed', () => {
+  test('rowFromMeta builds the standard row with returnsBasis and performanceAsOf', () => {
+    const row = rowFromMeta(sampleMeta('SCHX'), 'Oct 20 2011');
+    expect(row.dataFile).toBe('./funds/SCHX/meta.json');
+    expect(row.metrics.returnsBasis).toContain('official Schwab');
+    expect(row.metrics.performanceAsOf).toBe('2026-08-31');
+    expect(row.metrics.tr3y).toBe(annualizedToTotal(8, 3));
+    expect(row.distributions).toEqual({ frequency: 'Quarterly', exDate: '09/23/2026', dividend: '0.25' });
+    expect(row.holdings).toBe(5);
+    expect(row.history).toBe(7);
+    const noDate = rowFromMeta({ ...sampleMeta('SCHX'), returns: { monthEnd: { asOfDate: 'Aug 31 2026' } } });
+    expect(noDate.metrics.returnsBasis.length).toBeGreaterThan(0);
+    expect(noDate.metrics.performanceAsOf).toBe('2026-08-31');
+  });
+
+  test('a one-ticker run keeps every row, including funds the index lost', async () => {
+    // index.json lists only SCHD (the incident); three funds have meta.json
+    await withSampleFeed(['SCHD', 'SCHX', 'SCHB'], ['SCHD'], { TICKERS: 'SCHX', SKIP_SCHWAB: 'true', SKIP_YAHOO: 'true' }, offline, async (api, calls) => {
+      await main();
+      const rows = readIndexRows(api);
+      expect(rows.map((row) => row.ticker)).toEqual(['SCHB', 'SCHD', 'SCHX']);
+      expect(JSON.parse(readFileSync(join(api, 'index.json'), 'utf8')).counts.funds).toBe(3);
+      for (const row of rows) expect(typeof row.metrics.returnsBasis).toBe('string');
+      expect(calls).toEqual([]);
+    });
+  });
+
+  test('a one-ticker run on a full index keeps the same row count', async () => {
+    await withSampleFeed(['SCHD', 'SCHX', 'SCHB'], ['SCHD', 'SCHX', 'SCHB'], { TICKERS: 'SCHB', SKIP_SCHWAB: 'true', SKIP_YAHOO: 'true' }, offline, async (api) => {
+      await main();
+      expect(readIndexRows(api)).toHaveLength(3);
+    });
+  });
+
+  test('live catalog without a known fund, filters and MAX_FETCHES drop nothing', async () => {
+    // the mocked product finder lists FNDE, SCHR and SCHX only; SCHD is absent from it, SCHB exists only as meta.json
+    const catalogOnly = (async (input: any) => {
+      const url = String(input?.url ?? input);
+      if (url.includes('/product-finder')) return new Response(PRODUCT_FINDER_HTML, { status: 200 });
+      throw new Error('offline');
+    }) as unknown as typeof fetch;
+    await withSampleFeed(['SCHD', 'SCHX', 'SCHB'], ['SCHD', 'SCHX'], { TER: '0.9:', MAX_FETCHES: '1', EDGAR_FALLBACK: '0' }, catalogOnly, async (api, calls) => {
+      await main();
+      expect(calls.some((url) => url.includes('/product-finder'))).toBe(true);
+      expect(readIndexRows(api).map((row) => row.ticker)).toEqual(['SCHB', 'SCHD', 'SCHX']);
+    });
+  });
+
+  test('readMissingRows lists only funds with meta.json that the index lacks', async () => {
+    await withSampleFeed(['SCHD', 'SCHX'], ['SCHD'], {}, offline, async () => {
+      const missing = await readMissingRows(new Set(['SCHD']));
+      expect([...missing.keys()]).toEqual(['SCHX']);
+      expect(missing.get('SCHX')!.inceptionDate).toBe('Oct 20 2011');
+    });
+  });
 });
