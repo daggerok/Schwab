@@ -182,9 +182,18 @@ let secUa = DEFAULT_SEC_UA; // overridden by the SEC_UA control when nonblank
 const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
 const PROXY_SLEEP_SECONDS = 3.2; // r.jina.ai anonymous tier is ~20 requests per minute
 
-const API_ROOT = new URL('../api/schwab/', import.meta.url);
-const INDEX_FILE = new URL('index.json', API_ROOT);
-const STATE_FILE = new URL('update-state.json', API_ROOT);
+let API_ROOT = new URL('../api/schwab/', import.meta.url);
+let INDEX_FILE = new URL('index.json', API_ROOT);
+let STATE_FILE = new URL('update-state.json', API_ROOT);
+
+/** Test hook: point the feed readers and writers at another directory (a trailing slash is added). */
+export function useApiRoot(root: URL): URL {
+  const previous = API_ROOT;
+  API_ROOT = new URL(root.href.endsWith('/') ? root.href : `${root.href}/`);
+  INDEX_FILE = new URL('index.json', API_ROOT);
+  STATE_FILE = new URL('update-state.json', API_ROOT);
+  return previous;
+}
 
 const HOLDINGS_HEADERS = ['Name', 'Ticker', 'Identifier', 'Weight', 'Market Value', 'Shares Held', 'Asset Category'];
 const BOND_HOLDINGS_HEADERS = [...HOLDINGS_HEADERS, 'Coupon', 'Maturity'];
@@ -531,10 +540,6 @@ export function parseRanges(env: Record<string, string | undefined>, prefix: 'PE
 function readTickerSet(value: string | undefined): Set<string> | null {
   const tickers = String(value ?? '').split(/[\s,;]+/).map(sanitizeTicker).filter(Boolean);
   return tickers.length ? new Set(tickers) : null;
-}
-
-function hasConfiguredFilters(config: UpdaterConfig): boolean {
-  return Boolean(config.aum || config.ter || config.dividendYield || config.secYield || config.tickers || Object.keys(config.performance).length || Object.keys(config.totalReturn).length);
 }
 
 export function readConfig(env: Record<string, string | undefined> = process.env): UpdaterConfig {
@@ -1671,6 +1676,109 @@ async function readPreviousMeta(ticker: string): Promise<JsonRecord | null> {
   }
 }
 
+/**
+ * Index row rebuilt from a published meta.json (same shapes as the row
+ * processFund returns). inceptionDate is not stored in meta.json, so it comes
+ * from the caller (previous row or first history date).
+ */
+export function rowFromMeta(meta: JsonRecord, inceptionDate: string | null = null): JsonRecord {
+  const ticker = String(meta.ticker);
+  const monthEnd: JsonRecord = meta.returns?.monthEnd || {};
+  const rows: string[][] = Array.isArray(meta.distributions?.rows) ? meta.distributions.rows : [];
+  const latest = rows[rows.length - 1];
+  const frequency = meta.distributions?.frequency || '—';
+  const pct = (value: unknown) => numberOrNull(value);
+  const dividendYield = pct(meta.yields?.dividendYield);
+  const secYield = pct(meta.yields?.secYield);
+  const performance = meta.returns?.performanceAsOf ?? performanceAsOf(monthEnd.asOfDate === '—' ? '' : monthEnd.asOfDate);
+  const metrics: JsonRecord = {
+    ytd: pct(monthEnd.ytd),
+    tr1y: pct(monthEnd.yr1),
+    tr3y: annualizedToTotal(pct(monthEnd.yr3), 3),
+    tr5y: annualizedToTotal(pct(monthEnd.yr5), 5),
+    tr10y: annualizedToTotal(pct(monthEnd.yr10), 10),
+    cagr3y: pct(monthEnd.yr3),
+    cagr5y: pct(monthEnd.yr5),
+    cagr10y: pct(monthEnd.yr10),
+    siAnn: pct(monthEnd.sinceInception),
+    dividendYield,
+    dividendYieldText: dividendYield === null ? '—' : `${dividendYield.toFixed(2)}%`,
+    secYield,
+    secYieldText: secYield === null ? '—' : `${secYield.toFixed(2)}%`,
+    returnsBasis: meta.returns?.derivedFrom || DERIVED_RETURNS_BASIS,
+    performanceAsOf: performance || null,
+  };
+  return {
+    ticker,
+    name: meta.name,
+    category: meta.category,
+    fundPage: meta.source?.fundPage,
+    dataFile: `./funds/${ticker}/meta.json`,
+    cusip: meta.identifiers?.cusip || null,
+    isin: meta.identifiers?.isin || null,
+    ter: meta.expenseRatio?.display ?? '—',
+    terValue: pct(meta.expenseRatio?.value),
+    nav: meta.nav?.display ?? '—',
+    navValue: pct(meta.nav?.value),
+    aum: meta.aum?.display ?? '—',
+    aumValue: pct(meta.aum?.value),
+    asOfDate: meta.nav?.asOfDate || '—',
+    inceptionDate: inceptionDate || '—',
+    exchange: meta.identifiers?.exchange || '',
+    closePrice: meta.marketPrice?.display ?? '—',
+    closePriceValue: pct(meta.marketPrice?.value),
+    premiumDiscount: meta.premiumDiscount?.display ?? '—',
+    premiumDiscountValue: pct(meta.premiumDiscount?.value),
+    frequencyCode: meta.distributions?.frequencyCode || frequencyCodeLabel(frequency),
+    distributions: { frequency, exDate: latest?.[0] || '—', dividend: latest?.[1] !== undefined ? String(latest[1]) : '—' },
+    returns: meta.returns,
+    metrics,
+    holdings: pct(meta.holdings?.totalRows) ?? 0,
+    history: pct(meta.history?.totalRows) ?? 0,
+  };
+}
+
+/** Every fund with a published meta.json that the index does not list yet (rows rebuilt offline). */
+export async function readMissingRows(listed: Set<string>): Promise<Map<string, JsonRecord>> {
+  const rows = new Map<string, JsonRecord>();
+  let names: string[] = [];
+  try { names = await readdir(new URL('funds/', API_ROOT)); } catch { return rows; }
+  for (const ticker of names.sort()) {
+    if (listed.has(ticker)) continue;
+    const meta = await readPreviousMeta(ticker);
+    if (!meta?.ticker) continue;
+    let inception: string | null = null;
+    const first = Array.isArray(meta.history?.pages) ? meta.history.pages[0] : null;
+    if (first) {
+      try {
+        const page = JSON.parse(await readFile(new URL(`funds/${ticker}/${first}`, API_ROOT), 'utf8')) as JsonRecord;
+        inception = page.rows?.[0]?.Date || null;
+      } catch { /* no history page */ }
+    }
+    rows.set(ticker, rowFromMeta(meta, inception));
+  }
+  return rows;
+}
+
+export function indexDocument(funds: JsonRecord[]): JsonRecord {
+  const sorted = [...funds].sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
+  return {
+    generatedAt: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
+    source: {
+      provider: 'Schwab Asset Management (Charles Schwab Investment Management, Inc.), U.S.-listed ETFs',
+      market: 'us',
+      site: SCHWAB_SITE,
+      catalog: SCHWAB_CATALOG_URL,
+      catalogFallback: proxyUrl(SCHWAB_CATALOG_URL),
+      holdings: 'schwabassetmanagement.com full holdings CSV export per fund (SEC EDGAR Form N-PORT-P fallback)',
+      distributions: 'schwabassetmanagement.com distribution history CSV export per fund (Yahoo dividend events fallback)',
+      history: 'Yahoo Finance public chart API (adjusted close)',
+    },
+    counts: { funds: sorted.length, holdings: sorted.reduce((sum, row) => sum + (numberOrNull(row.holdings) || 0), 0), history: sorted.reduce((sum, row) => sum + (numberOrNull(row.history) || 0), 0) },
+    funds: sorted,
+  };
+}
+
 async function readPreviousSheet(ticker: string, kind: 'holdings' | 'history'): Promise<JsonRecord[]> {
   const meta = await readPreviousMeta(ticker);
   const pages = meta?.[kind]?.pages;
@@ -2201,7 +2309,7 @@ export async function runtimeControls(env: Record<string, string | undefined> = 
   return resolveControls(file, {}, {}, env);
 }
 
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
   const controls = await runtimeControls();
   if (controls.VERBOSE !== undefined) process.env.VERBOSE = controls.VERBOSE;
   installSystemCa(controls.USE_SYSTEM_CA ?? 'auto');
@@ -2214,6 +2322,8 @@ async function main(): Promise<void> {
   outputPrintConfig('Schwab', config);
 
   const previous = await readPreviousIndex();
+  // The index must list every fund that has a meta.json, even when an earlier run shrank it.
+  for (const [ticker, row] of await readMissingRows(new Set(previous.keys()))) previous.set(ticker, row);
   const catalog = new Map<string, CatalogFund>();
   let catalogSource = 'previous api/schwab/index.json';
   if (!config.skipSchwab) {
@@ -2270,39 +2380,18 @@ async function main(): Promise<void> {
       } catch (error) {
         failures += 1;
         const message = error instanceof Error ? error.message : String(error);
-        const old = previous.get(fund.ticker);
-        if (old && !hasConfiguredFilters(config)) results.push(old);
         await output.result(fund.ticker, before, 'failed', message);
       }
     }
   };
   await Promise.all(Array.from({ length: config.concurrency }, () => worker()));
 
-  const filterRun = hasConfiguredFilters(config);
-  const funds = [...results].sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
-  if (!filterRun) {
-    for (const fund of universe) if (!funds.some((row) => row.ticker === fund.ticker)) {
-      const old = previous.get(fund.ticker);
-      if (old) funds.push(old);
-    }
-    funds.sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
-  }
+  // Filtered, bounded, skipped and failed funds keep their published row: the index never shrinks.
+  const byTicker = new Map<string, JsonRecord>(previous);
+  for (const row of results) byTicker.set(String(row.ticker), row);
+  const funds = [...byTicker.values()].sort((a, b) => String(a.ticker).localeCompare(String(b.ticker)));
   const counts = { funds: funds.length, holdings: funds.reduce((sum, row) => sum + (numberOrNull(row.holdings) || 0), 0), history: funds.reduce((sum, row) => sum + (numberOrNull(row.history) || 0), 0) };
-  await writeIfChanged(INDEX_FILE, {
-    generatedAt: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
-    source: {
-      provider: 'Schwab Asset Management (Charles Schwab Investment Management, Inc.), U.S.-listed ETFs',
-      market: 'us',
-      site: SCHWAB_SITE,
-      catalog: SCHWAB_CATALOG_URL,
-      catalogFallback: proxyUrl(SCHWAB_CATALOG_URL),
-      holdings: 'schwabassetmanagement.com full holdings CSV export per fund (SEC EDGAR Form N-PORT-P fallback)',
-      distributions: 'schwabassetmanagement.com distribution history CSV export per fund (Yahoo dividend events fallback)',
-      history: 'Yahoo Finance public chart API (adjusted close)',
-    },
-    counts,
-    funds,
-  });
+  await writeIfChanged(INDEX_FILE, indexDocument(funds));
   await writeIfChanged(STATE_FILE, { cursor: config.maxFetches > 0 ? lastTicker : null, savedAt: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z') });
   console.log(`[ ${'done'.padEnd(9)}] ${results.length} funds updated, ${failures} failures`);
   console.log(`[ ${'done'.padEnd(9)}] counts: ${counts.funds} funds / ${counts.holdings.toLocaleString('en-US')} holdings rows / ${counts.history.toLocaleString('en-US')} history rows`);
