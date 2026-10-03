@@ -2,7 +2,7 @@
   "ticker": "SCHK",
   "page": 5,
   "pageSize": 250,
-  "totalRows": 1001,
+  "totalRows": 1002,
   "headers": [
     "Name",
     "Ticker",
@@ -13,6 +13,15 @@
     "Asset Category"
   ],
   "rows": [
+    {
+      "Name": "S&P500 EMINI DEC 26",
+      "Ticker": "ESZ6",
+      "Identifier": "BBG012FFK314",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "700",
+      "Asset Category": "-"
+    },
     {
       "Name": "S&P MID 400 EMINI DEC 26",
       "Ticker": "FAZ6",

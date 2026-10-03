@@ -2,7 +2,7 @@
   "ticker": "SCHA",
   "page": 8,
   "pageSize": 250,
-  "totalRows": 1757,
+  "totalRows": 1755,
   "headers": [
     "Name",
     "Ticker",
@@ -13,33 +13,6 @@
     "Asset Category"
   ],
   "rows": [
-    {
-      "Name": "AIRSCULPT TECHNOLOGIES INC",
-      "Ticker": "AIRS",
-      "Identifier": "BBG012V27C83",
-      "Weight": "0.000741",
-      "Market Value": "162938.32",
-      "Shares Held": "80359",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "WHEELS UP EXPERIENCE CLASS A",
-      "Ticker": "UP",
-      "Identifier": "BBG00Y2PJNW1",
-      "Weight": "0.000427",
-      "Market Value": "93971.84",
-      "Shares Held": "23758",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "GETTY IMAGES HOLDINGS INC CLASS A",
-      "Ticker": "GETY",
-      "Identifier": "BBG018XVRLN5",
-      "Weight": "0.000149",
-      "Market Value": "32781.72",
-      "Shares Held": "202718",
-      "Asset Category": "Communication Services"
-    },
     {
       "Name": "THIRD HARMONIC BIO INC",
       "Ticker": "THRD",
@@ -68,12 +41,21 @@
       "Asset Category": "Health Care"
     },
     {
+      "Name": "COHERUS ONCOLOGY INC",
+      "Ticker": "2298455D",
+      "Identifier": "BBG01HW1G648",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "696586",
+      "Asset Category": "-"
+    },
+    {
       "Name": "RUSSELL 2000 EMINI CME DEC 26",
       "Ticker": "RTYZ6",
       "Identifier": "BBG01TQ21910",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "10750",
+      "Shares Held": "17850",
       "Asset Category": "-"
     }
   ]

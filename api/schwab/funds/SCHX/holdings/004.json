@@ -2,7 +2,7 @@
   "ticker": "SCHX",
   "page": 4,
   "pageSize": 250,
-  "totalRows": 755,
+  "totalRows": 756,
   "headers": [
     "Name",
     "Ticker",
@@ -14,29 +14,38 @@
   ],
   "rows": [
     {
+      "Name": "WESTLAKE CORP",
+      "Ticker": "WLK",
+      "Identifier": "BBG000PXZGY8",
+      "Weight": "0.002771",
+      "Market Value": "2063515.99",
+      "Shares Held": "32775",
+      "Asset Category": "Materials"
+    },
+    {
       "Name": "LINEAGE",
       "Ticker": "LINE",
       "Identifier": "BBG01NJDR1F1",
-      "Weight": "0.002515",
-      "Market Value": "1878395.79",
-      "Shares Held": "51759",
+      "Weight": "0.002378",
+      "Market Value": "1770745.24",
+      "Shares Held": "51721",
       "Asset Category": "Real Estate"
     },
     {
       "Name": "SAILPOINT",
       "Ticker": "SAIL",
       "Identifier": "BBG01RW30QL6",
-      "Weight": "0.002382",
-      "Market Value": "1779365.11",
-      "Shares Held": "80195",
+      "Weight": "0.002233",
+      "Market Value": "1662571.92",
+      "Shares Held": "80157",
       "Asset Category": "Information Technology"
     },
     {
       "Name": "CNA FINANCIAL CORP",
       "Ticker": "CNA",
       "Identifier": "BBG000BFYCD5",
-      "Weight": "0.001238",
-      "Market Value": "925034.16",
+      "Weight": "0.001242",
+      "Market Value": "924798.3",
       "Shares Held": "20000",
       "Asset Category": "Financials"
     },
@@ -44,8 +53,8 @@
       "Name": "MCCORMICK & CO VOTING",
       "Ticker": "MKC V",
       "Identifier": "BBG000FJ5648",
-      "Weight": "0.000767",
-      "Market Value": "572787.16",
+      "Weight": "0.000714",
+      "Market Value": "531885.99",
       "Shares Held": "11543",
       "Asset Category": "Consumer Staples"
     },
@@ -55,7 +64,7 @@
       "Identifier": "BBG012FFK314",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "10700",
+      "Shares Held": "11800",
       "Asset Category": "-"
     }
   ]
