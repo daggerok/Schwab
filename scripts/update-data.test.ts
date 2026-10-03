@@ -1,7 +1,10 @@
 // Bun's test runner provides these globals at runtime.
 // @ts-ignore the repository intentionally keeps runtime dependencies at zero.
-import { describe, expect, test } from 'bun:test';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { afterEach, describe, expect, test } from 'bun:test';
+
+// main() sets process.exitCode = 1 when every selected fund failed; that must not leak into `bun test` itself
+afterEach(() => { process.exitCode = 0; });
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -55,6 +58,12 @@ import {
   toIsoDate,
   toTextLines,
   parseRanges,
+  configurePacing,
+  paceRequests,
+  fetchText,
+  historyPeriodStart,
+  postFetchFilterReasons,
+  softDeadlineReached,
 } from './update-data';
 
 // ---------------------------------------------------------------------------
@@ -1092,6 +1101,151 @@ describe('filtered and bounded runs keep the whole feed', () => {
       const missing = await readMissingRows(new Set(['SCHD']));
       expect([...missing.keys()]).toEqual(['SCHX']);
       expect(missing.get('SCHX')!.inceptionDate).toBe('Oct 20 2011');
+    });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Robustness: HISTORY_RANGE, dates, QTD, retries, cursor, filters
+// ---------------------------------------------------------------------------
+
+describe('HISTORY_RANGE', () => {
+  test('is validated as max or Ny and shrinks the Yahoo request through period1', async () => {
+    const base = JSON.parse(readFileSync(new URL('./update-data.config.json', import.meta.url), 'utf8'));
+    for (const bad of ['bogus', '6mo', 'ytd', '0y', '5']) expect(() => resolveControls(base, {}, {}, { HISTORY_RANGE: bad })).toThrow('HISTORY_RANGE');
+    expect(resolveControls(base, {}, {}, { HISTORY_RANGE: '5Y' }).HISTORY_RANGE).toBe('5Y');
+    const now = Date.UTC(2026, 9, 1, 12);
+    expect(historyPeriodStart('max', now)).toBe(0);
+    expect(historyPeriodStart('5y', now)).toBe(Math.floor(now / 1000 - 5 * 365.25 * 86_400));
+    await withSampleFeed(['SCHX'], ['SCHX'], { SKIP_SCHWAB: 'true', HISTORY_RANGE: '5y', TICKERS: 'SCHX' }, offline, async (_api, calls) => {
+      await main();
+      const url = new URL(calls.find((call) => call.includes('/v8/finance/chart/SCHX'))!);
+      expect(Number(url.searchParams.get('period1'))).toBeGreaterThan(Date.now() / 1000 - 5.1 * 365.25 * 86_400);
+      expect(url.searchParams.has('range')).toBe(false);
+    });
+    await withSampleFeed(['SCHX'], ['SCHX'], { SKIP_SCHWAB: 'true', HISTORY_RANGE: 'max', TICKERS: 'SCHX' }, offline, async (_api, calls) => {
+      await main();
+      expect(new URL(calls.find((call) => call.includes('/v8/finance/chart/SCHX'))!).searchParams.get('period1')).toBe('0');
+    });
+  });
+});
+
+describe('dates and returns', () => {
+  test('month-name dates parse as UTC in any timezone', () => {
+    for (const tz of ['Asia/Tokyo', 'America/Los_Angeles', 'UTC']) {
+      const run = spawnSync(process.execPath, ['-e', "const m = await import(process.argv[1]); console.log(m.toIsoDate('Sep 30 2026') + '|' + m.toIsoDate('September 30, 2026'))", new URL('./update-data.ts', import.meta.url).pathname], { env: { ...process.env, TZ: tz }, encoding: 'utf8' });
+      expect(run.stdout.trim()).toBe('2026-09-30|2026-09-30');
+    }
+  });
+
+  test('QTD on the first trading day of a quarter is measured from the previous quarter-end close', () => {
+    const days = [
+      { date: '2026-09-30', close: 10, adjClose: 10, volume: 1 },
+      { date: '2026-10-01', close: 10.5, adjClose: 10.5, volume: 1 },
+    ];
+    expect(priceReturns(days).qtd).toBe(5);
+    expect(priceReturns([days[1]]).qtd).toBeNull();
+  });
+
+  test('since-inception annualized needs at least a year of history', () => {
+    const short = [{ date: '2026-09-01', close: 10, adjClose: 10, volume: 1 }, { date: '2026-10-01', close: 10.2, adjClose: 10.2, volume: 1 }];
+    expect(priceReturns(short).siAnn).toBeNull();
+    const long = [{ date: '2024-09-30', close: 10, adjClose: 10, volume: 1 }, { date: '2026-10-01', close: 12, adjClose: 12, volume: 1 }];
+    expect(priceReturns(long).siAnn).not.toBeNull();
+  });
+
+  test('an unavailable holdings weight is "-" not "0"', () => {
+    const parsed = parseHoldingsCsv('As-Of-Date,Symbol,Name,Percent of Assets\n2026-09-30,AAA,Foo,\n2026-09-30,BBB,Bar,1.5\n');
+    expect(parsed.rows.map((row) => row.Weight)).toEqual(['-', '1.5']);
+  });
+
+  test('bounded return filters exclude funds with no value for the tenor', () => {
+    const config = readConfig({ PERFORMANCE_3Y: '5:', TOTAL_RETURN_5Y: ':50' });
+    const fund = { ticker: 'X', netAssets: 1 } as any;
+    expect(postFetchFilterReasons(fund, { cagr3y: null, tr5y: null }, config)).toEqual(['PERFORMANCE_3Y', 'TOTAL_RETURN_5Y']);
+    expect(postFetchFilterReasons(fund, { cagr3y: 6, tr5y: 40 }, config)).toEqual([]);
+  });
+
+  test('TICKERS with an invalid entry is an error', () => {
+    expect(() => readConfig({ TICKERS: 'SCHB $$$' })).toThrow('TICKERS');
+    expect([...readConfig({ TICKERS: 'schb, schd' }).tickers!]).toEqual(['SCHB', 'SCHD']);
+  });
+});
+
+describe('transport', () => {
+  test('every request carries a timeout signal and the proxy is retried at most once', async () => {
+    const saved = globalThis.fetch;
+    const seen: Array<{ url: string; signal: unknown }> = [];
+    globalThis.fetch = (async (input: any, init?: any) => { seen.push({ url: String(input), signal: init?.signal }); return new Response('boom', { status: 500 }); }) as typeof fetch;
+    try {
+      configurePacing(0, 1);
+      const config = readConfig({ MAX_RETRIES: '5' });
+      await expect(fetchText(proxyUrl('https://example.test/a'), 'proxy', config)).rejects.toThrow('500');
+      expect(seen).toHaveLength(2);
+      expect(seen.every((call) => call.signal instanceof AbortSignal)).toBe(true);
+    } finally {
+      globalThis.fetch = saved;
+    }
+  }, 20_000);
+
+  test('request lanes: peak in-flight is 1 at CONCURRENCY=1 and N at CONCURRENCY=N', async () => {
+    for (const [concurrency, expected] of [[1, 1], [4, 4]] as const) {
+      configurePacing(0.02, concurrency);
+      let inFlight = 0;
+      let peak = 0;
+      await Promise.all(Array.from({ length: concurrency }, async () => {
+        for (let i = 0; i < 3; i += 1) {
+          await paceRequests(false);
+          inFlight += 1;
+          peak = Math.max(peak, inFlight);
+          await new Promise((resolve) => setTimeout(resolve, 5));
+          inFlight -= 1;
+        }
+      }));
+      expect(peak).toBe(expected);
+    }
+  });
+
+  test('soft deadline helper', () => {
+    expect(softDeadlineReached(0, 24 * 60_000)).toBe(false);
+    expect(softDeadlineReached(0, 25 * 60_000)).toBe(true);
+  });
+});
+
+describe('bounded runs and the cursor', () => {
+  test('funds removed by the catalog filter do not consume MAX_FETCHES or stall the cursor', async () => {
+    await withSampleFeed(['SCHB', 'SCHD', 'SCHX'], ['SCHB', 'SCHD', 'SCHX'], { TER: ':1', MAX_FETCHES: '1', SKIP_SCHWAB: 'true', SKIP_YAHOO: 'true' }, offline, async (api) => {
+      const rows = readIndexRows(api);
+      writeFileSync(join(api, 'index.json'), JSON.stringify({ funds: rows.map((row) => (row.ticker === 'SCHB' ? { ...row, terValue: 5 } : row)) }));
+      await main();
+      const state = JSON.parse(readFileSync(join(api, 'update-state.json'), 'utf8'));
+      expect(state.cursor).toBe('SCHD');
+      await main();
+      expect(JSON.parse(readFileSync(join(api, 'update-state.json'), 'utf8')).cursor).toBe('SCHX');
+      await main();
+      expect(JSON.parse(readFileSync(join(api, 'update-state.json'), 'utf8')).cursor).toBe('SCHD');
+      expect(readIndexRows(api)).toHaveLength(3);
+    });
+  });
+
+  test('a TICKERS run leaves the cursor state untouched and an unknown ticker is an error', async () => {
+    await withSampleFeed(['SCHB', 'SCHD'], ['SCHB', 'SCHD'], { TICKERS: 'SCHB', MAX_FETCHES: '1', SKIP_SCHWAB: 'true', SKIP_YAHOO: 'true' }, offline, async (api) => {
+      const state = JSON.stringify({ cursor: 'SCHB', scope: 'other', savedAt: 'x' });
+      writeFileSync(join(api, 'update-state.json'), state);
+      await main();
+      expect(readFileSync(join(api, 'update-state.json'), 'utf8')).toBe(state);
+      process.env.TICKERS = 'NOPE';
+      await expect(main()).rejects.toThrow('NOPE');
+    });
+  });
+
+  test('a fund whose product page or Yahoo chart failed keeps its previous complete state', async () => {
+    await withSampleFeed(['SCHX'], ['SCHX'], { TICKERS: 'SCHX', SKIP_SCHWAB: 'true' }, offline, async (api) => {
+      const before = readFileSync(join(api, 'funds', 'SCHX', 'meta.json'), 'utf8');
+      await main();
+      expect(readFileSync(join(api, 'funds', 'SCHX', 'meta.json'), 'utf8')).toBe(before);
+      expect(readIndexRows(api)).toHaveLength(1);
+      expect(existsSync(join(api, 'funds', 'SCHX', 'meta.json'))).toBe(true);
     });
   });
 });

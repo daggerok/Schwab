@@ -41,7 +41,7 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `ytd` / `tr1y` - official YTD and 1-year returns -> *YTD Return*, *TR 1Y*
 - `cagr3y` / `cagr5y` / `cagr10y` - published annualized 3Y/5Y/10Y figures -> *CAGR 3Y/5Y/10Y*
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
-- `siAnn` - since-inception annualized -> *SI Ann.*
+- `siAnn` - since-inception annualized -> *SI Ann.*; derived only when the history spans at least one year
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price), an estimate when derived from market price
 - `secYield` - 30-day SEC yield when published; `-` otherwise
 - `returnsBasis` - mandatory non-empty text saying how the returns were computed: official Schwab product-page NAV total returns (month-end) with Yahoo adjusted closes filling gaps, or adjusted market-price closes from Yahoo only (an estimate, not official NAV)
@@ -50,7 +50,11 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 Caveats:
 
 - Returns published on the Schwab product page are official NAV figures; values derived from Yahoo Finance daily history are market-price estimates
-- Unavailable values stay empty and are never written as `0`
+- Unavailable values stay empty and are never written as `0` (an unavailable holdings weight is `-`)
+- QTD is measured from the last close before the quarter began, so it is `null` until a prior quarter-end close exists
+- A fund is either fully updated or kept as published: when the product page or the Yahoo chart fails for an already published fund, its previous complete data stays (the workflow still commits what other funds updated); the run stops taking new funds after 25 minutes and still writes the index; files are written through a temporary file and rename, stale pages are removed after the new `meta.json` is written
+- Dates printed as `Mon DD YYYY` (zero-padded); month-name dates are parsed as UTC so local runs match CI
+- `NEW FUNDS: ...` is printed (and added to the step summary) when the live catalog lists tickers that are not yet published
 - Each fund keeps as-of date and source metadata for holdings and history
 - Holdings come from the dated Schwab CSV export; SEC EDGAR N-PORT-P is used only when the CSV is unavailable and `EDGAR_FALLBACK` is on, and the previous run is the last resort
 - Issuer requests go direct first and fall back to the read-only r.jina.ai rendering proxy (paced at 3.2s or slower) when the site answers with a bot wall
@@ -61,26 +65,26 @@ Keep this table, `scripts/update-data.config.json`, `CONTROL_NAMES` and `--help`
 
 | Control | Default | Meaning |
 | --- | --: | --- |
-| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/schwab/update-state.json`; empty or `0` is a full pass - every fund is refreshed in one run |
+| `MAX_FETCHES` | `0` (all) | Batch size: with a positive value the updater continues after the committed cursor in `api/schwab/update-state.json`, wraps around after the last fund and counts only funds that pass the catalog-level filters (`TICKERS`, `TER`); the cursor is scoped to the filter set and a `TICKERS` run never reads or writes it; empty or `0` is a full pass - every fund is refreshed in one run |
 | `REQUEST_SLEEP` | `2` | Minimum delay in seconds between outgoing request starts, including retries |
 | `CONCURRENCY` | `2` | Number of parallel fund update workers; request starts are still globally spaced by `REQUEST_SLEEP` |
 | `AUM` | `:` | Net Assets range; each bound may be a USD amount or `K`/`M`/`B`/`T`, or one of `nano`, `micro`, `small`, `mid`, `large` |
 | `TER` | `:` | Expense ratio range in % (strict `min:max`) |
 | `DIVIDEND_YIELD` | `:` | Dividend-yield percentage range |
 | `SEC_YIELD` | `:` | 30-day SEC yield percentage range (`min:max`); funds without a published SEC yield do not match an active range |
-| `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `SCHB SCHX SCHG SCHV SCHD` |
+| `TICKERS` | empty (all) | Space-, comma- or semicolon-separated ticker allowlist, e.g. `SCHB SCHX SCHG SCHV SCHD`; an invalid entry or a ticker unknown to the catalog is an error |
 | `HOLDINGS_PAGE_SIZE` | `250` | Rows in each generated current-holdings JSON page |
 | `HISTORY_PAGE_SIZE` | `1000` | Rows in each generated daily-history JSON page |
 | `STORE_RAW_DOWNLOADS` | `false` | Store the official product finder and product pages under `api/schwab/raw` |
-| `MAX_RETRIES` | `2` | Integer >= 1; retries after the initial request; only network errors and HTTP 408/425/429/5xx are retried with exponential backoff |
-| `HISTORY_RANGE` | `max` | Yahoo chart range for history rows (`max`, `10y`, `5y`, ...) |
+| `MAX_RETRIES` | `2` | Integer >= 1; retries after the initial request; only network errors, timeouts (every request has a 45 s timeout covering headers and body) and HTTP 408/425/429/5xx are retried with exponential backoff; requests through the rendering proxy are retried at most once |
+| `HISTORY_RANGE` | `max` | Yahoo history window: `max` or `Ny` (for example `5y`); applied as an explicit `period1`/`period2` request window, anything else is an error |
 | `EDGAR_FALLBACK` | `true` | Use SEC EDGAR Form N-PORT-P when the issuer holdings CSV is unavailable |
 | `SKIP_YAHOO` | `false` | Keep previous history and distributions while refreshing catalog and holdings |
 | `SKIP_SCHWAB` | `false` | Keep the previously published catalog, product-page data, holdings and distributions |
 | `SEC_UA` | `daggerok ETF feed daggerok@gmail.com` | SEC User-Agent override; SEC policy requires automated tools to declare a contact; the protected `SEC_UA` Actions variable wins when nonblank |
 | `VERBOSE` | `false` | Print per-fund retry and fallback notices |
 | `USE_SYSTEM_CA` | `auto` | TLS trust store: `auto` restarts the updater once with Bun's `--use-system-ca` when a request fails with an untrusted-certificate error; `true` always uses the system CA store; `false` never restarts. Not an individual workflow input: use `advanced`, the config file or the CLI environment. |
-| `PERFORMANCE_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Annualized return ranges (`min:max`); YTD and 1Y are the official returns where published |
+| `PERFORMANCE_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Annualized return ranges (`min:max`); YTD and 1Y are the official returns where published; a bounded range excludes funds with no value for that tenor |
 | `TOTAL_RETURN_YTD`, `_1Y`, `_3Y`, `_5Y`, `_10Y` | `:` | Cumulative return ranges (`min:max`) |
 
 `TICKERS` combines with the AUM, TER and yield filters using AND logic; it does not override them. Filtered or bounded runs (`TICKERS`, `MAX_FETCHES`, any range filter, `SKIP_SCHWAB`, `SKIP_YAHOO`) never shrink the feed: funds that are not selected, are skipped by a filter or fail keep their published row and data files, and `api/schwab/index.json` always lists every fund known from the previous index or `funds/*/meta.json`, even one missing from the live catalog
