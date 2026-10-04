@@ -759,6 +759,32 @@ describe('metrics', () => {
     expect(sparse.metrics.returnsBasis.length).toBeGreaterThan(0);
   });
 
+  test('dividendYieldBasis names the definition behind dividendYield and is null exactly when the yield is null', () => {
+    const none = priceReturns([]);
+    const derive = (fund: object, dividends: { amount: number }[] = []) => deriveMetrics(none, { dividendYield: null, secYield: null, ...fund } as never, dividends as never, { paymentsPerYear: 4 }, 25, false);
+    // published "Distribution Yield (TTM)" on the product page
+    expect(derive({ dividendYield: 3, dividendYieldBasis: 'official-trailing-12m' })).toMatchObject({ dividendYield: 3, dividendYieldBasis: 'official-trailing-12m' });
+    // updater estimate: latest distribution x payments per year / price
+    expect(derive({}, [{ amount: 0.25 }])).toMatchObject({ dividendYield: 4, dividendYieldBasis: 'indicated' });
+    // a yield carried over from the previous index keeps its recorded code, an unrecorded one is official-other
+    expect(derive({ dividendYield: 2, dividendYieldBasis: 'indicated' }).dividendYieldBasis).toBe('indicated');
+    expect(derive({ dividendYield: 2 }).dividendYieldBasis).toBe('official-other');
+    // no yield, no code
+    expect(derive({})).toMatchObject({ dividendYield: null, dividendYieldBasis: null });
+    // rows rebuilt from meta: stored code, legacy kind text, unknown text, null yield
+    const rebuilt = (yields: object) => rowFromMeta({ ...sampleMeta('SCHX'), yields }, 'Oct 20 2011').metrics;
+    expect(rebuilt({ dividendYield: 2, dividendYieldBasis: 'computed-trailing-12m' }).dividendYieldBasis).toBe('computed-trailing-12m');
+    expect(rebuilt({ dividendYield: 2, dividendYieldKind: 'Distribution Yield (TTM) published on the official product page as of Aug 31 2026' }).dividendYieldBasis).toBe('official-trailing-12m');
+    expect(rebuilt({ dividendYield: 2, dividendYieldKind: 'indicated (latest distribution x inferred payments per year / NAV)' }).dividendYieldBasis).toBe('indicated');
+    expect(rebuilt({ dividendYield: 2, dividendYieldBasis: 'free text', dividendYieldKind: 'something else' }).dividendYieldBasis).toBe('official-other');
+    expect(rebuilt({ dividendYield: null, dividendYieldBasis: 'indicated' }).dividendYieldBasis).toBeNull();
+    // fresh, rebuilt and placeholder rows share one key set
+    const placeholder = placeholderRow({ ticker: 'X', name: 'X', category: 'ETF', fundPage: '', cusip: '', isin: '', exchange: '', ter: null, inception: null }).metrics;
+    expect(placeholder.dividendYieldBasis).toBeNull();
+    expect(Object.keys(placeholder)).toEqual(Object.keys(derive({})));
+    expect(Object.keys(rebuilt({ dividendYield: 2 }))).toEqual(Object.keys(placeholder));
+  });
+
   test('rowFromMeta builds the standard row; bounded return filters exclude funds with no value', () => {
     const row = rowFromMeta(sampleMeta('SCHX'), 'Oct 20 2011');
     expect(row.dataFile).toBe('./funds/SCHX/meta.json');
@@ -802,6 +828,7 @@ describe('pipeline', () => {
         expect(Object.keys(row.metrics)).toEqual(Object.keys(rows[0].metrics));
         expect(row.dataFile).toBe(`./funds/${row.ticker}/meta.json`);
         expect(statSync(join(api, 'funds', row.ticker, 'meta.json')).isFile()).toBe(true);
+        expect(row.metrics.dividendYieldBasis === null).toBe(row.metrics.dividendYield === null);
         expect(row.metrics.returnsBasis.length).toBeGreaterThan(0);
         expect(row.metrics.performanceAsOf).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       }
