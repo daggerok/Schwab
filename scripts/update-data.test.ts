@@ -26,6 +26,7 @@ import {
   isCertError,
   isDistributionsCsv,
   isHoldingsCsv,
+  isProductPage,
   isinFromCusip,
   lookupLabel,
   main,
@@ -46,6 +47,7 @@ import {
   parseNport,
   parseOfficialReturns,
   parseProductPage,
+  placeholderRow,
   parseRange,
   parseRanges,
   performanceAsOf,
@@ -333,7 +335,7 @@ function yahooPayload() {
 }
 
 /** Serves the whole provider surface from the inline fixtures; `fail` makes matching URLs answer 404. */
-function world(fail: RegExp | null = null): typeof fetch {
+function world(fail: RegExp | null = null, page: string = PRODUCT_PAGE_HTML): typeof fetch {
   return (async (input: any) => {
     const url = urlOf(input);
     const ok = (body: string) => new Response(body, { status: 200 });
@@ -342,7 +344,8 @@ function world(fail: RegExp | null = null): typeof fetch {
     if (url.includes('/v8/finance/chart/')) return ok(JSON.stringify(yahooPayload()));
     if (url.includes('FundHoldings')) return ok(EQUITY_HOLDINGS_CSV);
     if (url.includes('Fund_Distributions')) return ok(DISTRIBUTIONS_CSV);
-    if (url.includes('/products/')) return ok(PRODUCT_PAGE_HTML);
+    // the fixture is the SCHD page: its rows are labelled with the ticker that was asked for
+    if (url.includes('/products/')) return ok(page.replaceAll('SCHD', /\/products\/([a-z0-9.-]+)/i.exec(url)![1].toUpperCase()));
     return new Response('not found', { status: 404 });
   }) as unknown as typeof fetch;
 }
@@ -586,6 +589,21 @@ describe('parsing', () => {
     expect(s.officialReturns.quarterEnd.nav).toEqual({ asOfDate: '2026-06-30', mo1: null, mo3: null, ytd: null, yr1: 24.03, cagr3y: 13.52, cagr5y: 8.51, cagr10y: 12.37, siAnn: 13.09 });
   });
 
+  test('page-loaded check: quote, profile and both performance tables must be present; a missing yields table alone is not partial', () => {
+    const cut = (html: string, from: string, to: string) => html.slice(0, html.indexOf(from)) + html.slice(html.indexOf(to));
+    expect(parseProductPage(PRODUCT_PAGE_HTML, 'SCHD')).toMatchObject({ loadedFully: true, sections: { quote: true, profile: true, yields: true, recent: true, quarter: true } });
+    expect(parseProductPage(PRODUCT_PAGE_MARKDOWN, 'SCHO')).toMatchObject({ loadedFully: true });
+    const noPerformance = cut(PRODUCT_PAGE_HTML, '<h3>Monthly</h3>', '<p>As of 09/17/2026 <a');
+    expect(parseProductPage(noPerformance, 'SCHD')).toMatchObject({ nav: 33.66, loadedFully: false, sections: { quote: true, profile: true, recent: false, quarter: false } });
+    expect(parseProductPage(cut(PRODUCT_PAGE_HTML, '<h3>Quarterly</h3>', '<p>As of 09/17/2026 <a'), 'SCHD')).toMatchObject({ loadedFully: false, sections: { recent: true, quarter: false } });
+    expect(parseProductPage(cut(PRODUCT_PAGE_HTML, '<ul><li><span>Bid/Ask', '<table><tr><th>Fund Inception'), 'SCHD')).toMatchObject({ loadedFully: false, premiumDiscount: null, sections: { quote: false, profile: true } });
+    expect(parseProductPage(PRODUCT_PAGE_HTML.replace(/<tr><th>Total Net Assets.*?<\/tr>/, ''), 'SCHD')).toMatchObject({ loadedFully: false, sections: { profile: false } });
+    expect(parseProductPage(cut(PRODUCT_PAGE_HTML, '<table><tr><th>SEC Yield', '<h3>Monthly</h3>'), 'SCHD')).toMatchObject({ loadedFully: true, sections: { yields: false } });
+    expect(parseProductPage('<html><body>Access denied</body></html>', 'SCHD')).toMatchObject({ loadedFully: false, sections: { quote: false, profile: false, recent: false, quarter: false } });
+    // a stray marker word is not a product page, a numeric NAV or Total Net Assets row is
+    expect([isProductPage('<p>Total Expense Ratio</p>'), isProductPage(PRODUCT_PAGE_HTML), isProductPage(PRODUCT_PAGE_MARKDOWN), isProductPage(noPerformance)]).toEqual([false, true, true, true]);
+  });
+
   test('product page: young-fund "--" cells and missing sections are null, not 0', () => {
     const lines = toTextLines(['### Monthly', ' 08/31/2026', '| **SGVT NAV** |  | +0.35 | +1.05 | +2.90 | +4.30 | -- | -- | -- | +4.35 |'].join('\n'));
     const returns = parseOfficialReturns(lines, 'SGVT');
@@ -824,7 +842,67 @@ describe('pipeline', () => {
     await feed({ meta: ['SCHD', 'SCHX', 'SCHB'], listed: ['SCHD', 'SCHX'], env: { TER: '0.9:', MAX_FETCHES: '1' }, fetch: catalogOnly }, async (api, calls) => {
       await main();
       expect(calls.some((url) => url.includes('/product-finder'))).toBe(true);
-      expect(readIndexRows(api).map((row) => row.ticker)).toEqual(['SCHB', 'SCHD', 'SCHX']);
+      // listed funds without any published data (FNDE, SCHR) still get a catalog-only row
+      expect(readIndexRows(api).map((row) => [row.ticker, row.dataFile === null])).toEqual([['FNDE', true], ['SCHB', false], ['SCHD', false], ['SCHR', true], ['SCHX', false]]);
+    });
+  });
+
+  test('a partial product page keeps the published official sections (zero diff); a fully loaded page lacking a field is an honest null', async () => {
+    const cut = (html: string, from: string, to: string) => html.slice(0, html.indexOf(from)) + html.slice(html.indexOf(to));
+    const partials = {
+      'performance tables': cut(PRODUCT_PAGE_HTML, '<h3>Monthly</h3>', '<p>As of 09/17/2026 <a'),
+      'quote details and yields': cut(cut(PRODUCT_PAGE_HTML, '<ul><li><span>Bid/Ask', '<table><tr><th>Fund Inception'), '<table><tr><th>SEC Yield', '<h3>Monthly</h3>'),
+      'profile row and quarterly table': cut(PRODUCT_PAGE_HTML.replace(/<tr><th>Total Net Assets.*?<\/tr>/, ''), '<h3>Quarterly</h3>', '<p>As of 09/17/2026 <a'),
+    };
+    await feed({ fetch: world() }, async (api) => {
+      await main();
+      const published = snapshot(api);
+      const meta = JSON.parse(readFileSync(join(api, 'funds/SCHX/meta.json'), 'utf8'));
+      expect(meta).toMatchObject({ premiumDiscount: { value: 0.03, source: 'official product page Quote Details' }, yields: { secYield: 3.25, distributionRate: 3 }, returns: { derivedFrom: expect.stringContaining('official') } });
+      for (const [name, page] of Object.entries(partials)) {
+        const lines: string[] = [];
+        console.log = (...args: unknown[]) => { lines.push(args.join(' ')); };
+        globalThis.fetch = world(null, page);
+        await main();
+        expect([name, snapshot(api)]).toEqual([name, published]); // meta.json, history, holdings, index.json: zero diff
+        expect([name, lines.filter((line) => line.startsWith('[ kept')).length]).toEqual([name, 3]); // one notice per fund
+      }
+      // the product finder failing in the same run keeps the published gross expense ratio (the finder is its only source)
+      expect(JSON.parse(published['/funds/FNDE/meta.json']).expenseRatio.gross).toBe(0.39);
+      globalThis.fetch = world(/product-finder/, partials['performance tables']);
+      await main();
+      expect(snapshot(api)).toEqual(published);
+      const lines: string[] = [];
+      console.log = (...args: unknown[]) => { lines.push(args.join(' ')); };
+      globalThis.fetch = world(null, partials['performance tables']);
+      await main();
+      expect(lines.find((line) => line.includes('SCHX') && line.startsWith('[ kept'))).toContain('kept the published month-end returns, quarter-end returns');
+      expect(readIndexRows(api).find((row) => row.ticker === 'SCHX')!.metrics).toMatchObject({ tr1y: 29.56, secYield: 3.25, performanceAsOf: '2026-08-31' });
+
+      // a page that loaded fully but really has no SEC yield (and a new NAV) is fresh data with an honest null, nothing is kept
+      lines.length = 0;
+      globalThis.fetch = world(null, PRODUCT_PAGE_HTML.replace(/<tr><th>SEC Yield.*?<\/tr>/, '').replace('$33.66', '$33.70'));
+      await main();
+      expect(lines.filter((line) => line.startsWith('[ kept'))).toEqual([]);
+      const fresh = JSON.parse(readFileSync(join(api, 'funds/SCHX/meta.json'), 'utf8'));
+      expect(fresh.nav.value).toBe(33.7);
+      expect(fresh.yields).toMatchObject({ secYield: null, secYieldText: '—', distributionRate: 3 });
+      expect(fresh.yields.secYieldKind).toContain('not published');
+    });
+  }, 30_000);
+
+  test('a new fund whose required source failed gets a catalog-only row (dataFile null, full metrics key set) and no files', async () => {
+    await feed({ meta: ['SCHX'], listed: ['SCHX'], env: { TICKERS: 'FNDE' }, fetch: world(/products\/fnde/i) }, async (api) => {
+      await main();
+      const rows = readIndexRows(api);
+      expect(rows.map((row) => row.ticker)).toEqual(['FNDE', 'SCHR', 'SCHX']);
+      const row = rows.find((item) => item.ticker === 'FNDE')!;
+      expect(row).toMatchObject({ dataFile: null, name: 'Schwab Fundamental Emerging Markets Equity ETF', holdings: 0, history: 0 });
+      expect(Object.keys(row.metrics).sort()).toEqual(Object.keys(rows.find((item) => item.ticker === 'SCHX')!.metrics).sort());
+      expect(row.metrics).toMatchObject({ ytd: null, tr1y: null, secYield: null, performanceAsOf: null });
+      expect(String(row.metrics.returnsBasis).length).toBeGreaterThan(0);
+      expect(() => statSync(join(api, 'funds/FNDE'))).toThrow();
+      expect(placeholderRow({ ticker: 'X', name: 'X', category: 'ETF', fundPage: '', cusip: '', isin: '', exchange: '', ter: null, inception: null }).dataFile).toBeNull();
     });
   });
 
