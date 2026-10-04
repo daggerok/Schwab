@@ -60,6 +60,15 @@ Each fund carries a derived `metrics` object that powers the catalog columns sha
 - `tr3y` / `tr5y` / `tr10y` - cumulative 3Y/5Y/10Y figures `(1 + CAGR)^n - 1` -> *TR 3Y/5Y/10Y*
 - `siAnn` - since-inception annualized -> *SI Ann.*; derived only when the history spans at least one year
 - `dividendYield` - 12-month trailing yield or indicated yield (latest distribution x frequency / price), an estimate when derived from market price
+- `dividendYieldBasis` - short code for the definition behind `dividendYield`, `null` exactly when `dividendYield` is `null`:
+
+  | Code | Meaning for Schwab |
+  | --- | --- |
+  | `official-trailing-12m` | the `Distribution Yield (TTM)` published on the official product page (also when a missing page section keeps the previously published value) |
+  | `indicated` | updater estimate: latest distribution x inferred payments per year / NAV or price, used when the page publishes no yield |
+  | `official-other` | a yield carried over from an older index row whose origin was not recorded |
+  | `official-distribution-rate`, `computed-trailing-12m` | not produced for this brand |
+
 - `secYield` - 30-day SEC yield when published; `-` otherwise
 - `returnsBasis` - mandatory non-empty text saying how the returns were computed: official Schwab product-page NAV total returns (month-end) with Yahoo adjusted closes filling gaps, or adjusted market-price closes from Yahoo only (an estimate, not official NAV)
 - `performanceAsOf` - mandatory ISO `YYYY-MM-DD` date the returns are as of: the product-page performance table date, or the last Yahoo close date when derived; not the NAV date, `null` only when truly unknown

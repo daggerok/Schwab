@@ -229,6 +229,8 @@ export type CatalogFund = {
   premiumDiscount: number | null;
   netAssets: number | null;
   dividendYield: number | null;
+  /** Code of the definition behind dividendYield (see YIELD_BASIS_CODES); null while the yield is unknown or its origin is not recorded. */
+  dividendYieldBasis?: YieldBasis | null;
   secYield: number | null;
   asOfDate: string | null;
   returns: CatalogReturns;
@@ -1584,11 +1586,35 @@ function lastCompletedQuarterEnd(now = new Date()): string {
   return day.toISOString().slice(0, 10);
 }
 
+export const YIELD_BASIS_CODES = ['official-trailing-12m', 'official-distribution-rate', 'official-other', 'computed-trailing-12m', 'indicated'] as const;
+export type YieldBasis = typeof YIELD_BASIS_CODES[number];
+
+/** Known code or null, so a stored value can never smuggle in free text. */
+export function knownYieldBasis(value: unknown): YieldBasis | null {
+  return (YIELD_BASIS_CODES as readonly string[]).includes(String(value)) ? value as YieldBasis : null;
+}
+
+/**
+ * Code for the yield a row carries; null exactly when the yield is null. A stored code wins, then the legacy
+ * free-text kind (Schwab publishes "Distribution Yield (TTM)": trailing 12 months), then official-other for a
+ * published yield of unknown origin, indicated otherwise.
+ */
+export function yieldBasisFor(dividendYield: number | null, stored: unknown, kind: unknown = null): YieldBasis | null {
+  if (dividendYield === null) return null;
+  const code = knownYieldBasis(stored);
+  if (code) return code;
+  const text = String(kind ?? '');
+  if (text.startsWith('Distribution Yield (TTM) published')) return 'official-trailing-12m';
+  if (text.startsWith('indicated')) return 'indicated';
+  return 'official-other';
+}
+
 const DERIVED_RETURNS_BASIS = 'adjusted market-price closes (Yahoo chart API), not official Schwab NAV returns';
 const OFFICIAL_RETURNS_BASIS = 'official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values';
 
 export function deriveMetrics(effective: PriceReturns, fund: CatalogFund, dividends: Distribution[], frequency: { paymentsPerYear: number | null }, price: number | null, official: boolean): JsonRecord {
   const latest = dividends[dividends.length - 1];
+  const published = fund.dividendYield !== null;
   const indicated = fund.dividendYield ?? (latest && frequency.paymentsPerYear && price ? round((latest.amount * frequency.paymentsPerYear / price) * 100, 2) : null);
   return {
     ytd: effective.ytd,
@@ -1602,6 +1628,7 @@ export function deriveMetrics(effective: PriceReturns, fund: CatalogFund, divide
     siAnn: effective.siAnn,
     dividendYield: indicated,
     dividendYieldText: indicated === null ? '—' : `${indicated.toFixed(2)}%`,
+    dividendYieldBasis: yieldBasisFor(indicated, published ? (fund.dividendYieldBasis ?? 'official-other') : 'indicated'),
     secYield: fund.secYield,
     secYieldText: fund.secYield === null ? '—' : `${fund.secYield.toFixed(2)}%`,
     returnsBasis: official ? OFFICIAL_RETURNS_BASIS : DERIVED_RETURNS_BASIS,
@@ -1688,6 +1715,7 @@ function parsePreviousFund(ticker: string, row: JsonRecord): CatalogFund {
     premiumDiscount: numberOrNull(row.premiumDiscountValue),
     netAssets: numberOrNull(row.aumValue),
     dividendYield: numberOrNull(metrics.dividendYield),
+    dividendYieldBasis: yieldBasisFor(numberOrNull(metrics.dividendYield), metrics.dividendYieldBasis, null),
     secYield: numberOrNull(metrics.secYield),
     asOfDate: null,
     returns: { ytd: numberOrNull(monthEnd.ytd), yr1: numberOrNull(monthEnd.yr1), yr3: numberOrNull(monthEnd.yr3), yr5: numberOrNull(monthEnd.yr5), yr10: numberOrNull(monthEnd.yr10), sinceInception: numberOrNull(monthEnd.sinceInception) },
@@ -1742,6 +1770,7 @@ export function rowFromMeta(meta: JsonRecord, inceptionDate: string | null = nul
     siAnn: pct(monthEnd.sinceInception),
     dividendYield,
     dividendYieldText: dividendYield === null ? '—' : `${dividendYield.toFixed(2)}%`,
+    dividendYieldBasis: yieldBasisFor(dividendYield, meta.yields?.dividendYieldBasis, meta.yields?.dividendYieldKind),
     secYield,
     secYieldText: secYield === null ? '—' : `${secYield.toFixed(2)}%`,
     returnsBasis: meta.returns?.derivedFrom || DERIVED_RETURNS_BASIS,
@@ -2012,7 +2041,7 @@ function retainPublishedSections(summary: ProductPageSummary, fund: CatalogFund,
     const keepSec = String(yields.secYieldKind || '').startsWith('SEC Yield (30 Day) published') && numberOrNull(yields.secYield) !== null;
     const keepDist = String(yields.dividendYieldKind || '').startsWith('Distribution Yield (TTM) published') && numberOrNull(yields.distributionRate) !== null;
     if (keepSec) { summary.secYield = numberOrNull(yields.secYield); summary.secYieldAsOfDate = asOfOf(yields.secYieldKind); fund.secYield = summary.secYield; }
-    if (keepDist) { summary.distributionYield = numberOrNull(yields.distributionRate); summary.distributionYieldAsOfDate = asOfOf(yields.dividendYieldKind); fund.dividendYield = summary.distributionYield; }
+    if (keepDist) { summary.distributionYield = numberOrNull(yields.distributionRate); summary.distributionYieldAsOfDate = asOfOf(yields.dividendYieldKind); fund.dividendYield = summary.distributionYield; fund.dividendYieldBasis = 'official-trailing-12m'; }
     if (keepSec || keepDist) kept.push('yields');
   }
   const previousReturns = previousMeta.returns || {};
@@ -2049,7 +2078,7 @@ export function placeholderRow(fund: Pick<CatalogFund, 'ticker' | 'name' | 'cate
     returns: {},
     metrics: {
       ytd: null, tr1y: null, tr3y: null, tr5y: null, tr10y: null, cagr3y: null, cagr5y: null, cagr10y: null, siAnn: null,
-      dividendYield: null, dividendYieldText: '—', secYield: null, secYieldText: '—',
+      dividendYield: null, dividendYieldText: '—', dividendYieldBasis: null, secYield: null, secYieldText: '—',
       returnsBasis: NO_DATA_BASIS, performanceAsOf: null,
     },
     holdings: 0,
@@ -2098,10 +2127,10 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
       }
       if (summary.sections.quote) fund.premiumDiscount = summary.premiumDiscount;
       else if (summary.premiumDiscount !== null) fund.premiumDiscount = summary.premiumDiscount;
-      if (summary.sections.yields) { fund.secYield = summary.secYield; fund.dividendYield = summary.distributionYield; }
+      if (summary.sections.yields) { fund.secYield = summary.secYield; fund.dividendYield = summary.distributionYield; fund.dividendYieldBasis = summary.distributionYield === null ? null : 'official-trailing-12m'; }
       else {
         if (summary.secYield !== null) fund.secYield = summary.secYield;
-        if (summary.distributionYield !== null) fund.dividendYield = summary.distributionYield;
+        if (summary.distributionYield !== null) { fund.dividendYield = summary.distributionYield; fund.dividendYieldBasis = 'official-trailing-12m'; }
       }
       if (summary.morningstarCategory) fund.categoryPath = `${fund.category} / ${summary.morningstarCategory}`;
     } catch (error) {
@@ -2311,6 +2340,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
     yields: {
       dividendYield: metrics.dividendYield,
       dividendYieldText: metrics.dividendYieldText,
+      dividendYieldBasis: metrics.dividendYieldBasis,
       dividendYieldKind: fund.dividendYield !== null ? `Distribution Yield (TTM) published on the official product page${summary?.distributionYieldAsOfDate ? ` as of ${formatDate(summary.distributionYieldAsOfDate)}` : ''}` : 'indicated (latest distribution x inferred payments per year / NAV)',
       distributionRate: summary?.distributionYield ?? null,
       secYield: metrics.secYield,
