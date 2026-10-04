@@ -1507,8 +1507,7 @@ function categoryItems(): DropdownItem[] {
 }
 
 function applyCategorySelection(selected: Set<string>): void {
-  // Unchecking the last class falls back to everything checked (= All ETFs): the menu is never left empty
-  hiddenCategories = selected.size ? new Set(uniqueCategories().filter(category => !selected.has(category))) : new Set();
+  hiddenCategories = new Set(uniqueCategories().filter(category => !selected.has(category)));
   persistHiddenCategories();
   render();
 }
