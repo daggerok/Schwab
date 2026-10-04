@@ -1486,6 +1486,17 @@ function persistHiddenCategories(): void {
   }
 }
 
+/** True while some, but not all, asset classes are checked: only then the table is narrowed (all or none checked = All ETFs). */
+function categoryFilterActive(): boolean {
+  const all = uniqueCategories();
+  const shown = all.filter(category => !hiddenCategories.has(category)).length;
+  return shown > 0 && shown < all.length;
+}
+
+function categoryAllowed(category: string): boolean {
+  return !categoryFilterActive() || !hiddenCategories.has(category);
+}
+
 function categoryItems(): DropdownItem[] {
   return uniqueCategories().map(category => ({
     id: category,
@@ -1508,7 +1519,7 @@ function renderCategoriesButton(): void {
   if (!summary || !badge || !button) return;
   const all = uniqueCategories();
   const shown = all.filter(category => !hiddenCategories.has(category));
-  const filtered = shown.length < all.length;
+  const filtered = categoryFilterActive();
   summary.textContent = !filtered ? 'All' : shown.length === 1 ? categoryLabel(shown[0]) : `${shown.length} selected`;
   badge.hidden = !filtered;
   badge.textContent = `${shown.length}/${all.length}`;
@@ -1970,13 +1981,13 @@ function uniqueCategories(): string[] {
 }
 
 function visibleFunds(): FundRow[] {
-  return state.funds.filter(fund => !hiddenCategories.has(fund.category) && !state.blacklist.has(fund.ticker));
+  return state.funds.filter(fund => categoryAllowed(fund.category) && !state.blacklist.has(fund.ticker));
 }
 
 function getTabs(): TabInfo[] {
   const tabs: TabInfo[] = [];
   // The asset classes are a multi-select dropdown (3f), not tabs: All ETFs is the only catalog tab.
-  tabs.push({ id: 'All', label: 'All ETFs', count: state.funds.filter(fund => !hiddenCategories.has(fund.category) && !state.blacklist.has(fund.ticker)).length });
+  tabs.push({ id: 'All', label: 'All ETFs', count: state.funds.filter(fund => categoryAllowed(fund.category) && !state.blacklist.has(fund.ticker)).length });
   return tabs;
 }
 
@@ -2058,7 +2069,8 @@ function renderTabButtons(container: any, tabs: TabInfo[], minTabs = 1): void {
   const catalogFunds = state.funds.filter(fund => !state.blacklist.has(fund.ticker));
   const allSelected = catalogFunds.length > 0 && catalogFunds.every(fund => state.selected.has(fund.ticker));
   container.innerHTML = tabs.map(tab => {
-    const isActive = tab.id === state.activeTab;
+    // The All ETFs pill is lit only while no asset class narrows the table
+    const isActive = tab.id === state.activeTab && (tab.id !== 'All' || !categoryFilterActive());
     const activeClasses = 'bg-blue-600 text-white font-medium border-blue-500 shadow-sm';
     const inactiveClasses = 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700 border-slate-200 dark:border-slate-700';
     if (tab.id === 'All') {
@@ -2088,6 +2100,7 @@ function renderTabButtons(container: any, tabs: TabInfo[], minTabs = 1): void {
       // on the same tab, e.g. at boot before DOM hydration).
       if (state.activeTab && state.activeTab !== next) saveActiveTabQuery();
       state.activeTab = next;
+      if (next === 'All' && hiddenCategories.size) { hiddenCategories = new Set(); persistHiddenCategories(); } // All ETFs clears the asset class selection
       // Coming back to a tab (e.g. All ETFs after visiting Watchlist) must
       // show the sort the user last chose there, not the tab default.
       applySortForTab(state.activeTab);
