@@ -324,7 +324,7 @@
     <main class="flex-1 w-full max-w-full p-4 sm:p-8 space-y-6">
 
       <!-- Search, Tabs & Action Bar -->
-      <div class="flex flex-col lg:flex-row lg:flex-wrap justify-between items-center gap-4 bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm backdrop-blur">
+      <div class="flex flex-col lg:flex-row lg:flex-wrap lg:justify-start justify-between items-center gap-4 bg-white dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm backdrop-blur">
 
         <!-- Search is view-scoped: each tab keeps its own query. The ✕ button
              clears only the active tab's filter (same glyph as the Use-column blacklist). -->
@@ -346,10 +346,10 @@
         </div>
 
         <!-- ETF catalogue tabs: All ETFs + Schwab asset classes. -->
-        <div id="tabs-bar" class="hidden flex flex-wrap items-center justify-center gap-1.5 overflow-x-auto py-1 w-full max-w-full flex-1 themed-scroll"></div>
+        <div id="tabs-bar" class="hidden flex flex-wrap items-center justify-center gap-1.5 overflow-x-auto py-1 w-full max-w-full lg:w-auto lg:flex-none themed-scroll"></div>
 
         <!-- Actions intentionally match Amplify / iShares naming and placement -->
-        <div class="flex flex-wrap items-center gap-2.5 w-full lg:w-auto justify-end shrink-0">
+        <div class="flex flex-wrap items-center gap-2.5 w-full lg:w-auto lg:ml-auto justify-end shrink-0">
 
           <!-- Integrated Drag & Drop Upload (same feature as daggerok/iShares, N-PORT flavor) -->
           <div
