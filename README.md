@@ -6,8 +6,20 @@ One of the app's features lets you select Schwab ETFs in the Watchlist and aggre
 
 ```bash
 bunx degit daggerok/Schwab#main ./12345 && cd $_
-bunx serve . -p 1234
-open http://0:1234
+bun install
+bun run serve
+open http://localhost:1234
+```
+
+Production build (Parcel into `dist`, `api/` copied to `dist/api`):
+
+```bash
+bun run build
+bun run build-github-pages
+```
+
+```bash
+# GitHub Pages is deployed by .github/workflows/github-pages.yml
 ```
 
 The published application is available at <https://daggerok.github.io/Schwab/>.
@@ -130,7 +142,7 @@ PERFORMANCE_1Y="15:" ./scripts/update-data.ts
 
 ## TypeScript and verification
 
-The browser app is intentionally build-free: `index.html` carries the markup, styles and bootstrap, and `app.tsx` is TypeScript compiled in the browser with Babel standalone - no build step, no bundler, no `tsconfig.json` needed. Bun runs TypeScript out of the box.
+The browser app lives in `src/` (`index.html`, `main.tsx`, `index.css` with Tailwind v4) and is built by Parcel into `dist` (`bun run build`); `src/main.tsx` is plain TypeScript with no `tsconfig.json` needed. Bun runs the updater TypeScript out of the box. GitHub Pages is deployed by `.github/workflows/github-pages.yml`
 
 Verification before every publish:
 
