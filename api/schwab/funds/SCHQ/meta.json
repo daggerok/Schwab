@@ -7,13 +7,13 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/schq",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/schq",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Oct 02 2026",
-    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_FundHoldings_2026-10-01.CSV",
+    "productPageAsOf": "Oct 09 2026",
+    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_FundHoldings_2026-10-08.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHQ/SCHQ_NAV_History.CSV",
     "pricesDownload": null,
     "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/SCHQ",
-    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCHQ_FundHoldings_2026-10-01.CSV, via read-only rendering proxy)",
+    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCHQ_FundHoldings_2026-10-08.CSV, via read-only rendering proxy)",
     "historySource": "Yahoo Finance public chart API (adjusted close)",
     "distributionsSource": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
     "provider": "Schwab Asset Management product finder + official product page + per-fund holdings/distribution CSV exports + SEC EDGAR Form N-PORT-P fallback + Yahoo Finance public chart API"
@@ -33,33 +33,33 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$28.33",
-    "value": 28.33,
-    "asOfDate": "Oct 02 2026"
+    "display": "$28.48",
+    "value": 28.48,
+    "asOfDate": "Oct 09 2026"
   },
   "marketPrice": {
-    "display": "$28.32",
-    "value": 28.32,
-    "asOfDate": "Oct 02 2026",
+    "display": "$28.48",
+    "value": 28.48,
+    "asOfDate": "Oct 09 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.03%",
-    "value": 0.03,
-    "asOfDate": "Oct 02 2026",
+    "display": "-0.03%",
+    "value": -0.03,
+    "asOfDate": "Oct 09 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$940.51 M",
-    "value": 940511307.53,
-    "asOfDate": "Oct 02 2026",
+    "display": "$949.93 M",
+    "value": 949934858.94,
+    "asOfDate": "Oct 09 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
-    "sharesOutstanding": 33200000,
+    "sharesOutstanding": 33350000,
     "portfolioTurnover": 20.32,
     "publishedTotalHoldings": 102,
-    "bidAskMidpoint": 28.41
+    "bidAskMidpoint": 28.45
   },
   "yields": {
     "dividendYield": 4.9,
@@ -67,82 +67,82 @@
     "dividendYieldBasis": "official-trailing-12m",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
     "distributionRate": 4.9,
-    "secYield": 5.61,
-    "secYieldText": "5.61%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Oct 01 2026"
+    "secYield": 5.63,
+    "secYieldText": "5.63%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Oct 08 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
-    "performanceAsOf": "2026-08-31",
+    "performanceAsOf": "2026-09-30",
     "monthEnd": {
-      "asOfDate": "Aug 31 2026",
-      "mo1": 0.83,
-      "mo1Text": "0.83%",
-      "mo3": -2.22,
-      "mo3Text": "-2.22%",
-      "qtd": -0.1,
-      "qtdText": "-0.10%",
-      "ytd": -2.42,
-      "ytdText": "-2.42%",
-      "yr1": 0.12,
-      "yr1Text": "0.12%",
-      "yr3": 0.1,
-      "yr3Text": "0.10%",
-      "yr5": -6.87,
-      "yr5Text": "-6.87%",
+      "asOfDate": "Sep 30 2026",
+      "mo1": -4.98,
+      "mo1Text": "-4.98%",
+      "mo3": -8.03,
+      "mo3Text": "-8.03%",
+      "qtd": 0.47,
+      "qtdText": "0.47%",
+      "ytd": -7.27,
+      "ytdText": "-7.27%",
+      "yr1": -7.7,
+      "yr1Text": "-7.70%",
+      "yr3": 0.93,
+      "yr3Text": "0.93%",
+      "yr5": -7.27,
+      "yr5Text": "-7.27%",
       "yr10": null,
       "yr10Text": "—",
-      "sinceInception": -4.15,
-      "sinceInceptionText": "-4.15%"
+      "sinceInception": -4.8,
+      "sinceInceptionText": "-4.80%"
     },
     "quarterEnd": {
-      "asOfDate": "Jun 30 2026",
+      "asOfDate": "Sep 30 2026",
       "ytd": null,
-      "yr1": 2.87,
-      "yr3": -0.49,
-      "yr5": -5.62,
+      "yr1": -7.7,
+      "yr3": 0.93,
+      "yr5": -7.27,
       "yr10": null,
-      "sinceInception": -3.79
+      "sinceInception": -4.8
     }
   },
   "officialMarketPriceReturns": {
     "monthEnd": {
-      "asOfDate": "Aug 31 2026",
-      "mo1": 0.79,
-      "mo1Text": "0.79%",
-      "mo3": -2.22,
-      "mo3Text": "-2.22%",
-      "ytd": -2.48,
-      "ytdText": "-2.48%",
-      "yr1": 0.06,
-      "yr1Text": "0.06%",
-      "yr3": 0.11,
-      "yr3Text": "0.11%",
-      "yr5": -6.86,
-      "yr5Text": "-6.86%",
+      "asOfDate": "Sep 30 2026",
+      "mo1": -4.94,
+      "mo1Text": "-4.94%",
+      "mo3": -8.03,
+      "mo3Text": "-8.03%",
+      "ytd": -7.3,
+      "ytdText": "-7.30%",
+      "yr1": -7.7,
+      "yr1Text": "-7.70%",
+      "yr3": 0.91,
+      "yr3Text": "0.91%",
+      "yr5": -7.27,
+      "yr5Text": "-7.27%",
       "yr10": null,
       "yr10Text": "—",
-      "sinceInception": -4.16,
-      "sinceInceptionText": "-4.16%"
+      "sinceInception": -4.8,
+      "sinceInceptionText": "-4.80%"
     },
     "quarterEnd": {
-      "asOfDate": "Jun 30 2026",
+      "asOfDate": "Sep 30 2026",
       "mo1": null,
       "mo1Text": "—",
       "mo3": null,
       "mo3Text": "—",
       "ytd": null,
       "ytdText": "—",
-      "yr1": 2.84,
-      "yr1Text": "2.84%",
-      "yr3": -0.52,
-      "yr3Text": "-0.52%",
-      "yr5": -5.61,
-      "yr5Text": "-5.61%",
+      "yr1": -7.7,
+      "yr1Text": "-7.70%",
+      "yr3": 0.91,
+      "yr3Text": "0.91%",
+      "yr5": -7.27,
+      "yr5Text": "-7.27%",
       "yr10": null,
       "yr10Text": "—",
-      "sinceInception": -3.79,
-      "sinceInceptionText": "-3.79%"
+      "sinceInception": -4.8,
+      "sinceInceptionText": "-4.80%"
     }
   },
   "distributions": {
@@ -499,9 +499,9 @@
     ],
     "pageSize": 250,
     "totalRows": 102,
-    "asOfDate": "2026-10-01",
-    "asOf": "Oct 01 2026",
-    "source": "schwabassetmanagement.com full holdings CSV export (SCHQ_FundHoldings_2026-10-01.CSV, via read-only rendering proxy)",
+    "asOfDate": "2026-10-08",
+    "asOf": "Oct 08 2026",
+    "source": "schwabassetmanagement.com full holdings CSV export (SCHQ_FundHoldings_2026-10-08.CSV, via read-only rendering proxy)",
     "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
     "publishedTotalHoldings": 102
   },
@@ -511,8 +511,8 @@
       "history/002.json"
     ],
     "pageSize": 1000,
-    "totalRows": 1753,
-    "asOf": "Oct 02 2026",
+    "totalRows": 1758,
+    "asOf": "Oct 09 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }
