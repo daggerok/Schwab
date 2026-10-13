@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T04:51:07Z",
+  "generatedAt": "2026-10-13T02:28:24Z",
   "source": {
     "provider": "Schwab Asset Management (Charles Schwab Investment Management, Inc.), U.S.-listed ETFs",
     "market": "us",
@@ -12,8 +12,8 @@
   },
   "counts": {
     "funds": 33,
-    "holdings": 52814,
-    "history": 95018
+    "holdings": 52837,
+    "history": 95051
   },
   "funds": [
     {
@@ -33,8 +33,8 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 15 2013",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$35.62",
-      "closePriceValue": 35.62,
+      "closePrice": "$35.60",
+      "closePriceValue": 35.6,
       "premiumDiscount": "0.02%",
       "premiumDiscountValue": 0.02,
       "frequencyCode": "04 - Quarterly",
@@ -52,8 +52,8 @@
           "mo1Text": "-5.18%",
           "mo3": -7.62,
           "mo3Text": "-7.62%",
-          "qtd": 1.77,
-          "qtdText": "1.77%",
+          "qtd": 1.71,
+          "qtdText": "1.71%",
           "ytd": 11.95,
           "ytdText": "11.95%",
           "yr1": 13.77,
@@ -96,7 +96,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 915,
-      "history": 3308
+      "history": 3309
     },
     {
       "ticker": "FNDB",
@@ -115,10 +115,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 15 2013",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$31.24",
-      "closePriceValue": 31.24,
-      "premiumDiscount": "0.01%",
-      "premiumDiscountValue": 0.01,
+      "closePrice": "$31.38",
+      "closePriceValue": 31.38,
+      "premiumDiscount": "-0.03%",
+      "premiumDiscountValue": -0.03,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -134,8 +134,8 @@
           "mo1Text": "-2.68%",
           "mo3": 0.8,
           "mo3Text": "0.80%",
-          "qtd": 2.06,
-          "qtdText": "2.06%",
+          "qtd": 2.52,
+          "qtdText": "2.52%",
           "ytd": 16.51,
           "ytdText": "16.51%",
           "yr1": 20.81,
@@ -178,7 +178,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1623,
-      "history": 3308
+      "history": 3309
     },
     {
       "ticker": "FNDC",
@@ -197,10 +197,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 15 2013",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$49.74",
-      "closePriceValue": 49.74,
-      "premiumDiscount": "0.18%",
-      "premiumDiscountValue": 0.18,
+      "closePrice": "$49.50",
+      "closePriceValue": 49.5,
+      "premiumDiscount": "0.19%",
+      "premiumDiscountValue": 0.19,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -216,8 +216,8 @@
           "mo1Text": "-2.37%",
           "mo3": 3.68,
           "mo3Text": "3.68%",
-          "qtd": -0.18,
-          "qtdText": "-0.18%",
+          "qtd": -0.66,
+          "qtdText": "-0.66%",
           "ytd": 12.85,
           "ytdText": "12.85%",
           "yr1": 16.79,
@@ -254,13 +254,13 @@
         "dividendYield": 3.51,
         "dividendYieldText": "3.51%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 2.22,
-        "secYieldText": "2.22%",
+        "secYield": 2.21,
+        "secYieldText": "2.21%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 1590,
-      "history": 3308
+      "holdings": 1585,
+      "history": 3309
     },
     {
       "ticker": "FNDE",
@@ -279,10 +279,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 15 2013",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$42.79",
-      "closePriceValue": 42.79,
-      "premiumDiscount": "-0.34%",
-      "premiumDiscountValue": -0.34,
+      "closePrice": "$42.87",
+      "closePriceValue": 42.87,
+      "premiumDiscount": "-0.01%",
+      "premiumDiscountValue": -0.01,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -298,8 +298,8 @@
           "mo1Text": "-0.40%",
           "mo3": 6.76,
           "mo3Text": "6.76%",
-          "qtd": 2.2,
-          "qtdText": "2.20%",
+          "qtd": 2.39,
+          "qtdText": "2.39%",
           "ytd": 16.86,
           "ytdText": "16.86%",
           "yr1": 21.43,
@@ -336,13 +336,13 @@
         "dividendYield": 3.52,
         "dividendYieldText": "3.52%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 2.91,
-        "secYieldText": "2.91%",
+        "secYield": 2.88,
+        "secYieldText": "2.88%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 389,
-      "history": 3308
+      "holdings": 390,
+      "history": 3309
     },
     {
       "ticker": "FNDF",
@@ -361,10 +361,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 15 2013",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$53.61",
-      "closePriceValue": 53.61,
-      "premiumDiscount": "0.45%",
-      "premiumDiscountValue": 0.45,
+      "closePrice": "$53.42",
+      "closePriceValue": 53.42,
+      "premiumDiscount": "0.42%",
+      "premiumDiscountValue": 0.42,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -380,8 +380,8 @@
           "mo1Text": "-2.98%",
           "mo3": 2.76,
           "mo3Text": "2.76%",
-          "qtd": -0.26,
-          "qtdText": "-0.26%",
+          "qtd": -0.61,
+          "qtdText": "-0.61%",
           "ytd": 19.8,
           "ytdText": "19.80%",
           "yr1": 30.03,
@@ -424,7 +424,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 903,
-      "history": 3308
+      "history": 3309
     },
     {
       "ticker": "FNDX",
@@ -443,10 +443,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 15 2013",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$32.16",
-      "closePriceValue": 32.16,
-      "premiumDiscount": "0.04%",
-      "premiumDiscountValue": 0.04,
+      "closePrice": "$32.29",
+      "closePriceValue": 32.29,
+      "premiumDiscount": "0.02%",
+      "premiumDiscountValue": 0.02,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -462,8 +462,8 @@
           "mo1Text": "-2.51%",
           "mo3": 1.54,
           "mo3Text": "1.54%",
-          "qtd": 2.19,
-          "qtdText": "2.19%",
+          "qtd": 2.61,
+          "qtdText": "2.61%",
           "ytd": 16.96,
           "ytdText": "16.96%",
           "yr1": 21.46,
@@ -506,7 +506,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 734,
-      "history": 3308
+      "history": 3309
     },
     {
       "ticker": "SCCR",
@@ -525,10 +525,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Feb 05 2025",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$24.31",
-      "closePriceValue": 24.31,
-      "premiumDiscount": "0.03%",
-      "premiumDiscountValue": 0.03,
+      "closePrice": "$24.34",
+      "closePriceValue": 24.34,
+      "premiumDiscount": "-0.04%",
+      "premiumDiscountValue": -0.04,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -544,8 +544,8 @@
           "mo1Text": "-2.76%",
           "mo3": -3.76,
           "mo3Text": "-3.76%",
-          "qtd": 0.37,
-          "qtdText": "0.37%",
+          "qtd": 0.49,
+          "qtdText": "0.49%",
           "ytd": -2.88,
           "ytdText": "-2.88%",
           "yr1": -1.82,
@@ -582,13 +582,13 @@
         "dividendYield": 4.51,
         "dividendYieldText": "4.51%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 5.14,
-        "secYieldText": "5.14%",
+        "secYield": 5.15,
+        "secYieldText": "5.15%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 605,
-      "history": 422
+      "history": 423
     },
     {
       "ticker": "SCHA",
@@ -607,10 +607,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Nov 03 2009",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$32.79",
-      "closePriceValue": 32.79,
-      "premiumDiscount": "0.01%",
-      "premiumDiscountValue": 0.01,
+      "closePrice": "$32.66",
+      "closePriceValue": 32.66,
+      "premiumDiscount": "-0.03%",
+      "premiumDiscountValue": -0.03,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -626,8 +626,8 @@
           "mo1Text": "-4.28%",
           "mo3": -9.5,
           "mo3Text": "-9.50%",
-          "qtd": 0.49,
-          "qtdText": "0.49%",
+          "qtd": 0.09,
+          "qtdText": "0.09%",
           "ytd": 15.33,
           "ytdText": "15.33%",
           "yr1": 18.3,
@@ -664,13 +664,13 @@
         "dividendYield": 1.05,
         "dividendYieldText": "1.05%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 1.18,
-        "secYieldText": "1.18%",
+        "secYield": 1.19,
+        "secYieldText": "1.19%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1753,
-      "history": 4259
+      "history": 4260
     },
     {
       "ticker": "SCHB",
@@ -689,10 +689,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Nov 03 2009",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$29.91",
-      "closePriceValue": 29.91,
-      "premiumDiscount": "0.03%",
-      "premiumDiscountValue": 0.03,
+      "closePrice": "$29.88",
+      "closePriceValue": 29.88,
+      "premiumDiscount": "0.01%",
+      "premiumDiscountValue": 0.01,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -708,8 +708,8 @@
           "mo1Text": "-0.74%",
           "mo3": 1.38,
           "mo3Text": "1.38%",
-          "qtd": 2.05,
-          "qtdText": "2.05%",
+          "qtd": 1.94,
+          "qtdText": "1.94%",
           "ytd": 12.61,
           "ytdText": "12.61%",
           "yr1": 15.25,
@@ -752,7 +752,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 2394,
-      "history": 4259
+      "history": 4260
     },
     {
       "ticker": "SCHC",
@@ -771,10 +771,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jan 14 2010",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$49.47",
-      "closePriceValue": 49.47,
-      "premiumDiscount": "0.54%",
-      "premiumDiscountValue": 0.54,
+      "closePrice": "$49.13",
+      "closePriceValue": 49.13,
+      "premiumDiscount": "0.49%",
+      "premiumDiscountValue": 0.49,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -790,8 +790,8 @@
           "mo1Text": "-2.84%",
           "mo3": 4.19,
           "mo3Text": "4.19%",
-          "qtd": -0.54,
-          "qtdText": "-0.54%",
+          "qtd": -1.23,
+          "qtdText": "-1.23%",
           "ytd": 9.66,
           "ytdText": "9.66%",
           "yr1": 13.76,
@@ -828,13 +828,13 @@
         "dividendYield": 3.27,
         "dividendYieldText": "3.27%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 2.42,
-        "secYieldText": "2.42%",
+        "secYield": 2.39,
+        "secYieldText": "2.39%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 2334,
-      "history": 4210
+      "holdings": 2333,
+      "history": 4211
     },
     {
       "ticker": "SCHD",
@@ -853,10 +853,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Oct 20 2011",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$33.04",
-      "closePriceValue": 33.04,
-      "premiumDiscount": "0.03%",
-      "premiumDiscountValue": 0.03,
+      "closePrice": "$33.26",
+      "closePriceValue": 33.26,
+      "premiumDiscount": "0.06%",
+      "premiumDiscountValue": 0.06,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -872,8 +872,8 @@
           "mo1Text": "-5.99%",
           "mo3": 3.41,
           "mo3Text": "3.41%",
-          "qtd": 1.57,
-          "qtdText": "1.57%",
+          "qtd": 2.24,
+          "qtdText": "2.24%",
           "ytd": 21.46,
           "ytdText": "21.46%",
           "yr1": 23.36,
@@ -910,13 +910,13 @@
         "dividendYield": 3,
         "dividendYieldText": "3.00%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 3.32,
-        "secYieldText": "3.32%",
+        "secYield": 3.34,
+        "secYieldText": "3.34%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 102,
-      "history": 3764
+      "history": 3765
     },
     {
       "ticker": "SCHE",
@@ -935,10 +935,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jan 14 2010",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$36.73",
-      "closePriceValue": 36.73,
-      "premiumDiscount": "-0.45%",
-      "premiumDiscountValue": -0.45,
+      "closePrice": "$36.71",
+      "closePriceValue": 36.71,
+      "premiumDiscount": "-0.19%",
+      "premiumDiscountValue": -0.19,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -954,8 +954,8 @@
           "mo1Text": "-1.75%",
           "mo3": 1.7,
           "mo3Text": "1.70%",
-          "qtd": 0.77,
-          "qtdText": "0.77%",
+          "qtd": 0.71,
+          "qtdText": "0.71%",
           "ytd": 11.13,
           "ytdText": "11.13%",
           "yr1": 13.01,
@@ -992,13 +992,13 @@
         "dividendYield": 2.57,
         "dividendYieldText": "2.57%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 2.04,
-        "secYieldText": "2.04%",
+        "secYield": 2.02,
+        "secYieldText": "2.02%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 2231,
-      "history": 4210
+      "holdings": 2233,
+      "history": 4211
     },
     {
       "ticker": "SCHF",
@@ -1017,10 +1017,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Nov 03 2009",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$27.27",
-      "closePriceValue": 27.27,
-      "premiumDiscount": "0.28%",
-      "premiumDiscountValue": 0.28,
+      "closePrice": "$27.13",
+      "closePriceValue": 27.13,
+      "premiumDiscount": "0.35%",
+      "premiumDiscountValue": 0.35,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -1036,8 +1036,8 @@
           "mo1Text": "-2.72%",
           "mo3": 0,
           "mo3Text": "0.00%",
-          "qtd": -0.73,
-          "qtdText": "-0.73%",
+          "qtd": -1.24,
+          "qtdText": "-1.24%",
           "ytd": 15.06,
           "ytdText": "15.06%",
           "yr1": 22.25,
@@ -1074,13 +1074,13 @@
         "dividendYield": 2.98,
         "dividendYieldText": "2.98%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 2.16,
-        "secYieldText": "2.16%",
+        "secYield": 2.15,
+        "secYieldText": "2.15%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1442,
-      "history": 4259
+      "history": 4260
     },
     {
       "ticker": "SCHG",
@@ -1099,10 +1099,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Dec 11 2009",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$36.74",
-      "closePriceValue": 36.74,
-      "premiumDiscount": "-0.01%",
-      "premiumDiscountValue": -0.01,
+      "closePrice": "$36.59",
+      "closePriceValue": 36.59,
+      "premiumDiscount": "0.03%",
+      "premiumDiscountValue": 0.03,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -1118,8 +1118,8 @@
           "mo1Text": "0.80%",
           "mo3": 6.16,
           "mo3Text": "6.16%",
-          "qtd": 2.25,
-          "qtdText": "2.25%",
+          "qtd": 1.84,
+          "qtdText": "1.84%",
           "ytd": 10.48,
           "ytdText": "10.48%",
           "yr1": 13.01,
@@ -1156,13 +1156,13 @@
         "dividendYield": 0.37,
         "dividendYieldText": "0.37%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 0.35,
-        "secYieldText": "0.35%",
+        "secYield": 0.34,
+        "secYieldText": "0.34%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 189,
-      "history": 4218
+      "history": 4219
     },
     {
       "ticker": "SCHH",
@@ -1181,10 +1181,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jan 13 2011",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$22.22",
-      "closePriceValue": 22.22,
-      "premiumDiscount": "-0.01%",
-      "premiumDiscountValue": -0.01,
+      "closePrice": "$22.43",
+      "closePriceValue": 22.43,
+      "premiumDiscount": "-0.02%",
+      "premiumDiscountValue": -0.02,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -1200,8 +1200,8 @@
           "mo1Text": "-5.86%",
           "mo3": -6.37,
           "mo3Text": "-6.37%",
-          "qtd": 0.82,
-          "qtdText": "0.82%",
+          "qtd": 1.77,
+          "qtdText": "1.77%",
           "ytd": 7.55,
           "ytdText": "7.55%",
           "yr1": 5.27,
@@ -1238,13 +1238,13 @@
         "dividendYield": 2.8,
         "dividendYieldText": "2.80%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 3.65,
-        "secYieldText": "3.65%",
+        "secYield": 3.59,
+        "secYieldText": "3.59%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 122,
-      "history": 3958
+      "history": 3959
     },
     {
       "ticker": "SCHI",
@@ -1263,10 +1263,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Oct 10 2019",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$21.46",
-      "closePriceValue": 21.46,
-      "premiumDiscount": "-0.03%",
-      "premiumDiscountValue": -0.03,
+      "closePrice": "$21.48",
+      "closePriceValue": 21.48,
+      "premiumDiscount": "-0.04%",
+      "premiumDiscountValue": -0.04,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -1282,8 +1282,8 @@
           "mo1Text": "-2.98%",
           "mo3": -4.03,
           "mo3Text": "-4.03%",
-          "qtd": 0.55,
-          "qtdText": "0.55%",
+          "qtd": 0.65,
+          "qtdText": "0.65%",
           "ytd": -3.42,
           "ytdText": "-3.42%",
           "yr1": -2.26,
@@ -1320,13 +1320,13 @@
         "dividendYield": 5.12,
         "dividendYieldText": "5.12%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 5.97,
-        "secYieldText": "5.97%",
+        "secYield": 6,
+        "secYieldText": "6.00%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 2387,
-      "history": 1758
+      "history": 1759
     },
     {
       "ticker": "SCHJ",
@@ -1345,10 +1345,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Oct 10 2019",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$24.11",
-      "closePriceValue": 24.11,
-      "premiumDiscount": "-0.02%",
-      "premiumDiscountValue": -0.02,
+      "closePrice": "$24.13",
+      "closePriceValue": 24.13,
+      "premiumDiscount": "-0.01%",
+      "premiumDiscountValue": -0.01,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -1364,8 +1364,8 @@
           "mo1Text": "-1.20%",
           "mo3": -1.03,
           "mo3Text": "-1.03%",
-          "qtd": 0.43,
-          "qtdText": "0.43%",
+          "qtd": 0.52,
+          "qtdText": "0.52%",
           "ytd": -0.11,
           "ytdText": "-0.11%",
           "yr1": 1.14,
@@ -1402,13 +1402,13 @@
         "dividendYield": 4.53,
         "dividendYieldText": "4.53%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 5.39,
-        "secYieldText": "5.39%",
+        "secYield": 5.42,
+        "secYieldText": "5.42%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 3345,
-      "history": 1758
+      "history": 1759
     },
     {
       "ticker": "SCHK",
@@ -1427,10 +1427,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Oct 11 2017",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$37.43",
-      "closePriceValue": 37.43,
-      "premiumDiscount": "0.00%",
-      "premiumDiscountValue": 0,
+      "closePrice": "$37.39",
+      "closePriceValue": 37.39,
+      "premiumDiscount": "0.01%",
+      "premiumDiscountValue": 0.01,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -1446,8 +1446,8 @@
           "mo1Text": "-0.59%",
           "mo3": 1.83,
           "mo3Text": "1.83%",
-          "qtd": 2.1,
-          "qtdText": "2.10%",
+          "qtd": 1.99,
+          "qtdText": "1.99%",
           "ytd": 12.69,
           "ytdText": "12.69%",
           "yr1": 15.35,
@@ -1490,7 +1490,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1000,
-      "history": 2260
+      "history": 2261
     },
     {
       "ticker": "SCHM",
@@ -1509,10 +1509,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jan 13 2011",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$34.65",
-      "closePriceValue": 34.65,
-      "premiumDiscount": "0.01%",
-      "premiumDiscountValue": 0.01,
+      "closePrice": "$34.51",
+      "closePriceValue": 34.51,
+      "premiumDiscount": "0.03%",
+      "premiumDiscountValue": 0.03,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -1528,8 +1528,8 @@
           "mo1Text": "-3.87%",
           "mo3": -7.34,
           "mo3Text": "-7.34%",
-          "qtd": 1.85,
-          "qtdText": "1.85%",
+          "qtd": 1.44,
+          "qtdText": "1.44%",
           "ytd": 14.21,
           "ytdText": "14.21%",
           "yr1": 16.26,
@@ -1566,13 +1566,13 @@
         "dividendYield": 1.24,
         "dividendYieldText": "1.24%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 1.29,
-        "secYieldText": "1.29%",
+        "secYield": 1.3,
+        "secYieldText": "1.30%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 503,
-      "history": 3958
+      "history": 3959
     },
     {
       "ticker": "SCHO",
@@ -1593,8 +1593,8 @@
       "exchange": "NYSE Arca, Inc.",
       "closePrice": "$23.86",
       "closePriceValue": 23.86,
-      "premiumDiscount": "0.03%",
-      "premiumDiscountValue": 0.03,
+      "premiumDiscount": "0.00%",
+      "premiumDiscountValue": 0,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -1648,13 +1648,13 @@
         "dividendYield": 3.87,
         "dividendYieldText": "3.87%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 4.75,
-        "secYieldText": "4.75%",
+        "secYield": 4.78,
+        "secYieldText": "4.78%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 97,
-      "history": 4070
+      "history": 4071
     },
     {
       "ticker": "SCHP",
@@ -1673,8 +1673,8 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 05 2010",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$25.18",
-      "closePriceValue": 25.18,
+      "closePrice": "$25.21",
+      "closePriceValue": 25.21,
       "premiumDiscount": "0.02%",
       "premiumDiscountValue": 0.02,
       "frequencyCode": "01 - Monthly",
@@ -1692,8 +1692,8 @@
           "mo1Text": "-2.61%",
           "mo3": -3.21,
           "mo3Text": "-3.21%",
-          "qtd": 0.42,
-          "qtdText": "0.42%",
+          "qtd": 0.54,
+          "qtdText": "0.54%",
           "ytd": -1.98,
           "ytdText": "-1.98%",
           "yr1": -2.01,
@@ -1730,13 +1730,13 @@
         "dividendYield": 5.04,
         "dividendYieldText": "5.04%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 3.48,
-        "secYieldText": "3.48%",
+        "secYield": 3.95,
+        "secYieldText": "3.95%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 49,
-      "history": 4070
+      "history": 4071
     },
     {
       "ticker": "SCHQ",
@@ -1755,10 +1755,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Oct 10 2019",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$28.48",
-      "closePriceValue": 28.48,
-      "premiumDiscount": "-0.03%",
-      "premiumDiscountValue": -0.03,
+      "closePrice": "$28.52",
+      "closePriceValue": 28.52,
+      "premiumDiscount": "-0.01%",
+      "premiumDiscountValue": -0.01,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -1774,8 +1774,8 @@
           "mo1Text": "-4.98%",
           "mo3": -8.03,
           "mo3Text": "-8.03%",
-          "qtd": 0.47,
-          "qtdText": "0.47%",
+          "qtd": 0.61,
+          "qtdText": "0.61%",
           "ytd": -7.27,
           "ytdText": "-7.27%",
           "yr1": -7.7,
@@ -1818,7 +1818,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 102,
-      "history": 1758
+      "history": 1759
     },
     {
       "ticker": "SCHR",
@@ -1839,8 +1839,8 @@
       "exchange": "NYSE Arca, Inc.",
       "closePrice": "$23.71",
       "closePriceValue": 23.71,
-      "premiumDiscount": "0.03%",
-      "premiumDiscountValue": 0.03,
+      "premiumDiscount": "-0.02%",
+      "premiumDiscountValue": -0.02,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -1894,13 +1894,13 @@
         "dividendYield": 3.97,
         "dividendYieldText": "3.97%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 5.01,
-        "secYieldText": "5.01%",
+        "secYield": 5.03,
+        "secYieldText": "5.03%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 101,
-      "history": 4070
+      "history": 4071
     },
     {
       "ticker": "SCHV",
@@ -1919,10 +1919,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Dec 11 2009",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$33.93",
-      "closePriceValue": 33.93,
-      "premiumDiscount": "0.01%",
-      "premiumDiscountValue": 0.01,
+      "closePrice": "$34.04",
+      "closePriceValue": 34.04,
+      "premiumDiscount": "-0.02%",
+      "premiumDiscountValue": -0.02,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -1938,8 +1938,8 @@
           "mo1Text": "-3.10%",
           "mo3": -3.99,
           "mo3Text": "-3.99%",
-          "qtd": 1.86,
-          "qtdText": "1.86%",
+          "qtd": 2.19,
+          "qtdText": "2.19%",
           "ytd": 14.01,
           "ytdText": "14.01%",
           "yr1": 16.5,
@@ -1982,7 +1982,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 570,
-      "history": 4230
+      "history": 4231
     },
     {
       "ticker": "SCHX",
@@ -2001,10 +2001,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Nov 03 2009",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$30.64",
-      "closePriceValue": 30.64,
-      "premiumDiscount": "0.05%",
-      "premiumDiscountValue": 0.05,
+      "closePrice": "$30.63",
+      "closePriceValue": 30.63,
+      "premiumDiscount": "-0.03%",
+      "premiumDiscountValue": -0.03,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -2020,8 +2020,8 @@
           "mo1Text": "-0.52%",
           "mo3": 2.18,
           "mo3Text": "2.18%",
-          "qtd": 2.13,
-          "qtdText": "2.13%",
+          "qtd": 2.1,
+          "qtdText": "2.10%",
           "ytd": 12.44,
           "ytdText": "12.44%",
           "yr1": 15.08,
@@ -2058,13 +2058,13 @@
         "dividendYield": 1,
         "dividendYieldText": "1.00%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 1,
-        "secYieldText": "1.00%",
+        "secYield": 0.99,
+        "secYieldText": "0.99%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 754,
-      "history": 4259
+      "history": 4260
     },
     {
       "ticker": "SCHY",
@@ -2085,8 +2085,8 @@
       "exchange": "NYSE Arca, Inc.",
       "closePrice": "$31.75",
       "closePriceValue": 31.75,
-      "premiumDiscount": "0.63%",
-      "premiumDiscountValue": 0.63,
+      "premiumDiscount": "0.50%",
+      "premiumDiscountValue": 0.5,
       "frequencyCode": "04 - Quarterly",
       "distributions": {
         "frequency": "Quarterly",
@@ -2140,13 +2140,13 @@
         "dividendYield": 3.34,
         "dividendYieldText": "3.34%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 3.88,
-        "secYieldText": "3.88%",
+        "secYield": 3.84,
+        "secYieldText": "3.84%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 134,
-      "history": 1369
+      "holdings": 135,
+      "history": 1370
     },
     {
       "ticker": "SCHZ",
@@ -2165,10 +2165,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jul 14 2011",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$22.12",
-      "closePriceValue": 22.12,
-      "premiumDiscount": "-0.03%",
-      "premiumDiscountValue": -0.03,
+      "closePrice": "$22.13",
+      "closePriceValue": 22.13,
+      "premiumDiscount": "0.06%",
+      "premiumDiscountValue": 0.06,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -2184,8 +2184,8 @@
           "mo1Text": "-2.61%",
           "mo3": -3.51,
           "mo3Text": "-3.51%",
-          "qtd": 0.46,
-          "qtdText": "0.46%",
+          "qtd": 0.51,
+          "qtdText": "0.51%",
           "ytd": -2.8,
           "ytdText": "-2.80%",
           "yr1": -1.88,
@@ -2222,13 +2222,13 @@
         "dividendYield": 4.2,
         "dividendYieldText": "4.20%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 5.06,
-        "secYieldText": "5.06%",
+        "secYield": 5.07,
+        "secYieldText": "5.07%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 12608,
-      "history": 3833
+      "holdings": 12611,
+      "history": 3834
     },
     {
       "ticker": "SCMB",
@@ -2247,10 +2247,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Oct 12 2022",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$24.08",
-      "closePriceValue": 24.08,
-      "premiumDiscount": "0.14%",
-      "premiumDiscountValue": 0.14,
+      "closePrice": "$24.17",
+      "closePriceValue": 24.17,
+      "premiumDiscount": "-0.07%",
+      "premiumDiscountValue": -0.07,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -2266,8 +2266,8 @@
           "mo1Text": "-3.99%",
           "mo3": -5.94,
           "mo3Text": "-5.94%",
-          "qtd": 0.05,
-          "qtdText": "0.05%",
+          "qtd": 0.43,
+          "qtdText": "0.43%",
           "ytd": -4.12,
           "ytdText": "-4.12%",
           "yr1": -2.64,
@@ -2309,8 +2309,8 @@
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 7292,
-      "history": 1002
+      "holdings": 7311,
+      "history": 1003
     },
     {
       "ticker": "SCUS",
@@ -2330,9 +2330,9 @@
       "inceptionDate": "Aug 13 2024",
       "exchange": "NYSE Arca, Inc.",
       "closePrice": "$25.05",
-      "closePriceValue": 25.05,
-      "premiumDiscount": "-0.04%",
-      "premiumDiscountValue": -0.04,
+      "closePriceValue": 25.053,
+      "premiumDiscount": "-0.02%",
+      "premiumDiscountValue": -0.02,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -2348,8 +2348,8 @@
           "mo1Text": "0.04%",
           "mo3": 0.59,
           "mo3Text": "0.59%",
-          "qtd": 0.09,
-          "qtdText": "0.09%",
+          "qtd": 0.1,
+          "qtdText": "0.10%",
           "ytd": 2.3,
           "ytdText": "2.30%",
           "yr1": 3.41,
@@ -2392,7 +2392,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 143,
-      "history": 542
+      "history": 543
     },
     {
       "ticker": "SCYB",
@@ -2411,10 +2411,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jul 11 2023",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$25.20",
-      "closePriceValue": 25.2,
-      "premiumDiscount": "0.10%",
-      "premiumDiscountValue": 0.1,
+      "closePrice": "$25.21",
+      "closePriceValue": 25.21,
+      "premiumDiscount": "0.02%",
+      "premiumDiscountValue": 0.02,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -2430,8 +2430,8 @@
           "mo1Text": "-2.51%",
           "mo3": -1.82,
           "mo3Text": "-1.82%",
-          "qtd": 0.49,
-          "qtdText": "0.49%",
+          "qtd": 0.53,
+          "qtdText": "0.53%",
           "ytd": 0.03,
           "ytdText": "0.03%",
           "yr1": 1.47,
@@ -2468,13 +2468,13 @@
         "dividendYield": 6.89,
         "dividendYieldText": "6.89%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 7.72,
-        "secYieldText": "7.72%",
+        "secYield": 7.76,
+        "secYieldText": "7.76%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 1848,
-      "history": 817
+      "history": 818
     },
     {
       "ticker": "SGVT",
@@ -2493,8 +2493,8 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Jun 12 2025",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$100.61",
-      "closePriceValue": 100.615,
+      "closePrice": "$100.62",
+      "closePriceValue": 100.62,
       "premiumDiscount": "0.02%",
       "premiumDiscountValue": 0.02,
       "frequencyCode": "01 - Monthly",
@@ -2512,8 +2512,8 @@
           "mo1Text": "0.28%",
           "mo3": 0.86,
           "mo3Text": "0.86%",
-          "qtd": 0.13,
-          "qtdText": "0.13%",
+          "qtd": 0.14,
+          "qtdText": "0.14%",
           "ytd": 2.53,
           "ytdText": "2.53%",
           "yr1": 3.53,
@@ -2556,7 +2556,7 @@
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 227,
-      "history": 334
+      "history": 335
     },
     {
       "ticker": "SMBS",
@@ -2575,10 +2575,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Nov 19 2024",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$24.09",
-      "closePriceValue": 24.09,
-      "premiumDiscount": "0.01%",
-      "premiumDiscountValue": 0.01,
+      "closePrice": "$24.07",
+      "closePriceValue": 24.07,
+      "premiumDiscount": "-0.06%",
+      "premiumDiscountValue": -0.06,
       "frequencyCode": "01 - Monthly",
       "distributions": {
         "frequency": "Monthly",
@@ -2594,8 +2594,8 @@
           "mo1Text": "-3.32%",
           "mo3": -4.1,
           "mo3Text": "-4.10%",
-          "qtd": 0.85,
-          "qtdText": "0.85%",
+          "qtd": 0.77,
+          "qtdText": "0.77%",
           "ytd": -3,
           "ytdText": "-3.00%",
           "yr1": -1.43,
@@ -2637,8 +2637,8 @@
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 4287,
-      "history": 473
+      "holdings": 4290,
+      "history": 474
     },
     {
       "ticker": "STCE",
@@ -2657,10 +2657,10 @@
       "asOfDate": "Oct 09 2026",
       "inceptionDate": "Aug 04 2022",
       "exchange": "NYSE Arca, Inc.",
-      "closePrice": "$60.15",
-      "closePriceValue": 60.15,
-      "premiumDiscount": "-0.12%",
-      "premiumDiscountValue": -0.12,
+      "closePrice": "$59.13",
+      "closePriceValue": 59.13,
+      "premiumDiscount": "-0.03%",
+      "premiumDiscountValue": -0.03,
       "frequencyCode": "06 - Semi-annually",
       "distributions": {
         "frequency": "Semi-Annual",
@@ -2676,8 +2676,8 @@
           "mo1Text": "1.06%",
           "mo3": -5.67,
           "mo3Text": "-5.67%",
-          "qtd": -8.89,
-          "qtdText": "-8.89%",
+          "qtd": -10.44,
+          "qtdText": "-10.44%",
           "ytd": 9.88,
           "ytdText": "9.88%",
           "yr1": -14.48,
@@ -2714,13 +2714,13 @@
         "dividendYield": 1.74,
         "dividendYieldText": "1.74%",
         "dividendYieldBasis": "official-trailing-12m",
-        "secYield": 0.16,
-        "secYieldText": "0.16%",
+        "secYield": 0.13,
+        "secYieldText": "0.13%",
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
       "holdings": 41,
-      "history": 1050
+      "history": 1051
     }
   ]
 }

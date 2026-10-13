@@ -8,12 +8,12 @@
     "officialProductPage": "https://www.schwabassetmanagement.com/products/sccr",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
     "productPageAsOf": "Oct 09 2026",
-    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCCR/SCCR_FundHoldings_2026-10-08.CSV",
+    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCCR/SCCR_FundHoldings_2026-10-09.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCCR/SCCR_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCCR/SCCR_NAV_History.CSV",
     "pricesDownload": null,
     "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/SCCR",
-    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCCR_FundHoldings_2026-10-08.CSV, via read-only rendering proxy)",
+    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCCR_FundHoldings_2026-10-09.CSV, via read-only rendering proxy)",
     "historySource": "Yahoo Finance public chart API (adjusted close)",
     "distributionsSource": "schwabassetmanagement.com distribution history CSV export (Total Distribution per share, via read-only rendering proxy)",
     "provider": "Schwab Asset Management product finder + official product page + per-fund holdings/distribution CSV exports + SEC EDGAR Form N-PORT-P fallback + Yahoo Finance public chart API"
@@ -38,14 +38,14 @@
     "asOfDate": "Oct 09 2026"
   },
   "marketPrice": {
-    "display": "$24.31",
-    "value": 24.31,
-    "asOfDate": "Oct 09 2026",
+    "display": "$24.34",
+    "value": 24.34,
+    "asOfDate": "Oct 12 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.03%",
-    "value": 0.03,
+    "display": "-0.04%",
+    "value": -0.04,
     "asOfDate": "Oct 09 2026",
     "source": "official product page Quote Details"
   },
@@ -59,7 +59,7 @@
     "sharesOutstanding": 74100000,
     "portfolioTurnover": 99.73,
     "publishedTotalHoldings": 605,
-    "bidAskMidpoint": 24.33
+    "bidAskMidpoint": 24.31
   },
   "yields": {
     "dividendYield": 4.51,
@@ -67,9 +67,9 @@
     "dividendYieldBasis": "official-trailing-12m",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Aug 31 2026",
     "distributionRate": 4.51,
-    "secYield": 5.14,
-    "secYieldText": "5.14%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Oct 08 2026"
+    "secYield": 5.15,
+    "secYieldText": "5.15%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Oct 09 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
@@ -80,8 +80,8 @@
       "mo1Text": "-2.76%",
       "mo3": -3.76,
       "mo3Text": "-3.76%",
-      "qtd": 0.37,
-      "qtdText": "0.37%",
+      "qtd": 0.49,
+      "qtdText": "0.49%",
       "ytd": -2.88,
       "ytdText": "-2.88%",
       "yr1": -1.82,
@@ -241,9 +241,9 @@
     ],
     "pageSize": 250,
     "totalRows": 605,
-    "asOfDate": "2026-10-08",
-    "asOf": "Oct 08 2026",
-    "source": "schwabassetmanagement.com full holdings CSV export (SCCR_FundHoldings_2026-10-08.CSV, via read-only rendering proxy)",
+    "asOfDate": "2026-10-09",
+    "asOf": "Oct 09 2026",
+    "source": "schwabassetmanagement.com full holdings CSV export (SCCR_FundHoldings_2026-10-09.CSV, via read-only rendering proxy)",
     "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
     "publishedTotalHoldings": 605
   },
@@ -252,8 +252,8 @@
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 422,
-    "asOf": "Oct 09 2026",
+    "totalRows": 423,
+    "asOf": "Oct 12 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }

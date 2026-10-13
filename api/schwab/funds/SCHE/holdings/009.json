@@ -2,7 +2,7 @@
   "ticker": "SCHE",
   "page": 9,
   "pageSize": 250,
-  "totalRows": 2231,
+  "totalRows": 2233,
   "headers": [
     "Name",
     "Ticker",
@@ -14,254 +14,182 @@
   ],
   "rows": [
     {
-      "Name": "HANG ZHOU IRON & STEEL LTD A",
-      "Ticker": "600126",
-      "Identifier": "BBG01FR9ZWZ9",
-      "Weight": "0.001649",
-      "Market Value": "212752.1",
-      "Shares Held": "241900",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "YONFER AGRICULTURAL TECHNOLOGY LTD",
-      "Ticker": "000902",
-      "Identifier": "BBG00F136P79",
-      "Weight": "0.001649",
-      "Market Value": "212716.8",
-      "Shares Held": "104800",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "ZHEJIANG RONGTAI ELECTRIC MATERIAL",
-      "Ticker": "603119",
-      "Identifier": "BBG01PSLTW95",
-      "Weight": "0.001641",
-      "Market Value": "211779.79",
-      "Shares Held": "28990",
+      "Name": "SHENZHEN KSTAR SCIENCE AND TECHNOL",
+      "Ticker": "002518",
+      "Identifier": "BBG00F137ZC0",
+      "Weight": "0.001645",
+      "Market Value": "212254.77",
+      "Shares Held": "44500",
       "Asset Category": "Industrials"
     },
     {
       "Name": "TIANMA MICROELECTRONICS LTD A",
       "Ticker": "000050",
       "Identifier": "BBG00F1363N0",
-      "Weight": "0.001641",
-      "Market Value": "211682.33",
+      "Weight": "0.001643",
+      "Market Value": "211924.26",
       "Shares Held": "229000",
       "Asset Category": "Information Technology"
     },
     {
-      "Name": "TITAN WIND ENERGY (SUZHOU) LTD A",
-      "Ticker": "002531",
-      "Identifier": "BBG00F1380F3",
-      "Weight": "0.001625",
-      "Market Value": "209699.7",
-      "Shares Held": "167900",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "CHINA NATIONAL URANIUM LTD A",
-      "Ticker": "001280",
-      "Identifier": "BBG01ZJ3BKN2",
-      "Weight": "0.001625",
-      "Market Value": "209666.64",
-      "Shares Held": "23200",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "DONGGUAN YIHEDA AUTOMATION LTD A",
-      "Ticker": "301029",
-      "Identifier": "BBG017ZPHSQ1",
-      "Weight": "0.001621",
-      "Market Value": "209144.02",
-      "Shares Held": "59500",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SHENZHEN SED INDUSTRY LTD A",
-      "Ticker": "000032",
-      "Identifier": "BBG00VC7ZJT1",
-      "Weight": "0.001619",
-      "Market Value": "208873.29",
-      "Shares Held": "108000",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "OPPEIN HOME GROUP INC A",
-      "Ticker": "603833",
-      "Identifier": "BBG00JCQD5H3",
-      "Weight": "0.001617",
-      "Market Value": "208591.13",
-      "Shares Held": "45440",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "CHINA SOUTHERN POWER GRID ENERGY E",
-      "Ticker": "003035",
-      "Identifier": "BBG013Y50048",
-      "Weight": "0.001616",
-      "Market Value": "208489.64",
-      "Shares Held": "262500",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SHENZHEN KANGTAI BIOLOGICAL PRODUC",
-      "Ticker": "300601",
-      "Identifier": "BBG00LBJC7X4",
-      "Weight": "0.001613",
-      "Market Value": "208139.08",
-      "Shares Held": "105180",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "MICRO-TECH (NANJING) LTD A",
-      "Ticker": "688029",
-      "Identifier": "BBG01FRBL3D7",
-      "Weight": "0.001611",
-      "Market Value": "207877.28",
-      "Shares Held": "17179",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "SHANGHAI LUJIAZUI FINANCE & TRADE",
-      "Ticker": "900932",
-      "Identifier": "BBG000BC8MH5",
-      "Weight": "0.001606",
-      "Market Value": "207222.47",
-      "Shares Held": "500330",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "ZHEJIANG WEIXING NEW BUILDING MATE",
-      "Ticker": "002372",
-      "Identifier": "BBG00F137NC7",
-      "Weight": "0.001606",
-      "Market Value": "207203.43",
-      "Shares Held": "155300",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "PORTON PHARMA SOLUTIONS LTD A",
-      "Ticker": "300363",
-      "Identifier": "BBG00F13DRR5",
-      "Weight": "0.001601",
-      "Market Value": "206595.55",
-      "Shares Held": "58800",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "EVERDISPLAY OPTRONICS (SHANGHAI) L",
-      "Ticker": "688538",
-      "Identifier": "BBG01FR9YDC7",
-      "Weight": "0.001596",
-      "Market Value": "205970.6",
-      "Shares Held": "668463",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "EURO",
-      "Ticker": "EUR",
-      "Identifier": "-",
-      "Weight": "0.001593",
-      "Market Value": "205506.74",
-      "Shares Held": "182838.54",
-      "Asset Category": "-"
-    },
-    {
-      "Name": "SHENZHEN YAN TIAN PORT HOLDINGS LT",
-      "Ticker": "000088",
-      "Identifier": "BBG00F1364L0",
-      "Weight": "0.00159",
-      "Market Value": "205116.7",
-      "Shares Held": "288700",
+      "Name": "SHENZHEN AIRPORT LTD A",
+      "Ticker": "000089",
+      "Identifier": "BBG00F1364N8",
+      "Weight": "0.001638",
+      "Market Value": "211355.33",
+      "Shares Held": "213000",
       "Asset Category": "Industrials"
     },
     {
       "Name": "DIAN DIAGNOSTICS GROUP LTD A",
       "Ticker": "300244",
       "Identifier": "BBG00F13CFR2",
-      "Weight": "0.00159",
-      "Market Value": "205103.24",
+      "Weight": "0.001632",
+      "Market Value": "210606.67",
       "Shares Held": "69500",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "FAW JIEFANG GROUP LTD A",
-      "Ticker": "000800",
-      "Identifier": "BBG00F136KW2",
-      "Weight": "0.00159",
-      "Market Value": "205086.04",
-      "Shares Held": "236400",
+      "Name": "VOYAH AUTOMOTIVE TECHNOLOGY LTD CL",
+      "Ticker": "7489",
+      "Identifier": "BBG01Y5LRF09",
+      "Weight": "0.001632",
+      "Market Value": "210555.88",
+      "Shares Held": "928398",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "CHINA NATIONAL URANIUM LTD A",
+      "Ticker": "001280",
+      "Identifier": "BBG01ZJ3BKN2",
+      "Weight": "0.001628",
+      "Market Value": "210082.61",
+      "Shares Held": "23200",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SHENZHEN KANGTAI BIOLOGICAL PRODUC",
+      "Ticker": "300601",
+      "Identifier": "BBG00LBJC7X4",
+      "Weight": "0.001628",
+      "Market Value": "209985.64",
+      "Shares Held": "105180",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "OPPEIN HOME GROUP INC A",
+      "Ticker": "603833",
+      "Identifier": "BBG00JCQD5H3",
+      "Weight": "0.001626",
+      "Market Value": "209785.99",
+      "Shares Held": "45440",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "ZHEJIANG RONGTAI ELECTRIC MATERIAL",
+      "Ticker": "603119",
+      "Identifier": "BBG01PSLTW95",
+      "Weight": "0.00162",
+      "Market Value": "209071.39",
+      "Shares Held": "28990",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "EVERDISPLAY OPTRONICS (SHANGHAI) L",
+      "Ticker": "688538",
+      "Identifier": "BBG01FR9YDC7",
+      "Weight": "0.001616",
+      "Market Value": "208522.92",
+      "Shares Held": "668463",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "WUHAN JINGCE ELECTRONIC GROUP LTD",
+      "Ticker": "300567",
+      "Identifier": "BBG00LBJC7L7",
+      "Weight": "0.001608",
+      "Market Value": "207401.96",
+      "Shares Held": "8300",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "JONJEE HI-TECH INDUSTRIAL AND COMM",
+      "Ticker": "600872",
+      "Identifier": "BBG00709J5K0",
+      "Weight": "0.001607",
+      "Market Value": "207301.26",
+      "Shares Held": "78800",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "XTC NEW ENERGY MATERIALS (XIAMEN)",
+      "Ticker": "688778",
+      "Identifier": "BBG01FR9NJP2",
+      "Weight": "0.001606",
+      "Market Value": "207189.02",
+      "Shares Held": "29426",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "ZHEJIANG WEIXING NEW BUILDING MATE",
+      "Ticker": "002372",
+      "Identifier": "BBG00F137NC7",
+      "Weight": "0.001606",
+      "Market Value": "207159.54",
+      "Shares Held": "155300",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "DONGGUAN YIHEDA AUTOMATION LTD A",
+      "Ticker": "301029",
+      "Identifier": "BBG017ZPHSQ1",
+      "Weight": "0.001604",
+      "Market Value": "206995.54",
+      "Shares Held": "59500",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "PORTON PHARMA SOLUTIONS LTD A",
+      "Ticker": "300363",
+      "Identifier": "BBG00F13DRR5",
+      "Weight": "0.001603",
+      "Market Value": "206831.25",
+      "Shares Held": "58800",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "CHINA SOUTHERN POWER GRID ENERGY E",
+      "Ticker": "003035",
+      "Identifier": "BBG013Y50048",
+      "Weight": "0.001602",
+      "Market Value": "206662.81",
+      "Shares Held": "262500",
       "Asset Category": "Industrials"
     },
     {
       "Name": "JIANGXI SPECIAL ELECTRIC MOTOR LTD",
       "Ticker": "002176",
       "Identifier": "BBG00F137929",
-      "Weight": "0.001588",
-      "Market Value": "204846.72",
+      "Weight": "0.00159",
+      "Market Value": "205114.23",
       "Shares Held": "161500",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "ALPHA GROUP A",
-      "Ticker": "002292",
-      "Identifier": "BBG00F137JG2",
-      "Weight": "0.001583",
-      "Market Value": "204170.63",
-      "Shares Held": "162500",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "XTC NEW ENERGY MATERIALS (XIAMEN)",
-      "Ticker": "688778",
-      "Identifier": "BBG01FR9NJP2",
-      "Weight": "0.001579",
-      "Market Value": "203697.28",
-      "Shares Held": "29426",
+      "Name": "FAW JIEFANG GROUP LTD A",
+      "Ticker": "000800",
+      "Identifier": "BBG00F136KW2",
+      "Weight": "0.001587",
+      "Market Value": "204726.09",
+      "Shares Held": "236400",
       "Asset Category": "Industrials"
-    },
-    {
-      "Name": "JONJEE HI-TECH INDUSTRIAL AND COMM",
-      "Ticker": "600872",
-      "Identifier": "BBG00709J5K0",
-      "Weight": "0.001577",
-      "Market Value": "203435.93",
-      "Shares Held": "78800",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "GUANGZHOU PORT LTD A",
-      "Ticker": "601228",
-      "Identifier": "BBG00JCQBSR4",
-      "Weight": "0.001575",
-      "Market Value": "203148.74",
-      "Shares Held": "429800",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "CITIC METAL LTD A",
-      "Ticker": "601061",
-      "Identifier": "BBG01MV7GLH8",
-      "Weight": "0.001571",
-      "Market Value": "202748.03",
-      "Shares Held": "124700",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SONGCHENG PERFORMANCE DEVELOPMENT",
-      "Ticker": "300144",
-      "Identifier": "BBG00F13B032",
-      "Weight": "0.001566",
-      "Market Value": "202073.45",
-      "Shares Held": "244300",
-      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "CHINA MEHECO LTD A",
       "Ticker": "600056",
       "Identifier": "BBG00709HCG2",
-      "Weight": "0.001564",
-      "Market Value": "201800.64",
+      "Weight": "0.001581",
+      "Market Value": "203980.63",
       "Shares Held": "150240",
       "Asset Category": "Health Care"
     },
@@ -269,71 +197,197 @@
       "Name": "HUAXI SECURITIES LTD A",
       "Ticker": "002926",
       "Identifier": "BBG00MYKW4W0",
-      "Weight": "0.001555",
-      "Market Value": "200639.76",
+      "Weight": "0.001581",
+      "Market Value": "203925.14",
       "Shares Held": "165400",
       "Asset Category": "Financials"
     },
     {
-      "Name": "BEIJING SINNET TECHNOLOGY LTD A",
-      "Ticker": "300383",
-      "Identifier": "BBG00F13DSG5",
-      "Weight": "0.001549",
-      "Market Value": "199851.94",
-      "Shares Held": "130100",
+      "Name": "CITIC METAL LTD A",
+      "Ticker": "601061",
+      "Identifier": "BBG01MV7GLH8",
+      "Weight": "0.001578",
+      "Market Value": "203573.53",
+      "Shares Held": "124700",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "EURO",
+      "Ticker": "EUR",
+      "Identifier": "-",
+      "Weight": "0.001578",
+      "Market Value": "203548.11",
+      "Shares Held": "182838.54",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "WINNER MEDICAL LTD A",
+      "Ticker": "300888",
+      "Identifier": "BBG011C97MD3",
+      "Weight": "0.001574",
+      "Market Value": "203104.58",
+      "Shares Held": "43600",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "SHENZHEN SED INDUSTRY LTD A",
+      "Ticker": "000032",
+      "Identifier": "BBG00VC7ZJT1",
+      "Weight": "0.001572",
+      "Market Value": "202781.34",
+      "Shares Held": "108000",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SHENZHEN YAN TIAN PORT HOLDINGS LT",
+      "Ticker": "000088",
+      "Identifier": "BBG00F1364L0",
+      "Weight": "0.001569",
+      "Market Value": "202416.5",
+      "Shares Held": "288700",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "THE PACIFIC SECURITIES LTD A",
+      "Ticker": "601099",
+      "Identifier": "BBG00709J8G9",
+      "Weight": "0.001562",
+      "Market Value": "201510.24",
+      "Shares Held": "388700",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "SONGCHENG PERFORMANCE DEVELOPMENT",
+      "Ticker": "300144",
+      "Identifier": "BBG00F13B032",
+      "Weight": "0.001561",
+      "Market Value": "201406.55",
+      "Shares Held": "244300",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "SHANGHAI LUJIAZUI FINANCE & TRADE",
+      "Ticker": "900932",
+      "Identifier": "BBG000BC8MH5",
+      "Weight": "0.001558",
+      "Market Value": "200989.93",
+      "Shares Held": "500330",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "BEIQI FOTON MOTOR LTD A",
+      "Ticker": "600166",
+      "Identifier": "BBG00709HGY3",
+      "Weight": "0.001554",
+      "Market Value": "200483.65",
+      "Shares Held": "478600",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "GUANGZHOU PORT LTD A",
+      "Ticker": "601228",
+      "Identifier": "BBG00JCQBSR4",
+      "Weight": "0.001554",
+      "Market Value": "200471.75",
+      "Shares Held": "429800",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "GCL SYSTEM INTEGRATION TECHNOLOGY",
+      "Ticker": "002506",
+      "Identifier": "BBG00H1L7QP2",
+      "Weight": "0.001554",
+      "Market Value": "200445.02",
+      "Shares Held": "557600",
       "Asset Category": "Information Technology"
     },
     {
       "Name": "BEIJING UNITED INFORMATION TECHNOL",
       "Ticker": "603613",
       "Identifier": "BBG00R274H82",
-      "Weight": "0.001537",
-      "Market Value": "198326.45",
+      "Weight": "0.00155",
+      "Market Value": "199950.32",
       "Shares Held": "71905",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "BEIQI FOTON MOTOR LTD A",
-      "Ticker": "600166",
-      "Identifier": "BBG00709HGY3",
-      "Weight": "0.001537",
-      "Market Value": "198295.6",
-      "Shares Held": "478600",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "CHINA WORLD TRADE CENTER LTD A",
-      "Ticker": "600007",
-      "Identifier": "BBG00709H9Q8",
-      "Weight": "0.001537",
-      "Market Value": "198253.43",
-      "Shares Held": "64000",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "THE PACIFIC SECURITIES LTD A",
-      "Ticker": "601099",
-      "Identifier": "BBG00709J8G9",
-      "Weight": "0.001532",
-      "Market Value": "197676.06",
-      "Shares Held": "388700",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "GCL SYSTEM INTEGRATION TECHNOLOGY",
-      "Ticker": "002506",
-      "Identifier": "BBG00H1L7QP2",
-      "Weight": "0.001532",
-      "Market Value": "197665.9",
-      "Shares Held": "557600",
+      "Name": "CETC CYBERSPACE SECURITY TECHNOLOG",
+      "Ticker": "002268",
+      "Identifier": "BBG00F137H67",
+      "Weight": "0.001547",
+      "Market Value": "199642.73",
+      "Shares Held": "87900",
       "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "BEIJING SINNET TECHNOLOGY LTD A",
+      "Ticker": "300383",
+      "Identifier": "BBG00F13DSG5",
+      "Weight": "0.001547",
+      "Market Value": "199634.13",
+      "Shares Held": "130100",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "CHINA SOUTHERN POWER GRID TECHNOLO",
+      "Ticker": "688248",
+      "Identifier": "BBG01FRBB1X0",
+      "Weight": "0.001544",
+      "Market Value": "199148.53",
+      "Shares Held": "25782",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "ETERNAL ASIA SUPPLY CHAIN MANAGEME",
+      "Ticker": "002183",
+      "Identifier": "BBG00F1379H3",
+      "Weight": "0.001537",
+      "Market Value": "198310.74",
+      "Shares Held": "304800",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "RUYI FILM ENTERTAINMENT A",
+      "Ticker": "002739",
+      "Identifier": "BBG00F138MJ1",
+      "Weight": "0.001537",
+      "Market Value": "198253.7",
+      "Shares Held": "160800",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "GEN ILAC VE SAGLIK URUNLERI SANAYI",
+      "Ticker": "GENIL.E",
+      "Identifier": "BBG011QRRP85",
+      "Weight": "0.001533",
+      "Market Value": "197842.92",
+      "Shares Held": "2102259",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "JIUJIANG DEFU TECHNOLOGY LTD A",
+      "Ticker": "301511",
+      "Identifier": "BBG01J9420W1",
+      "Weight": "0.001533",
+      "Market Value": "197727.85",
+      "Shares Held": "15300",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "OURPALM LTD A",
+      "Ticker": "300315",
+      "Identifier": "BBG00F13DKV5",
+      "Weight": "0.001531",
+      "Market Value": "197498.05",
+      "Shares Held": "334900",
+      "Asset Category": "Communication Services"
     },
     {
       "Name": "TANGSHAN SANYOU CHEMICAL INDUSTRIE",
       "Ticker": "600409",
       "Identifier": "BBG00709HQ99",
-      "Weight": "0.001532",
-      "Market Value": "197665.9",
+      "Weight": "0.001526",
+      "Market Value": "196924.81",
       "Shares Held": "209100",
       "Asset Category": "Materials"
     },
@@ -341,197 +395,170 @@
       "Name": "CHINA RAILWAY HI-TECH INDUSTRY COR",
       "Ticker": "600528",
       "Identifier": "BBG00709HV52",
-      "Weight": "0.001532",
-      "Market Value": "197662.31",
+      "Weight": "0.001526",
+      "Market Value": "196874",
       "Shares Held": "193200",
       "Asset Category": "Industrials"
-    },
-    {
-      "Name": "GREEN DEVELOPMENT ELECTRICITY GROU",
-      "Ticker": "000537",
-      "Identifier": "BBG00LBJGND7",
-      "Weight": "0.001525",
-      "Market Value": "196733",
-      "Shares Held": "177500",
-      "Asset Category": "Utilities"
-    },
-    {
-      "Name": "LEVIMA ADVANCED MATERIALS CORP A",
-      "Ticker": "003022",
-      "Identifier": "BBG013Y4YV28",
-      "Weight": "0.001517",
-      "Market Value": "195766.59",
-      "Shares Held": "70900",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "GUIZHOU PANJIANG REFINED COAL LTD",
-      "Ticker": "600395",
-      "Identifier": "BBG00709HPZ2",
-      "Weight": "0.001511",
-      "Market Value": "194971.29",
-      "Shares Held": "257100",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "HUAIHE ENERGY (GROUP) LTD A",
-      "Ticker": "600575",
-      "Identifier": "BBG00709HWL2",
-      "Weight": "0.00151",
-      "Market Value": "194845.95",
-      "Shares Held": "403300",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "WINNER MEDICAL LTD A",
-      "Ticker": "300888",
-      "Identifier": "BBG011C97MD3",
-      "Weight": "0.001509",
-      "Market Value": "194666.62",
-      "Shares Held": "43600",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "GUANGZHOU KINGMED DIAGNOSTICS GROU",
-      "Ticker": "603882",
-      "Identifier": "BBG00MRX5D87",
-      "Weight": "0.001505",
-      "Market Value": "194225.51",
-      "Shares Held": "45900",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "SHENYANG XINGQI PHARMACEUTICAL LTD",
-      "Ticker": "300573",
-      "Identifier": "BBG00VC81CD8",
-      "Weight": "0.001502",
-      "Market Value": "193816.64",
-      "Shares Held": "36337",
-      "Asset Category": "Health Care"
     },
     {
       "Name": "CAPITAL SECURITIES A",
       "Ticker": "601136",
       "Identifier": "BBG01L0DCPT3",
-      "Weight": "0.001502",
-      "Market Value": "193757.94",
+      "Weight": "0.001524",
+      "Market Value": "196651.64",
       "Shares Held": "94900",
       "Asset Category": "Financials"
+    },
+    {
+      "Name": "GUANGZHOU KINGMED DIAGNOSTICS GROU",
+      "Ticker": "603882",
+      "Identifier": "BBG00MRX5D87",
+      "Weight": "0.001523",
+      "Market Value": "196500.56",
+      "Shares Held": "45900",
+      "Asset Category": "Health Care"
     },
     {
       "Name": "SWANCOR ADVANCED MATERIALS LTD A",
       "Ticker": "688585",
       "Identifier": "BBG01Z25ZP94",
-      "Weight": "0.001496",
-      "Market Value": "192957.76",
+      "Weight": "0.001517",
+      "Market Value": "195661",
       "Shares Held": "10817",
       "Asset Category": "Materials"
     },
     {
-      "Name": "BEIJING ZHONG KE SAN HUAN HIGH-TEC",
-      "Ticker": "000970",
-      "Identifier": "BBG00F136RC9",
-      "Weight": "0.001495",
-      "Market Value": "192848.38",
-      "Shares Held": "117530",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "HYTERA COMMUNICATIONS CORP LTD A",
-      "Ticker": "002583",
-      "Identifier": "BBG00F1385C5",
-      "Weight": "0.001492",
-      "Market Value": "192475.63",
-      "Shares Held": "165400",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "HEFEI MEYER OPTOELECTRONIC TECHNOL",
-      "Ticker": "002690",
-      "Identifier": "BBG00F138HN7",
-      "Weight": "0.00149",
-      "Market Value": "192234.63",
-      "Shares Held": "84110",
+      "Name": "HUAIHE ENERGY (GROUP) LTD A",
+      "Ticker": "600575",
+      "Identifier": "BBG00709HWL2",
+      "Weight": "0.001514",
+      "Market Value": "195300.33",
+      "Shares Held": "403300",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "RUYI FILM ENTERTAINMENT A",
-      "Ticker": "002739",
-      "Identifier": "BBG00F138MJ1",
-      "Weight": "0.00149",
-      "Market Value": "192173.48",
-      "Shares Held": "160800",
-      "Asset Category": "Communication Services"
+      "Name": "GUIZHOU PANJIANG REFINED COAL LTD",
+      "Ticker": "600395",
+      "Identifier": "BBG00709HPZ2",
+      "Weight": "0.001513",
+      "Market Value": "195155.2",
+      "Shares Held": "257100",
+      "Asset Category": "Energy"
     },
     {
-      "Name": "CAMEL GROUP LTD A",
-      "Ticker": "601311",
-      "Identifier": "BBG00709JB63",
-      "Weight": "0.001488",
-      "Market Value": "191929.38",
-      "Shares Held": "173400",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "TERA YATIRIM MENKUL DEGERLER A.S.",
-      "Ticker": "TERA.E",
-      "Identifier": "BBG01C34R420",
-      "Weight": "0.001487",
-      "Market Value": "191881.66",
-      "Shares Held": "225820",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "BAIMTEC MATERIAL LTD A",
-      "Ticker": "688563",
-      "Identifier": "BBG01P78LS30",
-      "Weight": "0.001485",
-      "Market Value": "191563.36",
-      "Shares Held": "26137",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "ETERNAL ASIA SUPPLY CHAIN MANAGEME",
-      "Ticker": "002183",
-      "Identifier": "BBG00F1379H3",
-      "Weight": "0.001484",
-      "Market Value": "191480.65",
-      "Shares Held": "304800",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "OURPALM LTD A",
-      "Ticker": "300315",
-      "Identifier": "BBG00F13DKV5",
-      "Weight": "0.001483",
-      "Market Value": "191354.7",
-      "Shares Held": "334900",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "CETC CYBERSPACE SECURITY TECHNOLOG",
-      "Ticker": "002268",
-      "Identifier": "BBG00F137H67",
-      "Weight": "0.001472",
-      "Market Value": "189852.66",
-      "Shares Held": "87900",
-      "Asset Category": "Information Technology"
+      "Name": "GREEN DEVELOPMENT ELECTRICITY GROU",
+      "Ticker": "000537",
+      "Identifier": "BBG00LBJGND7",
+      "Weight": "0.001508",
+      "Market Value": "194586.12",
+      "Shares Held": "177500",
+      "Asset Category": "Utilities"
     },
     {
       "Name": "JIANGSU BROADCASTING CABLE INFORMA",
       "Ticker": "600959",
       "Identifier": "BBG00BMBGWX2",
-      "Weight": "0.00147",
-      "Market Value": "189682.15",
+      "Weight": "0.001507",
+      "Market Value": "194471.15",
       "Shares Held": "410400",
       "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "CHINA WORLD TRADE CENTER LTD A",
+      "Ticker": "600007",
+      "Identifier": "BBG00709H9Q8",
+      "Weight": "0.001507",
+      "Market Value": "194415.3",
+      "Shares Held": "64000",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "BEIJING ZHONG KE SAN HUAN HIGH-TEC",
+      "Ticker": "000970",
+      "Identifier": "BBG00F136RC9",
+      "Weight": "0.001505",
+      "Market Value": "194138.05",
+      "Shares Held": "117530",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "CAMEL GROUP LTD A",
+      "Ticker": "601311",
+      "Identifier": "BBG00709JB63",
+      "Weight": "0.001503",
+      "Market Value": "193955.11",
+      "Shares Held": "173400",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "BGI GENOMICS LTD A",
+      "Ticker": "300676",
+      "Identifier": "BBG00LBJFCZ8",
+      "Weight": "0.001503",
+      "Market Value": "193849.19",
+      "Shares Held": "28700",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "LEVIMA ADVANCED MATERIALS CORP A",
+      "Ticker": "003022",
+      "Identifier": "BBG013Y4YV28",
+      "Weight": "0.001498",
+      "Market Value": "193258.89",
+      "Shares Held": "70900",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "HYTERA COMMUNICATIONS CORP LTD A",
+      "Ticker": "002583",
+      "Identifier": "BBG00F1385C5",
+      "Weight": "0.001489",
+      "Market Value": "192131.87",
+      "Shares Held": "165400",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "SHENYANG XINGQI PHARMACEUTICAL LTD",
+      "Ticker": "300573",
+      "Identifier": "BBG00VC81CD8",
+      "Weight": "0.001487",
+      "Market Value": "191887.11",
+      "Shares Held": "36337",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "EFOR YATIRIM SANAYI TICARET",
+      "Ticker": "EFOR.E",
+      "Identifier": "BBG01NL83CR8",
+      "Weight": "0.001483",
+      "Market Value": "191372.34",
+      "Shares Held": "562920",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "BAIMTEC MATERIAL LTD A",
+      "Ticker": "688563",
+      "Identifier": "BBG01P78LS30",
+      "Weight": "0.001479",
+      "Market Value": "190825.5",
+      "Shares Held": "26137",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "HEFEI MEYER OPTOELECTRONIC TECHNOL",
+      "Ticker": "002690",
+      "Identifier": "BBG00F138HN7",
+      "Weight": "0.001473",
+      "Market Value": "190035.18",
+      "Shares Held": "84110",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "SICHUAN SWELLFUN LTD A",
       "Ticker": "600779",
       "Identifier": "BBG00JCQBKK8",
-      "Weight": "0.001467",
-      "Market Value": "189319.73",
+      "Weight": "0.001471",
+      "Market Value": "189823.49",
       "Shares Held": "48700",
       "Asset Category": "Consumer Staples"
     },
@@ -539,323 +566,341 @@
       "Name": "SHANDONG PHARMACEUTICAL GLASS LTD",
       "Ticker": "600529",
       "Identifier": "BBG00VC82926",
-      "Weight": "0.001467",
-      "Market Value": "189241.51",
+      "Weight": "0.001471",
+      "Market Value": "189806.25",
       "Shares Held": "69900",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "BGI GENOMICS LTD A",
-      "Ticker": "300676",
-      "Identifier": "BBG00LBJFCZ8",
-      "Weight": "0.001456",
-      "Market Value": "187853.74",
-      "Shares Held": "28700",
+      "Name": "JINYU BIO-TECHNOLOGY LTD A",
+      "Ticker": "600201",
+      "Identifier": "BBG00709HJ59",
+      "Weight": "0.001459",
+      "Market Value": "188188.3",
+      "Shares Held": "107000",
       "Asset Category": "Health Care"
     },
     {
       "Name": "ANHUI ANKE BIOTECHNOLOGY (GROUP) L",
       "Ticker": "300009",
       "Identifier": "BBG00F138QW7",
-      "Weight": "0.001443",
-      "Market Value": "186136.3",
+      "Weight": "0.001458",
+      "Market Value": "188162.31",
       "Shares Held": "148500",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "JOINTO ENERGY INVESTMENT HEBEI LTD",
-      "Ticker": "000600",
-      "Identifier": "BBG00F136CH7",
-      "Weight": "0.001441",
-      "Market Value": "185909.26",
-      "Shares Held": "171200",
-      "Asset Category": "Utilities"
-    },
-    {
-      "Name": "CHINA SOUTHERN POWER GRID TECHNOLO",
-      "Ticker": "688248",
-      "Identifier": "BBG01FRBB1X0",
-      "Weight": "0.001439",
-      "Market Value": "185606.46",
-      "Shares Held": "25782",
+      "Name": "TITAN WIND ENERGY (SUZHOU) LTD A",
+      "Ticker": "002531",
+      "Identifier": "BBG00F1380F3",
+      "Weight": "0.001454",
+      "Market Value": "187553.72",
+      "Shares Held": "167900",
       "Asset Category": "Industrials"
-    },
-    {
-      "Name": "JINYU BIO-TECHNOLOGY LTD A",
-      "Ticker": "600201",
-      "Identifier": "BBG00709HJ59",
-      "Weight": "0.001438",
-      "Market Value": "185493.14",
-      "Shares Held": "107000",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "CHONGQING FULING ZHACAI GROUP LTD",
-      "Ticker": "002507",
-      "Identifier": "BBG00JMZY5G0",
-      "Weight": "0.001437",
-      "Market Value": "185384.6",
-      "Shares Held": "110760",
-      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "BEIJING DABEINONG TECHNOLOGY GROUP",
       "Ticker": "002385",
       "Identifier": "BBG00F137P14",
-      "Weight": "0.001422",
-      "Market Value": "183488.83",
+      "Weight": "0.001449",
+      "Market Value": "186942.01",
       "Shares Held": "397000",
       "Asset Category": "Consumer Staples"
     },
     {
-      "Name": "CHINA NATIONAL MEDICINES CORP LTD",
-      "Ticker": "600511",
-      "Identifier": "BBG00709HTD8",
-      "Weight": "0.001414",
-      "Market Value": "182460.64",
-      "Shares Held": "46400",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "XINXING DUCTILE IRON PIPES LTD A",
-      "Ticker": "000778",
-      "Identifier": "BBG00F136K25",
-      "Weight": "0.001413",
-      "Market Value": "182293.12",
-      "Shares Held": "337600",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "GEN ILAC VE SAGLIK URUNLERI SANAYI",
-      "Ticker": "GENIL.E",
-      "Identifier": "BBG011QRRP85",
-      "Weight": "0.001411",
-      "Market Value": "182058.16",
-      "Shares Held": "2102259",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "HEKTAS TICARET A",
-      "Ticker": "HEKTS.E",
-      "Identifier": "BBG000BVCKR1",
-      "Weight": "0.001409",
-      "Market Value": "181845.95",
-      "Shares Held": "4131568",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "ZHEJIANG JIUZHOU PHARMACEUTICAL LT",
-      "Ticker": "603456",
-      "Identifier": "BBG00YG12JT0",
-      "Weight": "0.001406",
-      "Market Value": "181460.58",
-      "Shares Held": "74200",
-      "Asset Category": "Health Care"
+      "Name": "CHONGQING FULING ZHACAI GROUP LTD",
+      "Ticker": "002507",
+      "Identifier": "BBG00JMZY5G0",
+      "Weight": "0.001444",
+      "Market Value": "186245.81",
+      "Shares Held": "110760",
+      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "SHANDONG HUMON SMELTING LTD A",
       "Ticker": "002237",
       "Identifier": "BBG00F137FQ9",
-      "Weight": "0.001402",
-      "Market Value": "180922.57",
+      "Weight": "0.001441",
+      "Market Value": "185941.72",
       "Shares Held": "98100",
       "Asset Category": "Materials"
     },
     {
-      "Name": "GUANGDONG ELECTRIC POWER DEVELOPME",
-      "Ticker": "000539",
-      "Identifier": "BBG00F1368T3",
-      "Weight": "0.00139",
-      "Market Value": "179359.05",
-      "Shares Held": "230600",
+      "Name": "JOINTO ENERGY INVESTMENT HEBEI LTD",
+      "Ticker": "000600",
+      "Identifier": "BBG00F136CH7",
+      "Weight": "0.001433",
+      "Market Value": "184882.3",
+      "Shares Held": "171200",
       "Asset Category": "Utilities"
     },
     {
-      "Name": "BEIJING ORIGINWATER TECHNOLOGY LTD",
-      "Ticker": "300070",
-      "Identifier": "BBG00F1391G9",
-      "Weight": "0.001388",
-      "Market Value": "179016.75",
-      "Shares Held": "350977",
-      "Asset Category": "Industrials"
+      "Name": "CHINA NATIONAL MEDICINES CORP LTD",
+      "Ticker": "600511",
+      "Identifier": "BBG00709HTD8",
+      "Weight": "0.001425",
+      "Market Value": "183822.27",
+      "Shares Held": "46400",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "SHIDA SHINGHWA ADVANCED MATERIAL G",
+      "Ticker": "603026",
+      "Identifier": "BBG013Y4F740",
+      "Weight": "0.001416",
+      "Market Value": "182724.25",
+      "Shares Held": "19600",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "HEKTAS TICARET A",
+      "Ticker": "HEKTS.E",
+      "Identifier": "BBG000BVCKR1",
+      "Weight": "0.001413",
+      "Market Value": "182337.69",
+      "Shares Held": "4131568",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "XINXING DUCTILE IRON PIPES LTD A",
+      "Ticker": "000778",
+      "Identifier": "BBG00F136K25",
+      "Weight": "0.001407",
+      "Market Value": "181538.26",
+      "Shares Held": "337600",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "YANTAI CHANGYU PIONEER WINE LTD A",
+      "Ticker": "000869",
+      "Identifier": "BBG00F136MY6",
+      "Weight": "0.001394",
+      "Market Value": "179875.83",
+      "Shares Held": "62483",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "ZHEJIANG JIUZHOU PHARMACEUTICAL LT",
+      "Ticker": "603456",
+      "Identifier": "BBG00YG12JT0",
+      "Weight": "0.001393",
+      "Market Value": "179769.09",
+      "Shares Held": "74200",
+      "Asset Category": "Health Care"
     },
     {
       "Name": "TASLY PHARMACEUTICAL LTD A",
       "Ticker": "600535",
       "Identifier": "BBG00709HV98",
-      "Weight": "0.001382",
-      "Market Value": "178331.61",
+      "Weight": "0.001391",
+      "Market Value": "179504.37",
       "Shares Held": "85100",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "ANHUI YINGJIA DISTILLERY CO LID LT",
-      "Ticker": "603198",
-      "Identifier": "BBG00FGGV856",
-      "Weight": "0.001379",
-      "Market Value": "177942.56",
-      "Shares Held": "30900",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "HAINAN JINPAN SMART TECHNOLOGY A",
-      "Ticker": "688676",
-      "Identifier": "BBG01FR9R1N9",
-      "Weight": "0.001377",
-      "Market Value": "177653.36",
-      "Shares Held": "19423",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "QINGDAO HUICHENG ENVIRONMENTAL TEC",
-      "Ticker": "300779",
-      "Identifier": "BBG01KJ87TK3",
-      "Weight": "0.001373",
-      "Market Value": "177116.88",
-      "Shares Held": "22820",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "BLOOMAGE BIOTECHNOLOGY CORP LTD A",
-      "Ticker": "688363",
-      "Identifier": "BBG013Y4KPM4",
-      "Weight": "0.001371",
-      "Market Value": "176871.23",
-      "Shares Held": "34275",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "STATE GRID YINGDA LTD A",
-      "Ticker": "600517",
-      "Identifier": "BBG00709HTL9",
-      "Weight": "0.001366",
-      "Market Value": "176274.8",
-      "Shares Held": "235700",
+      "Name": "BEIJING ORIGINWATER TECHNOLOGY LTD",
+      "Ticker": "300070",
+      "Identifier": "BBG00F1391G9",
+      "Weight": "0.00139",
+      "Market Value": "179347.05",
+      "Shares Held": "350977",
       "Asset Category": "Industrials"
     },
     {
       "Name": "YIFAN PHARMACEUTICAL CO LTD A",
       "Ticker": "002019",
       "Identifier": "BBG00F136TR9",
-      "Weight": "0.001365",
-      "Market Value": "176075.56",
+      "Weight": "0.001387",
+      "Market Value": "178937.24",
       "Shares Held": "124700",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "EFOR YATIRIM SANAYI TICARET",
-      "Ticker": "EFOR.E",
-      "Identifier": "BBG01NL83CR8",
-      "Weight": "0.001364",
-      "Market Value": "175957.2",
-      "Shares Held": "562920",
+      "Name": "ANHUI YINGJIA DISTILLERY CO LID LT",
+      "Ticker": "603198",
+      "Identifier": "BBG00FGGV856",
+      "Weight": "0.001383",
+      "Market Value": "178414.5",
+      "Shares Held": "30900",
       "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "YANTAI CHANGYU PIONEER WINE LTD A",
-      "Ticker": "000869",
-      "Identifier": "BBG00F136MY6",
-      "Weight": "0.001359",
-      "Market Value": "175329.65",
-      "Shares Held": "62483",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "LUOYANG XINQIANGLIAN SLEWING BEARI",
-      "Ticker": "300850",
-      "Identifier": "BBG011C97FC9",
-      "Weight": "0.001359",
-      "Market Value": "175295.07",
-      "Shares Held": "39000",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "MAANSHAN IRON AND STEEL LTD A",
-      "Ticker": "600808",
-      "Identifier": "BBG00709J3P0",
-      "Weight": "0.001356",
-      "Market Value": "174927.42",
-      "Shares Held": "479300",
-      "Asset Category": "Materials"
     },
     {
       "Name": "FLAT GLASS GROUP LTD A",
       "Ticker": "601865",
       "Identifier": "BBG00NDF92Y0",
-      "Weight": "0.001352",
-      "Market Value": "174472.11",
+      "Weight": "0.001381",
+      "Market Value": "178209.37",
       "Shares Held": "127900",
       "Asset Category": "Information Technology"
     },
     {
-      "Name": "SHIDA SHINGHWA ADVANCED MATERIAL G",
-      "Ticker": "603026",
-      "Identifier": "BBG013Y4F740",
-      "Weight": "0.001341",
-      "Market Value": "172969.18",
-      "Shares Held": "19600",
-      "Asset Category": "Materials"
+      "Name": "LUOYANG XINQIANGLIAN SLEWING BEARI",
+      "Ticker": "300850",
+      "Identifier": "BBG011C97FC9",
+      "Weight": "0.001377",
+      "Market Value": "177678.76",
+      "Shares Held": "39000",
+      "Asset Category": "Industrials"
     },
     {
-      "Name": "SUZHOU HYC TECHNOLOGY LTD A",
-      "Ticker": "688001",
-      "Identifier": "BBG01FRBG6B8",
-      "Weight": "0.001339",
-      "Market Value": "172749.7",
-      "Shares Held": "20362",
+      "Name": "BLOOMAGE BIOTECHNOLOGY CORP LTD A",
+      "Ticker": "688363",
+      "Identifier": "BBG013Y4KPM4",
+      "Weight": "0.001376",
+      "Market Value": "177586.96",
+      "Shares Held": "34275",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "GUANGDONG ELECTRIC POWER DEVELOPME",
+      "Ticker": "000539",
+      "Identifier": "BBG00F1368T3",
+      "Weight": "0.001365",
+      "Market Value": "176067.65",
+      "Shares Held": "230600",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "STATE GRID YINGDA LTD A",
+      "Ticker": "600517",
+      "Identifier": "BBG00709HTL9",
+      "Weight": "0.001357",
+      "Market Value": "175059.92",
+      "Shares Held": "235700",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SHENZHEN AISIDI LTD A",
+      "Ticker": "002416",
+      "Identifier": "BBG00F137QF7",
+      "Weight": "0.001349",
+      "Market Value": "174021.89",
+      "Shares Held": "127200",
       "Asset Category": "Information Technology"
     },
     {
       "Name": "AUTEL INTELLIGENT TECHNOLOGY CORP",
       "Ticker": "688208",
       "Identifier": "BBG011C17XC7",
-      "Weight": "0.001326",
-      "Market Value": "171112.81",
+      "Weight": "0.001348",
+      "Market Value": "173852.31",
       "Shares Held": "47966",
       "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "SHANGHAI ENVIRONMENT GROUP LTD A",
-      "Ticker": "601200",
-      "Identifier": "BBG00GCLXQ37",
-      "Weight": "0.001324",
-      "Market Value": "170867.64",
-      "Shares Held": "167500",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "JIANGSU LINYANG ENERGY LTD A",
-      "Ticker": "601222",
-      "Identifier": "BBG00709J9R5",
-      "Weight": "0.001322",
-      "Market Value": "170568.78",
-      "Shares Held": "188800",
-      "Asset Category": "Industrials"
     },
     {
       "Name": "HONGTA SECURITIES LTD A",
       "Ticker": "601236",
       "Identifier": "BBG00R1XHWV3",
-      "Weight": "0.00132",
-      "Market Value": "170317.35",
+      "Weight": "0.001337",
+      "Market Value": "172531.24",
       "Shares Held": "162900",
       "Asset Category": "Financials"
     },
     {
-      "Name": "SHENZHEN AISIDI LTD A",
-      "Ticker": "002416",
-      "Identifier": "BBG00F137QF7",
-      "Weight": "0.001315",
-      "Market Value": "169712.02",
-      "Shares Held": "127200",
+      "Name": "MAANSHAN IRON AND STEEL LTD A",
+      "Ticker": "600808",
+      "Identifier": "BBG00709J3P0",
+      "Weight": "0.001335",
+      "Market Value": "172297.89",
+      "Shares Held": "479300",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "CHINA TRANSINFO TECHNOLOGY LTD A",
+      "Ticker": "002373",
+      "Identifier": "BBG00F137NF4",
+      "Weight": "0.001333",
+      "Market Value": "172029.61",
+      "Shares Held": "156500",
       "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "QINGDAO HUICHENG ENVIRONMENTAL TEC",
+      "Ticker": "300779",
+      "Identifier": "BBG01KJ87TK3",
+      "Weight": "0.001326",
+      "Market Value": "171116.6",
+      "Shares Held": "22820",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "TERA YATIRIM MENKUL DEGERLER A.S.",
+      "Ticker": "TERA.E",
+      "Identifier": "BBG01C34R420",
+      "Weight": "0.001324",
+      "Market Value": "170833.91",
+      "Shares Held": "225820",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "HAINAN JINPAN SMART TECHNOLOGY A",
+      "Ticker": "688676",
+      "Identifier": "BBG01FR9R1N9",
+      "Weight": "0.001323",
+      "Market Value": "170687.46",
+      "Shares Held": "19423",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "DIGITAL CHINA INFORMATION SERVICE",
+      "Ticker": "000555",
+      "Identifier": "BBG00F1369S2",
+      "Weight": "0.001323",
+      "Market Value": "170655.58",
+      "Shares Held": "111000",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "SHANGHAI ENVIRONMENT GROUP LTD A",
+      "Ticker": "601200",
+      "Identifier": "BBG00GCLXQ37",
+      "Weight": "0.001321",
+      "Market Value": "170436.47",
+      "Shares Held": "167500",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "TIBET SUMMIT RESOURCES LTD A",
+      "Ticker": "600338",
+      "Identifier": "BBG00JCQ9P57",
+      "Weight": "0.001318",
+      "Market Value": "170008.81",
+      "Shares Held": "93200",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "JIANGSU LINYANG ENERGY LTD A",
+      "Ticker": "601222",
+      "Identifier": "BBG00709J9R5",
+      "Weight": "0.001313",
+      "Market Value": "169393.24",
+      "Shares Held": "188800",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "AIR CHINA CARGO LTD A",
+      "Ticker": "001391",
+      "Identifier": "BBG01SC2B523",
+      "Weight": "0.001312",
+      "Market Value": "169291.94",
+      "Shares Held": "281400",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "EASYHOME NEW RETAIL GROUP CORP LTD",
+      "Ticker": "000785",
+      "Identifier": "BBG00VC7ZMC2",
+      "Weight": "0.001312",
+      "Market Value": "169212.75",
+      "Shares Held": "488900",
+      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "JIUGUI LIQUOR LTD A",
       "Ticker": "000799",
       "Identifier": "BBG00FNDG8S7",
-      "Weight": "0.001311",
-      "Market Value": "169198.38",
+      "Weight": "0.001308",
+      "Market Value": "168815.11",
       "Shares Held": "31000",
       "Asset Category": "Consumer Staples"
     },
@@ -863,44 +908,44 @@
       "Name": "CITIC HEAVY INDUSTRIES LTD A",
       "Ticker": "601608",
       "Identifier": "BBG00709JCH9",
-      "Weight": "0.001309",
-      "Market Value": "168846.87",
+      "Weight": "0.001308",
+      "Market Value": "168776.78",
       "Shares Held": "245400",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "CHINA TRANSINFO TECHNOLOGY LTD A",
-      "Ticker": "002373",
-      "Identifier": "BBG00F137NF4",
-      "Weight": "0.001303",
-      "Market Value": "168073.57",
-      "Shares Held": "156500",
+      "Name": "ANADOLU HAYAT EMEKLILIK A",
+      "Ticker": "ANHYT.E",
+      "Identifier": "BBG000BQNPG1",
+      "Weight": "0.001308",
+      "Market Value": "168764.64",
+      "Shares Held": "80914",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "BTG HOTELS GROUP A",
+      "Ticker": "600258",
+      "Identifier": "BBG00709HKD7",
+      "Weight": "0.001295",
+      "Market Value": "167027.37",
+      "Shares Held": "102500",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "SUZHOU HYC TECHNOLOGY LTD A",
+      "Ticker": "688001",
+      "Identifier": "BBG01FRBG6B8",
+      "Weight": "0.001294",
+      "Market Value": "166961.62",
+      "Shares Held": "20362",
       "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "PEKER GAYRIMENKUL YATIRIM ORTAKLIG",
-      "Ticker": "PEKGY.E",
-      "Identifier": "BBG00K4MQTH2",
-      "Weight": "0.001297",
-      "Market Value": "167328.99",
-      "Shares Held": "4147353",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "TIBET SUMMIT RESOURCES LTD A",
-      "Ticker": "600338",
-      "Identifier": "BBG00JCQ9P57",
-      "Weight": "0.001296",
-      "Market Value": "167145.9",
-      "Shares Held": "93200",
-      "Asset Category": "Materials"
     },
     {
       "Name": "SHAANXI INTERNATIONAL TRUST LTD A",
       "Ticker": "000563",
       "Identifier": "BBG00F136B52",
       "Weight": "0.001293",
-      "Market Value": "166798.88",
+      "Market Value": "166783.9",
       "Shares Held": "381900",
       "Asset Category": "Financials"
     },
@@ -908,206 +953,197 @@
       "Name": "CHINA ENTERPRISE LTD A",
       "Ticker": "600675",
       "Identifier": "BBG00709J021",
-      "Weight": "0.001292",
-      "Market Value": "166652.31",
+      "Weight": "0.001288",
+      "Market Value": "166187.64",
       "Shares Held": "460400",
       "Asset Category": "Real Estate"
     },
     {
-      "Name": "ANADOLU HAYAT EMEKLILIK A",
-      "Ticker": "ANHYT.E",
-      "Identifier": "BBG000BQNPG1",
-      "Weight": "0.001289",
-      "Market Value": "166360.34",
-      "Shares Held": "80914",
-      "Asset Category": "Financials"
+      "Name": "SHANGHAI JAHWA UNITED LTD A",
+      "Ticker": "600315",
+      "Identifier": "BBG00709HM61",
+      "Weight": "0.001272",
+      "Market Value": "164106.24",
+      "Shares Held": "56800",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "SHENZHEN AGRICULTURAL PRODUCTS GRO",
+      "Ticker": "000061",
+      "Identifier": "BBG00F1363Y8",
+      "Weight": "0.00127",
+      "Market Value": "163873.92",
+      "Shares Held": "178800",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "LEYARD OPTOELECTRONIC LTD A",
+      "Ticker": "300296",
+      "Identifier": "BBG00F13D7Y1",
+      "Weight": "0.00127",
+      "Market Value": "163852.82",
+      "Shares Held": "236200",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "EGE ENDUSTRI VE TICARET A",
+      "Ticker": "EGEEN.E",
+      "Identifier": "BBG000CKN3S9",
+      "Weight": "0.001266",
+      "Market Value": "163315.92",
+      "Shares Held": "1579",
+      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "GEMDALE CORP A",
       "Ticker": "600383",
       "Identifier": "BBG00709HPL7",
-      "Weight": "0.001286",
-      "Market Value": "165872.57",
+      "Weight": "0.001262",
+      "Market Value": "162806.47",
       "Shares Held": "431500",
       "Asset Category": "Real Estate"
     },
     {
-      "Name": "EASYHOME NEW RETAIL GROUP CORP LTD",
-      "Ticker": "000785",
-      "Identifier": "BBG00VC7ZMC2",
-      "Weight": "0.001281",
-      "Market Value": "165268.12",
-      "Shares Held": "488900",
+      "Name": "HARBIN BOSHI AUTOMATION LTD A",
+      "Ticker": "002698",
+      "Identifier": "BBG00F138HV8",
+      "Weight": "0.001261",
+      "Market Value": "162645.3",
+      "Shares Held": "97500",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "AN HUI WENERGY LTD A",
+      "Ticker": "000543",
+      "Identifier": "BBG00F136957",
+      "Weight": "0.001258",
+      "Market Value": "162356.08",
+      "Shares Held": "148100",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "OFFCN EDUCATION TECHNOLOGY LTD A",
+      "Ticker": "002607",
+      "Identifier": "BBG00MYKW343",
+      "Weight": "0.001253",
+      "Market Value": "161692.38",
+      "Shares Held": "572900",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "BTG HOTELS GROUP A",
-      "Ticker": "600258",
-      "Identifier": "BBG00709HKD7",
-      "Weight": "0.001276",
-      "Market Value": "164660.25",
-      "Shares Held": "102500",
+      "Name": "4IG NYILVANOSAN",
+      "Ticker": "4IG",
+      "Identifier": "BBG000Q4J3V1",
+      "Weight": "0.001252",
+      "Market Value": "161592.34",
+      "Shares Held": "33378",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "NANJING KING-FRIEND BIOCHEMICAL PH",
+      "Ticker": "603707",
+      "Identifier": "BBG00L1KN1Q1",
+      "Weight": "0.001252",
+      "Market Value": "161486.21",
+      "Shares Held": "132900",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "ZHEJIANG MEDICINE LTD A",
+      "Ticker": "600216",
+      "Identifier": "BBG00709HJC1",
+      "Weight": "0.00125",
+      "Market Value": "161209.32",
+      "Shares Held": "86200",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "TRIANGLE TYRE LTD",
+      "Ticker": "601163",
+      "Identifier": "BBG00GVXBQX1",
+      "Weight": "0.001249",
+      "Market Value": "161121.68",
+      "Shares Held": "88400",
       "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "CSSC SCIENCE & TECHNOLOGY LTD A",
       "Ticker": "600072",
       "Identifier": "BBG00JCQ92L0",
-      "Weight": "0.001274",
-      "Market Value": "164311.75",
+      "Weight": "0.001249",
+      "Market Value": "161111.59",
       "Shares Held": "116000",
       "Asset Category": "Industrials"
-    },
-    {
-      "Name": "AIR CHINA CARGO LTD A",
-      "Ticker": "001391",
-      "Identifier": "BBG01SC2B523",
-      "Weight": "0.001272",
-      "Market Value": "164153.2",
-      "Shares Held": "281400",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "RAL YATIRIM HOLDING ANONIM SIRKETI",
-      "Ticker": "RALYH.E",
-      "Identifier": "BBG000CFKSW3",
-      "Weight": "0.001271",
-      "Market Value": "164021.05",
-      "Shares Held": "177066",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "4IG NYILVANOSAN",
-      "Ticker": "4IG",
-      "Identifier": "BBG000Q4J3V1",
-      "Weight": "0.00127",
-      "Market Value": "163878.52",
-      "Shares Held": "33378",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "AN HUI WENERGY LTD A",
-      "Ticker": "000543",
-      "Identifier": "BBG00F136957",
-      "Weight": "0.001269",
-      "Market Value": "163704.31",
-      "Shares Held": "148100",
-      "Asset Category": "Utilities"
-    },
-    {
-      "Name": "DIGITAL CHINA INFORMATION SERVICE",
-      "Ticker": "000555",
-      "Identifier": "BBG00F1369S2",
-      "Weight": "0.001265",
-      "Market Value": "163206.38",
-      "Shares Held": "111000",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "LEYARD OPTOELECTRONIC LTD A",
-      "Ticker": "300296",
-      "Identifier": "BBG00F13D7Y1",
-      "Weight": "0.001262",
-      "Market Value": "162870.14",
-      "Shares Held": "236200",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "SHANGHAI AEROSPACE AUTOMOBILE ELEC",
-      "Ticker": "600151",
-      "Identifier": "BBG01FRB0VH4",
-      "Weight": "0.001261",
-      "Market Value": "162740.59",
-      "Shares Held": "119300",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "LUXIN VENTURE CAPITAL GROUP LTD A",
-      "Ticker": "600783",
-      "Identifier": "BBG00709J2Z1",
-      "Weight": "0.00126",
-      "Market Value": "162598.35",
-      "Shares Held": "76500",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "JIANGSU GOODWE POWER SUPPLY TECHNO",
-      "Ticker": "688390",
-      "Identifier": "BBG013Y4L9S3",
-      "Weight": "0.00126",
-      "Market Value": "162532.28",
-      "Shares Held": "19847",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "TRIANGLE TYRE LTD",
-      "Ticker": "601163",
-      "Identifier": "BBG00GVXBQX1",
-      "Weight": "0.00125",
-      "Market Value": "161314.25",
-      "Shares Held": "88400",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "ZHEJIANG MEDICINE LTD A",
-      "Ticker": "600216",
-      "Identifier": "BBG00709HJC1",
-      "Weight": "0.001249",
-      "Market Value": "161167.67",
-      "Shares Held": "86200",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "HARBIN BOSHI AUTOMATION LTD A",
-      "Ticker": "002698",
-      "Identifier": "BBG00F138HV8",
-      "Weight": "0.001249",
-      "Market Value": "161148.96",
-      "Shares Held": "97500",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "NANJING KING-FRIEND BIOCHEMICAL PH",
-      "Ticker": "603707",
-      "Identifier": "BBG00L1KN1Q1",
-      "Weight": "0.001248",
-      "Market Value": "161016.59",
-      "Shares Held": "132900",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "SHENZHEN AGRICULTURAL PRODUCTS GRO",
-      "Ticker": "000061",
-      "Identifier": "BBG00F1363Y8",
-      "Weight": "0.001244",
-      "Market Value": "160464.66",
-      "Shares Held": "178800",
-      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "ZHEJIANG WOLWO BIO-PHARMACEUTICAL",
       "Ticker": "300357",
       "Identifier": "BBG00LBJBZ45",
-      "Weight": "0.001241",
-      "Market Value": "160060.51",
+      "Weight": "0.001245",
+      "Market Value": "160645",
       "Shares Held": "54100",
       "Asset Category": "Health Care"
+    },
+    {
+      "Name": "HARBIN HATOU INVESTMENT LTD A",
+      "Ticker": "600864",
+      "Identifier": "BBG00709J5C9",
+      "Weight": "0.001244",
+      "Market Value": "160543.24",
+      "Shares Held": "185700",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "LUXIN VENTURE CAPITAL GROUP LTD A",
+      "Ticker": "600783",
+      "Identifier": "BBG00709J2Z1",
+      "Weight": "0.001244",
+      "Market Value": "160455.01",
+      "Shares Held": "76500",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "SHANGHAI AEROSPACE AUTOMOBILE ELEC",
+      "Ticker": "600151",
+      "Identifier": "BBG01FRB0VH4",
+      "Weight": "0.001242",
+      "Market Value": "160201.3",
+      "Shares Held": "119300",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "JIANGSU GOODWE POWER SUPPLY TECHNO",
+      "Ticker": "688390",
+      "Identifier": "BBG013Y4L9S3",
+      "Weight": "0.001234",
+      "Market Value": "159200.99",
+      "Shares Held": "19847",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "YANGLING METRON NEW MATERIAL LTD A",
       "Ticker": "300861",
       "Identifier": "BBG011C97GP3",
-      "Weight": "0.001238",
-      "Market Value": "159716.94",
+      "Weight": "0.001233",
+      "Market Value": "159044.58",
       "Shares Held": "72100",
       "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "C&S PAPER LTD A",
+      "Ticker": "002511",
+      "Identifier": "BBG00LBJCK29",
+      "Weight": "0.001226",
+      "Market Value": "158222.68",
+      "Shares Held": "151300",
+      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "ZHUZHOU KIBING GROUP LTD A",
       "Ticker": "601636",
       "Identifier": "BBG00709JCR8",
-      "Weight": "0.001229",
-      "Market Value": "158499.24",
+      "Weight": "0.001222",
+      "Market Value": "157708.42",
       "Shares Held": "203000",
       "Asset Category": "Industrials"
     },
@@ -1115,108 +1151,108 @@
       "Name": "NORTH INDUSTRIES GROUP RED ARROW A",
       "Ticker": "000519",
       "Identifier": "BBG00F136813",
-      "Weight": "0.001227",
-      "Market Value": "158301.35",
+      "Weight": "0.001221",
+      "Market Value": "157544.13",
       "Shares Held": "74900",
       "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SINOSOFT LTD A",
+      "Ticker": "603927",
+      "Identifier": "BBG00VC826B2",
+      "Weight": "0.00122",
+      "Market Value": "157363.79",
+      "Shares Held": "75400",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "LAKALA PAYMENT LTD A",
       "Ticker": "300773",
       "Identifier": "BBG00R2FR4J6",
-      "Weight": "0.001225",
-      "Market Value": "158090.89",
+      "Weight": "0.001217",
+      "Market Value": "157001.34",
       "Shares Held": "73500",
       "Asset Category": "Financials"
-    },
-    {
-      "Name": "OFFCN EDUCATION TECHNOLOGY LTD A",
-      "Ticker": "002607",
-      "Identifier": "BBG00MYKW343",
-      "Weight": "0.001222",
-      "Market Value": "157672.98",
-      "Shares Held": "572900",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "SHANGHAI JAHWA UNITED LTD A",
-      "Ticker": "600315",
-      "Identifier": "BBG00709HM61",
-      "Weight": "0.001218",
-      "Market Value": "157174.01",
-      "Shares Held": "56800",
-      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "BBMG JIDONG CEMENT GROUP LTD A",
       "Ticker": "000401",
       "Identifier": "BBG00F1365X4",
-      "Weight": "0.001215",
-      "Market Value": "156694.15",
+      "Weight": "0.001213",
+      "Market Value": "156469.26",
       "Shares Held": "287800",
       "Asset Category": "Materials"
     },
     {
-      "Name": "C&S PAPER LTD A",
-      "Ticker": "002511",
-      "Identifier": "BBG00LBJCK29",
-      "Weight": "0.001214",
-      "Market Value": "156605.02",
-      "Shares Held": "151300",
+      "Name": "YUAN LONGPING HIGH-TECH AGRICULTUR",
+      "Ticker": "000998",
+      "Identifier": "BBG00F136SG3",
+      "Weight": "0.001212",
+      "Market Value": "156383.7",
+      "Shares Held": "116200",
       "Asset Category": "Consumer Staples"
     },
     {
-      "Name": "EGE ENDUSTRI VE TICARET A",
-      "Ticker": "EGEEN.E",
-      "Identifier": "BBG000CKN3S9",
-      "Weight": "0.001208",
-      "Market Value": "155806.93",
-      "Shares Held": "1579",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "JIANGSU XUKUANG ENERGY LTD A",
-      "Ticker": "600925",
-      "Identifier": "BBG01MFJKY41",
-      "Weight": "0.001201",
-      "Market Value": "154988.25",
-      "Shares Held": "247300",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "VALIANT LTD A",
-      "Ticker": "002643",
-      "Identifier": "BBG00F138CL0",
-      "Weight": "0.001194",
-      "Market Value": "154014.96",
-      "Shares Held": "84400",
-      "Asset Category": "Materials"
+      "Name": "ZHEJIANG DIGITAL CULTURE TECHNOLOG",
+      "Ticker": "600633",
+      "Identifier": "BBG00709HYG4",
+      "Weight": "0.001211",
+      "Market Value": "156210.79",
+      "Shares Held": "103200",
+      "Asset Category": "Communication Services"
     },
     {
       "Name": "FON SINAI YATIRIMLAR B",
       "Ticker": "UFUK.E",
       "Identifier": "BBG000Q1LRK3",
-      "Weight": "0.001192",
-      "Market Value": "153803.78",
+      "Weight": "0.001208",
+      "Market Value": "155886.13",
       "Shares Held": "23441",
       "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "ZHONGSHAN BROAD-OCEAN MOTOR LTD A",
-      "Ticker": "002249",
-      "Identifier": "BBG00F137G78",
-      "Weight": "0.001192",
-      "Market Value": "153787.6",
-      "Shares Held": "163200",
-      "Asset Category": "Industrials"
     },
     {
       "Name": "QINGDAO HANHE CABLE LTD A",
       "Ticker": "002498",
       "Identifier": "BBG00F137Y24",
-      "Weight": "0.001191",
-      "Market Value": "153604.52",
+      "Weight": "0.001206",
+      "Market Value": "155537",
       "Shares Held": "167800",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "JIANGSU XUKUANG ENERGY LTD A",
+      "Ticker": "600925",
+      "Identifier": "BBG01MFJKY41",
+      "Weight": "0.001204",
+      "Market Value": "155389.48",
+      "Shares Held": "247300",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "SHENZHEN DYNANONIC LTD A",
+      "Ticker": "300769",
+      "Identifier": "BBG013Y4ZS51",
+      "Weight": "0.001199",
+      "Market Value": "154674.96",
+      "Shares Held": "22880",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "ZHONGSHAN BROAD-OCEAN MOTOR LTD A",
+      "Ticker": "002249",
+      "Identifier": "BBG00F137G78",
+      "Weight": "0.001199",
+      "Market Value": "154667.12",
+      "Shares Held": "163200",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "XIAMEN ITG GROUP CORP LTD A",
+      "Ticker": "600755",
+      "Identifier": "BBG00709J281",
+      "Weight": "0.001192",
+      "Market Value": "153781.2",
+      "Shares Held": "178800",
       "Asset Category": "Industrials"
     },
     {
@@ -1224,214 +1260,187 @@
       "Ticker": "600835",
       "Identifier": "BBG00709J4S5",
       "Weight": "0.001188",
-      "Market Value": "153289.53",
+      "Market Value": "153265.14",
       "Shares Held": "57900",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "HARBIN HATOU INVESTMENT LTD A",
-      "Ticker": "600864",
-      "Identifier": "BBG00709J5C9",
-      "Weight": "0.001184",
-      "Market Value": "152769",
-      "Shares Held": "185700",
-      "Asset Category": "Utilities"
+      "Name": "VALIANT LTD A",
+      "Ticker": "002643",
+      "Identifier": "BBG00F138CL0",
+      "Weight": "0.001186",
+      "Market Value": "152953.5",
+      "Shares Held": "84400",
+      "Asset Category": "Materials"
     },
     {
       "Name": "JAFRON BIOMEDICAL CO LTD A",
       "Ticker": "300529",
       "Identifier": "BBG00LBJC657",
-      "Weight": "0.001183",
-      "Market Value": "152679.25",
+      "Weight": "0.001185",
+      "Market Value": "152840.02",
       "Shares Held": "68050",
       "Asset Category": "Health Care"
-    },
-    {
-      "Name": "XIAMEN ITG GROUP CORP LTD A",
-      "Ticker": "600755",
-      "Identifier": "BBG00709J281",
-      "Weight": "0.001179",
-      "Market Value": "152173.98",
-      "Shares Held": "178800",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SINOSOFT LTD A",
-      "Ticker": "603927",
-      "Identifier": "BBG00VC826B2",
-      "Weight": "0.001179",
-      "Market Value": "152140.18",
-      "Shares Held": "75400",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "ZHEJIANG DIGITAL CULTURE TECHNOLOG",
-      "Ticker": "600633",
-      "Identifier": "BBG00709HYG4",
-      "Weight": "0.001176",
-      "Market Value": "151737.83",
-      "Shares Held": "103200",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "CSG HOLDING LTD A",
-      "Ticker": "000012",
-      "Identifier": "BBG00F1362J7",
-      "Weight": "0.001174",
-      "Market Value": "151480.56",
-      "Shares Held": "275200",
-      "Asset Category": "Materials"
     },
     {
       "Name": "CENTRAL CHINA SECURITIES LTD H",
       "Ticker": "1375",
       "Identifier": "BBG006MJKCL8",
-      "Weight": "0.001171",
-      "Market Value": "151056.86",
+      "Weight": "0.001184",
+      "Market Value": "152780.84",
       "Shares Held": "788129",
       "Asset Category": "Financials"
     },
     {
-      "Name": "YUAN LONGPING HIGH-TECH AGRICULTUR",
-      "Ticker": "000998",
-      "Identifier": "BBG00F136SG3",
-      "Weight": "0.001165",
-      "Market Value": "150342.87",
-      "Shares Held": "116200",
-      "Asset Category": "Consumer Staples"
+      "Name": "CSG HOLDING LTD A",
+      "Ticker": "000012",
+      "Identifier": "BBG00F1362J7",
+      "Weight": "0.001176",
+      "Market Value": "151662.95",
+      "Shares Held": "275200",
+      "Asset Category": "Materials"
     },
     {
-      "Name": "SHANGHAI JINQIAO EXPORT PROCESSING",
-      "Ticker": "600639",
-      "Identifier": "BBG00709HYS1",
-      "Weight": "0.001165",
-      "Market Value": "150321.35",
-      "Shares Held": "99800",
+      "Name": "LYDIA HOLDING A.S.",
+      "Ticker": "LYDHO.E",
+      "Identifier": "BBG000C1NG20",
+      "Weight": "0.001173",
+      "Market Value": "151352.51",
+      "Shares Held": "148430",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "ANHUI XINHUA MEDIA LTD A",
+      "Ticker": "601801",
+      "Identifier": "BBG00709JDQ7",
+      "Weight": "0.001167",
+      "Market Value": "150533.56",
+      "Shares Held": "178100",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "PEKER GAYRIMENKUL YATIRIM ORTAKLIG",
+      "Ticker": "PEKGY.E",
+      "Identifier": "BBG00K4MQTH2",
+      "Weight": "0.00116",
+      "Market Value": "149603.4",
+      "Shares Held": "4147353",
       "Asset Category": "Real Estate"
     },
     {
       "Name": "SHEDE SPIRITS LTD A",
       "Ticker": "600702",
       "Identifier": "BBG00709J0X7",
-      "Weight": "0.001156",
-      "Market Value": "149126.23",
+      "Weight": "0.001157",
+      "Market Value": "149242.27",
       "Shares Held": "30800",
       "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "TIANJIN CHASE SUN PHARMACEUTICAL L",
+      "Ticker": "300026",
+      "Identifier": "BBG00F138T97",
+      "Weight": "0.001156",
+      "Market Value": "149183.44",
+      "Shares Held": "302500",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "HANGZHOU SHUNWANG TECHNOLOGY LTD A",
+      "Ticker": "300113",
+      "Identifier": "BBG00F139P49",
+      "Weight": "0.001154",
+      "Market Value": "148846.24",
+      "Shares Held": "63500",
+      "Asset Category": "Communication Services"
     },
     {
       "Name": "BEIJING SHOUGANG LTD A",
       "Ticker": "000959",
       "Identifier": "BBG00F136QS4",
-      "Weight": "0.001155",
-      "Market Value": "148992.22",
+      "Weight": "0.00115",
+      "Market Value": "148388.14",
       "Shares Held": "284600",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "SHANGHAI M&G STATIONERY A",
+      "Ticker": "603899",
+      "Identifier": "BBG009CLJSW3",
+      "Weight": "0.00114",
+      "Market Value": "147071.13",
+      "Shares Held": "44200",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "JIANGSU CNANO TECHNOLOGY LTD A",
+      "Ticker": "688116",
+      "Identifier": "BBG017ZP6LS6",
+      "Weight": "0.001139",
+      "Market Value": "146956.7",
+      "Shares Held": "28759",
       "Asset Category": "Materials"
     },
     {
       "Name": "DONGGUAN DEVELOPMENT (HOLDINGS) LT",
       "Ticker": "000828",
       "Identifier": "BBG00F136M12",
-      "Weight": "0.001141",
-      "Market Value": "147182.35",
+      "Weight": "0.001139",
+      "Market Value": "146898.82",
       "Shares Held": "98400",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SHENZHEN KINGDOM SCI-TECH LTD A",
+      "Ticker": "600446",
+      "Identifier": "BBG00709HR88",
+      "Weight": "0.001134",
+      "Market Value": "146271.37",
+      "Shares Held": "92200",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "SHANGHAI JINQIAO EXPORT PROCESSING",
+      "Ticker": "600639",
+      "Identifier": "BBG00709HYS1",
+      "Weight": "0.001133",
+      "Market Value": "146172.14",
+      "Shares Held": "99800",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "RAL YATIRIM HOLDING ANONIM SIRKETI",
+      "Ticker": "RALYH.E",
+      "Identifier": "BBG000CFKSW3",
+      "Weight": "0.001132",
+      "Market Value": "146011.89",
+      "Shares Held": "177066",
       "Asset Category": "Industrials"
     },
     {
       "Name": "UAE DIRHAM",
       "Ticker": "AED",
       "Identifier": "-",
-      "Weight": "0.001135",
-      "Market Value": "146450.36",
+      "Weight": "0.001125",
+      "Market Value": "145200.12",
       "Shares Held": "536354.01",
       "Asset Category": "-"
-    },
-    {
-      "Name": "SHANGHAI M&G STATIONERY A",
-      "Ticker": "603899",
-      "Identifier": "BBG009CLJSW3",
-      "Weight": "0.001134",
-      "Market Value": "146306.73",
-      "Shares Held": "44200",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "TIANJIN CHASE SUN PHARMACEUTICAL L",
-      "Ticker": "300026",
-      "Identifier": "BBG00F138T97",
-      "Weight": "0.001133",
-      "Market Value": "146146.53",
-      "Shares Held": "302500",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "LYDIA HOLDING A.S.",
-      "Ticker": "LYDHO.E",
-      "Identifier": "BBG000C1NG20",
-      "Weight": "0.001133",
-      "Market Value": "146144.87",
-      "Shares Held": "148430",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "JIANGSU CNANO TECHNOLOGY LTD A",
-      "Ticker": "688116",
-      "Identifier": "BBG017ZP6LS6",
-      "Weight": "0.001132",
-      "Market Value": "146040.79",
-      "Shares Held": "28759",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "SHENZHEN DYNANONIC LTD A",
-      "Ticker": "300769",
-      "Identifier": "BBG013Y4ZS51",
-      "Weight": "0.001126",
-      "Market Value": "145276.16",
-      "Shares Held": "22880",
-      "Asset Category": "Materials"
     },
     {
       "Name": "GUANGXI GUIGUAN ELECTRIC POWER LTD",
       "Ticker": "600236",
       "Identifier": "BBG00709HJP7",
-      "Weight": "0.001124",
-      "Market Value": "144973.72",
+      "Weight": "0.001123",
+      "Market Value": "144849.8",
       "Shares Held": "98200",
       "Asset Category": "Utilities"
-    },
-    {
-      "Name": "HANGZHOU SHUNWANG TECHNOLOGY LTD A",
-      "Ticker": "300113",
-      "Identifier": "BBG00F139P49",
-      "Weight": "0.001119",
-      "Market Value": "144370.33",
-      "Shares Held": "63500",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "ANHUI XINHUA MEDIA LTD A",
-      "Ticker": "601801",
-      "Identifier": "BBG00709JDQ7",
-      "Weight": "0.001117",
-      "Market Value": "144119.19",
-      "Shares Held": "178100",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "DONGFENG AUTOMOBILE LTD A",
-      "Ticker": "600006",
-      "Identifier": "BBG00FGGV6K3",
-      "Weight": "0.001109",
-      "Market Value": "143143.81",
-      "Shares Held": "174000",
-      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "HUBEI JUMPCAN PHARMACEUTICAL LTD A",
       "Ticker": "600566",
       "Identifier": "BBG007FFW954",
-      "Weight": "0.001098",
-      "Market Value": "141667.2",
+      "Weight": "0.001119",
+      "Market Value": "144367.61",
       "Shares Held": "36400",
       "Asset Category": "Health Care"
     },
@@ -1439,8 +1448,8 @@
       "Name": "BLUESTAR ADISSEO COMPANY A",
       "Ticker": "600299",
       "Identifier": "BBG00FGGVCD8",
-      "Weight": "0.001093",
-      "Market Value": "141007.12",
+      "Weight": "0.001102",
+      "Market Value": "142215.49",
       "Shares Held": "112900",
       "Asset Category": "Materials"
     },
@@ -1448,80 +1457,89 @@
       "Name": "TONGHUA DONGBAO PHARMACEUTICAL LTD",
       "Ticker": "600867",
       "Identifier": "BBG00709J5F6",
-      "Weight": "0.00109",
-      "Market Value": "140626.46",
+      "Weight": "0.001098",
+      "Market Value": "141634.39",
       "Shares Held": "121000",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "SHENZHEN KINGDOM SCI-TECH LTD A",
-      "Ticker": "600446",
-      "Identifier": "BBG00709HR88",
-      "Weight": "0.001085",
-      "Market Value": "139977.3",
-      "Shares Held": "92200",
-      "Asset Category": "Information Technology"
+      "Name": "DONGFENG AUTOMOBILE LTD A",
+      "Ticker": "600006",
+      "Identifier": "BBG00FGGV6K3",
+      "Weight": "0.001092",
+      "Market Value": "140864.93",
+      "Shares Held": "174000",
+      "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "TAB GIDA SANAYI VE TICARET AS",
-      "Ticker": "TABGD.E",
-      "Identifier": "BBG01JWWB9V5",
-      "Weight": "0.001068",
-      "Market Value": "137817.27",
-      "Shares Held": "30194",
+      "Name": "CHINESE UNIVERSE PUBLISHING AND ME",
+      "Ticker": "600373",
+      "Identifier": "BBG00709HP46",
+      "Weight": "0.001088",
+      "Market Value": "140376.22",
+      "Shares Held": "121000",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "KEBODA TECHNOLOGY LTD A",
+      "Ticker": "603786",
+      "Identifier": "BBG00VC82383",
+      "Weight": "0.001085",
+      "Market Value": "140004.12",
+      "Shares Held": "25100",
       "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "POLARIS BAY GROUP LTD A",
       "Ticker": "600155",
       "Identifier": "BBG00JCQKVV2",
-      "Weight": "0.001068",
-      "Market Value": "137754.31",
+      "Weight": "0.001082",
+      "Market Value": "139615.97",
       "Shares Held": "157700",
       "Asset Category": "Financials"
-    },
-    {
-      "Name": "YILI CHUANNING BIOTECHNOLOGY LTD A",
-      "Ticker": "301301",
-      "Identifier": "BBG01FRBBQV7",
-      "Weight": "0.001067",
-      "Market Value": "137692.68",
-      "Shares Held": "112400",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "KEBODA TECHNOLOGY LTD A",
-      "Ticker": "603786",
-      "Identifier": "BBG00VC82383",
-      "Weight": "0.001059",
-      "Market Value": "136658.22",
-      "Shares Held": "25100",
-      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "LONGSHINE TECHNOLOGY GROUP LTD A",
       "Ticker": "300682",
       "Identifier": "BBG00PF5DZX8",
-      "Weight": "0.001055",
-      "Market Value": "136110.76",
+      "Weight": "0.001078",
+      "Market Value": "139079.43",
       "Shares Held": "105200",
       "Asset Category": "Information Technology"
     },
     {
-      "Name": "GUANGZHOU BAIYUN INTERNATIONAL AIR",
-      "Ticker": "600004",
-      "Identifier": "BBG00709H9L3",
-      "Weight": "0.001052",
-      "Market Value": "135719.03",
-      "Shares Held": "118300",
+      "Name": "TAB GIDA SANAYI VE TICARET AS",
+      "Ticker": "TABGD.E",
+      "Identifier": "BBG01JWWB9V5",
+      "Weight": "0.001075",
+      "Market Value": "138730.81",
+      "Shares Held": "30194",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "YILI CHUANNING BIOTECHNOLOGY LTD A",
+      "Ticker": "301301",
+      "Identifier": "BBG01FRBBQV7",
+      "Weight": "0.001064",
+      "Market Value": "137244.6",
+      "Shares Held": "112400",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "GIRISIM ELEKTRIK SANAYI TAAHUT VE",
+      "Ticker": "GESAN.E",
+      "Identifier": "BBG0106MY2G4",
+      "Weight": "0.001062",
+      "Market Value": "137055.86",
+      "Shares Held": "162163",
       "Asset Category": "Industrials"
     },
     {
       "Name": "SHANDONG LINGLONG TYRE CO LTD A",
       "Ticker": "601966",
       "Identifier": "BBG00GVXBR41",
-      "Weight": "0.001049",
-      "Market Value": "135307.25",
+      "Weight": "0.00106",
+      "Market Value": "136813.24",
       "Shares Held": "86400",
       "Asset Category": "Consumer Discretionary"
     },
@@ -1529,116 +1547,179 @@
       "Name": "ZHEJIANG HANGKE TECHNOLOGY A",
       "Ticker": "688006",
       "Identifier": "BBG00Z15J008",
-      "Weight": "0.001048",
-      "Market Value": "135237",
+      "Weight": "0.001053",
+      "Market Value": "135886.56",
       "Shares Held": "44364",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "GIRISIM ELEKTRIK SANAYI TAAHUT VE",
-      "Ticker": "GESAN.E",
-      "Identifier": "BBG0106MY2G4",
-      "Weight": "0.001042",
-      "Market Value": "134487.27",
-      "Shares Held": "162163",
+      "Name": "GUANGZHOU BAIYUN INTERNATIONAL AIR",
+      "Ticker": "600004",
+      "Identifier": "BBG00709H9L3",
+      "Weight": "0.001049",
+      "Market Value": "135310.85",
+      "Shares Held": "118300",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "CHINESE UNIVERSE PUBLISHING AND ME",
-      "Ticker": "600373",
-      "Identifier": "BBG00709HP46",
-      "Weight": "0.001034",
-      "Market Value": "133387",
-      "Shares Held": "121000",
-      "Asset Category": "Communication Services"
+      "Name": "FARASIS ENERGY (GAN ZHOU) LTD A",
+      "Ticker": "688567",
+      "Identifier": "BBG01FR9V5G3",
+      "Weight": "0.001047",
+      "Market Value": "135089.74",
+      "Shares Held": "93274",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SHANXI MEIJIN ENERGY LTD A",
+      "Ticker": "000723",
+      "Identifier": "BBG00JMZX7L1",
+      "Weight": "0.001035",
+      "Market Value": "133553.56",
+      "Shares Held": "247000",
+      "Asset Category": "Materials"
     },
     {
       "Name": "GREENLAND HOLDINGS GROUP CORPORATI",
       "Ticker": "600606",
       "Identifier": "BBG00D1T03V5",
       "Weight": "0.001032",
-      "Market Value": "133134.96",
+      "Market Value": "133116.84",
       "Shares Held": "605500",
       "Asset Category": "Real Estate"
     },
     {
-      "Name": "MIA TEKNOLOJI",
-      "Ticker": "MIATK.E",
-      "Identifier": "BBG013N8P5S0",
-      "Weight": "0.001029",
-      "Market Value": "132737.93",
-      "Shares Held": "226817",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "FARASIS ENERGY (GAN ZHOU) LTD A",
-      "Ticker": "688567",
-      "Identifier": "BBG01FR9V5G3",
-      "Weight": "0.00102",
-      "Market Value": "131562.74",
-      "Shares Held": "93274",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SHANGHAI AWINIC TECHNOLOGY LTD A",
-      "Ticker": "688798",
-      "Identifier": "BBG01FR9NH76",
-      "Weight": "0.001017",
-      "Market Value": "131253.1",
-      "Shares Held": "17102",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "SHANXI MEIJIN ENERGY LTD A",
-      "Ticker": "000723",
-      "Identifier": "BBG00JMZX7L1",
-      "Weight": "0.001014",
-      "Market Value": "130785.88",
-      "Shares Held": "247000",
+      "Name": "BATICIM BATI ANADOLU SANAYI VE TIC",
+      "Ticker": "BTCIM.E",
+      "Identifier": "BBG000BVVDN0",
+      "Weight": "0.001008",
+      "Market Value": "130104.19",
+      "Shares Held": "3103920",
       "Asset Category": "Materials"
-    },
-    {
-      "Name": "ASYMCHEM LABORATORIES (TIANJIN) LT",
-      "Ticker": "002821",
-      "Identifier": "BBG00H1L81R4",
-      "Weight": "0.001001",
-      "Market Value": "129181",
-      "Shares Held": "4780",
-      "Asset Category": "Health Care"
     },
     {
       "Name": "GUANGDONG XINBAO ELECTRICAL APPLIA",
       "Ticker": "002705",
       "Identifier": "BBG00NKQ6ML1",
-      "Weight": "0.001001",
-      "Market Value": "129151.76",
+      "Weight": "0.001003",
+      "Market Value": "129368.32",
       "Shares Held": "74500",
       "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "SHANGHAI AWINIC TECHNOLOGY LTD A",
+      "Ticker": "688798",
+      "Identifier": "BBG01FR9NH76",
+      "Weight": "0.000999",
+      "Market Value": "128925.88",
+      "Shares Held": "17102",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "GRANDJOY HOLDINGS GROUP LTD A",
       "Ticker": "000031",
       "Identifier": "BBG00F136323",
-      "Weight": "0.000995",
-      "Market Value": "128363.06",
+      "Weight": "0.000992",
+      "Market Value": "128011.78",
       "Shares Held": "359072",
       "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "MARGUN ENERJI URETIM SANAYI & TICA",
+      "Ticker": "MAGEN.E",
+      "Identifier": "BBG012QDSV99",
+      "Weight": "0.00098",
+      "Market Value": "126391.18",
+      "Shares Held": "728444",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "ASYMCHEM LABORATORIES (TIANJIN) LT",
+      "Ticker": "002821",
+      "Identifier": "BBG00H1L81R4",
+      "Weight": "0.000979",
+      "Market Value": "126338.06",
+      "Shares Held": "4780",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "MIA TEKNOLOJI",
+      "Ticker": "MIATK.E",
+      "Identifier": "BBG013N8P5S0",
+      "Weight": "0.000971",
+      "Market Value": "125240.15",
+      "Shares Held": "226817",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "MINMETALS NEW ENERGY MATERIALS(HUN",
+      "Ticker": "688779",
+      "Identifier": "BBG01BWN72X0",
+      "Weight": "0.00097",
+      "Market Value": "125117.42",
+      "Shares Held": "105286",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "KANGMEI PHARMACEUTICAL LTD A",
+      "Ticker": "600518",
+      "Identifier": "BBG00709HTN7",
+      "Weight": "0.000968",
+      "Market Value": "124893.41",
+      "Shares Held": "622800",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "AUTEK CHINA INC A",
+      "Ticker": "300595",
+      "Identifier": "BBG00MYKW8V2",
+      "Weight": "0.000964",
+      "Market Value": "124326.83",
+      "Shares Held": "81180",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "OSOTSPA PCL NON-VOTING DR",
+      "Ticker": "OSP.R",
+      "Identifier": "BBG00M533PX4",
+      "Weight": "0.00095",
+      "Market Value": "122518.18",
+      "Shares Held": "255063",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "PYLON TECHNOLOGIES LTD A",
+      "Ticker": "688063",
+      "Identifier": "BBG017ZP6HB3",
+      "Weight": "0.000949",
+      "Market Value": "122389.58",
+      "Shares Held": "19566",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "KAISHAN GROUP LTD A",
       "Ticker": "300257",
       "Identifier": "BBG00F13CM79",
-      "Weight": "0.000984",
-      "Market Value": "126947.47",
+      "Weight": "0.000946",
+      "Market Value": "122005.7",
       "Shares Held": "50700",
       "Asset Category": "Industrials"
+    },
+    {
+      "Name": "WANGFUJING GROUP LTD A",
+      "Ticker": "600859",
+      "Identifier": "BBG00709J575",
+      "Weight": "0.000939",
+      "Market Value": "121201.33",
+      "Shares Held": "82500",
+      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "WUXI AUTOWELL TECHNOLOGY LTD A",
       "Ticker": "688516",
       "Identifier": "BBG017ZP6ZG8",
-      "Weight": "0.000971",
-      "Market Value": "125332.95",
+      "Weight": "0.000939",
+      "Market Value": "121103.46",
       "Shares Held": "20787",
       "Asset Category": "Information Technology"
     },
@@ -1646,143 +1727,71 @@
       "Name": "BEIJING YUANLIU HONGYUAN ELECTRONI",
       "Ticker": "603267",
       "Identifier": "BBG00R1XHY21",
-      "Weight": "0.000962",
-      "Market Value": "124123.78",
+      "Weight": "0.000936",
+      "Market Value": "120699.11",
       "Shares Held": "18400",
       "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "KANGMEI PHARMACEUTICAL LTD A",
-      "Ticker": "600518",
-      "Identifier": "BBG00709HTN7",
-      "Weight": "0.00096",
-      "Market Value": "123897.03",
-      "Shares Held": "622800",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "OSOTSPA PCL NON-VOTING DR",
-      "Ticker": "OSP.R",
-      "Identifier": "BBG00M533PX4",
-      "Weight": "0.000953",
-      "Market Value": "123014.47",
-      "Shares Held": "255063",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "AUTEK CHINA INC A",
-      "Ticker": "300595",
-      "Identifier": "BBG00MYKW8V2",
-      "Weight": "0.000947",
-      "Market Value": "122153.99",
-      "Shares Held": "81180",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "BATICIM BATI ANADOLU SANAYI VE TIC",
-      "Ticker": "BTCIM.E",
-      "Identifier": "BBG000BVVDN0",
-      "Weight": "0.000946",
-      "Market Value": "122068.27",
-      "Shares Held": "3103920",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "PYLON TECHNOLOGIES LTD A",
-      "Ticker": "688063",
-      "Identifier": "BBG017ZP6HB3",
-      "Weight": "0.000935",
-      "Market Value": "120575.73",
-      "Shares Held": "19566",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "BEIJING TRICOLOR TECHNOLOGY LTD A",
-      "Ticker": "603516",
-      "Identifier": "BBG01R992123",
-      "Weight": "0.000933",
-      "Market Value": "120419.38",
-      "Shares Held": "10900",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "MINMETALS NEW ENERGY MATERIALS(HUN",
-      "Ticker": "688779",
-      "Identifier": "BBG01BWN72X0",
-      "Weight": "0.000933",
-      "Market Value": "120316.34",
-      "Shares Held": "105286",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "WANGFUJING GROUP LTD A",
-      "Ticker": "600859",
-      "Identifier": "BBG00709J575",
-      "Weight": "0.000925",
-      "Market Value": "119327.64",
-      "Shares Held": "82500",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "MUANGTHAI CAPITAL ORS NON-VOTING D",
-      "Ticker": "MTC.R",
-      "Identifier": "BBG007B064R7",
-      "Weight": "0.00092",
-      "Market Value": "118724.22",
-      "Shares Held": "145015",
-      "Asset Category": "Financials"
     },
     {
       "Name": "CSG HOLDING LTD B",
       "Ticker": "200012",
       "Identifier": "BBG000BZ9HV8",
-      "Weight": "0.000917",
-      "Market Value": "118337.47",
+      "Weight": "0.000925",
+      "Market Value": "119364.31",
       "Shares Held": "798385",
       "Asset Category": "Materials"
     },
     {
-      "Name": "MARGUN ENERJI URETIM SANAYI & TICA",
-      "Ticker": "MAGEN.E",
-      "Identifier": "BBG012QDSV99",
-      "Weight": "0.000916",
-      "Market Value": "118152.86",
-      "Shares Held": "728444",
-      "Asset Category": "Utilities"
+      "Name": "MUANGTHAI CAPITAL ORS NON-VOTING D",
+      "Ticker": "MTC.R",
+      "Identifier": "BBG007B064R7",
+      "Weight": "0.000925",
+      "Market Value": "119320.2",
+      "Shares Held": "145015",
+      "Asset Category": "Financials"
     },
     {
       "Name": "AIMA TECHNOLOGY GROUP LTD A",
       "Ticker": "603529",
       "Identifier": "BBG013Y4D2H9",
-      "Weight": "0.000905",
-      "Market Value": "116751.05",
+      "Weight": "0.000914",
+      "Market Value": "117921.92",
       "Shares Held": "34100",
       "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "BEIJING TRICOLOR TECHNOLOGY LTD A",
+      "Ticker": "603516",
+      "Identifier": "BBG01R992123",
+      "Weight": "0.000914",
+      "Market Value": "117873.19",
+      "Shares Held": "10900",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "JIANGLING MOTORS CORP LTD A",
       "Ticker": "000550",
       "Identifier": "BBG00F136993",
-      "Weight": "0.000877",
-      "Market Value": "113085.1",
+      "Weight": "0.0009",
+      "Market Value": "116072.08",
       "Shares Held": "46100",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "KUYAS YATIRIM A.S.",
-      "Ticker": "KUYAS.E",
-      "Identifier": "BBG003CVSLB2",
-      "Weight": "0.000871",
-      "Market Value": "112356.41",
-      "Shares Held": "386131",
-      "Asset Category": "Real Estate"
+      "Name": "VISUAL CHINA LTD A",
+      "Ticker": "000681",
+      "Identifier": "BBG00F136FD4",
+      "Weight": "0.000892",
+      "Market Value": "115080.55",
+      "Shares Held": "48000",
+      "Asset Category": "Communication Services"
     },
     {
       "Name": "SANY HEAVY ENERGY LTD A",
       "Ticker": "688349",
       "Identifier": "BBG01HGT6BT8",
-      "Weight": "0.000863",
-      "Market Value": "111294.46",
+      "Weight": "0.000875",
+      "Market Value": "112937.43",
       "Shares Held": "55945",
       "Asset Category": "Industrials"
     },
@@ -1790,26 +1799,17 @@
       "Name": "BY-HEALTH LTD A",
       "Ticker": "300146",
       "Identifier": "BBG00F13B078",
-      "Weight": "0.000855",
-      "Market Value": "110300.9",
+      "Weight": "0.000862",
+      "Market Value": "111166.99",
       "Shares Held": "78200",
       "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "VISUAL CHINA LTD A",
-      "Ticker": "000681",
-      "Identifier": "BBG00F136FD4",
-      "Weight": "0.000854",
-      "Market Value": "110207.27",
-      "Shares Held": "48000",
-      "Asset Category": "Communication Services"
     },
     {
       "Name": "TAIJI COMPUTER CORP LTD A",
       "Ticker": "002368",
       "Identifier": "BBG00F137N73",
-      "Weight": "0.000849",
-      "Market Value": "109472.55",
+      "Weight": "0.000852",
+      "Market Value": "109957.54",
       "Shares Held": "59600",
       "Asset Category": "Information Technology"
     },
@@ -1817,8 +1817,8 @@
       "Name": "TIANSHAN MATERIAL LTD A",
       "Ticker": "000877",
       "Identifier": "BBG00F136N47",
-      "Weight": "0.000846",
-      "Market Value": "109191.65",
+      "Weight": "0.000838",
+      "Market Value": "108146.04",
       "Shares Held": "197300",
       "Asset Category": "Materials"
     },
@@ -1826,8 +1826,8 @@
       "Name": "HONGYUAN GREEN ENERGY LTD A",
       "Ticker": "603185",
       "Identifier": "BBG00PDL9KH1",
-      "Weight": "0.000836",
-      "Market Value": "107910.96",
+      "Weight": "0.000831",
+      "Market Value": "107239.32",
       "Shares Held": "48517",
       "Asset Category": "Information Technology"
     },
@@ -1835,17 +1835,26 @@
       "Name": "FUJIAN KUNCAI MATERIAL TECHNOLOGY",
       "Ticker": "603826",
       "Identifier": "BBG01FRBDNZ8",
-      "Weight": "0.000813",
-      "Market Value": "104873.74",
+      "Weight": "0.000808",
+      "Market Value": "104220.44",
       "Shares Held": "46774",
       "Asset Category": "Materials"
+    },
+    {
+      "Name": "KUYAS YATIRIM A.S.",
+      "Ticker": "KUYAS.E",
+      "Identifier": "BBG003CVSLB2",
+      "Weight": "0.000776",
+      "Market Value": "100067.5",
+      "Shares Held": "386131",
+      "Asset Category": "Real Estate"
     },
     {
       "Name": "GAMBOL PET GROUP A",
       "Ticker": "301498",
       "Identifier": "BBG01J941ZG3",
-      "Weight": "0.000765",
-      "Market Value": "98680.38",
+      "Weight": "0.000769",
+      "Market Value": "99273.02",
       "Shares Held": "16800",
       "Asset Category": "Consumer Staples"
     },
@@ -1853,8 +1862,8 @@
       "Name": "GRAINTURK HOLDING A.S.",
       "Ticker": "GRTHO.E",
       "Identifier": "BBG01GF5TPF2",
-      "Weight": "0.000747",
-      "Market Value": "96332.43",
+      "Weight": "0.000741",
+      "Market Value": "95661.78",
       "Shares Held": "38910",
       "Asset Category": "Consumer Staples"
     },
@@ -1862,107 +1871,107 @@
       "Name": "SINGAPORE DOLLAR",
       "Ticker": "SGD",
       "Identifier": "-",
-      "Weight": "0.000741",
-      "Market Value": "95609.21",
+      "Weight": "0.000735",
+      "Market Value": "94773.56",
       "Shares Held": "122128.94",
       "Asset Category": "-"
-    },
-    {
-      "Name": "CW ENERJI MUHENDISLIK TICARET VE S",
-      "Ticker": "CWENE.E",
-      "Identifier": "BBG01GJXLF76",
-      "Weight": "0.000684",
-      "Market Value": "88255.47",
-      "Shares Held": "224530",
-      "Asset Category": "Industrials"
     },
     {
       "Name": "YUNNAN BOTANEE BIO-TECHNOLOGY GROU",
       "Ticker": "300957",
       "Identifier": "BBG013Y512B5",
-      "Weight": "0.00068",
-      "Market Value": "87770.93",
+      "Weight": "0.000687",
+      "Market Value": "88609.88",
       "Shares Held": "18000",
       "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "CW ENERJI MUHENDISLIK TICARET VE S",
+      "Ticker": "CWENE.E",
+      "Identifier": "BBG01GJXLF76",
+      "Weight": "0.000669",
+      "Market Value": "86286.43",
+      "Shares Held": "224530",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "KONYA CIMENTO SANAYII A",
       "Ticker": "KONYA.E",
       "Identifier": "BBG000BVCXT1",
-      "Weight": "0.000633",
-      "Market Value": "81699.42",
+      "Weight": "0.000647",
+      "Market Value": "83434.78",
       "Shares Held": "1163",
       "Asset Category": "Materials"
-    },
-    {
-      "Name": "VANCHIP (TIANJIN) TECHNOLOGY LTD A",
-      "Ticker": "688153",
-      "Identifier": "BBG01GN4XP43",
-      "Weight": "0.000611",
-      "Market Value": "78817.21",
-      "Shares Held": "21658",
-      "Asset Category": "Information Technology"
     },
     {
       "Name": "DOUBLE MEDICAL TECHNOLOGY INC A",
       "Ticker": "002901",
       "Identifier": "BBG00LBJBYK0",
-      "Weight": "0.000606",
-      "Market Value": "78186.13",
+      "Weight": "0.000609",
+      "Market Value": "78588.47",
       "Shares Held": "13200",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "HAINAN DRINDA NEW ENERGY TECHNOLOG",
-      "Ticker": "002865",
-      "Identifier": "BBG01BWN9D00",
-      "Weight": "0.000596",
-      "Market Value": "76915.34",
-      "Shares Held": "14400",
+      "Name": "VANCHIP (TIANJIN) TECHNOLOGY LTD A",
+      "Ticker": "688153",
+      "Identifier": "BBG01GN4XP43",
+      "Weight": "0.0006",
+      "Market Value": "77437.55",
+      "Shares Held": "21658",
       "Asset Category": "Information Technology"
     },
     {
       "Name": "HOYMILES POWER ELECTRONICS INC A",
       "Ticker": "688032",
       "Identifier": "BBG01FRBLCX5",
-      "Weight": "0.000596",
-      "Market Value": "76904.26",
+      "Weight": "0.000599",
+      "Market Value": "77236.07",
       "Shares Held": "7634",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "ODINE SOLUTIONS TEKNOLOJI TICARET",
-      "Ticker": "ODINE.E",
-      "Identifier": "BBG01M2RWVR5",
-      "Weight": "0.000565",
-      "Market Value": "72950.98",
-      "Shares Held": "33711",
+      "Name": "HAINAN DRINDA NEW ENERGY TECHNOLOG",
+      "Ticker": "002865",
+      "Identifier": "BBG01BWN9D00",
+      "Weight": "0.000598",
+      "Market Value": "77155.31",
+      "Shares Held": "14400",
       "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "KOCAER CELIK SANAYI VE TICARET AS",
-      "Ticker": "KCAER.E",
-      "Identifier": "BBG0189JNCX2",
-      "Weight": "0.000535",
-      "Market Value": "69022.68",
-      "Shares Held": "323218",
-      "Asset Category": "Materials"
     },
     {
       "Name": "LYDIA YESIL ENERJI KAYNAKLARI A.S.",
       "Ticker": "LYDYE.E",
       "Identifier": "BBG003GVN5X4",
-      "Weight": "0.000532",
-      "Market Value": "68608.33",
+      "Weight": "0.000578",
+      "Market Value": "74614.97",
       "Shares Held": "537",
       "Asset Category": "Utilities"
+    },
+    {
+      "Name": "KOCAER CELIK SANAYI VE TICARET AS",
+      "Ticker": "KCAER.E",
+      "Identifier": "BBG0189JNCX2",
+      "Weight": "0.000548",
+      "Market Value": "70671.23",
+      "Shares Held": "323218",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "ODINE SOLUTIONS TEKNOLOJI TICARET",
+      "Ticker": "ODINE.E",
+      "Identifier": "BBG01M2RWVR5",
+      "Weight": "0.000503",
+      "Market Value": "64945.19",
+      "Shares Held": "33711",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "DAP GAYRIMENKUL GELISTIRME",
       "Ticker": "DAPGM.E",
       "Identifier": "BBG015JS13P0",
-      "Weight": "0.000458",
-      "Market Value": "59026.9",
+      "Weight": "0.000473",
+      "Market Value": "61046.52",
       "Shares Held": "946659",
       "Asset Category": "Real Estate"
     },
@@ -1970,8 +1979,8 @@
       "Name": "ANHUI KOUZI DISTILLERY LTD A",
       "Ticker": "603589",
       "Identifier": "BBG00BMBL501",
-      "Weight": "0.000435",
-      "Market Value": "56146.02",
+      "Weight": "0.000441",
+      "Market Value": "56887.42",
       "Shares Held": "21100",
       "Asset Category": "Consumer Staples"
     },
@@ -1979,8 +1988,8 @@
       "Name": "ORG TECHNOLOGY LTD A",
       "Ticker": "002701",
       "Identifier": "BBG00F138JK6",
-      "Weight": "0.00041",
-      "Market Value": "52914.01",
+      "Weight": "0.000413",
+      "Market Value": "53277.49",
       "Shares Held": "81700",
       "Asset Category": "Materials"
     },
@@ -1988,8 +1997,8 @@
       "Name": "POLITEKNIK METAL SANAYI VE TICARET",
       "Ticker": "POLTK.E",
       "Identifier": "BBG0063L81K3",
-      "Weight": "0.000306",
-      "Market Value": "39533.85",
+      "Weight": "0.000315",
+      "Market Value": "40596.59",
       "Shares Held": "633",
       "Asset Category": "Materials"
     },
@@ -1997,8 +2006,8 @@
       "Name": "LDR TURIZM AS",
       "Ticker": "LIDER.E",
       "Identifier": "BBG016CF0T13",
-      "Weight": "0.000263",
-      "Market Value": "33973.39",
+      "Weight": "0.000275",
+      "Market Value": "35525.41",
       "Shares Held": "199195",
       "Asset Category": "Industrials"
     },
@@ -2006,8 +2015,8 @@
       "Name": "CHONGQING WATER GROUP LTD A",
       "Ticker": "601158",
       "Identifier": "BBG00709J977",
-      "Weight": "0.000235",
-      "Market Value": "30274.7",
+      "Weight": "0.000234",
+      "Market Value": "30214.88",
       "Shares Held": "50100",
       "Asset Category": "Utilities"
     },
@@ -2016,7 +2025,7 @@
       "Ticker": "301267",
       "Identifier": "BBG01FRBBLP5",
       "Weight": "0.00023",
-      "Market Value": "29621.79",
+      "Market Value": "29612.98",
       "Shares Held": "13150",
       "Asset Category": "Health Care"
     },
@@ -2024,8 +2033,8 @@
       "Name": "SUZHOU NANOMICRO TECHNOLOGY LTD A",
       "Ticker": "688690",
       "Identifier": "BBG01BWN6XB7",
-      "Weight": "0.000101",
-      "Market Value": "13078.13",
+      "Weight": "0.000098",
+      "Market Value": "12581.29",
       "Shares Held": "1984",
       "Asset Category": "Materials"
     },
@@ -2033,8 +2042,8 @@
       "Name": "AKCANSA CIMENTO SANAYI VE TICARET",
       "Ticker": "AKCNS.E",
       "Identifier": "BBG000BV9Z83",
-      "Weight": "0.000016",
-      "Market Value": "2058.72",
+      "Weight": "0.000015",
+      "Market Value": "1967.58",
       "Shares Held": "441",
       "Asset Category": "Materials"
     },
@@ -2089,7 +2098,16 @@
       "Identifier": "BBG013V2S5X5",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "24750",
+      "Shares Held": "23750",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "TWD999999",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "-0.00001",
+      "Market Value": "-1265.41",
+      "Shares Held": "40635",
       "Asset Category": "-"
     }
   ]

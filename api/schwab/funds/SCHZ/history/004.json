@@ -2,7 +2,7 @@
   "ticker": "SCHZ",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3833,
+  "totalRows": 3834,
   "headers": [
     "Date",
     "Close",
@@ -5007,6 +5007,12 @@
       "Close": "22.1200008392334",
       "Adj Close": "22.12",
       "Volume": "2197200"
+    },
+    {
+      "Date": "Oct 12 2026",
+      "Close": "22.1299991607666",
+      "Adj Close": "22.13",
+      "Volume": "2330100"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "SCHR",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4070,
+  "totalRows": 4071,
   "headers": [
     "Date",
     "Close",
@@ -429,6 +429,12 @@
       "Close": "23.709999084472656",
       "Adj Close": "23.71",
       "Volume": "3069700"
+    },
+    {
+      "Date": "Oct 12 2026",
+      "Close": "23.709999084472656",
+      "Adj Close": "23.71",
+      "Volume": "10717000"
     }
   ]
 }

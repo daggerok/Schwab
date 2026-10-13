@@ -2,7 +2,7 @@
   "ticker": "SMBS",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 473,
+  "totalRows": 474,
   "headers": [
     "Date",
     "Close",
@@ -2847,6 +2847,12 @@
       "Close": "24.09000015258789",
       "Adj Close": "24.09",
       "Volume": "1535000"
+    },
+    {
+      "Date": "Oct 12 2026",
+      "Close": "24.06999969482422",
+      "Adj Close": "24.07",
+      "Volume": "190800"
     }
   ]
 }
