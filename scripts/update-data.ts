@@ -1671,13 +1671,25 @@ export function performanceAsOf(date: string | null | undefined): string | null 
   return /^\d{4}-\d{2}-\d{2}$/.test(iso) ? iso : null;
 }
 
-function historyRows(days: ChartDay[]): JsonRecord[] {
+// Yahoo's adjusted close is float32 and its last digits move with the request's period2, so a value
+// sitting on a cent boundary (31.544998 vs 31.545001) flips between runs. Within that noise the
+// published cent is kept: a rerun with the same source data changes nothing.
+export const ADJ_CLOSE_NOISE = 1e-4;
+
+export function historyRows(days: ChartDay[], published: JsonRecord[] = []): JsonRecord[] {
   // Yahoo recomputes the split/dividend-adjusted close on every request; storing
   // the raw float lets the last digit or two jitter between otherwise identical
   // requests, making every history row (and the fund) look "updated" on every
   // single run. Rounding to 2 decimals is well past any meaningful price
   // precision and absorbs that jitter.
-  return days.map((day) => ({ Date: formatDate(day.date), Close: String(day.close), 'Adj Close': String(round(day.adjClose, 2)), Volume: String(day.volume) }));
+  const publishedAdj = new Map(published.map((row) => [toIsoDate(row.Date), row['Adj Close']]));
+  return days.map((day) => {
+    const prior = publishedAdj.get(day.date);
+    const priorAdj = numberOrNull(prior);
+    let adjClose = String(round(day.adjClose, 2));
+    if (priorAdj !== null && adjClose !== String(prior) && Math.abs(day.adjClose - priorAdj) <= 0.005 + ADJ_CLOSE_NOISE) adjClose = String(prior);
+    return { Date: formatDate(day.date), Close: String(day.close), 'Adj Close': adjClose, Volume: String(day.volume) };
+  });
 }
 
 function distributionRows(dividends: Distribution[]): string[][] {
@@ -2296,7 +2308,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
 
   // 6. Write sheets, meta.json and the index row --------------------------------
   await mkdir(fundDir, { recursive: true });
-  const history = historyRows(days);
+  const history = historyRows(days, chart?.days.length ? await readPreviousSheet(fund.ticker, 'history') : []);
   const historyAsOf = derived.asOfDate || previousMeta?.history?.asOf || null;
   const holdingManifest = await writePages(fundDir, fund.ticker, 'holdings', holdingsHeaders, holdingsRows, config.holdingsPageSize, holdingsAsOf, holdingsSource);
   if (marketValueBasis) holdingManifest.marketValueBasis = marketValueBasis;

@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import {
+  ADJ_CLOSE_NOISE,
   CONTROL_NAMES,
   FETCH_TIMEOUT_MS,
   annualizedToTotal,
@@ -19,6 +20,7 @@ import {
   firstNumber,
   frequencyCodeLabel,
   historyPeriodStart,
+  historyRows,
   holdingsCsvCandidates,
   htmlToText,
   inferDistributionFrequency,
@@ -840,6 +842,32 @@ describe('pipeline', () => {
       expect(readIndexRows(api)).toHaveLength(3);
       expect(snapshot(api)).toEqual(first);
     });
+  });
+
+  test('two runs on the same source data write zero changes even when Yahoo adjusted closes jitter across a cent boundary', async () => {
+    // Yahoo float32 noise seen live: SPDV 2024-11-12 came back as 31.544998 and 31.545001 a minute apart
+    const jittered = (adjclose: number[]): typeof fetch => (async (input: any, init?: any) => {
+      const response = await world()(input, init);
+      if (!urlOf(input).includes('/v8/finance/chart/')) return response;
+      const payload = await response.json();
+      payload.chart.result[0].indicators.adjclose[0].adjclose.splice(500, adjclose.length, ...adjclose);
+      return Response.json(payload);
+    }) as unknown as typeof fetch;
+    await feed({ fetch: jittered([23.915001, 24.984999, 25.995001]) }, async (api) => {
+      await main();
+      const first = snapshot(api);
+      globalThis.fetch = jittered([23.914998, 24.985002, 25.994999]);
+      await main();
+      expect(snapshot(api)).toEqual(first);
+      // a real change beyond the noise is still written
+      globalThis.fetch = jittered([23.9, 24.97, 25.98]);
+      await main();
+      expect(snapshot(api)).not.toEqual(first);
+    });
+    const day = (adjClose: number) => ({ date: '2024-11-12', close: 33.928001, adjClose, volume: 3900 });
+    const prior = [{ Date: 'Nov 12 2024', Close: '33.928001', 'Adj Close': '31.54', Volume: '3900' }];
+    expect([31.545001, 31.5452, 31.56].map((adj) => historyRows([day(adj)], prior)[0]['Adj Close'])).toEqual(['31.54', '31.55', '31.56']);
+    expect(ADJ_CLOSE_NOISE).toBe(1e-4);
   });
 
   test('a failed source keeps the fund exactly as published', async () => {
