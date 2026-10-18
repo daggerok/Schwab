@@ -2,7 +2,7 @@
   "ticker": "SCHR",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4071,
+  "totalRows": 4075,
   "headers": [
     "Date",
     "Close",
@@ -435,6 +435,30 @@
       "Close": "23.709999084472656",
       "Adj Close": "23.71",
       "Volume": "10717000"
+    },
+    {
+      "Date": "Oct 13 2026",
+      "Close": "23.739999771118164",
+      "Adj Close": "23.74",
+      "Volume": "6103700"
+    },
+    {
+      "Date": "Oct 14 2026",
+      "Close": "23.75",
+      "Adj Close": "23.75",
+      "Volume": "2824800"
+    },
+    {
+      "Date": "Oct 15 2026",
+      "Close": "23.860000610351562",
+      "Adj Close": "23.86",
+      "Volume": "2869900"
+    },
+    {
+      "Date": "Oct 16 2026",
+      "Close": "23.899999618530273",
+      "Adj Close": "23.9",
+      "Volume": "5401800"
     }
   ]
 }

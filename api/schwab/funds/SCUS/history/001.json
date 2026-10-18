@@ -2,7 +2,7 @@
   "ticker": "SCUS",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 543,
+  "totalRows": 547,
   "headers": [
     "Date",
     "Close",
@@ -3267,6 +3267,30 @@
       "Close": "25.05299949645996",
       "Adj Close": "25.05",
       "Volume": "76800"
+    },
+    {
+      "Date": "Oct 13 2026",
+      "Close": "25.049999237060547",
+      "Adj Close": "25.05",
+      "Volume": "67200"
+    },
+    {
+      "Date": "Oct 14 2026",
+      "Close": "25.06999969482422",
+      "Adj Close": "25.07",
+      "Volume": "142200"
+    },
+    {
+      "Date": "Oct 15 2026",
+      "Close": "25.079999923706055",
+      "Adj Close": "25.08",
+      "Volume": "183500"
+    },
+    {
+      "Date": "Oct 16 2026",
+      "Close": "25.09000015258789",
+      "Adj Close": "25.09",
+      "Volume": "68000"
     }
   ]
 }

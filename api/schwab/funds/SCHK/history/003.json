@@ -2,7 +2,7 @@
   "ticker": "SCHK",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2261,
+  "totalRows": 2265,
   "headers": [
     "Date",
     "Close",
@@ -1575,6 +1575,30 @@
       "Close": "37.38999938964844",
       "Adj Close": "37.39",
       "Volume": "666300"
+    },
+    {
+      "Date": "Oct 13 2026",
+      "Close": "37.369998931884766",
+      "Adj Close": "37.37",
+      "Volume": "980500"
+    },
+    {
+      "Date": "Oct 14 2026",
+      "Close": "36.93000030517578",
+      "Adj Close": "36.93",
+      "Volume": "1695100"
+    },
+    {
+      "Date": "Oct 15 2026",
+      "Close": "37.060001373291016",
+      "Adj Close": "37.06",
+      "Volume": "2040900"
+    },
+    {
+      "Date": "Oct 16 2026",
+      "Close": "36.630001068115234",
+      "Adj Close": "36.63",
+      "Volume": "1741200"
     }
   ]
 }

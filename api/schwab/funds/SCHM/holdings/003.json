@@ -2,7 +2,7 @@
   "ticker": "SCHM",
   "page": 3,
   "pageSize": 250,
-  "totalRows": 503,
+  "totalRows": 504,
   "headers": [
     "Name",
     "Ticker",
@@ -14,22 +14,31 @@
   ],
   "rows": [
     {
-      "Name": "X-ENERGY INC CLASS A",
-      "Ticker": "XE",
-      "Identifier": "BBG021GML3P2",
-      "Weight": "0.013666",
-      "Market Value": "1990302.64",
-      "Shares Held": "145656",
-      "Asset Category": "Industrials"
-    },
-    {
       "Name": "MCCORMICK & CO VOTING",
       "Ticker": "MKC V",
       "Identifier": "BBG000FJ5648",
-      "Weight": "0.011698",
-      "Market Value": "1703791.76",
-      "Shares Held": "36582",
+      "Weight": "0.011824",
+      "Market Value": "1710432.72",
+      "Shares Held": "36606",
       "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "X-ENERGY INC CLASS A",
+      "Ticker": "XE",
+      "Identifier": "BBG021GML3P2",
+      "Weight": "0.01144",
+      "Market Value": "1654955.52",
+      "Shares Held": "145758",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SKYDANCE EQUITY WARRANTS EXP TH OC",
+      "Ticker": "SKYD WS",
+      "Identifier": "BBG025K36C59",
+      "Weight": "0.000033",
+      "Market Value": "4710.43",
+      "Shares Held": "1508",
+      "Asset Category": "Communication Services"
     },
     {
       "Name": "S&P MID 400 EMINI DEC 26",
@@ -37,7 +46,7 @@
       "Identifier": "BBG01X9RPHD8",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "4400",
+      "Shares Held": "5700",
       "Asset Category": "-"
     }
   ]

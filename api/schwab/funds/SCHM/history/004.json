@@ -2,7 +2,7 @@
   "ticker": "SCHM",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3959,
+  "totalRows": 3963,
   "headers": [
     "Date",
     "Close",
@@ -5763,6 +5763,30 @@
       "Close": "34.5099983215332",
       "Adj Close": "34.51",
       "Volume": "1875600"
+    },
+    {
+      "Date": "Oct 13 2026",
+      "Close": "34.5",
+      "Adj Close": "34.5",
+      "Volume": "2973900"
+    },
+    {
+      "Date": "Oct 14 2026",
+      "Close": "34.06999969482422",
+      "Adj Close": "34.07",
+      "Volume": "2854600"
+    },
+    {
+      "Date": "Oct 15 2026",
+      "Close": "34.54999923706055",
+      "Adj Close": "34.55",
+      "Volume": "4114600"
+    },
+    {
+      "Date": "Oct 16 2026",
+      "Close": "34.15999984741211",
+      "Adj Close": "34.16",
+      "Volume": "2822800"
     }
   ]
 }

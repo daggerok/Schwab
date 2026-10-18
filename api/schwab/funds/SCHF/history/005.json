@@ -2,7 +2,7 @@
   "ticker": "SCHF",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4260,
+  "totalRows": 4264,
   "headers": [
     "Date",
     "Close",
@@ -1569,6 +1569,30 @@
       "Close": "27.1299991607666",
       "Adj Close": "27.13",
       "Volume": "6842400"
+    },
+    {
+      "Date": "Oct 13 2026",
+      "Close": "27.139999389648438",
+      "Adj Close": "27.14",
+      "Volume": "11348600"
+    },
+    {
+      "Date": "Oct 14 2026",
+      "Close": "26.889999389648438",
+      "Adj Close": "26.89",
+      "Volume": "15513100"
+    },
+    {
+      "Date": "Oct 15 2026",
+      "Close": "27.020000457763672",
+      "Adj Close": "27.02",
+      "Volume": "11103500"
+    },
+    {
+      "Date": "Oct 16 2026",
+      "Close": "26.93000030517578",
+      "Adj Close": "26.93",
+      "Volume": "8905200"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "SCHP",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4071,
+  "totalRows": 4075,
   "headers": [
     "Date",
     "Close",
@@ -435,6 +435,30 @@
       "Close": "25.209999084472656",
       "Adj Close": "25.21",
       "Volume": "7490500"
+    },
+    {
+      "Date": "Oct 13 2026",
+      "Close": "25.200000762939453",
+      "Adj Close": "25.2",
+      "Volume": "3496000"
+    },
+    {
+      "Date": "Oct 14 2026",
+      "Close": "25.270000457763672",
+      "Adj Close": "25.27",
+      "Volume": "7101200"
+    },
+    {
+      "Date": "Oct 15 2026",
+      "Close": "25.389999389648438",
+      "Adj Close": "25.39",
+      "Volume": "5215600"
+    },
+    {
+      "Date": "Oct 16 2026",
+      "Close": "25.450000762939453",
+      "Adj Close": "25.45",
+      "Volume": "3807500"
     }
   ]
 }

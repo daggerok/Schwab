@@ -1,0 +1,35 @@
+{
+  "ticker": "SCHK",
+  "page": 5,
+  "pageSize": 250,
+  "totalRows": 1002,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category"
+  ],
+  "rows": [
+    {
+      "Name": "S&P MID 400 EMINI DEC 26",
+      "Ticker": "FAZ6",
+      "Identifier": "BBG01X9RPHD8",
+      "Weight": "0",
+      "Market Value": "0",
+      "Shares Held": "100",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "US DOLLAR",
+      "Ticker": "USD",
+      "Identifier": "-",
+      "Weight": "-0.000761",
+      "Market Value": "-43544.4",
+      "Shares Held": "-44021.76",
+      "Asset Category": "-"
+    }
+  ]
+}

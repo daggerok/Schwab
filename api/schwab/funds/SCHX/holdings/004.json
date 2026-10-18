@@ -2,7 +2,7 @@
   "ticker": "SCHX",
   "page": 4,
   "pageSize": 250,
-  "totalRows": 754,
+  "totalRows": 755,
   "headers": [
     "Name",
     "Ticker",
@@ -14,20 +14,11 @@
   ],
   "rows": [
     {
-      "Name": "SAILPOINT",
-      "Ticker": "SAIL",
-      "Identifier": "BBG01RW30QL6",
-      "Weight": "0.002211",
-      "Market Value": "1664805.84",
-      "Shares Held": "80195",
-      "Asset Category": "Information Technology"
-    },
-    {
       "Name": "CNA FINANCIAL CORP",
       "Ticker": "CNA",
       "Identifier": "BBG000BFYCD5",
-      "Weight": "0.001226",
-      "Market Value": "922931.9",
+      "Weight": "0.001267",
+      "Market Value": "934686.27",
       "Shares Held": "20000",
       "Asset Category": "Financials"
     },
@@ -35,10 +26,19 @@
       "Name": "MCCORMICK & CO VOTING",
       "Ticker": "MKC V",
       "Identifier": "BBG000FJ5648",
-      "Weight": "0.000716",
-      "Market Value": "539130.94",
+      "Weight": "0.000728",
+      "Market Value": "537287.72",
       "Shares Held": "11543",
       "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "SKYDANCE EQUITY WARRANTS EXP TH OC",
+      "Ticker": "SKYD WS",
+      "Identifier": "BBG025K36C59",
+      "Weight": "0.000004",
+      "Market Value": "2735.19",
+      "Shares Held": "879",
+      "Asset Category": "Communication Services"
     },
     {
       "Name": "S&P500 EMINI DEC 26",
@@ -46,7 +46,16 @@
       "Identifier": "BBG012FFK314",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "19150",
+      "Shares Held": "8450",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "US DOLLAR",
+      "Ticker": "USD",
+      "Identifier": "-",
+      "Weight": "-0.011431",
+      "Market Value": "-8434188.73",
+      "Shares Held": "-8538083.11",
       "Asset Category": "-"
     }
   ]
