@@ -2,7 +2,7 @@
   "ticker": "FNDC",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3313,
+  "totalRows": 3314,
   "headers": [
     "Date",
     "Close",
@@ -1887,6 +1887,12 @@
       "Close": "49.45000076293945",
       "Adj Close": "49.45",
       "Volume": "99800"
+    },
+    {
+      "Date": "Oct 19 2026",
+      "Close": "49.369998931884766",
+      "Adj Close": "49.37",
+      "Volume": "91500"
     }
   ]
 }
