@@ -2,7 +2,7 @@
   "ticker": "SCHM",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3964,
+  "totalRows": 3965,
   "headers": [
     "Date",
     "Close",
@@ -5793,6 +5793,12 @@
       "Close": "34.15999984741211",
       "Adj Close": "34.16",
       "Volume": "2331900"
+    },
+    {
+      "Date": "Oct 20 2026",
+      "Close": "34.59000015258789",
+      "Adj Close": "34.59",
+      "Volume": "2723700"
     }
   ]
 }

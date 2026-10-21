@@ -2,7 +2,7 @@
   "ticker": "SCHO",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4076,
+  "totalRows": 4077,
   "headers": [
     "Date",
     "Close",
@@ -465,6 +465,12 @@
       "Close": "23.899999618530273",
       "Adj Close": "23.9",
       "Volume": "4045700"
+    },
+    {
+      "Date": "Oct 20 2026",
+      "Close": "23.889999389648438",
+      "Adj Close": "23.89",
+      "Volume": "3257200"
     }
   ]
 }

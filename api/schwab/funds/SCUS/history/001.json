@@ -2,7 +2,7 @@
   "ticker": "SCUS",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 548,
+  "totalRows": 549,
   "headers": [
     "Date",
     "Close",
@@ -3297,6 +3297,12 @@
       "Close": "25.075000762939453",
       "Adj Close": "25.08",
       "Volume": "73200"
+    },
+    {
+      "Date": "Oct 20 2026",
+      "Close": "25.075000762939453",
+      "Adj Close": "25.08",
+      "Volume": "73700"
     }
   ]
 }
