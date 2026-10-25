@@ -223,6 +223,8 @@ export function useApiRoot(root: URL): URL {
 
 const HOLDINGS_HEADERS = ['Name', 'Ticker', 'Identifier', 'Weight', 'Market Value', 'Shares Held', 'Asset Category'];
 const BOND_HOLDINGS_HEADERS = [...HOLDINGS_HEADERS, 'Coupon', 'Maturity'];
+/** Funds whose holdings legitimately fail a holdingsGuard check (geared, futures, look-through, top-N lists): ticker, or '*' for every fund -> relaxed checks. */
+const HOLDINGS_GUARD_RELAX: Record<string, string[]> = {};
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const TRUTHY = new Set(['1', 'true', 'yes', 'y', 'on']);
 const AUM_BOUNDS = { nano: [0, 10_000_000], micro: [10_000_000, 300_000_000], small: [300_000_000, 2_000_000_000], mid: [2_000_000_000, 10_000_000_000], large: [10_000_000_000, undefined] } as const;
@@ -2187,6 +2189,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   let holdingsDownload: string | null = summary?.holdingsCsvUrl || null;
   let marketValueBasis: string | null = null;
   let nport: ParsedNport | null = null;
+  let holdingsFresh = false; // false while holdingsRows is the previous run's sheet
   if (!config.skipSchwab) {
     const candidates = summary?.holdingsCsvUrl ? [summary.holdingsCsvUrl] : holdingsCsvCandidates(fund.ticker, summary?.totalHoldingsAsOfDate || null);
     for (const url of candidates) {
@@ -2196,6 +2199,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
         if (!parsed.rows.length) continue;
         holdingsRows = parsed.rows;
         holdingsHeaders = parsed.headers;
+        holdingsFresh = true;
         holdingsAsOf = parsed.asOfDate;
         holdingsDownload = url;
         holdingsSource = `schwabassetmanagement.com full holdings CSV export (${url.split('/').pop()}${csv.via === 'proxy' ? ', via read-only rendering proxy' : ''})`;
@@ -2215,6 +2219,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
         if (seriesMatches && parsed.holdings.length) {
           const names = await loadCompanyTickerTable(config);
           holdingsRows = fillNportTickers(parsed.holdings, names);
+          holdingsFresh = true;
           holdingsHeaders = holdingsRows.some((row) => 'Coupon' in row || 'Maturity' in row) ? BOND_HOLDINGS_HEADERS : HOLDINGS_HEADERS;
           holdingsAsOf = parsed.repPdDate || null;
           nport = parsed;
@@ -2302,6 +2307,9 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   // A fund is either fully updated or fully kept: when a required source failed for a fund that is already
   // published, keep its previous complete state instead of mixing fresh columns with stale ones.
   // A fund with no published data has nothing to keep: it is not written at all and gets a catalog-only index row (dataFile null).
+  // Fresh holdings that look broken (no weight column, non-numeric weights, a bad weight sum, half the rows gone) never replace the published ones.
+  const holdingsProblem = holdingsFresh ? holdingsGuard(holdingsHeaders, holdingsRows, numberOrNull(previousMeta?.holdings?.totalRows), HOLDINGS_GUARD_RELAX[fund.ticker] ?? HOLDINGS_GUARD_RELAX['*'] ?? []) : null;
+  if (holdingsProblem) throw new Error(`holdings guard: ${holdingsProblem}; ${previousMeta ? 'kept the previous complete data' : 'no data published for this fund yet'}`);
   if ((!config.skipSchwab && !summary) || (!config.skipYahoo && !chart)) {
     throw new Error(`required source failed (${!summary && !config.skipSchwab ? 'product page' : 'Yahoo chart'}); ${previousMeta ? 'kept the previous complete data' : 'no data published for this fund yet'}`);
   }
@@ -2714,3 +2722,49 @@ if ((import.meta as { main?: boolean }).main) {
   if (process.argv.some((arg) => ['-h', '--help', 'help'].includes(arg))) console.log(USAGE.trim());
   else await main().catch((error) => { console.error(error instanceof Error ? error.stack : String(error)); process.exitCode = 1; });
 }
+
+// <holdings-guard> shared block of .claude/tools/etfs/etf-std/holdings-guard.block.ts, applied by apply-holdings-guard.ts: never edit it in one repo
+/**
+ * Sanity check of a fund's new holdings before they replace the published ones. Returns why they must be rejected
+ * (the caller then keeps the fund's previous state and reports it as failed), or null when they may be written.
+ * An empty sheet passes only when nothing was published before. Otherwise a Name and a weight column (Weight,
+ * Weight (%) or Market Weight) are required, >= 80% of the rows carry a numeric weight, the weights add up to
+ * 50..150 and the sheet keeps >= 50% of the previously published rows. `relax` switches off the checks a fund
+ * legitimately fails: 'numeric' and 'sum' (geared, inverse, futures, look-through, top-N lists) and 'count'.
+ * Rows are arrays in header order or objects keyed by the header text.
+ */
+export function holdingsGuard(headers: ReadonlyArray<string>, rows: ReadonlyArray<unknown>, previousRows: number | null | undefined, relax: ReadonlyArray<string> = []): string | null {
+  const previous = Number(previousRows) > 0 ? Number(previousRows) : 0;
+  if (!rows.length) return previous ? `no holdings rows (${previous} published)` : null;
+  const names = headers.map((header) => String(header).trim().toLowerCase());
+  const nameAt = names.indexOf('name');
+  let weightAt = names.indexOf('weight');
+  if (weightAt < 0) weightAt = names.indexOf('weight (%)');
+  if (weightAt < 0) weightAt = names.indexOf('market weight');
+  if (nameAt < 0 || weightAt < 0) return `no ${nameAt < 0 ? 'Name' : 'weight'} column (headers: ${headers.join(', ') || 'none'})`;
+  let numeric = 0;
+  let sum = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const row: any = rows[i];
+    const weight = holdingsGuardNumber(Array.isArray(row) ? row[weightAt] : row && typeof row === 'object' ? row[headers[weightAt]] : undefined);
+    if (weight !== null) {
+      numeric++;
+      sum += weight;
+    }
+  }
+  if (relax.indexOf('numeric') < 0 && numeric < rows.length * 0.8) return `only ${numeric} of ${rows.length} rows have a numeric weight`;
+  if (relax.indexOf('sum') < 0 && (sum < 50 || sum > 150)) return `weights add up to ${sum.toFixed(2)}, outside 50..150`;
+  if (relax.indexOf('count') < 0 && previous && rows.length < previous * 0.5) return `${rows.length} rows, less than half of the ${previous} published`;
+  return null;
+}
+
+/** A weight cell as a number: %, $, commas and spaces are ignored, (x) is negative; null when it is no plain number (a zero-width character inside counts as broken). */
+function holdingsGuardNumber(value: unknown): number | null {
+  if (typeof value === 'number') return Number.isFinite(value) ? value : null;
+  let text = String(value === null || value === undefined ? '' : value).replace(/[ \t ,%$]/g, '').replace(/−/g, '-');
+  const negative = /^\(.*\)$/.test(text);
+  if (negative) text = text.slice(1, -1);
+  if (!/^[-+]?(\d+\.?\d*|\.\d+)(e[-+]?\d+)?$/i.test(text)) return null;
+  return negative ? -Number(text) : Number(text);
+}
+// </holdings-guard>

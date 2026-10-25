@@ -22,6 +22,7 @@ import {
   historyPeriodStart,
   historyRows,
   holdingsCsvCandidates,
+  holdingsGuard,
   htmlToText,
   inferDistributionFrequency,
   installSystemCa,
@@ -270,7 +271,7 @@ const PRODUCT_PAGE_HTML = `<html><head><title>SCHD Schwab U.S. Dividend Equity E
 const EQUITY_HOLDINGS_CSV = [
   'As-Of-Date,Symbol,Quantity,Percent of Assets,Name,BBG FIGI,Country,Currency,Exchange,Exchange (fx) Rate,Market Currency,Sector',
   '2026-09-17,MRK,37710468.0000000000,4.9137166784,MERCK & CO INC,BBG000BPD257,US,USD,XNYS,1.0000000000,USD,Health Care',
-  '2026-09-17,T,116803468.0000000000,4.1236578520,AT&T INC,BBG000BSJK37,US,USD,XNYS,1.0000000000,USD,Communication Services',
+  '2026-09-17,T,116803468.0000000000,94.1236578520,AT&T INC,BBG000BSJK37,US,USD,XNYS,1.0000000000,USD,Communication Services',
   '2026-09-17,USD,2832806.9200000000,0.0123721038,US DOLLAR,,US,USD,OTC,1.0000000000,USD,',
   '2026-09-17,,1.0000000000,0.0000000000,EMINI MAR 26,,US,USD,OTC,1.0000000000,USD,',
   '"Holdings may include collateral held by the fund for securities on loan. Holdings are subject to change."',
@@ -639,6 +640,21 @@ describe('parsing', () => {
     expect(() => parseHoldingsCsv('<html>nope</html>')).toThrow(/header row not found/);
   });
 
+  test('holdings guard: header-only, renamed weight column, broken weights, a bad weight sum and a halved sheet are rejected', () => {
+    const headers = ['Name', 'Ticker', 'Weight'];
+    const rows = [{ Name: 'A', Ticker: 'A', Weight: '60%' }, { Name: 'B', Ticker: 'B', Weight: '40%' }];
+    expect(holdingsGuard(headers, rows, 2)).toBeNull();
+    expect(holdingsGuard(headers, [['A', 'A', '60'], ['B', 'B', '40']], null)).toBeNull();
+    expect(holdingsGuard([], [], 0)).toBeNull(); // nothing published before: an empty sheet is honest
+    expect(holdingsGuard(headers, [], 505)).toContain('no holdings rows');
+    expect(holdingsGuard(['Name', 'Ticker', 'Wt'], rows, 2)).toContain('no weight column');
+    expect(holdingsGuard(headers, rows.map((row) => ({ ...row, Weight: '6\u200B0' })), 2)).toContain('numeric weight');
+    const allocation = [{ Name: 'Cash&Collateral', Ticker: '-', Weight: '100' }, { Name: 'Equities', Ticker: '-', Weight: '476' }];
+    expect(holdingsGuard(headers, allocation, 2)).toContain('outside 50..150');
+    expect(holdingsGuard(headers, allocation, 2, ['sum'])).toBeNull();
+    expect(holdingsGuard(headers, rows, 5)).toContain('less than half');
+  });
+
   test('distributions CSV and URL helpers: ascending by ex-date, trailer dropped, candidates unique', () => {
     const rows = parseDistributionsCsv(DISTRIBUTIONS_CSV);
     expect(rows).toHaveLength(5);
@@ -885,6 +901,20 @@ describe('pipeline', () => {
       await main();
       expect(snapshot(join(api, 'funds'))).toEqual(before);
       expect(readIndexRows(api)).toHaveLength(1);
+    });
+  });
+
+  test('holdings that fail the guard keep the fund exactly as published and report it failed', async () => {
+    const renamed = EQUITY_HOLDINGS_CSV.replace('Percent of Assets', 'Pct of Assets'); // every weight becomes "-"
+    await feed({ fetch: world() }, async (api) => {
+      await main();
+      const first = snapshot(api);
+      const good = world();
+      globalThis.fetch = (async (input: any, init?: any) => (urlOf(input).includes('FundHoldings') ? new Response(renamed, { status: 200 }) : good(input, init))) as unknown as typeof fetch;
+      process.env.TICKERS = 'SCHX';
+      await main();
+      expect(snapshot(api)).toEqual(first);
+      expect(process.exitCode).toBe(1);
     });
   });
 
