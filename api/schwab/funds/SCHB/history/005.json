@@ -2,7 +2,7 @@
   "ticker": "SCHB",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4266,
+  "totalRows": 4269,
   "headers": [
     "Date",
     "Close",
@@ -1605,6 +1605,24 @@
       "Close": "29.510000228881836",
       "Adj Close": "29.51",
       "Volume": "21314500"
+    },
+    {
+      "Date": "Oct 21 2026",
+      "Close": "29.690000534057617",
+      "Adj Close": "29.69",
+      "Volume": "14622600"
+    },
+    {
+      "Date": "Oct 22 2026",
+      "Close": "29.329999923706055",
+      "Adj Close": "29.33",
+      "Volume": "19247800"
+    },
+    {
+      "Date": "Oct 23 2026",
+      "Close": "29.190000534057617",
+      "Adj Close": "29.19",
+      "Volume": "17680100"
     }
   ]
 }

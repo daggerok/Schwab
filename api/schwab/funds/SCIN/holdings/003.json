@@ -1,0 +1,52 @@
+{
+  "ticker": "SCIN",
+  "page": 3,
+  "pageSize": 250,
+  "totalRows": 503,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category",
+    "Coupon",
+    "Maturity"
+  ],
+  "rows": [
+    {
+      "Name": "JAPAN (GOVERNMENT OF) 10YR #375",
+      "Ticker": "-",
+      "Identifier": "BBG01NLC7LN9",
+      "Weight": "0.001149",
+      "Market Value": "287.66",
+      "Shares Held": "100000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "1.1",
+      "Maturity": "06/20/2034"
+    },
+    {
+      "Name": "MALAYSIAN RINGGIT",
+      "Ticker": "MYR",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0.03",
+      "Shares Held": "0.22",
+      "Asset Category": "-",
+      "Coupon": "-",
+      "Maturity": "-"
+    },
+    {
+      "Name": "THAI BAHT",
+      "Ticker": "THB",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0.02",
+      "Shares Held": "0.94",
+      "Asset Category": "-",
+      "Coupon": "-",
+      "Maturity": "-"
+    }
+  ]
+}

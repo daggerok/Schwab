@@ -2,7 +2,7 @@
   "ticker": "SMBS",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 480,
+  "totalRows": 483,
   "headers": [
     "Date",
     "Close",
@@ -2889,6 +2889,24 @@
       "Close": "24.309999465942383",
       "Adj Close": "24.31",
       "Volume": "2034200"
+    },
+    {
+      "Date": "Oct 21 2026",
+      "Close": "24.280000686645508",
+      "Adj Close": "24.28",
+      "Volume": "809900"
+    },
+    {
+      "Date": "Oct 22 2026",
+      "Close": "24.46500015258789",
+      "Adj Close": "24.47",
+      "Volume": "1452700"
+    },
+    {
+      "Date": "Oct 23 2026",
+      "Close": "24.420000076293945",
+      "Adj Close": "24.42",
+      "Volume": "703300"
     }
   ]
 }

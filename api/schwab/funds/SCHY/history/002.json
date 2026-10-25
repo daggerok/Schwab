@@ -2,7 +2,7 @@
   "ticker": "SCHY",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1376,
+  "totalRows": 1379,
   "headers": [
     "Date",
     "Close",
@@ -2265,6 +2265,24 @@
       "Close": "32.900001525878906",
       "Adj Close": "32.9",
       "Volume": "537700"
+    },
+    {
+      "Date": "Oct 21 2026",
+      "Close": "32.84000015258789",
+      "Adj Close": "32.84",
+      "Volume": "347000"
+    },
+    {
+      "Date": "Oct 22 2026",
+      "Close": "33.029998779296875",
+      "Adj Close": "33.03",
+      "Volume": "519200"
+    },
+    {
+      "Date": "Oct 23 2026",
+      "Close": "33.029998779296875",
+      "Adj Close": "33.03",
+      "Volume": "594100"
     }
   ]
 }
