@@ -33,10 +33,12 @@ import {
   isHoldingsCsv,
   isProductPage,
   isinFromCusip,
+  isUsListing,
   lookupLabel,
   main,
   mergeOfficialReturns,
   normalizeHoldingName,
+  nportIsNewer,
   nportUrlFor,
   numberOrNull,
   paceRequests,
@@ -732,6 +734,42 @@ describe('parsing 3', () => {
   });
 });
 
+describe('parsing 4', () => {
+  test('holdings CSV: a foreign listing publishes Ticker "-" with its FIGI; U.S. venues, U.S. cash and ADRs keep the symbol; no name or symbol column is refused', () => {
+    const header = 'As-Of-Date,Symbol,Quantity,Percent of Assets,Name,BBG FIGI,Country,Currency,Exchange,Exchange (fx) Rate,Market Currency,Sector';
+    const fndf = [header,
+      '2026-10-22,SAN,14822212,0.7484,BANCO SANTANDER,BBG000K65LJ1,ES,USD,XMAD,0.89,EUR,Financials',
+      '2026-10-22,SAN,1544899,0.5091,SANOFI SA,BBG000BWBBP2,FR,USD,XPAR,0.89,EUR,Health Care',
+      '2026-10-22,T,1431177,0.0495,TELUS,BBG000BZYZZ6,CA,USD,XTSE,1.40,CAD,Communication Services',
+      '2026-10-22,BNTX,162000,0.0570,BIONTECH SE ADR,BBG00Q70B4D9,DE,USD,XNGS,1,USD,Health Care',
+      '2026-10-22,TEVA,100,0.1,TEVA PHARMACEUTICAL INDUSTRIES,BBG000BV9VR4,IL,USD,XNYS,1,USD,Health Care',
+      '2026-10-22,USD,1,0.01,US DOLLAR,,US,USD,OTC,1,USD,',
+      '2026-10-22,JPY,1,0.01,JAPANESE YEN,,JP,USD,OTC,1,JPY,',
+      '2026-10-22,MFSZ6,1,0,MSCI EAFE INDEX DEC 26,,US,USD,OTC,1,USD,',
+    ].join('\n');
+    // SW-2: Santander and Sanofi were both "SAN", Telus "T" (AT&T in U.S. funds): the Watchlist merged them by ticker
+    expect(parseHoldingsCsv(fndf).rows.map((row) => [row.Ticker, row.Identifier])).toEqual([
+      ['-', 'BBG000K65LJ1'], ['-', 'BBG000BWBBP2'], ['-', 'BBG000BZYZZ6'], ['BNTX', 'BBG00Q70B4D9'], ['TEVA', 'BBG000BV9VR4'], ['USD', '-'], ['-', '-'], ['MFSZ6', '-'],
+    ]);
+    expect(parseHoldingsCsv(EQUITY_HOLDINGS_CSV).rows.map((row) => row.Ticker)).toEqual(['MRK', 'T', 'USD', '-']); // a U.S. fund is unchanged
+    expect(parseHoldingsCsv('As-Of-Date,Symbol,Name,Percent of Assets\n2026-09-30,AAA,Foo,1.5\n').rows[0].Ticker).toBe('AAA'); // no Exchange or Country column
+    expect([isUsListing('ARCX', 'CN'), isUsListing('XLON', 'US'), isUsListing('XLON', 'GB'), isUsListing('', ''), isUsListing('', 'GB')]).toEqual([true, true, false, true, false]);
+    // SW-3: a dropped Name or Symbol column would publish "-" for every name or ticker over good data
+    expect(() => parseHoldingsCsv(EQUITY_HOLDINGS_CSV.replace(',Name,', ',Security,'))).toThrow('no name column');
+    expect(() => parseHoldingsCsv(EQUITY_HOLDINGS_CSV.replace('As-Of-Date,Symbol,', 'As-Of-Date,Ticker Code,'))).toThrow('no symbol column');
+  });
+
+  test('N-PORT freshness: a report replaces published holdings only when strictly newer; nothing published accepts any report', () => {
+    expect(nportIsNewer('2026-06-30', '2026-10-20', 12613)).toBe(false); // SW-1: SCHZ published from the 10-20 CSV
+    expect(nportIsNewer('2026-10-20', '2026-10-20', 12613)).toBe(false);
+    expect(nportIsNewer('2026-06-30', '2026-03-31', 100)).toBe(true);
+    expect(nportIsNewer('2026-06-30', 'Oct 20 2026', 100)).toBe(false);
+    expect(nportIsNewer('', '2026-03-31', 100)).toBe(false);
+    expect(nportIsNewer('2026-06-30', null, 0)).toBe(true);
+    expect(nportIsNewer('2026-06-30', null, 100)).toBe(true); // published rows without a date cannot be compared
+  });
+});
+
 // ---------------------------------------------------------------------------
 // metrics
 // ---------------------------------------------------------------------------
@@ -748,6 +786,15 @@ describe('metrics', () => {
     expect(priceReturns([day('2024-09-30', 10), day('2026-10-01', 12)]).siAnn).not.toBeNull();
     expect(annualizedToTotal(10, 3)).toBe(33.1);
     expect(annualizedToTotal(null, 3)).toBeNull();
+  });
+
+  test('TER: terValue is the net ratio, terGrossValue the gross one when the product finder publishes it, null otherwise', () => {
+    const meta = { ...sampleMeta('FNDC'), expenseRatio: { display: '0.39%', value: 0.39, gross: 0.39 } };
+    expect(rowFromMeta(meta)).toMatchObject({ ter: '0.39%', terValue: 0.39, terGross: '0.39%', terGrossValue: 0.39 });
+    expect(rowFromMeta(sampleMeta('SCHD'))).toMatchObject({ terValue: 0.06, terGross: '—', terGrossValue: null });
+    const fund = { ticker: 'X', name: 'X', category: 'ETF', fundPage: '', cusip: '', isin: '', exchange: '', ter: 0.39, inception: null };
+    expect(placeholderRow({ ...fund, grossTer: 0.39 })).toMatchObject({ terValue: 0.39, terGrossValue: 0.39 });
+    expect(placeholderRow(fund)).toMatchObject({ terValue: 0.39, terGross: '—', terGrossValue: null });
   });
 
   test('official returns win over derived ones but keep the derived QTD', () => {
@@ -1034,6 +1081,52 @@ describe('pipeline 3', () => {
       expect(String(row.metrics.returnsBasis).length).toBeGreaterThan(0);
       expect(() => statSync(join(api, 'funds/FNDE'))).toThrow();
       expect(placeholderRow({ ticker: 'X', name: 'X', category: 'ETF', fundPage: '', cusip: '', isin: '', exchange: '', ter: null, inception: null }).dataFile).toBeNull();
+    });
+  });
+
+  test('a new fund that no source answers is failed and keeps its catalog-only row, never an empty meta.json reported as updated', async () => {
+    await feed({ meta: ['SCHX'], listed: ['SCHX'], env: { TICKERS: 'FNDE' }, fetch: world(/products\/fnde/i) }, async (api) => {
+      await main();
+      expect(process.exitCode).toBe(1);
+      const first = snapshot(api);
+      // the next run reads its catalog from that index (SKIP_SCHWAB) and asks no source (SKIP_YAHOO, EDGAR_FALLBACK=false)
+      Object.assign(process.env, { SKIP_SCHWAB: 'true', SKIP_YAHOO: 'true' });
+      process.exitCode = 0;
+      await main();
+      expect(process.exitCode).toBe(1);
+      expect(() => statSync(join(api, 'funds/FNDE'))).toThrow();
+      expect(readIndexRows(api).find((row) => row.ticker === 'FNDE')).toMatchObject({ dataFile: null, holdings: 0, history: 0 });
+      expect(snapshot(api)).toEqual(first);
+    });
+  });
+
+  test('an N-PORT report older than the published holdings never replaces them; a newer one does (SW-1)', async () => {
+    const nport = (period: string) => `<edgarSubmission><genInfo><seriesName>Schwab U.S. Large-Cap ETF</seriesName><seriesId>S000027575</seriesId><repPdDate>${period}</repPdDate></genInfo><fundInfo><netAssets>1000</netAssets></fundInfo><invstOrSecs><invstOrSec><name>APPLE INC</name><cusip>037833100</cusip><balance>10</balance><valUSD>250</valUSD><pctVal>25</pctVal><assetCat>EC</assetCat></invstOrSec><invstOrSec><name>MICROSOFT CORP</name><cusip>594918104</cusip><balance>10</balance><valUSD>250</valUSD><pctVal>25</pctVal><assetCat>EC</assetCat></invstOrSec><invstOrSec><name>NVIDIA CORP</name><cusip>67066G104</cusip><balance>10</balance><valUSD>250</valUSD><pctVal>25</pctVal><assetCat>EC</assetCat></invstOrSec><invstOrSec><name>AMAZON COM INC</name><cusip>023135106</cusip><balance>10</balance><valUSD>250</valUSD><pctVal>25</pctVal><assetCat>EC</assetCat></invstOrSec></invstOrSecs></edgarSubmission>`;
+    const secWorld = (period: string): typeof fetch => {
+      const issuer = world(/FundHoldings/);
+      return (async (input: any, init?: any) => {
+        const url = urlOf(input);
+        if (url.endsWith('company_tickers_mf.json')) return new Response(JSON.stringify({ fields: ['cik', 'seriesId', 'classId', 'symbol'], data: [[1454889, 'S000027575', 'C000083337', 'SCHX']] }));
+        if (url.endsWith('company_tickers.json')) return new Response('{}');
+        if (url.includes('browse-edgar')) return new Response('<feed><entry><content><accession-number>0001752724-26-000009</accession-number><filing-type>NPORT-P</filing-type><filing-href>https://www.sec.gov/Archives/edgar/data/1454889/000175272426000009/0001752724-26-000009-index.htm</filing-href></content></entry></feed>');
+        if (url.includes('/Archives/edgar/data/')) return new Response(nport(period));
+        return issuer(input, init);
+      }) as unknown as typeof fetch;
+    };
+    await feed({ env: { TICKERS: 'SCHX' }, fetch: world() }, async (api) => {
+      await main();
+      const holdings = () => JSON.parse(readFileSync(join(api, 'funds/SCHX/meta.json'), 'utf8')).holdings;
+      expect(holdings()).toMatchObject({ asOfDate: '2026-09-17', totalRows: 4 });
+      const published = snapshot(join(api, 'funds/SCHX/holdings'));
+      process.env.EDGAR_FALLBACK = 'true';
+      globalThis.fetch = secWorld('2026-06-30');
+      await main();
+      expect(holdings()).toMatchObject({ asOfDate: '2026-09-17', totalRows: 4 });
+      expect(snapshot(join(api, 'funds/SCHX/holdings'))).toEqual(published);
+      globalThis.fetch = secWorld('2026-09-30');
+      await main();
+      expect(holdings()).toMatchObject({ asOfDate: '2026-09-30', totalRows: 4 });
+      expect(holdings().source).toContain('N-PORT-P');
     });
   });
 

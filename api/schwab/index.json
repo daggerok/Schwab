@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T03:53:09Z",
+  "generatedAt": "2026-10-26T05:39:53Z",
   "source": {
     "provider": "Schwab Asset Management (Charles Schwab Investment Management, Inc.), U.S.-listed ETFs",
     "market": "us",
@@ -12,7 +12,7 @@
   },
   "counts": {
     "funds": 34,
-    "holdings": 54163,
+    "holdings": 54171,
     "history": 95351
   },
   "funds": [
@@ -190,6 +190,8 @@
       "isin": "US8085247489",
       "ter": "0.39%",
       "terValue": 0.39,
+      "terGross": "0.39%",
+      "terGrossValue": 0.39,
       "nav": "$49.08",
       "navValue": 49.08,
       "aum": "$3.04 B",
@@ -272,6 +274,8 @@
       "isin": "US8085247307",
       "ter": "0.39%",
       "terValue": 0.39,
+      "terGross": "0.39%",
+      "terGrossValue": 0.39,
       "nav": "$41.45",
       "navValue": 41.45,
       "aum": "$10.15 B",
@@ -354,6 +358,8 @@
       "isin": "US8085247554",
       "ter": "0.25%",
       "terValue": 0.25,
+      "terGross": "0.25%",
+      "terGrossValue": 0.25,
       "nav": "$53.68",
       "navValue": 53.68,
       "aum": "$25.57 B",
@@ -764,6 +770,8 @@
       "isin": "US8085248883",
       "ter": "0.06%",
       "terValue": 0.06,
+      "terGross": "0.06%",
+      "terGrossValue": 0.06,
       "nav": "$47.92",
       "navValue": 47.92,
       "aum": "$5.46 B",
@@ -833,7 +841,7 @@
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 2334,
+      "holdings": 2333,
       "history": 4220
     },
     {
@@ -928,6 +936,8 @@
       "isin": "US8085247067",
       "ter": "0.06%",
       "terValue": 0.06,
+      "terGross": "0.06%",
+      "terGrossValue": 0.06,
       "nav": "$34.74",
       "navValue": 34.74,
       "aum": "$12.25 B",
@@ -997,7 +1007,7 @@
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 2232,
+      "holdings": 2233,
       "history": 4220
     },
     {
@@ -1010,6 +1020,8 @@
       "isin": "US8085248057",
       "ter": "0.03%",
       "terValue": 0.03,
+      "terGross": "0.03%",
+      "terGrossValue": 0.03,
       "nav": "$26.82",
       "navValue": 26.82,
       "aum": "$66.89 B",
@@ -1079,7 +1091,7 @@
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 1440,
+      "holdings": 1441,
       "history": 4269
     },
     {
@@ -2076,6 +2088,8 @@
       "isin": "US8085246721",
       "ter": "0.08%",
       "terValue": 0.08,
+      "terGross": "0.08%",
+      "terGrossValue": 0.08,
       "nav": "$32.95",
       "navValue": 32.95,
       "aum": "$2.69 B",
@@ -2145,7 +2159,7 @@
         "returnsBasis": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
         "performanceAsOf": "2026-09-30"
       },
-      "holdings": 134,
+      "holdings": 141,
       "history": 1379
     },
     {
@@ -2732,6 +2746,8 @@
       "isin": "US8085246564",
       "ter": "0.3%",
       "terValue": 0.3,
+      "terGross": "0.3%",
+      "terGrossValue": 0.3,
       "nav": "$49.65",
       "navValue": 49.65,
       "aum": "$168.81 M",
