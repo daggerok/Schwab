@@ -10,9 +10,9 @@ import {
   ADJ_CLOSE_NOISE,
   CLOSED_FUNDS,
   CONTROL_NAMES,
+  HOLDINGS_GUARD_RELAX,
   FETCH_TIMEOUT_MS,
   annualizedToTotal,
-  cleanHoldingTicker,
   closedFund,
   configurePacing,
   deriveMetrics,
@@ -23,6 +23,7 @@ import {
   frequencyCodeLabel,
   historyPeriodStart,
   historyRows,
+  holdingsWeightCount,
   holdingsCsvCandidates,
   holdingsGuard,
   htmlToText,
@@ -37,21 +38,21 @@ import {
   lookupLabel,
   main,
   mergeOfficialReturns,
-  normalizeHoldingName,
-  nportIsNewer,
-  nportUrlFor,
+  nportHoldingsSheet,
+  nportIsFresh,
+  nportTickers,
   numberOrNull,
   paceRequests,
   parseAumRange,
   parseCatalogText,
   parseChart,
+  parseNportFiling,
+  parseSecCompanyNames,
+  parseSecFundTickers,
   parseCsv,
   parseDistributionsCsv,
-  parseEdgarAtomFilings,
   parseFundName,
-  parseFundTickerMap,
   parseHoldingsCsv,
-  parseNport,
   parseOfficialReturns,
   parseProductPage,
   placeholderRow,
@@ -713,24 +714,20 @@ describe('parsing 3', () => {
     expect(() => parseChart({})).toThrow(/no result/);
   });
 
-  test('SEC EDGAR fallback: ticker map, original NPORT-P filings only, N-PORT holdings and net assets', () => {
-    const map = parseFundTickerMap({ fields: ['cik', 'seriesId', 'classId', 'symbol'], data: [[1454889, 'S000034073', 'C000104937', 'SCHD'], [1454889, 'S000027575', 'C000083337', 'SCHX']] });
+  test('SEC EDGAR fallback (shared nport-reader): ticker map, N-PORT sheet with empty missing numbers, no derivative identifiers, tickers only for U.S. equities', () => {
+    const map = parseSecFundTickers({ fields: ['cik', 'seriesId', 'classId', 'symbol'], data: [[1454889, 'S000034073', 'C000104937', 'SCHD'], [1454889, 'S000027575', 'C000083337', 'SCHX']] });
     expect(map.get('SCHD')).toEqual({ cik: '0001454889', seriesId: 'S000034073', classId: 'C000104937' });
-    expect(map.size).toBe(2);
-    const atom = '<feed><entry><content><accession-number>0001752724-26-000001</accession-number><filing-date>2026-08-27</filing-date><filing-type>NPORT-P</filing-type><filing-href>https://www.sec.gov/Archives/edgar/data/1454889/000175272426000001/0001752724-26-000001-index.htm</filing-href><period>2026-06-30</period></content></entry><entry><content><accession-number>0001752724-26-000002</accession-number><filing-type>NPORT-P/A</filing-type></content></entry></feed>';
-    const filings = parseEdgarAtomFilings(atom);
-    expect(filings).toHaveLength(1);
-    expect(filings[0].url).toBe(nportUrlFor('0001454889', '0001752724-26-000001'));
     const xml = `<edgarSubmission><genInfo><seriesName>Schwab U.S. Dividend Equity ETF</seriesName><seriesId>S000034073</seriesId><repPdDate>2026-06-30</repPdDate></genInfo><fundInfo><netAssets>112770927091.11</netAssets></fundInfo>
-<invstOrSecs><invstOrSec><name>MERCK &amp; CO INC</name><cusip>58933Y105</cusip><balance>37710468</balance><valUSD>5541249108.24</valUSD><pctVal>4.91</pctVal><assetCat>EC</assetCat></invstOrSec>
-<invstOrSec><name>UNITED STATES TREASURY NOTE</name><cusip>91282CJL6</cusip><balance>1000000</balance><valUSD>990000</valUSD><pctVal>0.5</pctVal><assetCat>DBT</assetCat><debtSec><maturityDt>2028-01-31</maturityDt><annualizedRt>3.5</annualizedRt></debtSec></invstOrSec></invstOrSecs></edgarSubmission>`;
-    const parsed = parseNport(xml);
-    expect([parsed.seriesId, parsed.repPdDate, parsed.netAssets, parsed.holdings.length]).toEqual(['S000034073', '2026-06-30', 112_770_927_091.11, 2]);
-    expect(parsed.holdings[0]).toEqual({ Name: 'MERCK & CO INC', Ticker: '-', Identifier: '58933Y105', Weight: '4.91', 'Market Value': '5541249108.24', 'Shares Held': '37710468', 'Asset Category': 'EC' });
-    expect([parsed.holdings[1].Coupon, parsed.holdings[1].Maturity]).toEqual(['3.5', '2028-01-31']);
-    expect(normalizeHoldingName('Merck & Co., Inc.')).toBe('MERCK AND');
-    expect(cleanHoldingTicker(' n/a ')).toBe('');
-    expect(cleanHoldingTicker('brk.b')).toBe('BRK.B');
+<invstOrSecs><invstOrSec><name>MERCK &amp; CO INC</name><cusip>58933Y105</cusip><identifiers><isin value="US58933Y1055"/></identifiers><balance>37710468.00000000</balance><curCd>USD</curCd><valUSD>5541249108.24</valUSD><pctVal>4.91</pctVal><assetCat>EC</assetCat></invstOrSec>
+<invstOrSec><name>UNITED STATES TREASURY NOTE</name><cusip>91282CJL6</cusip><identifiers><ticker value="T"/></identifiers><balance>1000000</balance><curCd>USD</curCd><valUSD>990000</valUSD><assetCat>DBT</assetCat><debtSec><maturityDt>2028-01-31</maturityDt><annualizedRt>3.5</annualizedRt></debtSec></invstOrSec>
+<invstOrSec><name>DJIA MINI E-CBOT</name><cusip>000000000</cusip><identifiers><other otherDesc="Bloomberg Identifier" value="BBG01VKPGXL9"/></identifiers><curCd>USD</curCd><valUSD>4913771.74</valUSD><pctVal>0.005</pctVal><assetCat>DE</assetCat><derivativeInfo><futrDeriv derivCat="FUT"><descRefInstrmnt><otherRefInst><identifiers><cusip value="78462F103"/><ticker value="SPY"/></identifiers></otherRefInst></descRefInstrmnt></futrDeriv></derivativeInfo></invstOrSec></invstOrSecs></edgarSubmission>`;
+    const filing = parseNportFiling(xml);
+    expect([filing.seriesId, filing.repPdDate, filing.netAssets, filing.positions.length]).toEqual(['S000034073', '2026-06-30', 112_770_927_091.11, 3]);
+    const sheet = nportHoldingsSheet(filing, nportTickers(filing.positions, parseSecCompanyNames({ 0: { ticker: 'MRK', title: 'Merck & Co., Inc.' }, 1: { ticker: 'T', title: 'AT&T INC.' } })));
+    expect(sheet.headers).toEqual(['Name', 'Ticker', 'Identifier', 'Weight', 'Market Value', 'Shares Held', 'Asset Category', 'Coupon', 'Maturity']);
+    expect(sheet.rows[0]).toEqual({ Name: 'MERCK & CO INC', Ticker: 'MRK', Identifier: '58933Y105', Weight: '4.91', 'Market Value': '5541249108.24', 'Shares Held': '37710468', 'Asset Category': 'EC', Coupon: '', Maturity: '-' });
+    // the Treasury note keeps no ticker (a bond is no "T" for AT&T) and an empty weight, never 0; the future keeps its own id, not SPY's
+    expect(sheet.rows.slice(1).map((row) => [row.Ticker, row.Identifier, row.Weight, row.Coupon, row.Maturity])).toEqual([['-', '91282CJL6', '', '3.5', '2028-01-31'], ['-', 'BBG01VKPGXL9', '0.005', '', '-']]);
   });
 });
 
@@ -760,13 +757,20 @@ describe('parsing 4', () => {
   });
 
   test('N-PORT freshness: a report replaces published holdings only when strictly newer; nothing published accepts any report', () => {
-    expect(nportIsNewer('2026-06-30', '2026-10-20', 12613)).toBe(false); // SW-1: SCHZ published from the 10-20 CSV
-    expect(nportIsNewer('2026-10-20', '2026-10-20', 12613)).toBe(false);
-    expect(nportIsNewer('2026-06-30', '2026-03-31', 100)).toBe(true);
-    expect(nportIsNewer('2026-06-30', 'Oct 20 2026', 100)).toBe(false);
-    expect(nportIsNewer('', '2026-03-31', 100)).toBe(false);
-    expect(nportIsNewer('2026-06-30', null, 0)).toBe(true);
-    expect(nportIsNewer('2026-06-30', null, 100)).toBe(true); // published rows without a date cannot be compared
+    expect(nportIsFresh('2026-06-30', '2026-10-20', 12613)).toBe(false); // SW-1: SCHZ published from the 10-20 CSV
+    expect(nportIsFresh('2026-10-20', '2026-10-20', 12613)).toBe(false);
+    expect(nportIsFresh('2026-06-30', '2026-03-31', 100)).toBe(true);
+    expect(nportIsFresh('', '2026-03-31', 100)).toBe(false);
+    expect(nportIsFresh('2026-06-30', null, 0)).toBe(true);
+    expect(nportIsFresh('2026-06-30', null, 100)).toBe(false); // published rows without a date cannot be compared: keep them
+  });
+
+  test('dates: month-name and U.S. dates are the same calendar day in every time zone', () => {
+    for (const tz of ['Asia/Tokyo', 'America/Los_Angeles', 'UTC']) {
+      process.env.TZ = tz;
+      expect(['Oct 24, 2026', 'October 24 2026', '24 Oct 2026', '10/24/2026', '10/24/26', '2026-10-24'].map((raw) => toIsoDate(raw))).toEqual(Array(6).fill('2026-10-24'));
+      expect(toIsoDate('not a date')).toBe('not a date');
+    }
   });
 });
 
@@ -822,6 +826,15 @@ describe('metrics', () => {
 });
 
 describe('metrics 2', () => {
+  test('a fund younger than one year publishes no 1y, 3y or since-inception return, official or derived', async () => {
+    const young = PRODUCT_PAGE_HTML.replace('<td>10/20/2011</td>', '<td>01/15/2026</td>');
+    await feed({ env: { TICKERS: 'SCHX' }, fetch: world(null, young) }, async (api) => {
+      await main();
+      const metrics = readIndexRows(api).find((row) => row.ticker === 'SCHX')!.metrics;
+      expect([metrics.ytd, metrics.tr1y, metrics.cagr3y, metrics.siAnn, metrics.performanceAsOf]).toEqual([29.31, null, null, null, '2026-08-31']);
+    });
+  });
+
   test('a young fund with no data gets null metrics (never 0) and the same key set as a full row', () => {
     const young = deriveMetrics(priceReturns([]), { dividendYield: null, secYield: null } as never, [], { paymentsPerYear: null }, null, false);
     for (const key of ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'secYield']) expect(young[key]).toBeNull();
@@ -1130,6 +1143,85 @@ describe('pipeline 3', () => {
     });
   });
 
+  test('a HISTORY_RANGE run after a full run keeps the older history and writes nothing (Q25)', async () => {
+    const windowed = (days: number): typeof fetch => (async (input: any, init?: any) => {
+      const response = await world()(input, init);
+      if (!urlOf(input).includes('/v8/finance/chart/')) return response;
+      const payload = await response.json();
+      const result = payload.chart.result[0];
+      result.timestamp = result.timestamp.slice(-days);
+      result.indicators.quote[0].close = result.indicators.quote[0].close.slice(-days);
+      result.indicators.quote[0].volume = result.indicators.quote[0].volume.slice(-days);
+      result.indicators.adjclose[0].adjclose = result.indicators.adjclose[0].adjclose.slice(-days);
+      return Response.json(payload);
+    }) as unknown as typeof fetch;
+    await feed({ fetch: world() }, async (api) => {
+      await main();
+      const first = snapshot(api);
+      process.env.HISTORY_RANGE = '1y';
+      globalThis.fetch = windowed(300);
+      await main();
+      expect(snapshot(api)).toEqual(first);
+      expect(JSON.parse(readFileSync(join(api, 'funds/SCHX/meta.json'), 'utf8')).history.totalRows).toBe(1000);
+    });
+  });
+
+  test('a relaxed guard still keeps numeric published weights from an all-dash sheet (Q24)', async () => {
+    const dashes = EQUITY_HOLDINGS_CSV.split('\r\n').map((line) => (line.startsWith('2026-09-17,') ? line.split(',').map((cell, index) => (index === 3 ? '-' : cell)).join(',') : line)).join('\r\n');
+    await feed({ fetch: world() }, async (api) => {
+      await main();
+      const first = snapshot(api);
+      const good = world();
+      globalThis.fetch = (async (input: any, init?: any) => (urlOf(input).includes('FundHoldings') ? new Response(dashes, { status: 200 }) : good(input, init))) as unknown as typeof fetch;
+      HOLDINGS_GUARD_RELAX.SCHX = ['numeric', 'sum'];
+      try {
+        process.env.TICKERS = 'SCHX';
+        await main();
+      } finally {
+        delete HOLDINGS_GUARD_RELAX.SCHX;
+      }
+      expect(snapshot(api)).toEqual(first);
+      expect(process.exitCode).toBe(1);
+      expect(holdingsWeightCount(['Name', 'Weight'], [['A', '-'], ['B', '2']])).toBe(1);
+    });
+  });
+});
+
+describe('pipeline 4', () => {
+  test('TICKERS outside the live catalog stops the run before any fund request; a stale catalog-only row is dropped (Q27)', async () => {
+    await feed({ meta: ['SCHX'], listed: ['SCHX'], fetch: world() }, async (api, calls) => {
+      const fund = { ticker: 'NOPE', name: 'NOPE', category: 'ETF', fundPage: '', cusip: '', isin: '', exchange: '', ter: null, inception: null };
+      writeFileSync(join(api, 'index.json'), JSON.stringify({ funds: [...readIndexRows(api), placeholderRow(fund)] }));
+      const before = snapshot(api);
+      process.env.TICKERS = 'NOPE';
+      await expect(main()).rejects.toThrow('TICKERS: NOPE not in the Schwab catalog or published feed; nothing was fetched or written');
+      expect(calls.filter((url) => !url.includes('/product-finder'))).toEqual([]);
+      expect(snapshot(api)).toEqual(before);
+      delete process.env.TICKERS;
+      await main();
+      expect(readIndexRows(api).map((row) => row.ticker)).toEqual(['FNDE', 'SCHR', 'SCHX']);
+    });
+  });
+
+  test('NEW FUNDS announces a fund on its first successful publish, a failed new fund as not published yet (Q28)', async () => {
+    await feed({ meta: ['SCHX'], listed: ['SCHX'], fetch: world(/products\/schr/i) }, async (api) => {
+      const fund = { ticker: 'FNDE', name: 'FNDE', category: 'ETF', fundPage: '', cusip: '', isin: '', exchange: '', ter: null, inception: null };
+      writeFileSync(join(api, 'index.json'), JSON.stringify({ funds: [...readIndexRows(api), placeholderRow(fund)] }));
+      process.env.GITHUB_STEP_SUMMARY = join(api, '..', 'summary.md');
+      const lines: string[] = [];
+      console.log = (line: unknown) => { if (/^NEW FUNDS/.test(String(line))) lines.push(String(line)); };
+      await main();
+      expect(lines).toEqual(['NEW FUNDS: FNDE', 'NEW FUNDS (not published yet): SCHR']);
+      expect(readFileSync(join(api, '..', 'summary.md'), 'utf8')).toContain('### NEW FUNDS\n\nNEW FUNDS: FNDE\nNEW FUNDS (not published yet): SCHR\n');
+      lines.length = 0;
+      await main();
+      expect(lines).toEqual([]);
+      globalThis.fetch = world();
+      await main();
+      expect(lines).toEqual(['NEW FUNDS: SCHR']);
+    });
+  });
+
   test('MAX_FETCHES resumes from a cursor that ignores catalog-filtered funds', async () => {
     await feed({ meta: ['SCHB', 'SCHD', 'SCHX'], listed: ['SCHB', 'SCHD', 'SCHX'], env: { TER: ':1', MAX_FETCHES: '1', SKIP_SCHWAB: 'true', SKIP_YAHOO: 'true' } }, async (api) => {
       const rows = readIndexRows(api);
@@ -1149,7 +1241,7 @@ describe('pipeline 3', () => {
       await main();
       expect(readFileSync(join(api, 'update-state.json'), 'utf8')).toBe(state);
       process.env.TICKERS = 'NOPE';
-      await expect(main()).rejects.toThrow('NOPE');
+      await expect(main()).rejects.toThrow('TICKERS: NOPE not in');
     });
   });
 });
