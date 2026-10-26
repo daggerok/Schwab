@@ -1174,6 +1174,31 @@ function plainNumber(value: unknown, digits: number): string {
   return parsed === null ? '-' : String(round(parsed, digits));
 }
 
+/** Market identifier codes of U.S. trading venues (the holdings CSV Exchange column). */
+const US_VENUES = new Set(['XNYS', 'XNAS', 'XNGS', 'XNMS', 'XNCM', 'ARCX', 'BATS', 'BATY', 'EDGA', 'EDGX', 'IEXG', 'XASE', 'XCBO', 'XCHI', 'XCIS', 'XPHL', 'XBOS']);
+
+/**
+ * The holdings CSV gives the LOCAL exchange symbol of a foreign listing without its exchange: FNDF lists `SAN` for Banco Santander
+ * (XMAD) and for Sanofi (XPAR), `T` for Telus (XTSE) next to AT&T in U.S. funds. The Watchlist groups positions by ticker, so a symbol
+ * is published only for a U.S. listing (a U.S. venue, or a U.S. country with no or an OTC venue: U.S. dollar cash, futures); a foreign
+ * listing gets Ticker '-' and keeps its BBG FIGI as Identifier. ADRs on NYSE or Nasdaq keep their symbol. No Exchange and no Country
+ * column keeps every symbol.
+ */
+export function isUsListing(exchange: string, country: string): boolean {
+  const venue = exchange.trim().toUpperCase(), home = country.trim().toUpperCase();
+  if (US_VENUES.has(venue)) return true;
+  return home === 'US' || (!venue && !home);
+}
+
+/** An N-PORT report replaces published holdings only when it is strictly newer than them; nothing published accepts any report. */
+export function nportIsNewer(repPdDate: string | null | undefined, publishedAsOf: string | null | undefined, publishedRows: number): boolean {
+  if (!publishedRows) return true;
+  const published = toIsoDate(publishedAsOf ?? '');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(published)) return true;
+  const report = toIsoDate(repPdDate ?? '');
+  return /^\d{4}-\d{2}-\d{2}$/.test(report) && report > published;
+}
+
 export function isHoldingsCsv(text: string): boolean {
   return /^\s*"?As-Of-Date"?\s*,\s*"?Symbol"?/i.test(String(text ?? '').replace(/^\uFEFF/, ''));
 }
@@ -1205,7 +1230,13 @@ export function parseHoldingsCsv(text: string, netAssets: number | null = null):
     sector: csvColumn(headers, /^sector$/i),
     coupon: csvColumn(headers, /^coupon rate$/i, /^coupon$/i),
     maturity: csvColumn(headers, /^maturity date$/i, /^maturity$/i),
+    exchange: csvColumn(headers, /^exchange$/i),
+    country: csvColumn(headers, /^country$/i),
   };
+  // A renamed or dropped Name or Symbol column would publish '-' for every name or ticker over good data: refuse the sheet so the next
+  // source is tried. A missing weight column parses to '-' weights, which the shared holdings guard rejects (fund kept, reported failed).
+  const missing = (['name', 'symbol'] as const).filter((key) => col[key] < 0);
+  if (missing.length) throw new Error(`holdings CSV: no ${missing.join(', ')} column`);
   const bond = col.maturity >= 0 || col.coupon >= 0;
   const rows: JsonRecord[] = [];
   let asOfDate: string | null = null;
@@ -1218,7 +1249,8 @@ export function parseHoldingsCsv(text: string, netAssets: number | null = null):
     const maturity = at(row, col.maturity);
     const symbolRaw = at(row, col.symbol).toUpperCase();
     const isBondRow = bond && (Boolean(maturity) || at(row, col.coupon) !== '');
-    const symbol = isBondRow || !symbolRaw || ['-', '--', 'N/A', 'NA', 'NONE', 'NULL'].includes(symbolRaw) ? '-' : symbolRaw;
+    const local = !isUsListing(at(row, col.exchange), at(row, col.country));
+    const symbol = isBondRow || local || !symbolRaw || ['-', '--', 'N/A', 'NA', 'NONE', 'NULL'].includes(symbolRaw) ? '-' : symbolRaw;
     const figi = at(row, col.figi).toUpperCase();
     const cusip = at(row, col.cusip).toUpperCase();
     const weight = numberOrNull(at(row, col.weight));
@@ -1750,7 +1782,7 @@ function parsePreviousFund(ticker: string, row: JsonRecord): CatalogFund {
     isin: String(row.isin || ''),
     benchmark: '',
     ter: numberOrNull(row.terValue),
-    grossTer: null,
+    grossTer: numberOrNull(row.terGrossValue),
     nav: numberOrNull(row.navValue),
     close: numberOrNull(row.closePriceValue),
     premiumDiscount: numberOrNull(row.premiumDiscountValue),
@@ -1827,6 +1859,8 @@ export function rowFromMeta(meta: JsonRecord, inceptionDate: string | null = nul
     isin: meta.identifiers?.isin || null,
     ter: meta.expenseRatio?.display ?? '—',
     terValue: pct(meta.expenseRatio?.value),
+    terGross: pct(meta.expenseRatio?.gross) === null ? '—' : `${pct(meta.expenseRatio?.gross)}%`,
+    terGrossValue: pct(meta.expenseRatio?.gross),
     nav: meta.nav?.display ?? '—',
     navValue: pct(meta.nav?.value),
     aum: meta.aum?.display ?? '—',
@@ -2100,7 +2134,8 @@ function retainPublishedSections(summary: ProductPageSummary, fund: CatalogFund,
 }
 
 /** Index row for a catalog fund that has no published data yet: no meta.json, so dataFile is null and every metric is null. */
-export function placeholderRow(fund: Pick<CatalogFund, 'ticker' | 'name' | 'category' | 'fundPage' | 'cusip' | 'isin' | 'exchange' | 'ter' | 'inception'>): JsonRecord {
+export function placeholderRow(fund: Pick<CatalogFund, 'ticker' | 'name' | 'category' | 'fundPage' | 'cusip' | 'isin' | 'exchange' | 'ter' | 'inception'> & Partial<Pick<CatalogFund, 'grossTer'>>): JsonRecord {
+  const grossTer = fund.grossTer ?? null;
   return {
     ticker: fund.ticker,
     name: fund.name,
@@ -2111,6 +2146,8 @@ export function placeholderRow(fund: Pick<CatalogFund, 'ticker' | 'name' | 'cate
     isin: fund.isin || null,
     ter: fund.ter === null ? '—' : `${fund.ter}%`,
     terValue: fund.ter,
+    terGross: grossTer === null ? '—' : `${grossTer}%`,
+    terGrossValue: grossTer,
     nav: '—', navValue: null, aum: '—', aumValue: null,
     asOfDate: '—', inceptionDate: fund.inception ? formatDate(fund.inception) : '—', exchange: fund.exchange || '',
     closePrice: '—', closePriceValue: null, premiumDiscount: '—', premiumDiscountValue: null,
@@ -2218,7 +2255,10 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
       if (filing) {
         const parsed = parseNport(await fetchText(filing.accession.url, `[nport   ] ${fund.ticker}`, config, secHeaders()));
         const seriesMatches = !parsed.seriesId || parsed.seriesId.toUpperCase() === filing.ref.seriesId.toUpperCase();
-        if (seriesMatches && parsed.holdings.length) {
+        const publishedRows = numberOrNull(previousMeta?.holdings?.totalRows) ?? 0;
+        const newer = nportIsNewer(parsed.repPdDate, previousMeta?.holdings?.asOfDate, publishedRows);
+        if (seriesMatches && parsed.holdings.length && !newer) outputNote(`[ ${'nport'.padEnd(9)}] ${fund.ticker}: N-PORT report ${parsed.repPdDate || 'undated'} is not newer than the published holdings ${previousMeta?.holdings?.asOfDate}; kept the published holdings`);
+        if (seriesMatches && parsed.holdings.length && newer) {
           const names = await loadCompanyTickerTable(config);
           holdingsRows = fillNportTickers(parsed.holdings, names);
           holdingsFresh = true;
@@ -2315,6 +2355,9 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   if ((!config.skipSchwab && !summary) || (!config.skipYahoo && !chart)) {
     throw new Error(`required source failed (${!summary && !config.skipSchwab ? 'product page' : 'Yahoo chart'}); ${previousMeta ? 'kept the previous complete data' : 'no data published for this fund yet'}`);
   }
+  // A new fund that no source answered (for example SKIP_SCHWAB and SKIP_YAHOO with the catalog read from a catalog-only index row)
+  // has nothing to publish: it fails and keeps its catalog-only row instead of an empty meta.json reported as updated (open-items etfs Q19).
+  if (!previousMeta && !summary && !holdingsFresh && !chart) throw new Error('no source answered; no data published for this fund yet');
 
   // 6. Write sheets, meta.json and the index row --------------------------------
   await mkdir(fundDir, { recursive: true });
@@ -2414,6 +2457,8 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
     isin: fund.isin || null,
     ter: fund.ter === null ? '—' : `${fund.ter}%`,
     terValue: fund.ter,
+    terGross: fund.grossTer === null ? '—' : `${fund.grossTer}%`,
+    terGrossValue: fund.grossTer,
     nav: nav === null ? '—' : `$${nav.toFixed(2)}`,
     navValue: nav,
     aum: formatAumDisplay(netAssets),

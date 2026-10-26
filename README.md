@@ -98,7 +98,10 @@ Caveats:
 - Dates printed as `Mon DD YYYY` (zero-padded); month-name dates are parsed as UTC so local runs match CI
 - `NEW FUNDS: ...` is printed (and added to the step summary) when the live catalog lists tickers that are not yet published
 - Each fund keeps as-of date and source metadata for holdings and history
-- Holdings come from the dated Schwab CSV export; SEC EDGAR N-PORT-P is used only when the CSV is unavailable and `EDGAR_FALLBACK` is on, and the previous run is the last resort
+- Holdings come from the dated Schwab CSV export; SEC EDGAR N-PORT-P is used only when the CSV is unavailable, `EDGAR_FALLBACK` is on and its report period is newer than the published holdings, and the previous run is the last resort. A CSV without its Name or Symbol column is refused like an unavailable one
+- The CSV gives the local exchange symbol of a foreign listing with no exchange (FNDF lists `SAN` for both Banco Santander and Sanofi, `T` is Telus next to AT&T in U.S. funds), so a symbol is published only for a U.S. listing (a U.S. venue such as NYSE or Nasdaq, ADRs included, or a U.S. holding such as dollar cash); a foreign listing has Ticker `-` and its BBG FIGI as the Identifier, so the Watchlist never merges two companies
+- `terValue` is the net expense ratio, `terGrossValue` the gross one from the product finder (null when the finder leaves it blank)
+- A new fund that no source answered (for example `SKIP_SCHWAB` and `SKIP_YAHOO`) is reported failed and keeps its catalog-only row
 - Issuer requests go direct first and fall back to the read-only r.jina.ai rendering proxy (paced at 3.2s or slower) when the site answers with a bot wall
 
 ### Update controls
