@@ -8,10 +8,12 @@ import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import {
   ADJ_CLOSE_NOISE,
+  CLOSED_FUNDS,
   CONTROL_NAMES,
   FETCH_TIMEOUT_MS,
   annualizedToTotal,
   cleanHoldingTicker,
+  closedFund,
   configurePacing,
   deriveMetrics,
   distributionsCsvUrl,
@@ -437,7 +439,9 @@ describe('controls', () => {
     for (const bad of ['bogus', '6mo', 'ytd', '0y', '5']) expect(() => resolveControls(configFile(), {}, {}, { HISTORY_RANGE: bad })).toThrow('HISTORY_RANGE');
     expect(resolveControls(configFile(), {}, {}, { HISTORY_RANGE: '5Y' }).HISTORY_RANGE).toBe('5Y');
   });
+});
 
+describe('controls 2', () => {
   test('USE_SYSTEM_CA is auto, true or false (case-insensitive, strict, default auto)', () => {
     expect(resolveControls(configFile()).USE_SYSTEM_CA).toBe('auto');
     for (const mode of ['auto', 'true', 'false', 'AUTO', 'True', 'FALSE']) expect(resolveControls(configFile(), {}, {}, { USE_SYSTEM_CA: mode }).USE_SYSTEM_CA).toBe(mode.toLowerCase());
@@ -567,7 +571,9 @@ describe('parsing', () => {
     expect(funds.find((fund) => fund.ticker === 'FNDE')!.grossTer).toBe(0.39);
     expect(() => parseCatalogText('<html><body>Access denied</body></html>')).toThrow(/no ETF rows/);
   });
+});
 
+describe('parsing 2', () => {
   test('product page: proxied markdown rendering with month and quarter returns', () => {
     const s = parseProductPage(PRODUCT_PAGE_MARKDOWN, 'SCHO');
     expect([s.name, s.inception, s.totalNetAssets, s.totalNetAssetsAsOfDate, s.totalExpenseRatio]).toEqual(['Schwab Short-Term U.S. Treasury ETF', '2010-08-05', 15_193_857_213.48, '2026-09-17', 0.03]);
@@ -639,7 +645,9 @@ describe('parsing', () => {
     expect(parseHoldingsCsv('As-Of-Date,Symbol,Name,Percent of Assets\n2026-09-30,AAA,Foo,\n2026-09-30,BBB,Bar,1.5\n').rows.map((row) => row.Weight)).toEqual(['-', '1.5']);
     expect(() => parseHoldingsCsv('<html>nope</html>')).toThrow(/header row not found/);
   });
+});
 
+describe('parsing 3', () => {
   test('holdings guard: header-only, renamed weight column, broken weights, a bad weight sum and a halved sheet are rejected', () => {
     const headers = ['Name', 'Ticker', 'Weight'];
     const rows = [{ Name: 'A', Ticker: 'A', Weight: '60%' }, { Name: 'B', Ticker: 'B', Weight: '40%' }];
@@ -764,7 +772,9 @@ describe('metrics', () => {
     expect(performanceAsOf('')).toBeNull();
     expect(performanceAsOf('n/a')).toBeNull();
   });
+});
 
+describe('metrics 2', () => {
   test('a young fund with no data gets null metrics (never 0) and the same key set as a full row', () => {
     const young = deriveMetrics(priceReturns([]), { dividendYield: null, secYield: null } as never, [], { paymentsPerYear: null }, null, false);
     for (const key of ['ytd', 'tr1y', 'tr3y', 'tr5y', 'tr10y', 'cagr3y', 'cagr5y', 'cagr10y', 'siAnn', 'dividendYield', 'secYield']) expect(young[key]).toBeNull();
@@ -903,7 +913,9 @@ describe('pipeline', () => {
       expect(readIndexRows(api)).toHaveLength(1);
     });
   });
+});
 
+describe('pipeline 2', () => {
   test('holdings that fail the guard keep the fund exactly as published and report it failed', async () => {
     const renamed = EQUITY_HOLDINGS_CSV.replace('Percent of Assets', 'Pct of Assets'); // every weight becomes "-"
     await feed({ fetch: world() }, async (api) => {
@@ -915,6 +927,38 @@ describe('pipeline', () => {
       await main();
       expect(snapshot(api)).toEqual(first);
       expect(process.exitCode).toBe(1);
+    });
+  });
+
+  test('a closed fund is never fetched or reported failed: its files stay as published, its index row says closed, a rerun writes nothing', async () => {
+    const entry = { ticker: 'SCHX', closed: '2026-10-01', source: 'https://www.sec.gov/Archives/edgar/data/1/notice.htm' };
+    expect(() => closedFund([{ ...entry, closed: 'soon' }], 'SCHX')).toThrow('CLOSED_FUNDS');
+    expect(closedFund([entry], 'schx')).toEqual(entry);
+    const renamed = EQUITY_HOLDINGS_CSV.replace('Percent of Assets', 'Pct of Assets'); // the guard would reject these holdings
+    await feed({ fetch: world() }, async (api, calls) => {
+      await main();
+      const first = snapshot(api);
+      const good = world();
+      globalThis.fetch = (async (input: any, init?: any) => { calls.push(urlOf(input)); return urlOf(input).includes('FundHoldings') ? new Response(renamed, { status: 200 }) : good(input, init); }) as unknown as typeof fetch;
+      CLOSED_FUNDS.push(entry);
+      try {
+        calls.length = 0;
+        process.env.TICKERS = 'SCHX';
+        await main();
+        expect(calls.filter((url) => /schx/i.test(url))).toEqual([]);
+        expect(process.exitCode).not.toBe(1);
+        const closed = snapshot(api);
+        for (const path of Object.keys(first)) if (path !== '/index.json') expect([path, closed[path]]).toEqual([path, first[path]]);
+        const rows = readIndexRows(api);
+        expect(rows.map((row) => row.ticker)).toEqual(['FNDE', 'SCHR', 'SCHX']);
+        expect(rows.find((row) => row.ticker === 'SCHX')).toMatchObject({ status: 'closed', closedDate: '2026-10-01', closedSource: entry.source, dataFile: './funds/SCHX/meta.json' });
+        expect(rows.filter((row) => row.status === 'closed')).toHaveLength(1);
+        delete process.env.TICKERS;
+        await main();
+        expect(snapshot(api)).toEqual(closed);
+      } finally {
+        CLOSED_FUNDS.splice(CLOSED_FUNDS.indexOf(entry), 1);
+      }
     });
   });
 
@@ -975,7 +1019,9 @@ describe('pipeline', () => {
       expect(fresh.yields.secYieldKind).toContain('not published');
     });
   }, 30_000);
+});
 
+describe('pipeline 3', () => {
   test('a new fund whose required source failed gets a catalog-only row (dataFile null, full metrics key set) and no files', async () => {
     await feed({ meta: ['SCHX'], listed: ['SCHX'], env: { TICKERS: 'FNDE' }, fetch: world(/products\/fnde/i) }, async (api) => {
       await main();
@@ -1071,7 +1117,9 @@ describe('network', () => {
       expect(peak).toBe(expected);
     }
   });
+});
 
+describe('network 2', () => {
   test('main fetches funds in parallel: peak in-flight product pages is 1 at CONCURRENCY=1 and 3 at 3', async () => {
     for (const [concurrency, expected] of [[1, 1], [3, 3]] as const) {
       const inner = world();
