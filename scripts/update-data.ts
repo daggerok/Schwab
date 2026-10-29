@@ -132,7 +132,7 @@ function outputFundLine(index: number, total: number, ticker: string, status: st
     field('sec', outputPercent(data.secYield ?? data.yields?.secYield ?? metrics.secYield)),
     field('wp', data.workplaceRaw),
   ].filter(part => part !== '').join(' ');
-  return `[ ${String(index).padStart(width)}/${String(total).padEnd(width)}  ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
+  return `[ ${`${String(index).padStart(width)}/${total}`.padEnd(8)} ] ${outputClean(ticker).padEnd(5)} ${status.padEnd(9)}${detail ? ` ${detail}` : ''}${reason ? ` reason=${outputClean(reason)}` : ''}`;
 }
 function outputCreateReporter(root: URL | string, total: number) {
   let completed = 0;
@@ -952,7 +952,7 @@ async function fetchIssuerText(url: string, label: string, config: UpdaterConfig
       lastError = error;
       if (/\b403\b/.test(error instanceof Error ? error.message : String(error))) {
         issuerDirectDenials += 1;
-        if (issuerDirectDenials === ISSUER_DIRECT_DENIAL_LIMIT) outputNote(`[ ${'issuer'.padEnd(9)}] direct requests are denied from this network; using the read-only rendering proxy for the rest of the run`);
+        if (issuerDirectDenials === ISSUER_DIRECT_DENIAL_LIMIT) outputNote(`[ ${'issuer'.padEnd(8)} ] direct requests are denied from this network; using the read-only rendering proxy for the rest of the run`);
       }
     }
   }
@@ -1325,7 +1325,7 @@ export function resetSecState(): void {
 /** SEC's ticker -> registrant CIK + series id table, loaded once per run (a failed load is asked again by the next fund). */
 function loadFundTickerTable(config: UpdaterConfig): Promise<Map<string, NportSeriesRef>> {
   if (!secState.funds) {
-    const loading = fetchJson(SEC_FUND_TICKERS_URL, '[edgar   ] fund ticker table', config, secHeaders()).then((payload) => parseSecFundTickers(payload));
+    const loading = fetchJson(SEC_FUND_TICKERS_URL, '[ edgar    ] fund ticker table', config, secHeaders()).then((payload) => parseSecFundTickers(payload));
     secState.funds = loading;
     loading.catch(() => { if (secState.funds === loading) secState.funds = null; });
   }
@@ -1335,7 +1335,7 @@ function loadFundTickerTable(config: UpdaterConfig): Promise<Map<string, NportSe
 /** SEC's company name -> ticker table for the N-PORT rows, loaded once per run. */
 function loadCompanyNames(config: UpdaterConfig): Promise<Map<string, string>> {
   if (!secState.names) {
-    const loading = fetchJson(SEC_COMPANY_TICKERS_URL, '[edgar   ] company ticker table', config, secHeaders()).then((payload) => parseSecCompanyNames(payload));
+    const loading = fetchJson(SEC_COMPANY_TICKERS_URL, '[ edgar    ] company ticker table', config, secHeaders()).then((payload) => parseSecCompanyNames(payload));
     secState.names = loading;
     loading.catch(() => { if (secState.names === loading) secState.names = null; });
   }
@@ -2030,7 +2030,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   let productVia: 'direct' | 'proxy' | null = null;
   if (!config.skipSchwab && fund.fundPage) {
     try {
-      const page = await fetchIssuerText(fund.fundPage, `[product ] ${fund.ticker}`, config, isProductPage, undefined, { cache: false });
+      const page = await fetchIssuerText(fund.fundPage, `[ product  ] ${fund.ticker}`, config, isProductPage, undefined, { cache: false });
       productVia = page.via;
       summary = parseProductPage(page.text, fund.ticker);
       if (config.storeRawDownloads) {
@@ -2061,12 +2061,12 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
       }
       if (summary.morningstarCategory) fund.categoryPath = `${fund.category} / ${summary.morningstarCategory}`;
     } catch (error) {
-      outputNote(`[ ${'product'.padEnd(9)}] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
+      outputNote(`[ ${'product'.padEnd(8)} ] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
   // A partial page keeps what was published as official: one notice per fund naming the sections kept.
   const keptSections = summary ? retainPublishedSections(summary, fund, previousMeta) : [];
-  if (keptSections.length) console.log(`[ ${'kept'.padEnd(9)}] ${fund.ticker}: product page came back partial, kept the published ${keptSections.join(', ')}`);
+  if (keptSections.length) console.log(`[ ${'kept'.padEnd(8)} ] ${fund.ticker}: product page came back partial, kept the published ${keptSections.join(', ')}`);
   if (!fund.isin && fund.cusip) fund.isin = isinFromCusip(fund.cusip);
 
   // 2. Holdings: issuer CSV -> N-PORT-P -> previous run ------------------------
@@ -2082,7 +2082,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
     const candidates = summary?.holdingsCsvUrl ? [summary.holdingsCsvUrl] : holdingsCsvCandidates(fund.ticker, summary?.totalHoldingsAsOfDate || null);
     for (const url of candidates) {
       try {
-        const csv = await fetchIssuerText(url, `[holdings] ${fund.ticker}`, config, isHoldingsCsv, 'text/csv,text/plain;q=0.9,*/*;q=0.8');
+        const csv = await fetchIssuerText(url, `[ holdings ] ${fund.ticker}`, config, isHoldingsCsv, 'text/csv,text/plain;q=0.9,*/*;q=0.8');
         const parsed = parseHoldingsCsv(csv.text, fund.netAssets);
         if (!parsed.rows.length) continue;
         holdingsRows = parsed.rows;
@@ -2094,7 +2094,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
         marketValueBasis = fund.netAssets !== null ? 'derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)' : 'not derivable: Total Net Assets unavailable in this run';
         break;
       } catch (error) {
-        outputNote(`[ ${'holdings'.padEnd(9)}] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
+        outputNote(`[ ${'holdings'.padEnd(8)} ] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
       }
     }
   }
@@ -2103,11 +2103,11 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
       // the fund's own newest filing, read only when strictly newer than the published holdings (shared nport-reader block)
       const ref = (await loadFundTickerTable(config)).get(fund.ticker);
       const read = ref
-        ? await readNportHoldings({ ticker: fund.ticker, cik: ref.cik, seriesId: ref.seriesId }, { asOf: previousMeta?.holdings?.asOfDate, rows: numberOrNull(previousMeta?.holdings?.totalRows) ?? 0 }, (url, label) => fetchText(url, `[nport   ] ${label}`, config, secHeaders()), { cache: secState.reader })
+        ? await readNportHoldings({ ticker: fund.ticker, cik: ref.cik, seriesId: ref.seriesId }, { asOf: previousMeta?.holdings?.asOfDate, rows: numberOrNull(previousMeta?.holdings?.totalRows) ?? 0 }, (url, label) => fetchText(url, `[ nport    ] ${label}`, config, secHeaders()), { cache: secState.reader })
         : { problem: `${fund.ticker}: not in the SEC fund ticker table` };
-      if ('problem' in read) outputNote(`[ ${'nport'.padEnd(9)}] ${read.problem}`);
+      if ('problem' in read) outputNote(`[ ${'nport'.padEnd(8)} ] ${read.problem}`);
       else {
-        const sheet = nportHoldingsSheet(read.filing, nportTickers(read.filing.positions, await loadCompanyNames(config).catch(() => null), await loadUsListings((url, label) => fetchText(url, `[nport   ] ${label}`, config, secHeaders()))));
+        const sheet = nportHoldingsSheet(read.filing, nportTickers(read.filing.positions, await loadCompanyNames(config).catch(() => null), await loadUsListings((url, label) => fetchText(url, `[ nport    ] ${label}`, config, secHeaders()))));
         holdingsRows = sheet.rows;
         holdingsHeaders = sheet.headers;
         holdingsFresh = true;
@@ -2118,7 +2118,7 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
         marketValueBasis = 'SEC Form N-PORT-P reported value (valUSD)';
       }
     } catch (error) {
-      outputNote(`[ ${'nport'.padEnd(9)}] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
+      outputNote(`[ ${'nport'.padEnd(8)} ] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
   if (!holdingsRows.length) {
@@ -2136,11 +2136,11 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   let distributionsDownload: string | null = summary?.distributionsCsvUrl || distributionsCsvUrl(fund.ticker);
   if (!config.skipSchwab) {
     try {
-      const csv = await fetchIssuerText(distributionsDownload, `[distrib ] ${fund.ticker}`, config, isDistributionsCsv, 'text/csv,text/plain;q=0.9,*/*;q=0.8', { cache: false });
+      const csv = await fetchIssuerText(distributionsDownload, `[ distrib  ] ${fund.ticker}`, config, isDistributionsCsv, 'text/csv,text/plain;q=0.9,*/*;q=0.8', { cache: false });
       dividends = parseDistributionsCsv(csv.text);
       if (dividends.length) distributionsSource = `schwabassetmanagement.com distribution history CSV export (Total Distribution per share${csv.via === 'proxy' ? ', via read-only rendering proxy' : ''})`;
     } catch (error) {
-      outputNote(`[ ${'distrib'.padEnd(9)}] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
+      outputNote(`[ ${'distrib'.padEnd(8)} ] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
@@ -2151,14 +2151,14 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
   if (!config.skipYahoo) {
     try {
       const query = new URLSearchParams({ period1: String(historyPeriodStart(config.historyRange)), period2: String(Math.floor(Date.now() / 1000) + 86_400), interval: '1d', events: 'div|split', includeAdjustedClose: 'true' });
-      const payload = await fetchJson(`${YAHOO_CHART_URL}/${encodeURIComponent(fund.ticker)}?${query.toString()}`, `[chart   ] ${fund.ticker}`, config, { 'User-Agent': 'Mozilla/5.0' });
+      const payload = await fetchJson(`${YAHOO_CHART_URL}/${encodeURIComponent(fund.ticker)}?${query.toString()}`, `[ chart    ] ${fund.ticker}`, config, { 'User-Agent': 'Mozilla/5.0' });
       const fetched = parseChart(payload);
       // A HISTORY_RANGE window never shrinks the published history (and with it 3y, 5y, 10y and since inception)
       chart = historyPeriodStart(config.historyRange) > 0 ? mergeWindowedChart(fetched, await readPreviousSheet(fund.ticker, 'history'), Array.isArray(previousMeta?.distributions?.rows) ? previousMeta.distributions.rows : []) : fetched;
       if (!chart) throw new Error(`chart window does not join the published history (${config.historyRange})`);
       days = chart.days;
     } catch (error) {
-      outputNote(`[ ${'chart'.padEnd(9)}] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
+      outputNote(`[ ${'chart'.padEnd(8)} ] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
   if (!days.length) {
@@ -2528,7 +2528,7 @@ export async function main(): Promise<void> {
   let catalogSource = 'previous api/schwab/index.json';
   if (!config.skipSchwab) {
     try {
-      const fetched = await fetchIssuerText(SCHWAB_CATALOG_URL, '[catalog ] product finder', config, (text) => /\/products\/[a-z0-9]{3,5}/i.test(text) && /Asset Class|Expense Ratio/i.test(text), undefined, { cache: false });
+      const fetched = await fetchIssuerText(SCHWAB_CATALOG_URL, '[ catalog  ] product finder', config, (text) => /\/products\/[a-z0-9]{3,5}/i.test(text) && /Asset Class|Expense Ratio/i.test(text), undefined, { cache: false });
       const parsed = parseCatalogText(fetched.text);
       for (const fund of parsed) catalog.set(fund.ticker, fund);
       catalogSource = fetched.via === 'proxy' ? 'Schwab Asset Management product finder via read-only rendering proxy' : 'Schwab Asset Management product finder';
@@ -2538,7 +2538,7 @@ export async function main(): Promise<void> {
         await writeFile(new URL(`product-finder-${new Date().toISOString().slice(0, 10)}.${fetched.via === 'proxy' ? 'md' : 'html'}`, raw), fetched.text, 'utf8');
       }
     } catch (error) {
-      console.warn(`[ ${'catalog'.padEnd(9)}] ${(error instanceof Error ? error.message : String(error)).replace(/^\[[^\]]*\]\s*/, '')} — keeping the published feed`);
+      console.warn(`[ ${'catalog'.padEnd(8)} ] ${(error instanceof Error ? error.message : String(error)).replace(/^\[[^\]]*\]\s*/, '')} — keeping the published feed`);
     }
   }
   // The live catalog (null when only the published feed is known): a catalog-only row it no longer lists is dropped, never retried.
@@ -2548,7 +2548,7 @@ export async function main(): Promise<void> {
 
   const universe = [...catalog.values()].sort((a, b) => a.ticker.localeCompare(b.ticker));
   if (!universe.length) throw new Error('No catalog rows available. Run this where www.schwabassetmanagement.com is reachable or seed api/schwab/index.json first.');
-  console.log(`[ ${'catalog'.padEnd(9)}] ${universe.length} Schwab ETFs (${catalogSource})`);
+  console.log(`[ ${'catalog'.padEnd(8)} ] ${universe.length} Schwab ETFs (${catalogSource})`);
 
   // Q27: a TICKERS entry outside the live catalog and the published funds stops the run before any fund request
   assertKnownTickers(config.tickers ? Array.from(config.tickers) : null, knownTickers(live, Array.from(previous.values())), 'the Schwab catalog or published feed');
@@ -2598,7 +2598,7 @@ export async function main(): Promise<void> {
     }
   };
   await Promise.all(Array.from({ length: config.concurrency }, () => worker()));
-  if (deadlineHit) console.warn(`[ ${'deadline'.padEnd(9)}] soft deadline reached after ${Math.round((Date.now() - runStartedAt) / 60000)} min; remaining funds keep their published data`);
+  if (deadlineHit) console.warn(`[ ${'deadline'.padEnd(8)} ] soft deadline reached after ${Math.round((Date.now() - runStartedAt) / 60000)} min; remaining funds keep their published data`);
   const lastTicker: string | null = lastPosition >= 0 ? ordered[lastPosition].ticker : (cursor || null);
 
   // Filtered, bounded, skipped and failed funds keep their published row: the index never shrinks.
