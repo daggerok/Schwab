@@ -2,7 +2,7 @@
   "ticker": "SCHC",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4220,
+  "totalRows": 4224,
   "headers": [
     "Date",
     "Close",
@@ -1329,6 +1329,30 @@
       "Close": "47.900001525878906",
       "Adj Close": "47.9",
       "Volume": "253100"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "48.060001373291016",
+      "Adj Close": "48.06",
+      "Volume": "442700"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "48.61000061035156",
+      "Adj Close": "48.61",
+      "Volume": "296100"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "48.70000076293945",
+      "Adj Close": "48.7",
+      "Volume": "503500"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "48.689998626708984",
+      "Adj Close": "48.69",
+      "Volume": "184794"
     }
   ]
 }

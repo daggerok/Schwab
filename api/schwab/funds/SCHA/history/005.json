@@ -2,7 +2,7 @@
   "ticker": "SCHA",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4269,
+  "totalRows": 4273,
   "headers": [
     "Date",
     "Close",
@@ -1623,6 +1623,30 @@
       "Close": "32.529998779296875",
       "Adj Close": "32.53",
       "Volume": "3049900"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "32.720001220703125",
+      "Adj Close": "32.72",
+      "Volume": "2974500"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "33.040000915527344",
+      "Adj Close": "33.04",
+      "Volume": "3457700"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "33.15999984741211",
+      "Adj Close": "33.16",
+      "Volume": "3830800"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "33.52000045776367",
+      "Adj Close": "33.52",
+      "Volume": "3085155"
     }
   ]
 }

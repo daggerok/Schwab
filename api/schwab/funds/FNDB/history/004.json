@@ -2,7 +2,7 @@
   "ticker": "FNDB",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3318,
+  "totalRows": 3322,
   "headers": [
     "Date",
     "Close",
@@ -1917,6 +1917,30 @@
       "Close": "31.670000076293945",
       "Adj Close": "31.67",
       "Volume": "351900"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "31.729999542236328",
+      "Adj Close": "31.73",
+      "Volume": "465800"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "31.719999313354492",
+      "Adj Close": "31.72",
+      "Volume": "186000"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "31.780000686645508",
+      "Adj Close": "31.78",
+      "Volume": "207700"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "31.969999313354492",
+      "Adj Close": "31.97",
+      "Volume": "146366"
     }
   ]
 }

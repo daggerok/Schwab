@@ -2,7 +2,7 @@
   "ticker": "SCHO",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4080,
+  "totalRows": 4084,
   "headers": [
     "Date",
     "Close",
@@ -489,6 +489,30 @@
       "Close": "23.959999084472656",
       "Adj Close": "23.96",
       "Volume": "5247400"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "23.940000534057617",
+      "Adj Close": "23.94",
+      "Volume": "3824900"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "23.940000534057617",
+      "Adj Close": "23.94",
+      "Volume": "2800400"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "23.950000762939453",
+      "Adj Close": "23.95",
+      "Volume": "2435400"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "23.979999542236328",
+      "Adj Close": "23.98",
+      "Volume": "4040260"
     }
   ]
 }

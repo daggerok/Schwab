@@ -2,7 +2,7 @@
   "ticker": "SCHQ",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1768,
+  "totalRows": 1772,
   "headers": [
     "Date",
     "Close",
@@ -4617,6 +4617,30 @@
       "Close": "29.600000381469727",
       "Adj Close": "29.6",
       "Volume": "341300"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "29.719999313354492",
+      "Adj Close": "29.72",
+      "Volume": "427500"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "29.709999084472656",
+      "Adj Close": "29.71",
+      "Volume": "208500"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "29.510000228881836",
+      "Adj Close": "29.51",
+      "Volume": "767200"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "29.68000030517578",
+      "Adj Close": "29.68",
+      "Volume": "392927"
     }
   ]
 }

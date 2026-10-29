@@ -2,7 +2,7 @@
   "ticker": "SCHV",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4240,
+  "totalRows": 4244,
   "headers": [
     "Date",
     "Close",
@@ -1448,7 +1448,31 @@
       "Date": "Oct 23 2026",
       "Close": "34.34000015258789",
       "Adj Close": "34.34",
-      "Volume": "3242100"
+      "Volume": "3258600"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "34.54999923706055",
+      "Adj Close": "34.55",
+      "Volume": "3339800"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "34.54999923706055",
+      "Adj Close": "34.55",
+      "Volume": "2796100"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "34.630001068115234",
+      "Adj Close": "34.63",
+      "Volume": "3364800"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "34.97999954223633",
+      "Adj Close": "34.98",
+      "Volume": "3123416"
     }
   ]
 }

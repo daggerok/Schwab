@@ -2,7 +2,7 @@
   "ticker": "SGVT",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 344,
+  "totalRows": 348,
   "headers": [
     "Date",
     "Close",
@@ -2073,6 +2073,30 @@
       "Close": "100.75",
       "Adj Close": "100.75",
       "Volume": "309100"
+    },
+    {
+      "Date": "Oct 26 2026",
+      "Close": "100.76000213623047",
+      "Adj Close": "100.76",
+      "Volume": "366100"
+    },
+    {
+      "Date": "Oct 27 2026",
+      "Close": "100.76000213623047",
+      "Adj Close": "100.76",
+      "Volume": "347300"
+    },
+    {
+      "Date": "Oct 28 2026",
+      "Close": "100.7699966430664",
+      "Adj Close": "100.77",
+      "Volume": "154400"
+    },
+    {
+      "Date": "Oct 29 2026",
+      "Close": "100.77999877929688",
+      "Adj Close": "100.78",
+      "Volume": "196364"
     }
   ]
 }
