@@ -914,6 +914,8 @@ describe('pipeline', () => {
       expect(rows.map((row) => row.ticker)).toEqual(['FNDE', 'SCHR', 'SCHX']);
       for (const row of rows) {
         expect(Object.keys(row.metrics)).toEqual(Object.keys(rows[0].metrics));
+        // the 52-week range keys from the published history pages (shared range-52w block)
+        expect(Object.keys(row.metrics)).toEqual(expect.arrayContaining(['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis']));
         expect(row.dataFile).toBe(`./funds/${row.ticker}/meta.json`);
         expect(statSync(join(api, 'funds', row.ticker, 'meta.json')).isFile()).toBe(true);
         expect(row.metrics.dividendYieldBasis === null).toBe(row.metrics.dividendYield === null);
