@@ -1165,6 +1165,25 @@ describe('pipeline 3', () => {
       await main();
       expect(snapshot(api)).toEqual(first);
       expect(JSON.parse(readFileSync(join(api, 'funds/SCHX/meta.json'), 'utf8')).history.totalRows).toBe(1000);
+      // a truncated `max` answer (Yahoo served 2 bars for some funds on 2026-10-29) never shrinks the history either:
+      // one that joins the published days keeps them all, one that does not join keeps the fund as published
+      delete process.env.HISTORY_RANGE;
+      globalThis.fetch = windowed(2);
+      await main();
+      expect(snapshot(api)).toEqual(first);
+      globalThis.fetch = (async (input: any, init?: any) => {
+        const response = await world()(input, init);
+        if (!urlOf(input).includes('/v8/finance/chart/')) return response;
+        const payload = await response.json();
+        const result = payload.chart.result[0];
+        result.timestamp = [result.timestamp[result.timestamp.length - 1] + 30 * 86400];
+        result.indicators.quote[0].close = result.indicators.quote[0].close.slice(-1);
+        result.indicators.quote[0].volume = result.indicators.quote[0].volume.slice(-1);
+        result.indicators.adjclose[0].adjclose = result.indicators.adjclose[0].adjclose.slice(-1);
+        return Response.json(payload);
+      }) as unknown as typeof fetch;
+      await main();
+      expect(JSON.parse(readFileSync(join(api, 'funds/SCHX/meta.json'), 'utf8')).history.totalRows).toBe(1000);
     });
   });
 
