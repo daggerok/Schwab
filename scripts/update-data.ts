@@ -2153,9 +2153,11 @@ async function processFund(fund: CatalogFund, config: UpdaterConfig, previous: J
       const query = new URLSearchParams({ period1: String(historyPeriodStart(config.historyRange)), period2: String(Math.floor(Date.now() / 1000) + 86_400), interval: '1d', events: 'div|split', includeAdjustedClose: 'true' });
       const payload = await fetchJson(`${YAHOO_CHART_URL}/${encodeURIComponent(fund.ticker)}?${query.toString()}`, `[ chart    ] ${fund.ticker}`, config, { 'User-Agent': 'Mozilla/5.0' });
       const fetched = parseChart(payload);
-      // A HISTORY_RANGE window never shrinks the published history (and with it 3y, 5y, 10y and since inception)
-      chart = historyPeriodStart(config.historyRange) > 0 ? mergeWindowedChart(fetched, await readPreviousSheet(fund.ticker, 'history'), Array.isArray(previousMeta?.distributions?.rows) ? previousMeta.distributions.rows : []) : fetched;
-      if (!chart) throw new Error(`chart window does not join the published history (${config.historyRange})`);
+      // A fresh chart never shrinks the published history (and with it 3y, 5y, 10y and since inception): the older published
+      // days and distributions stay, and a chart that does not join them keeps the fund as published (shared windowed-chart
+      // block). This covers a HISTORY_RANGE window and a truncated `max` answer; a full `max` answer starts at inception: unchanged
+      chart = mergeWindowedChart(fetched, await readPreviousSheet(fund.ticker, 'history'), Array.isArray(previousMeta?.distributions?.rows) ? previousMeta.distributions.rows : []);
+      if (!chart) throw new Error(`chart does not join the published history (${config.historyRange}, ${fetched.days.length} days)`);
       days = chart.days;
     } catch (error) {
       outputNote(`[ ${'chart'.padEnd(8)} ] ${fund.ticker}: ${error instanceof Error ? error.message : String(error)}`);
