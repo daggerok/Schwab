@@ -2,7 +2,7 @@
   "ticker": "FNDE",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3322,
+  "totalRows": 3323,
   "headers": [
     "Date",
     "Close",
@@ -1940,7 +1940,13 @@
       "Date": "Oct 29 2026",
       "Close": "40.95000076293945",
       "Adj Close": "40.95",
-      "Volume": "2330121"
+      "Volume": "2330100"
+    },
+    {
+      "Date": "Oct 30 2026",
+      "Close": "40.56999969482422",
+      "Adj Close": "40.57",
+      "Volume": "2595000"
     }
   ]
 }

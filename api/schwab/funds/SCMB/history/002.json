@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1016,
+  "totalRows": 1017,
   "headers": [
     "Date",
     "Close",
@@ -104,7 +104,13 @@
       "Date": "Oct 29 2026",
       "Close": "24.719999313354492",
       "Adj Close": "24.72",
-      "Volume": "2375440"
+      "Volume": "2375500"
+    },
+    {
+      "Date": "Oct 30 2026",
+      "Close": "24.84000015258789",
+      "Adj Close": "24.84",
+      "Volume": "2943000"
     }
   ]
 }

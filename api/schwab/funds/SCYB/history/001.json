@@ -2,7 +2,7 @@
   "ticker": "SCYB",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 831,
+  "totalRows": 832,
   "headers": [
     "Date",
     "Close",
@@ -4994,7 +4994,13 @@
       "Date": "Oct 29 2026",
       "Close": "25.309999465942383",
       "Adj Close": "25.31",
-      "Volume": "1475765"
+      "Volume": "1476100"
+    },
+    {
+      "Date": "Oct 30 2026",
+      "Close": "25.229999542236328",
+      "Adj Close": "25.23",
+      "Volume": "2058400"
     }
   ]
 }

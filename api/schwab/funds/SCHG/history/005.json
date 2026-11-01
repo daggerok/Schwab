@@ -2,7 +2,7 @@
   "ticker": "SCHG",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4232,
+  "totalRows": 4233,
   "headers": [
     "Date",
     "Close",
@@ -1400,7 +1400,13 @@
       "Date": "Oct 29 2026",
       "Close": "35.20000076293945",
       "Adj Close": "35.2",
-      "Volume": "8572804"
+      "Volume": "8637800"
+    },
+    {
+      "Date": "Oct 30 2026",
+      "Close": "34.31999969482422",
+      "Adj Close": "34.32",
+      "Volume": "13392900"
     }
   ]
 }

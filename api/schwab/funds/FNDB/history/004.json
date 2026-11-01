@@ -2,7 +2,7 @@
   "ticker": "FNDB",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3322,
+  "totalRows": 3323,
   "headers": [
     "Date",
     "Close",
@@ -1940,7 +1940,13 @@
       "Date": "Oct 29 2026",
       "Close": "31.969999313354492",
       "Adj Close": "31.97",
-      "Volume": "146366"
+      "Volume": "146400"
+    },
+    {
+      "Date": "Oct 30 2026",
+      "Close": "31.780000686645508",
+      "Adj Close": "31.78",
+      "Volume": "146800"
     }
   ]
 }
