@@ -2,7 +2,7 @@
   "ticker": "SCIN",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 8,
+  "totalRows": 13,
   "headers": [
     "Date",
     "Close",
@@ -57,6 +57,36 @@
       "Close": "25.200000762939453",
       "Adj Close": "25.2",
       "Volume": "23300"
+    },
+    {
+      "Date": "Nov 02 2026",
+      "Close": "25.219999313354492",
+      "Adj Close": "25.22",
+      "Volume": "1700"
+    },
+    {
+      "Date": "Nov 03 2026",
+      "Close": "25.200000762939453",
+      "Adj Close": "25.2",
+      "Volume": "5100"
+    },
+    {
+      "Date": "Nov 04 2026",
+      "Close": "25.34000015258789",
+      "Adj Close": "25.34",
+      "Volume": "1800"
+    },
+    {
+      "Date": "Nov 05 2026",
+      "Close": "25.40999984741211",
+      "Adj Close": "25.41",
+      "Volume": "9400"
+    },
+    {
+      "Date": "Nov 06 2026",
+      "Close": "25.40999984741211",
+      "Adj Close": "25.41",
+      "Volume": "1600"
     }
   ]
 }

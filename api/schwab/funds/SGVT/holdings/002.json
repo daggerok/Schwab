@@ -1,0 +1,52 @@
+{
+  "ticker": "SGVT",
+  "page": 2,
+  "pageSize": 250,
+  "totalRows": 253,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category",
+    "Coupon",
+    "Maturity"
+  ],
+  "rows": [
+    {
+      "Name": "FFCB FLOAT",
+      "Ticker": "-",
+      "Identifier": "BBG01WT1HW41",
+      "Weight": "0.004745",
+      "Market Value": "50247.92",
+      "Shares Held": "50000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4.06",
+      "Maturity": "08/25/2027"
+    },
+    {
+      "Name": "FEDERAL HOME LOAN MORTGAGE CORPORA",
+      "Ticker": "-",
+      "Identifier": "BBG01VYKGKS6",
+      "Weight": "0.004745",
+      "Market Value": "50245.26",
+      "Shares Held": "50000",
+      "Asset Category": "Financials",
+      "Coupon": "4",
+      "Maturity": "01/08/2027"
+    },
+    {
+      "Name": "US DOLLAR",
+      "Ticker": "USD",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0.59",
+      "Shares Held": "0.59",
+      "Asset Category": "-",
+      "Coupon": "-",
+      "Maturity": "-"
+    }
+  ]
+}
