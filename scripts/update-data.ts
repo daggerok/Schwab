@@ -3958,9 +3958,9 @@ export function swingDaysFromHistory(headers: string[], rows: unknown[]): SwingD
 }
 
 /**
- * The daily closes of a Yahoo chart answer (`/v8/finance/chart/<T>?range=max&interval=1d`): `indicators.quote[0].close`,
- * which Yahoo adjusts for splits and not for dividends, dated by the UTC day of the timestamp (as in Stocks). Null when the
- * answer has no result (unknown ticker, error payload, not JSON); missing closes are skipped.
+ * The daily closes of a Yahoo chart answer (swingChartUrl): `indicators.quote[0].close`, which Yahoo adjusts for splits
+ * and not for dividends, dated by the UTC day of the timestamp (as in Stocks). Null when the answer has no result (unknown
+ * ticker, error payload, not JSON) or bars other than daily (`meta.dataGranularity` not `1d`); missing closes are skipped.
  */
 export function swingDaysFromChart(payload: unknown): SwingDay[] | null {
   let json: unknown = payload;
@@ -3971,6 +3971,8 @@ export function swingDaysFromChart(payload: unknown): SwingDay[] | null {
   const results = chart && Array.isArray(chart.result) ? chart.result : null;
   const result = results && results[0] && typeof results[0] === 'object' ? (results[0] as Record<string, unknown>) : null;
   if (!result) return null;
+  const meta = result.meta && typeof result.meta === 'object' ? (result.meta as Record<string, unknown>) : {};
+  if (typeof meta.dataGranularity === 'string' && meta.dataGranularity !== '1d') return null;
   const stamps = Array.isArray(result.timestamp) ? (result.timestamp as unknown[]) : [];
   const indicators = result.indicators as { quote?: Array<{ close?: unknown[] }> } | undefined;
   const quote = indicators && Array.isArray(indicators.quote) && indicators.quote[0] ? indicators.quote[0] : {};
@@ -3984,9 +3986,13 @@ export function swingDaysFromChart(payload: unknown): SwingDay[] | null {
   return out;
 }
 
-/** The Yahoo chart request of one fund: the whole daily history since listing. */
-export function swingChartUrl(ticker: string): string {
-  return `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?range=max&interval=1d&includePrePost=false&events=split`;
+/**
+ * The Yahoo chart request of one fund: the whole daily history since listing. Explicit period1=0 and period2 (tomorrow), never
+ * `range=max`: Yahoo answers `range=max&interval=1d` with weekly bars for a long history.
+ */
+export function swingChartUrl(ticker: string, nowMs?: number): string {
+  const period2 = Math.floor((nowMs === undefined ? Date.now() : nowMs) / 1000) + 86400;
+  return `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?period1=0&period2=${period2}&interval=1d&includePrePost=false&events=split`;
 }
 
 export type SwingOptions = {
@@ -4011,8 +4017,9 @@ export type SwingOptions = {
  * before index.json is written. The keys go in front of `returnsBasis` and `performanceAsOf`, which stay the last two keys.
  * - History mode (no `fetchChart`): from the `Close` column of each fund's published history pages
  *   (`funds/<T>/history/*.json` under `feedRoot`, the folder of index.json), so kept funds get the same values again
- * - Yahoo mode: from swingChartUrl for the funds of `tickers`; a failed or empty chart and a fund not requested keep the
- *   swing keys published before (`previous`, else the row's own), so a failed source never changes a published fund
+ * - Yahoo mode: from swingChartUrl for the funds of `tickers`; a failed or empty chart, a chart that starts more than 31
+ *   days after the published `athBasis` date (a truncated `max` answer) and a fund not requested keep the swing keys
+ *   published before (`previous`, else the row's own), so a failed source never changes a published fund
  * - A row without `dataFile` gets swingEmpty(); a row without a `metrics` object is left as it is
  */
 export async function withSwing<T>(feedRoot: URL | string, funds: T[], options?: SwingOptions): Promise<T[]> {
@@ -4035,6 +4042,9 @@ export async function withSwing<T>(feedRoot: URL | string, funds: T[], options?:
   const computed: Array<SwingRow | null> = rows.map(() => null);
   if (opts.fetchChart) {
     const fetchChart = opts.fetchChart;
+    const before: Record<string, unknown> = {};
+    const previous = Array.isArray(opts.previous) ? opts.previous : [];
+    for (let i = 0; i < previous.length; i += 1) if (tickerOf(previous[i])) before[tickerOf(previous[i])] = previous[i];
     const wanted = Array.isArray(opts.tickers) ? opts.tickers.map((t) => String(t)) : null;
     const queue: number[] = [];
     for (let i = 0; i < rows.length; i += 1) if (hasData(rows[i]) && (!wanted || wanted.indexOf(tickerOf(rows[i])) >= 0)) queue.push(i);
@@ -4047,7 +4057,14 @@ export async function withSwing<T>(feedRoot: URL | string, funds: T[], options?:
         try {
           const days = swingDaysFromChart(await fetchChart(swingChartUrl(ticker), ticker));
           if (!days || !days.length) throw new Error('Yahoo chart returned no daily closes');
-          computed[index] = swingRow(days);
+          const row = swingRow(days);
+          // a truncated `max` answer (Yahoo served 2 bars on 2026-10-29) never shrinks the ATH history: a series that starts
+          // more than 31 days after the published one is a failed source
+          const old = published(before[ticker]) || published(rows[index]);
+          const since = old && typeof old.athBasis === 'string' ? /(\d{4}-\d{2}-\d{2})$/.exec(old.athBasis) : null;
+          const first = row.athBasis ? row.athBasis.slice(-10) : '';
+          if (since && first && Date.parse(`${first}T00:00:00Z`) - Date.parse(`${since[1]}T00:00:00Z`) > 31 * 86400000) throw new Error(`Yahoo chart starts ${first}, after the published history since ${since[1]}`);
+          computed[index] = row;
         } catch (error) {
           if (opts.onError) opts.onError(ticker, error);
         }
@@ -4057,9 +4074,6 @@ export async function withSwing<T>(feedRoot: URL | string, funds: T[], options?:
     const workers: Array<Promise<void>> = [];
     for (let i = 0; i < lanes; i += 1) workers.push(worker());
     await Promise.all(workers);
-    const before: Record<string, unknown> = {};
-    const previous = Array.isArray(opts.previous) ? opts.previous : [];
-    for (let i = 0; i < previous.length; i += 1) if (tickerOf(previous[i])) before[tickerOf(previous[i])] = previous[i];
     for (let i = 0; i < rows.length; i += 1) {
       if (computed[i] || !hasData(rows[i])) continue;
       computed[i] = published(before[tickerOf(rows[i])]) || published(rows[i]);
