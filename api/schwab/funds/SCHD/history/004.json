@@ -2,7 +2,7 @@
   "ticker": "SCHD",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3788,
+  "totalRows": 3789,
   "headers": [
     "Date",
     "Close",
@@ -4730,13 +4730,19 @@
       "Date": "Nov 11 2026",
       "Close": "36.02000045776367",
       "Adj Close": "36.02",
-      "Volume": "24443800"
+      "Volume": "24534100"
     },
     {
       "Date": "Nov 12 2026",
-      "Close": "36.11840057373047",
+      "Close": "35.93000030517578",
+      "Adj Close": "35.93",
+      "Volume": "19846100"
+    },
+    {
+      "Date": "Nov 13 2026",
+      "Close": "36.119998931884766",
       "Adj Close": "36.12",
-      "Volume": "8645175"
+      "Volume": "21002800"
     }
   ]
 }
