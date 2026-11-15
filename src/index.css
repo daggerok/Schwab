@@ -230,6 +230,10 @@ textarea.ui-input{height:auto;padding:.5rem .75rem;line-height:1.4}
 .ui-modal-foot{flex:none;display:flex;justify-content:flex-end;gap:.5rem;padding:var(--ui-pad-head) var(--ui-pad);border-top:1px solid var(--ui-line)}
 .ui-modal-foot kbd{margin-left:.5rem;padding:0 .3rem;font:inherit;font-size:.65rem;opacity:.7;border:1px solid currentColor;border-radius:var(--ui-r-tag)}
 
+/* a link inside a panel (selected tickers of the subtitle) shows the ring, not the browser outline */
+.ui-panel a:focus{outline:none}
+.ui-panel a:focus-visible{border-radius:var(--ui-r-tag);box-shadow:var(--ui-ring)}
+
 /* section label and hint text */
 .ui-label{font-size:var(--ui-fs-chip);line-height:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ui-muted);white-space:nowrap}
 .ui-hint{font-size:var(--ui-fs-chip);color:var(--ui-muted)}
