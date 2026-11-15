@@ -334,10 +334,10 @@ function yahooPayload() {
   const close = timestamp.map((_, i) => 20 + i * 0.01);
   return {
     chart: { result: [{
-      meta: { exchangeName: 'PCX', regularMarketPrice: 30, regularMarketTime: timestamp[999], firstTradeDate: start },
+      meta: { exchangeName: 'PCX', regularMarketPrice: 30, regularMarketTime: timestamp[999], firstTradeDate: start, dataGranularity: '1d' },
       timestamp,
       indicators: { quote: [{ close, volume: timestamp.map(() => 1000) }], adjclose: [{ adjclose: close }] },
-      events: { dividends: {} },
+      events: { dividends: { [String(timestamp[990])]: { amount: 0.25, date: timestamp[990] } } },
     }] },
   };
 }
@@ -908,7 +908,7 @@ describe('pipeline', () => {
   });
 
   test('a full run publishes one metrics key set; identical re-runs (full and one-ticker) write nothing', async () => {
-    await feed({ fetch: world() }, async (api) => {
+    await feed({ fetch: world() }, async (api, calls) => {
       await main();
       const rows = readIndexRows(api);
       expect(rows.map((row) => row.ticker)).toEqual(['FNDE', 'SCHR', 'SCHX']);
@@ -917,7 +917,11 @@ describe('pipeline', () => {
         // the 52-week range keys from the published history pages (shared range-52w block)
         expect(Object.keys(row.metrics)).toEqual(expect.arrayContaining(['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis']));
         // the swing keys from the Close column of the same pages (shared swing block): ATH and its basis from the first close
-        expect(Object.keys(row.metrics).slice(-11, -2)).toEqual(['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d']);
+        expect(Object.keys(row.metrics).slice(-17, -8)).toEqual(['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d']);
+        // the dividend keys from the Yahoo dividend events of the daily chart (shared dividends block): one payment in the last
+        // 12 months, no complete year after the listing year, so growth, streak and cut are null (never 0)
+        expect(Object.keys(row.metrics).slice(-8, -2)).toEqual(['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y']);
+        expect([row.metrics.dividendRate, row.metrics.dividendGrowth, row.metrics.dividendGrowth3y, row.metrics.dividendGrowth5y, row.metrics.dividendStreak, row.metrics.dividendCut10y]).toEqual([0.25, null, null, null, null, null]);
         expect([typeof row.metrics.athPrice, row.metrics.athBasis]).toEqual(['number', expect.stringMatching(/^daily closes since \d{4}-\d{2}-\d{2}$/)]);
         expect(row.dataFile).toBe(`./funds/${row.ticker}/meta.json`);
         expect(statSync(join(api, 'funds', row.ticker, 'meta.json')).isFile()).toBe(true);
@@ -929,9 +933,13 @@ describe('pipeline', () => {
       await main();
       expect(snapshot(api)).toEqual(first);
       process.env.TICKERS = 'SCHR';
+      const before = calls.length;
       await main();
       expect(readIndexRows(api)).toHaveLength(3);
       expect(snapshot(api)).toEqual(first);
+      // the dividend chart request (it differs from the fund's own chart request by includePrePost=false) only for the updated fund
+      const dividendCharts = calls.slice(before).filter((url) => /chart\/[A-Z]+\?period1=0&.*includePrePost=false/.test(url));
+      expect(dividendCharts.map((url) => /chart\/([A-Z]+)\?/.exec(url)![1])).toEqual(['SCHR']);
     });
   });
 
