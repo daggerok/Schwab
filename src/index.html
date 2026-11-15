@@ -86,22 +86,22 @@
             <button id="rank-btn" type="button" aria-pressed="false" class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 px-3 py-2 rounded-lg text-sm font-medium transition active:scale-95 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed" title="Sticky #: number the rows by their rank in the sorted table before the column filters, so filtered rows keep their rank (1, 4, 7...). Off: 1..N of the shown rows">Sticky #: <span id="rank-summary">off</span></button>
           <!-- Actions menu (☰ at the right end of the toolbar, owner 2026-11-15): the action buttons keep their ids and handlers, setupActionsMenu() in main.tsx opens and closes it -->
           <div class="am-root">
-            <button type="button" id="actions-btn" class="am-trigger" aria-haspopup="menu" aria-expanded="false" aria-controls="actions-panel" aria-label="Actions" title="Actions: copy tickers, export, clear, blacklist">☰</button>
+            <button type="button" id="actions-btn" class="dd-trigger am-trigger" aria-haspopup="menu" aria-expanded="false" aria-controls="actions-panel" aria-label="Actions" title="Actions: copy tickers, export, clear, blacklist"><svg class="am-burger" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3.5 5.5h13M3.5 10h13M3.5 14.5h13"/></svg><span class="am-label">Actions</span><svg class="dd-chev" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></button>
             <div id="actions-panel" class="am-panel" role="menu" aria-label="Actions" hidden>
-              <button id="copy-btn" disabled class="am-item am-copy" role="menuitem" data-am-keep>Copy Tickers</button>
+              <button id="copy-btn" disabled class="am-item dd-opt am-copy" role="menuitem" data-am-keep>Copy Tickers</button>
               <!-- Integrated Drag & Drop Upload (same feature as daggerok/iShares, N-PORT flavor) -->
-              <div id="dropzone" class="am-item am-upload" title="Upload SEC Form N-PORT-P primary_doc.xml (Schwab ETF holdings from EDGAR, used by the feed only when schwabassetmanagement.com publishes no holdings CSV for a fund). Parsed in your browser; uploads live for this session only." role="menuitem">
+              <div id="dropzone" class="am-item dd-opt am-upload" title="Upload SEC Form N-PORT-P primary_doc.xml (Schwab ETF holdings from EDGAR, used by the feed only when schwabassetmanagement.com publishes no holdings CSV for a fund). Parsed in your browser; uploads live for this session only." role="menuitem">
                 <input type="file" id="file-input" accept=".xml" class="hidden" />
                 <svg class="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                 </svg>
                 <span id="dropzone-text" class="dz-label font-medium">Upload / Drop N-PORT XML</span>
               </div>
-              <button id="export-csv-btn" disabled class="am-item am-csv" role="menuitem">Export .csv</button>
-              <button id="export-txt-btn" disabled class="am-item am-txt" role="menuitem">Export .txt</button>
+              <button id="export-csv-btn" disabled class="am-item dd-opt am-csv" role="menuitem">Export .csv</button>
+              <button id="export-txt-btn" disabled class="am-item dd-opt am-txt" role="menuitem">Export .txt</button>
               <div class="am-sep" role="separator"></div>
-              <button id="reset-btn" disabled title="Choose what to reset to the first-visit view (the choice is remembered, the theme is kept)" class="am-item am-clear" role="menuitem">Clear</button>
-              <button id="blacklist-btn" class="am-item am-blacklist" title="Manage the blacklist of ETFs hidden from All ETFs (kept in browser localStorage)" aria-expanded="false" role="menuitem">Blacklist</button>
+              <button id="reset-btn" disabled title="Choose what to reset to the first-visit view (the choice is remembered, the theme is kept)" class="am-item dd-opt am-clear" role="menuitem">Clear</button>
+              <button id="blacklist-btn" class="am-item dd-opt am-blacklist" title="Manage the blacklist of ETFs hidden from All ETFs (kept in browser localStorage)" aria-expanded="false" role="menuitem">Blacklist</button>
             </div>
           </div>
 
