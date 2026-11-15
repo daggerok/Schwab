@@ -338,9 +338,11 @@
 .range52w-cell{background-image:linear-gradient(to right,rgb(59 130 246 / .7) 0 var(--range52w,0%),rgb(148 163 184 / .35) var(--range52w,0%) 100%);background-repeat:no-repeat;background-size:calc(100% - 2rem) 3px;background-position:1rem calc(100% - .3rem)}
 .range52w-cell.range52w-young{background-image:linear-gradient(to right,rgb(245 158 11 / .75) 0 var(--range52w,0%),rgb(148 163 184 / .35) var(--range52w,0%) 100%)}
 
-/* Actions menu (☰ at the right end of the toolbar, owner 2026-11-15, see setupActionsMenu in main.tsx): the action buttons as menu items, each with its old color as an accent bar.
-   .am-bar is the toolbar, .am-root (☰ and its panel) its last child, .am-row the search. From lg ☰ is pushed to the right end of its row; below lg it sits right of the search
-   on the first row: a column toolbar (flex-col, brands) becomes a two-column grid there, a wrapping row toolbar (hub, Stocks) puts the search and ☰ first by order */
+/* Actions menu (☰ Actions ▾ at the right end of the toolbar, owner 2026-11-15, see setupActionsMenu in main.tsx). Restyled 2026-11-15 to the toolbar dropdowns: the trigger is a .dd-trigger
+   (border, radius, height, font, chevron, focus ring and open state of Columns and Asset classes), the items are .dd-opt rows of a .dd-panel look with a small neutral icon each (mask of an inline SVG,
+   so a handler that sets the item's text keeps it), hover and keyboard focus like the active row of a dropdown, only Clear has a red label, the Upload item shows a dashed frame only while a file is dragged over it.
+   .am-bar is the toolbar, .am-root (the trigger and its panel) its last child, .am-row the search. From lg the trigger is pushed to the right end of its row; below lg it sits right of the search
+   on the first row: a column toolbar (flex-col, brands) becomes a two-column grid there, a wrapping row toolbar (hub, Stocks) puts the search and the trigger first by order */
 .am-row{display:flex;align-items:center;gap:.5rem;min-width:0}
 .am-bar > .am-root{flex:none}
 @media (min-width:64rem){.am-bar > .am-root{margin-left:auto}}
@@ -349,34 +351,34 @@
 .am-bar.flex-col > *{grid-column:1 / -1}
 .am-bar.flex-col > .am-row{grid-column:1;grid-row:1;justify-self:stretch}
 .am-bar.flex-col > .am-root{grid-column:2;grid-row:1}
-.am-bar:not(.flex-col) > .am-row{order:-2;flex:1 1 calc(100% - 3.5rem)}
+.am-bar:not(.flex-col) > .am-row{order:-2;flex:1 1 calc(100% - 9rem)}
 .am-bar:not(.flex-col) > .am-root{order:-1}
 }
 .am-row > *{flex:1 1 auto;min-width:0}
-.am-trigger{display:inline-flex;align-items:center;justify-content:center;width:2.375rem;height:2.375rem;flex:none;border-radius:.5rem;border:1px solid #e2e8f0;background:#fff;color:#334155;font-size:1.125rem;line-height:1;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
-.am-trigger:hover,.am-trigger[aria-expanded="true"]{background:#f1f5f9;border-color:#cbd5e1}
-.dark .am-trigger{background:#0f172a;border-color:#334155;color:#e2e8f0}
-.dark .am-trigger:hover,.dark .am-trigger[aria-expanded="true"]{background:#1e293b;border-color:#475569}
-.am-trigger:focus-visible,.am-item:focus-visible{outline:2px solid #3b82f6;outline-offset:2px}
-.am-panel{position:fixed;left:0;top:0;z-index:1000;display:flex;flex-direction:column;gap:.125rem;min-width:13rem;max-width:calc(100vw - 1rem);overflow:auto;padding:.375rem;background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;box-shadow:0 12px 30px rgb(15 23 42 / .16),0 2px 6px rgb(15 23 42 / .06);opacity:0;transform:translateY(-4px) scale(.98);transform-origin:top right;transition:opacity .14s ease,transform .14s ease}
+.am-trigger{flex:none;white-space:nowrap}
+.am-trigger .am-burger{flex:none;color:#64748b}
+.dark .am-trigger .am-burger{color:#94a3b8}
+.am-panel{position:fixed;left:0;top:0;z-index:1000;display:flex;flex-direction:column;gap:.125rem;min-width:13rem;max-width:calc(100vw - 1rem);overflow:auto;overscroll-behavior:contain;padding:.375rem;background:#fff;border:1px solid #e2e8f0;border-radius:.75rem;box-shadow:0 12px 30px rgb(15 23 42 / .16),0 2px 6px rgb(15 23 42 / .06);opacity:0;transform:translateY(-4px) scale(.98);transform-origin:top right;transition:opacity .14s ease,transform .14s ease}
 .am-panel[hidden]{display:none}
 .am-panel.is-open{opacity:1;transform:none}
 .dark .am-panel{background:#0f172a;border-color:#334155;box-shadow:0 12px 30px rgb(0 0 0 / .5),0 2px 6px rgb(0 0 0 / .3)}
-.am-item{--am-accent:#94a3b8;display:flex;align-items:center;gap:.5rem;width:100%;padding:.5rem .75rem .5rem .625rem;border:0;border-left:3px solid var(--am-accent);border-radius:.375rem;background:transparent;color:#334155;font-size:.875rem;line-height:1.25rem;font-weight:500;text-align:left;white-space:nowrap;cursor:pointer;transition:background-color .12s}
-.am-item:hover:not(:disabled),.am-item:focus-visible{background:#f1f5f9}
-.dark .am-item{color:#e2e8f0}
-.dark .am-item:hover:not(:disabled),.dark .am-item:focus-visible{background:#1e293b}
+.am-item{width:100%;margin:0;border:0;background:transparent;font-family:inherit;text-align:left;white-space:nowrap}
+.am-item:focus{outline:none}
+.am-item:hover:not(:disabled),.am-item:focus-visible{background:#eff6ff;box-shadow:inset 0 0 0 1px #bfdbfe}
+.dark .am-item:hover:not(:disabled),.dark .am-item:focus-visible{background:rgba(30,64,175,.28);box-shadow:inset 0 0 0 1px rgba(59,130,246,.4)}
 .am-item:disabled{opacity:.5;cursor:not-allowed}
-.am-item svg{width:1rem;height:1rem;flex:none}
-.am-copy,.am-blacklist{--am-accent:#94a3b8}
-.am-upload{--am-accent:#3b82f6;border-top:1px dashed #cbd5e1;border-right:1px dashed #cbd5e1;border-bottom:1px dashed #cbd5e1}
-.dark .am-upload{border-top-color:#475569;border-right-color:#475569;border-bottom-color:#475569}
-.am-csv{--am-accent:#2563eb}
-.am-txt{--am-accent:#059669}
-.am-clear{--am-accent:#e11d48;color:#be123c}
-.dark .am-clear{color:#fda4af}
-.am-sep{height:1px;margin:.25rem .25rem;background:#e2e8f0;flex:none}
-.dark .am-sep{background:#334155}
+.am-item::before{content:"";flex:none;width:1rem;height:1rem;background-color:#94a3b8;-webkit-mask:var(--am-icon) center / contain no-repeat;mask:var(--am-icon) center / contain no-repeat}
+.am-item > svg{display:none}
+.am-upload .dz-label{font-weight:inherit}
+.am-copy{--am-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='13' height='13' rx='2'/%3E%3Cpath d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'/%3E%3C/svg%3E")}
+.am-upload{--am-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12'/%3E%3C/svg%3E")}
+.am-csv,.am-txt{--am-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3'/%3E%3C/svg%3E")}
+.am-clear{--am-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21M22 21H7M5 11l9 9'/%3E%3C/svg%3E")}
+.am-blacklist{--am-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m4.9 4.9 14.2 14.2'/%3E%3C/svg%3E")}
+.am-item.am-clear{color:#be123c}
+.dark .am-item.am-clear{color:#fda4af}
+.am-sep{height:1px;margin:.25rem .125rem;background:#f1f5f9;flex:none}
+.dark .am-sep{background:#1e293b}
 @media (prefers-reduced-motion:reduce){.am-panel{transition:none}}
-.am-upload.dz-active{border-color:#3b82f6;background:#eff6ff}
-.dark .am-upload.dz-active{background:#1e293b}
+.am-upload.dz-active{background:#eff6ff;box-shadow:none;outline:1px dashed #3b82f6;outline-offset:-1px}
+.dark .am-upload.dz-active{background:rgba(30,64,175,.28)}
