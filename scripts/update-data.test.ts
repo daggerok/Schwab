@@ -917,11 +917,15 @@ describe('pipeline', () => {
         // the 52-week range keys from the published history pages (shared range-52w block)
         expect(Object.keys(row.metrics)).toEqual(expect.arrayContaining(['week52Low', 'week52High', 'range52w', 'range52wClose', 'range52wAsOf', 'range52wSince', 'range52wBasis']));
         // the swing keys from the Close column of the same pages (shared swing block): ATH and its basis from the first close
-        expect(Object.keys(row.metrics).slice(-17, -8)).toEqual(['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d']);
+        expect(Object.keys(row.metrics).slice(-51, -42)).toEqual(['pctFrom52wHigh', 'athPrice', 'athDate', 'athBasis', 'pctFromAth', 'volatility1y', 'sigmaFromMean60d', 'high60d', 'low60d']);
         // the dividend keys from the Yahoo dividend events of the daily chart (shared dividends block): one payment in the last
         // 12 months, no complete year after the listing year, so growth, streak and cut are null (never 0)
-        expect(Object.keys(row.metrics).slice(-8, -2)).toEqual(['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y']);
-        expect([row.metrics.dividendRate, row.metrics.dividendGrowth, row.metrics.dividendGrowth3y, row.metrics.dividendGrowth5y, row.metrics.dividendStreak, row.metrics.dividendCut10y]).toEqual([0.25, null, null, null, null, null]);
+        expect(Object.keys(row.metrics).slice(-42, -34)).toEqual(['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y', 'paymentsPerYear', 'payFrequency']);
+        expect(['dividendRate', 'dividendGrowth', 'dividendGrowth3y', 'dividendGrowth5y', 'dividendStreak', 'dividendCut10y', 'paymentsPerYear', 'payFrequency'].map((key) => row.metrics[key])).toEqual([0.25, null, null, null, null, null, 1, 'annual']);
+        // the 32 benchmark keys against SPY and QQQ (benchmark block) sit before the returns pair; the mock's 1000 daily bars (the benchmarks answer the same ones)
+        // give beta and correlation 1 and relative strength 0 against both; the one mocked payment over more than a year is annual
+        expect(Object.keys(row.metrics).slice(-34, -2)).toEqual(['perf1y', 'perf3y', 'perf5y', 'perf10y', 'perfSi', 'maxDrawdown1y', 'maxDrawdown3y', 'maxDrawdown5y', 'maxDrawdown10y', 'vsSpy1y', 'vsSpy3y', 'vsSpy5y', 'vsSpy10y', 'beta1ySpy', 'corr1ySpy', 'upCapture3ySpy', 'downCapture3ySpy', 'relStrength3mSpy', 'stressReturnSpy', 'stressBasisSpy', 'vsQqq1y', 'vsQqq3y', 'vsQqq5y', 'vsQqq10y', 'beta1yQqq', 'corr1yQqq', 'upCapture3yQqq', 'downCapture3yQqq', 'relStrength3mQqq', 'stressReturnQqq', 'stressBasisQqq', 'benchmarkAsOf']);
+        expect([row.metrics.beta1ySpy, row.metrics.corr1ySpy, row.metrics.beta1yQqq, row.metrics.relStrength3mSpy, row.metrics.benchmarkAsOf]).toEqual([1, 1, 1, 0, expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/)]);
         expect([typeof row.metrics.athPrice, row.metrics.athBasis]).toEqual(['number', expect.stringMatching(/^daily closes since \d{4}-\d{2}-\d{2}$/)]);
         expect(row.dataFile).toBe(`./funds/${row.ticker}/meta.json`);
         expect(statSync(join(api, 'funds', row.ticker, 'meta.json')).isFile()).toBe(true);
@@ -937,9 +941,9 @@ describe('pipeline', () => {
       await main();
       expect(readIndexRows(api)).toHaveLength(3);
       expect(snapshot(api)).toEqual(first);
-      // the dividend chart request (it differs from the fund's own chart request by includePrePost=false) only for the updated fund
+      // the dividend chart request (it differs from the fund's own chart request by includePrePost=false) only for the updated fund, plus the SPY and QQQ charts of the benchmark block
       const dividendCharts = calls.slice(before).filter((url) => /chart\/[A-Z]+\?period1=0&.*includePrePost=false/.test(url));
-      expect(dividendCharts.map((url) => /chart\/([A-Z]+)\?/.exec(url)![1])).toEqual(['SCHR']);
+      expect(dividendCharts.map((url) => /chart\/([A-Z]+)\?/.exec(url)![1]).sort()).toEqual(['QQQ', 'SCHR', 'SPY']);
     });
   });
 
