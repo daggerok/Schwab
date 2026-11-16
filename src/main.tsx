@@ -1799,8 +1799,6 @@ function setupActionsMenu(): void {
 }
 setupActionsMenu();
 
-init();
-
 // =========================================================================
 // 3. Theme & small helpers
 // =========================================================================
@@ -4426,3 +4424,7 @@ Object.defineProperty(window, 'hiddenColumns', { get: () => hiddenColumns, set: 
 document.querySelectorAll('a[data-feed-link]').forEach(link => {
   (link as HTMLAnchorElement).href = new URL(link.getAttribute('data-feed-link') || '', document.baseURI).href;
 });
+
+// keep init() the last statement: it reads top-level let/const bindings from all over this file, and started in the middle a reload
+// with a saved selection threw "Cannot access ... before initialization" (the catalog never loaded)
+init();
