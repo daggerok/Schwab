@@ -2,7 +2,7 @@
   "ticker": "FNDF",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3333,
+  "totalRows": 3336,
   "headers": [
     "Date",
     "Close",
@@ -2007,6 +2007,24 @@
       "Close": "53.86000061035156",
       "Adj Close": "53.86",
       "Volume": "1221300"
+    },
+    {
+      "Date": "Nov 16 2026",
+      "Close": "53.099998474121094",
+      "Adj Close": "53.1",
+      "Volume": "1509700"
+    },
+    {
+      "Date": "Nov 17 2026",
+      "Close": "52.52000045776367",
+      "Adj Close": "52.52",
+      "Volume": "1733400"
+    },
+    {
+      "Date": "Nov 18 2026",
+      "Close": "51.790000915527344",
+      "Adj Close": "51.79",
+      "Volume": "2003200"
     }
   ]
 }

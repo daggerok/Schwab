@@ -2,7 +2,7 @@
   "ticker": "FNDA",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3333,
+  "totalRows": 3336,
   "headers": [
     "Date",
     "Close",
@@ -2007,6 +2007,24 @@
       "Close": "36.209999084472656",
       "Adj Close": "36.21",
       "Volume": "995100"
+    },
+    {
+      "Date": "Nov 16 2026",
+      "Close": "35.790000915527344",
+      "Adj Close": "35.79",
+      "Volume": "1324200"
+    },
+    {
+      "Date": "Nov 17 2026",
+      "Close": "35.25",
+      "Adj Close": "35.25",
+      "Volume": "1628800"
+    },
+    {
+      "Date": "Nov 18 2026",
+      "Close": "35.43000030517578",
+      "Adj Close": "35.43",
+      "Volume": "1813300"
     }
   ]
 }

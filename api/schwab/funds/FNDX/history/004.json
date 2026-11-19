@@ -2,7 +2,7 @@
   "ticker": "FNDX",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3333,
+  "totalRows": 3336,
   "headers": [
     "Date",
     "Close",
@@ -2007,6 +2007,24 @@
       "Close": "32.97999954223633",
       "Adj Close": "32.98",
       "Volume": "3219300"
+    },
+    {
+      "Date": "Nov 16 2026",
+      "Close": "32.599998474121094",
+      "Adj Close": "32.6",
+      "Volume": "3594800"
+    },
+    {
+      "Date": "Nov 17 2026",
+      "Close": "32.16999816894531",
+      "Adj Close": "32.17",
+      "Volume": "4434600"
+    },
+    {
+      "Date": "Nov 18 2026",
+      "Close": "31.8700008392334",
+      "Adj Close": "31.87",
+      "Volume": "5317100"
     }
   ]
 }
