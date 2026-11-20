@@ -7,13 +7,13 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/scin",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/scin",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 18 2026",
-    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_FundHoldings_2026-11-18.CSV",
+    "productPageAsOf": "Nov 19 2026",
+    "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_FundHoldings_2026-11-19.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_NAV_History.CSV",
     "pricesDownload": null,
     "yahooChart": "https://query1.finance.yahoo.com/v8/finance/chart/SCIN",
-    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCIN_FundHoldings_2026-11-18.CSV, via read-only rendering proxy)",
+    "holdingsSource": "schwabassetmanagement.com full holdings CSV export (SCIN_FundHoldings_2026-11-19.CSV, via read-only rendering proxy)",
     "historySource": "Yahoo Finance public chart API (adjusted close)",
     "distributionsSource": "not available",
     "provider": "Schwab Asset Management product finder + official product page + per-fund holdings/distribution CSV exports + SEC EDGAR Form N-PORT-P fallback + Yahoo Finance public chart API"
@@ -35,30 +35,30 @@
   "nav": {
     "display": "$25.16",
     "value": 25.16,
-    "asOfDate": "Nov 18 2026"
+    "asOfDate": "Nov 19 2026"
   },
   "marketPrice": {
-    "display": "$25.25",
-    "value": 25.245,
-    "asOfDate": "Nov 18 2026",
+    "display": "$25.36",
+    "value": 25.355,
+    "asOfDate": "Nov 20 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.38%",
-    "value": 0.38,
-    "asOfDate": "Nov 18 2026",
+    "display": "0.27%",
+    "value": 0.27,
+    "asOfDate": "Nov 19 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
     "display": "$25.16 M",
-    "value": 25158342.27,
-    "asOfDate": "Nov 18 2026",
+    "value": 25157599.2,
+    "asOfDate": "Nov 19 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
     "sharesOutstanding": 1000000,
     "portfolioTurnover": null,
-    "publishedTotalHoldings": 526,
+    "publishedTotalHoldings": 527,
     "bidAskMidpoint": 25.22
   },
   "yields": {
@@ -67,9 +67,9 @@
     "dividendYieldBasis": null,
     "dividendYieldKind": "indicated (latest distribution x inferred payments per year / NAV)",
     "distributionRate": null,
-    "secYield": null,
-    "secYieldText": "—",
-    "secYieldKind": "not published on the official product page for this fund"
+    "secYield": 3.68,
+    "secYieldText": "3.68%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 18 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
@@ -163,20 +163,20 @@
       "holdings/003.json"
     ],
     "pageSize": 250,
-    "totalRows": 526,
-    "asOfDate": "2026-11-18",
-    "asOf": "Nov 18 2026",
-    "source": "schwabassetmanagement.com full holdings CSV export (SCIN_FundHoldings_2026-11-18.CSV, via read-only rendering proxy)",
+    "totalRows": 527,
+    "asOfDate": "2026-11-19",
+    "asOf": "Nov 19 2026",
+    "source": "schwabassetmanagement.com full holdings CSV export (SCIN_FundHoldings_2026-11-19.CSV, via read-only rendering proxy)",
     "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
-    "publishedTotalHoldings": 526
+    "publishedTotalHoldings": 527
   },
   "history": {
     "pages": [
       "history/001.json"
     ],
     "pageSize": 1000,
-    "totalRows": 21,
-    "asOf": "Nov 18 2026",
+    "totalRows": 23,
+    "asOf": "Nov 20 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }

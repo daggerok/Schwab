@@ -2,7 +2,7 @@
   "ticker": "SCHV",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4258,
+  "totalRows": 4260,
   "headers": [
     "Date",
     "Close",
@@ -1557,6 +1557,18 @@
       "Close": "33.72999954223633",
       "Adj Close": "33.73",
       "Volume": "3329100"
+    },
+    {
+      "Date": "Nov 19 2026",
+      "Close": "33.209999084472656",
+      "Adj Close": "33.21",
+      "Volume": "4977000"
+    },
+    {
+      "Date": "Nov 20 2026",
+      "Close": "32.650001525878906",
+      "Adj Close": "32.65",
+      "Volume": "4908630"
     }
   ]
 }

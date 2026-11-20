@@ -2,7 +2,7 @@
   "ticker": "SCHJ",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1786,
+  "totalRows": 1788,
   "headers": [
     "Date",
     "Close",
@@ -4725,6 +4725,18 @@
       "Close": "24.139999389648438",
       "Adj Close": "24.14",
       "Volume": "293000"
+    },
+    {
+      "Date": "Nov 19 2026",
+      "Close": "24.15999984741211",
+      "Adj Close": "24.16",
+      "Volume": "194000"
+    },
+    {
+      "Date": "Nov 20 2026",
+      "Close": "24.239999771118164",
+      "Adj Close": "24.24",
+      "Volume": "267283"
     }
   ]
 }

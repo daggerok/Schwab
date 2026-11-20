@@ -2,7 +2,7 @@
   "ticker": "SGVT",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 362,
+  "totalRows": 364,
   "headers": [
     "Date",
     "Close",
@@ -2181,6 +2181,18 @@
       "Close": "100.66999816894531",
       "Adj Close": "100.67",
       "Volume": "597400"
+    },
+    {
+      "Date": "Nov 19 2026",
+      "Close": "100.68000030517578",
+      "Adj Close": "100.68",
+      "Volume": "353900"
+    },
+    {
+      "Date": "Nov 20 2026",
+      "Close": "100.69999694824219",
+      "Adj Close": "100.7",
+      "Volume": "563933"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "FNDX",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3336,
+  "totalRows": 3338,
   "headers": [
     "Date",
     "Close",
@@ -2025,6 +2025,18 @@
       "Close": "31.8700008392334",
       "Adj Close": "31.87",
       "Volume": "5317100"
+    },
+    {
+      "Date": "Nov 19 2026",
+      "Close": "31.31999969482422",
+      "Adj Close": "31.32",
+      "Volume": "7838400"
+    },
+    {
+      "Date": "Nov 20 2026",
+      "Close": "30.780000686645508",
+      "Adj Close": "30.78",
+      "Volume": "7087818"
     }
   ]
 }

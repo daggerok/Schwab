@@ -1,0 +1,96 @@
+{
+  "ticker": "SGVT",
+  "page": 2,
+  "pageSize": 250,
+  "totalRows": 257,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category",
+    "Coupon",
+    "Maturity"
+  ],
+  "rows": [
+    {
+      "Name": "FFCB",
+      "Ticker": "-",
+      "Identifier": "BBG01ZNPGGD3",
+      "Weight": "0.008661",
+      "Market Value": "97660.24",
+      "Shares Held": "100000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "0",
+      "Maturity": "03/31/2027"
+    },
+    {
+      "Name": "TREASURY NOTE",
+      "Ticker": "-",
+      "Identifier": "BBG00TFVYW30",
+      "Weight": "0.008648",
+      "Market Value": "97509.78",
+      "Shares Held": "100000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "0.5",
+      "Maturity": "04/30/2027"
+    },
+    {
+      "Name": "FFCB FLOAT",
+      "Ticker": "-",
+      "Identifier": "BBG01VXRPBB0",
+      "Weight": "0.004399",
+      "Market Value": "49599",
+      "Shares Held": "50000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4.005",
+      "Maturity": "07/09/2027"
+    },
+    {
+      "Name": "FHLB FLOAT",
+      "Ticker": "-",
+      "Identifier": "BBG01VKY6PR2",
+      "Weight": "0.004399",
+      "Market Value": "49596.37",
+      "Shares Held": "50000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.995",
+      "Maturity": "06/17/2027"
+    },
+    {
+      "Name": "FEDERAL HOME LOAN MORTGAGE CORPORA",
+      "Ticker": "-",
+      "Identifier": "BBG01VYKGKS6",
+      "Weight": "0.004398",
+      "Market Value": "49593.71",
+      "Shares Held": "50000",
+      "Asset Category": "Financials",
+      "Coupon": "3.98",
+      "Maturity": "01/08/2027"
+    },
+    {
+      "Name": "FFCB FLOAT",
+      "Ticker": "-",
+      "Identifier": "BBG01WT1HW41",
+      "Weight": "0.004398",
+      "Market Value": "49591.83",
+      "Shares Held": "50000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4.04",
+      "Maturity": "08/25/2027"
+    },
+    {
+      "Name": "US DOLLAR",
+      "Ticker": "USD",
+      "Identifier": "-",
+      "Weight": "0",
+      "Market Value": "0.51",
+      "Shares Held": "0.51",
+      "Asset Category": "-",
+      "Coupon": "-",
+      "Maturity": "-"
+    }
+  ]
+}
