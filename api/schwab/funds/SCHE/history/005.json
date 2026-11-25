@@ -2,7 +2,7 @@
   "ticker": "SCHE",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4242,
+  "totalRows": 4243,
   "headers": [
     "Date",
     "Close",
@@ -1461,6 +1461,12 @@
       "Close": "32.56999969482422",
       "Adj Close": "32.57",
       "Volume": "4071000"
+    },
+    {
+      "Date": "Nov 25 2026",
+      "Close": "32.540000915527344",
+      "Adj Close": "32.54",
+      "Volume": "3951600"
     }
   ]
 }

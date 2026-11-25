@@ -2,7 +2,7 @@
   "ticker": "SCHK",
   "page": 3,
   "pageSize": 1000,
-  "totalRows": 2292,
+  "totalRows": 2293,
   "headers": [
     "Date",
     "Close",
@@ -1761,6 +1761,12 @@
       "Close": "34.540000915527344",
       "Adj Close": "34.54",
       "Volume": "1235800"
+    },
+    {
+      "Date": "Nov 25 2026",
+      "Close": "34.470001220703125",
+      "Adj Close": "34.47",
+      "Volume": "2582597"
     }
   ]
 }

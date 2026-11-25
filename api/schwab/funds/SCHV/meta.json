@@ -38,14 +38,14 @@
     "asOfDate": "Nov 24 2026"
   },
   "marketPrice": {
-    "display": "$33.57",
-    "value": 33.57,
-    "asOfDate": "Nov 24 2026",
+    "display": "$33.79",
+    "value": 33.79,
+    "asOfDate": "Nov 25 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.05%",
-    "value": 0.05,
+    "display": "0.01%",
+    "value": 0.01,
     "asOfDate": "Nov 24 2026",
     "source": "official product page Quote Details"
   },
@@ -59,7 +59,7 @@
     "sharesOutstanding": 452700000,
     "portfolioTurnover": 10.2,
     "publishedTotalHoldings": 569,
-    "bidAskMidpoint": 33.42
+    "bidAskMidpoint": 33.57
   },
   "yields": {
     "dividendYield": 1.81,
@@ -80,8 +80,8 @@
       "mo1Text": "4.03%",
       "mo3": 2.13,
       "mo3Text": "2.13%",
-      "qtd": 0.78,
-      "qtdText": "0.78%",
+      "qtd": 1.44,
+      "qtdText": "1.44%",
       "ytd": 18.6,
       "ytdText": "18.60%",
       "yr1": 22.15,
@@ -344,8 +344,8 @@
       "history/005.json"
     ],
     "pageSize": 1000,
-    "totalRows": 4262,
-    "asOf": "Nov 24 2026",
+    "totalRows": 4263,
+    "asOf": "Nov 25 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }

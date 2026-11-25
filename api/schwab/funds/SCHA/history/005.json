@@ -2,7 +2,7 @@
   "ticker": "SCHA",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4291,
+  "totalRows": 4292,
   "headers": [
     "Date",
     "Close",
@@ -1755,6 +1755,12 @@
       "Close": "31.670000076293945",
       "Adj Close": "31.67",
       "Volume": "6632600"
+    },
+    {
+      "Date": "Nov 25 2026",
+      "Close": "31.959999084472656",
+      "Adj Close": "31.96",
+      "Volume": "2751445"
     }
   ]
 }

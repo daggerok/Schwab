@@ -2,7 +2,7 @@
   "ticker": "SCHC",
   "page": 2,
   "pageSize": 250,
-  "totalRows": 2339,
+  "totalRows": 2337,
   "headers": [
     "Name",
     "Ticker",
@@ -14,11 +14,29 @@
   ],
   "rows": [
     {
+      "Name": "KANEMATSU",
+      "Ticker": "-",
+      "Identifier": "BBG000BMPGV1",
+      "Weight": "0.094448",
+      "Market Value": "4876342.57",
+      "Shares Held": "345673",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "VENTIA SERVICES GROUP LTD",
+      "Ticker": "VNT",
+      "Identifier": "BBG01368R8W6",
+      "Weight": "0.094316",
+      "Market Value": "4869489.03",
+      "Shares Held": "1607002",
+      "Asset Category": "Industrials"
+    },
+    {
       "Name": "UNIQA INSURANCE GROUP AG",
       "Ticker": "-",
       "Identifier": "BBG000BPL944",
-      "Weight": "0.094527",
-      "Market Value": "4880375.72",
+      "Weight": "0.094264",
+      "Market Value": "4866847.06",
       "Shares Held": "229059",
       "Asset Category": "Financials"
     },
@@ -26,269 +44,314 @@
       "Name": "AMBU CLASS B",
       "Ticker": "-",
       "Identifier": "BBG000BP3TK2",
-      "Weight": "0.094483",
-      "Market Value": "4878136.8",
+      "Weight": "0.093712",
+      "Market Value": "4838323.88",
       "Shares Held": "377145",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "FORTUNA MINING CORP",
+      "Name": "BILFINGER",
       "Ticker": "-",
-      "Identifier": "BBG000F0XC09",
-      "Weight": "0.094298",
-      "Market Value": "4868553.91",
-      "Shares Held": "618414",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "KANEMATSU",
-      "Ticker": "-",
-      "Identifier": "BBG000BMPGV1",
-      "Weight": "0.094096",
-      "Market Value": "4858122.87",
-      "Shares Held": "345673",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "TAG IMMOBILIEN AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BPQGM3",
-      "Weight": "0.09408",
-      "Market Value": "4857317.15",
-      "Shares Held": "393667",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "BUCHER INDUSTRIES AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BLZY52",
-      "Weight": "0.093544",
-      "Market Value": "4829647.41",
-      "Shares Held": "12758",
+      "Identifier": "BBG000BC25M2",
+      "Weight": "0.092987",
+      "Market Value": "4800894.07",
+      "Shares Held": "76642",
       "Asset Category": "Industrials"
     },
     {
       "Name": "AJ BELL PLC",
       "Ticker": "-",
       "Identifier": "BBG00MM5LQN9",
-      "Weight": "0.093315",
-      "Market Value": "4817811.48",
+      "Weight": "0.092875",
+      "Market Value": "4795101.62",
       "Shares Held": "671630",
       "Asset Category": "Financials"
-    },
-    {
-      "Name": "HEXPOL CLASS B",
-      "Ticker": "-",
-      "Identifier": "BBG000CDZP94",
-      "Weight": "0.092899",
-      "Market Value": "4796344.27",
-      "Shares Held": "538970",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "K+S N AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BC8NR2",
-      "Weight": "0.092738",
-      "Market Value": "4788029.82",
-      "Shares Held": "366766",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "SUNRISE N CLASS A LTD",
-      "Ticker": "-",
-      "Identifier": "BBG01QMBDL65",
-      "Weight": "0.092567",
-      "Market Value": "4779197.25",
-      "Shares Held": "102767",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "XTB",
-      "Ticker": "-",
-      "Identifier": "BBG00CMM7YZ0",
-      "Weight": "0.092403",
-      "Market Value": "4770762.08",
-      "Shares Held": "177383",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "GN STORE NORD",
-      "Ticker": "-",
-      "Identifier": "BBG000BVGZ03",
-      "Weight": "0.092242",
-      "Market Value": "4762401.1",
-      "Shares Held": "277333",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "GRAFTON GROUP PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000L9YKG7",
-      "Weight": "0.091141",
-      "Market Value": "4705557.7",
-      "Shares Held": "348790",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "WATCHES OF SWITZERLAND GROUP PLC",
-      "Ticker": "-",
-      "Identifier": "BBG00P9H34Z7",
-      "Weight": "0.091101",
-      "Market Value": "4703510.88",
-      "Shares Held": "465305",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "ST.GALLER KANTONALBANK AG",
-      "Ticker": "-",
-      "Identifier": "BBG000NFPJM7",
-      "Weight": "0.091028",
-      "Market Value": "4699753.98",
-      "Shares Held": "5812",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "XTALPI HOLDINGS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG01N5KVS20",
-      "Weight": "0.091017",
-      "Market Value": "4699163.54",
-      "Shares Held": "7682478",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "GREENCORE GROUP PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BS3YL4",
-      "Weight": "0.090902",
-      "Market Value": "4693241.53",
-      "Shares Held": "1226183",
-      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "LINAMAR",
       "Ticker": "-",
       "Identifier": "BBG000BZGKK5",
-      "Weight": "0.09075",
-      "Market Value": "4685417.41",
+      "Weight": "0.09284",
+      "Market Value": "4793290.12",
       "Shares Held": "79434",
       "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "NORTH PACIFIC BANK LTD",
+      "Ticker": "-",
+      "Identifier": "BBG003BZFWV2",
+      "Weight": "0.092616",
+      "Market Value": "4781728.58",
+      "Shares Held": "682356",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "GREENCORE GROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BS3YL4",
+      "Weight": "0.091953",
+      "Market Value": "4747510.63",
+      "Shares Held": "1226183",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "HEXPOL CLASS B",
+      "Ticker": "-",
+      "Identifier": "BBG000CDZP94",
+      "Weight": "0.091758",
+      "Market Value": "4737413.52",
+      "Shares Held": "538970",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "FORTUNA MINING CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000F0XC09",
+      "Weight": "0.091607",
+      "Market Value": "4729650.93",
+      "Shares Held": "618414",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "ST.GALLER KANTONALBANK AG",
+      "Ticker": "-",
+      "Identifier": "BBG000NFPJM7",
+      "Weight": "0.091523",
+      "Market Value": "4725330.84",
+      "Shares Held": "5812",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "BAUSCH HEALTH COMPANIES",
+      "Ticker": "-",
+      "Identifier": "BBG000DC8S17",
+      "Weight": "0.091321",
+      "Market Value": "4714872.18",
+      "Shares Held": "546370",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "GN STORE NORD",
+      "Ticker": "-",
+      "Identifier": "BBG000BVGZ03",
+      "Weight": "0.091222",
+      "Market Value": "4709765.5",
+      "Shares Held": "277333",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "ZEALAND PHARMA",
+      "Ticker": "-",
+      "Identifier": "BBG0018JWYS7",
+      "Weight": "0.091096",
+      "Market Value": "4703275.4",
+      "Shares Held": "142238",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "TAURON POLSKA ENERGIA",
+      "Ticker": "-",
+      "Identifier": "BBG000RRSB32",
+      "Weight": "0.091017",
+      "Market Value": "4699158.69",
+      "Shares Held": "2180711",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "XTB",
+      "Ticker": "-",
+      "Identifier": "BBG00CMM7YZ0",
+      "Weight": "0.090419",
+      "Market Value": "4668296.45",
+      "Shares Held": "177383",
+      "Asset Category": "Financials"
     },
     {
       "Name": "THULE GROUP",
       "Ticker": "-",
       "Identifier": "BBG007JQ3Y35",
-      "Weight": "0.090093",
-      "Market Value": "4651496.48",
+      "Weight": "0.089552",
+      "Market Value": "4623555.07",
       "Shares Held": "224773",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "RELIANCE WORLDWIDE CORPORATION",
+      "Name": "ERO COPPER",
       "Ticker": "-",
-      "Identifier": "BBG00CNNCSV8",
-      "Weight": "0.090058",
-      "Market Value": "4649653.86",
-      "Shares Held": "1533217",
+      "Identifier": "BBG00HNV5DF8",
+      "Weight": "0.089452",
+      "Market Value": "4618395.01",
+      "Shares Held": "212180",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "WATCHES OF SWITZERLAND GROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG00P9H34Z7",
+      "Weight": "0.088954",
+      "Market Value": "4592688.27",
+      "Shares Held": "465305",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "ROBOTIS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG00LY9XNG2",
+      "Weight": "0.08892",
+      "Market Value": "4590916.72",
+      "Shares Held": "20889",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "GRAFTON GROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000L9YKG7",
+      "Weight": "0.088853",
+      "Market Value": "4587450.13",
+      "Shares Held": "348790",
       "Asset Category": "Industrials"
     },
     {
       "Name": "ENERFLEX",
       "Ticker": "-",
       "Identifier": "BBG001QM9TY0",
-      "Weight": "0.09004",
-      "Market Value": "4648756.19",
+      "Weight": "0.087762",
+      "Market Value": "4531139.71",
       "Shares Held": "252489",
       "Asset Category": "Energy"
     },
     {
-      "Name": "NORTH PACIFIC BANK LTD",
+      "Name": "BIG YELLOW GROUP REIT PLC",
       "Ticker": "-",
-      "Identifier": "BBG003BZFWV2",
-      "Weight": "0.089771",
-      "Market Value": "4634829.54",
-      "Shares Held": "682356",
+      "Identifier": "BBG000BJYJG9",
+      "Weight": "0.087616",
+      "Market Value": "4523597.68",
+      "Shares Held": "387737",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "KIWOOM SECURITIES",
+      "Ticker": "-",
+      "Identifier": "BBG000BB8HF0",
+      "Weight": "0.087562",
+      "Market Value": "4520820.49",
+      "Shares Held": "30528",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "EMERALD RESOURCES",
+      "Ticker": "-",
+      "Identifier": "BBG000BRL4W0",
+      "Weight": "0.087358",
+      "Market Value": "4510248.85",
+      "Shares Held": "1104802",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "XTALPI HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG01N5KVS20",
+      "Weight": "0.087213",
+      "Market Value": "4502756.85",
+      "Shares Held": "7682478",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "NETCOMPANY GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG00KW6K3S7",
+      "Weight": "0.087189",
+      "Market Value": "4501559.99",
+      "Shares Held": "83187",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "NIB HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000TS80M3",
+      "Weight": "0.087133",
+      "Market Value": "4498673.96",
+      "Shares Held": "1003723",
       "Asset Category": "Financials"
     },
     {
       "Name": "AIR CANADA VOTING AND VARIABLE VOT",
       "Ticker": "-",
       "Identifier": "BBG000PV7FL9",
-      "Weight": "0.089562",
-      "Market Value": "4624051.58",
+      "Weight": "0.086739",
+      "Market Value": "4478290.32",
       "Shares Held": "292372",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "BAUSCH HEALTH COMPANIES",
-      "Ticker": "-",
-      "Identifier": "BBG000DC8S17",
-      "Weight": "0.089119",
-      "Market Value": "4601204.96",
-      "Shares Held": "546370",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "BAKKAFROST",
-      "Ticker": "-",
-      "Identifier": "BBG000QF8SK5",
-      "Weight": "0.089057",
-      "Market Value": "4597988.64",
-      "Shares Held": "103734",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "SACYR",
-      "Ticker": "-",
-      "Identifier": "BBG000BCGW39",
-      "Weight": "0.089021",
-      "Market Value": "4596130.89",
-      "Shares Held": "1006268",
       "Asset Category": "Industrials"
     },
     {
       "Name": "OSB GROUP PLC",
       "Ticker": "-",
       "Identifier": "BBG00YB84YG9",
-      "Weight": "0.088246",
-      "Market Value": "4556106.3",
+      "Weight": "0.086695",
+      "Market Value": "4476059.34",
       "Shares Held": "702140",
       "Asset Category": "Financials"
     },
     {
-      "Name": "ZEALAND PHARMA",
+      "Name": "LANCASHIRE HOLDINGS",
       "Ticker": "-",
-      "Identifier": "BBG0018JWYS7",
-      "Weight": "0.087998",
-      "Market Value": "4543317.04",
-      "Shares Held": "142238",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "BIG YELLOW GROUP REIT PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BJYJG9",
-      "Weight": "0.087874",
-      "Market Value": "4536931.47",
-      "Shares Held": "387737",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "NIB HOLDINGS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000TS80M3",
-      "Weight": "0.087328",
-      "Market Value": "4508740",
-      "Shares Held": "1003723",
+      "Identifier": "BBG000C1PNG8",
+      "Weight": "0.086592",
+      "Market Value": "4470729.05",
+      "Shares Held": "515887",
       "Asset Category": "Financials"
+    },
+    {
+      "Name": "SACYR",
+      "Ticker": "-",
+      "Identifier": "BBG000BCGW39",
+      "Weight": "0.086512",
+      "Market Value": "4466601.58",
+      "Shares Held": "1006268",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "BAKKAFROST",
+      "Ticker": "-",
+      "Identifier": "BBG000QF8SK5",
+      "Weight": "0.086157",
+      "Market Value": "4448278.63",
+      "Shares Held": "103734",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "WENDEL",
+      "Ticker": "-",
+      "Identifier": "BBG000BC8CR6",
+      "Weight": "0.085997",
+      "Market Value": "4440018.8",
+      "Shares Held": "48042",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "JCDECAUX",
+      "Ticker": "-",
+      "Identifier": "BBG000FYY4K0",
+      "Weight": "0.085782",
+      "Market Value": "4428911.34",
+      "Shares Held": "145446",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "ADEKA",
+      "Ticker": "-",
+      "Identifier": "BBG000BJMG78",
+      "Weight": "0.085519",
+      "Market Value": "4415331.91",
+      "Shares Held": "172586",
+      "Asset Category": "Materials"
     },
     {
       "Name": "HAFNIA",
       "Ticker": "-",
       "Identifier": "BBG00N2XW7Z5",
-      "Weight": "0.08731",
-      "Market Value": "4507798.73",
+      "Weight": "0.085444",
+      "Market Value": "4411470.35",
       "Shares Held": "508555",
       "Asset Category": "Energy"
     },
@@ -296,1124 +359,1178 @@
       "Name": "KONINKLIJKE HEIJMANS DUTCH CERTIFI",
       "Ticker": "-",
       "Identifier": "BBG000BKL213",
-      "Weight": "0.086822",
-      "Market Value": "4482588.45",
+      "Weight": "0.084505",
+      "Market Value": "4362972.78",
       "Shares Held": "49201",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "EMERALD RESOURCES",
-      "Ticker": "-",
-      "Identifier": "BBG000BRL4W0",
-      "Weight": "0.086525",
-      "Market Value": "4467249.27",
-      "Shares Held": "1104802",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "LANCASHIRE HOLDINGS",
-      "Ticker": "-",
-      "Identifier": "BBG000C1PNG8",
-      "Weight": "0.086274",
-      "Market Value": "4454322.28",
-      "Shares Held": "515887",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "RENISHAW PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BDZV65",
-      "Weight": "0.08616",
-      "Market Value": "4448440.73",
-      "Shares Held": "71033",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "JCDECAUX",
-      "Ticker": "-",
-      "Identifier": "BBG000FYY4K0",
-      "Weight": "0.085905",
-      "Market Value": "4435241.74",
-      "Shares Held": "145446",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "MARIE",
-      "Ticker": "-",
-      "Identifier": "BBG000KW30G5",
-      "Weight": "0.085092",
-      "Market Value": "4393280.04",
-      "Shares Held": "291297",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "WENDEL",
-      "Ticker": "-",
-      "Identifier": "BBG000BC8CR6",
-      "Weight": "0.084879",
-      "Market Value": "4382287.28",
-      "Shares Held": "48042",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "FRASERS CENTREPOINT UNITS TRUST",
-      "Ticker": "-",
-      "Identifier": "BBG000BG5SG7",
-      "Weight": "0.084366",
-      "Market Value": "4355787.11",
-      "Shares Held": "2626325",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "SPROTT INC",
-      "Ticker": "-",
-      "Identifier": "BBG000VGZPZ7",
-      "Weight": "0.084341",
-      "Market Value": "4354489.08",
-      "Shares Held": "44750",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "KIWOOM SECURITIES",
-      "Ticker": "-",
-      "Identifier": "BBG000BB8HF0",
-      "Weight": "0.084189",
-      "Market Value": "4346676.35",
-      "Shares Held": "30528",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "NETCOMPANY GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG00KW6K3S7",
-      "Weight": "0.084073",
-      "Market Value": "4340674.49",
-      "Shares Held": "83187",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "TOMRA SYSTEMS",
-      "Ticker": "-",
-      "Identifier": "BBG000BCQZM0",
-      "Weight": "0.083949",
-      "Market Value": "4334241.83",
-      "Shares Held": "485330",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "ELEKTA CLASS B",
-      "Ticker": "-",
-      "Identifier": "BBG000BH56D6",
-      "Weight": "0.083605",
-      "Market Value": "4316496.92",
-      "Shares Held": "719635",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "TREKOR METALS",
-      "Ticker": "-",
-      "Identifier": "BBG000BTFLR1",
-      "Weight": "0.083502",
-      "Market Value": "4311175.7",
-      "Shares Held": "743666",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "INSILICO MEDICINE CAYMAN TOPCO",
-      "Ticker": "-",
-      "Identifier": "BBG01Z36GZL6",
-      "Weight": "0.083109",
-      "Market Value": "4290899.91",
-      "Shares Held": "1061425",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "PENTA-OCEAN CONSTRUCTION LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BKPSH5",
-      "Weight": "0.083102",
-      "Market Value": "4290531.32",
-      "Shares Held": "543386",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "HOEGH AUTOLINERS",
-      "Ticker": "-",
-      "Identifier": "BBG013NSS1P5",
-      "Weight": "0.082982",
-      "Market Value": "4284341.33",
-      "Shares Held": "253383",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "STADLER RAIL AG",
-      "Ticker": "-",
-      "Identifier": "BBG00NNQ2FK8",
-      "Weight": "0.082921",
-      "Market Value": "4281183.22",
-      "Shares Held": "114395",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "BOYD GROUP SERVICES INC",
-      "Ticker": "-",
-      "Identifier": "BBG000GB1P73",
-      "Weight": "0.082435",
-      "Market Value": "4256093.61",
-      "Shares Held": "57940",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "ADEKA",
-      "Ticker": "-",
-      "Identifier": "BBG000BJMG78",
-      "Weight": "0.082341",
-      "Market Value": "4251263.89",
-      "Shares Held": "172586",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "BODYCOTE PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BD7YV2",
-      "Weight": "0.082255",
-      "Market Value": "4246803.16",
-      "Shares Held": "351094",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "EXOSENS SA",
-      "Ticker": "-",
-      "Identifier": "BBG01MQ9FY56",
-      "Weight": "0.082111",
-      "Market Value": "4239361.92",
-      "Shares Held": "75602",
       "Asset Category": "Industrials"
     },
     {
       "Name": "FLATEXDEGIRO N",
       "Ticker": "-",
       "Identifier": "BBG000F9QXM8",
-      "Weight": "0.081868",
-      "Market Value": "4226815.94",
+      "Weight": "0.084422",
+      "Market Value": "4358676.95",
       "Shares Held": "165520",
       "Asset Category": "Financials"
     },
     {
-      "Name": "YOSHINOYA HOLDINGS LTD",
+      "Name": "ELEKTA CLASS B",
       "Ticker": "-",
-      "Identifier": "BBG000BLF5V8",
-      "Weight": "0.081684",
-      "Market Value": "4217326.79",
-      "Shares Held": "134501",
-      "Asset Category": "Consumer Discretionary"
+      "Identifier": "BBG000BH56D6",
+      "Weight": "0.084182",
+      "Market Value": "4346296.99",
+      "Shares Held": "719635",
+      "Asset Category": "Health Care"
     },
     {
-      "Name": "SINCH",
+      "Name": "PENTA-OCEAN CONSTRUCTION LTD",
       "Ticker": "-",
-      "Identifier": "BBG00B0DSW69",
-      "Weight": "0.081662",
-      "Market Value": "4216163.97",
-      "Shares Held": "1048783",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "JENOPTIK N AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BJ5X25",
-      "Weight": "0.081628",
-      "Market Value": "4214454.91",
-      "Shares Held": "106088",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "BREVILLE GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG000BV7B15",
-      "Weight": "0.081568",
-      "Market Value": "4211306.53",
-      "Shares Held": "203648",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "BW LPG LTD",
-      "Ticker": "-",
-      "Identifier": "BBG005KMVVV0",
-      "Weight": "0.081422",
-      "Market Value": "4203800.29",
-      "Shares Held": "188983",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "NANKAI",
-      "Ticker": "-",
-      "Identifier": "BBG000BH09Y2",
-      "Weight": "0.081394",
-      "Market Value": "4202333.76",
-      "Shares Held": "218755",
+      "Identifier": "BBG000BKPSH5",
+      "Weight": "0.084043",
+      "Market Value": "4339123.36",
+      "Shares Held": "543386",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "COLONIAL SFL SOCIMI SA",
+      "Name": "SIMMTECH",
       "Ticker": "-",
-      "Identifier": "BBG000BR87D9",
-      "Weight": "0.081332",
-      "Market Value": "4199136.26",
-      "Shares Held": "778837",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "SENKO GROUP HOLDINGS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BQL5G7",
-      "Weight": "0.081245",
-      "Market Value": "4194642.46",
-      "Shares Held": "284839",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "TRIPLE FLAG PRECIOUS METALS",
-      "Ticker": "-",
-      "Identifier": "BBG00QRZMG78",
-      "Weight": "0.081016",
-      "Market Value": "4182806.86",
-      "Shares Held": "146329",
-      "Asset Category": "Materials"
+      "Identifier": "BBG0085YRGT6",
+      "Weight": "0.083633",
+      "Market Value": "4317968.19",
+      "Shares Held": "52993",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "SANKI ENGINEERING",
       "Ticker": "-",
       "Identifier": "BBG000BKV043",
-      "Weight": "0.080909",
-      "Market Value": "4177294.8",
+      "Weight": "0.083552",
+      "Market Value": "4313767.03",
       "Shares Held": "283661",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "DO & CO AKTIENGESELLSCHAFT",
+      "Name": "BREVILLE GROUP",
       "Ticker": "-",
-      "Identifier": "BBG000C3RP77",
-      "Weight": "0.080501",
-      "Market Value": "4156239.34",
-      "Shares Held": "16403",
+      "Identifier": "BBG000BV7B15",
+      "Weight": "0.083534",
+      "Market Value": "4312835.04",
+      "Shares Held": "203648",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "SPROTT INC",
+      "Ticker": "-",
+      "Identifier": "BBG000VGZPZ7",
+      "Weight": "0.083418",
+      "Market Value": "4306822.47",
+      "Shares Held": "44750",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "BOYD GROUP SERVICES INC",
+      "Ticker": "-",
+      "Identifier": "BBG000GB1P73",
+      "Weight": "0.083413",
+      "Market Value": "4306577.61",
+      "Shares Held": "57940",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "CLAS OHLSON CLASS B",
+      "Name": "FRASERS CENTREPOINT UNITS TRUST",
       "Ticker": "-",
-      "Identifier": "BBG000C2P138",
-      "Weight": "0.080328",
-      "Market Value": "4147317.11",
-      "Shares Held": "76464",
+      "Identifier": "BBG000BG5SG7",
+      "Weight": "0.08315",
+      "Market Value": "4293029.2",
+      "Shares Held": "2626325",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "EXOSENS SA",
+      "Ticker": "-",
+      "Identifier": "BBG01MQ9FY56",
+      "Weight": "0.08294",
+      "Market Value": "4282148.19",
+      "Shares Held": "75602",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "LEENO INDUSTRIAL INC",
+      "Ticker": "-",
+      "Identifier": "BBG000L56YS3",
+      "Weight": "0.082519",
+      "Market Value": "4260406.11",
+      "Shares Held": "117510",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "RENISHAW PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BDZV65",
+      "Weight": "0.082383",
+      "Market Value": "4253432.45",
+      "Shares Held": "71033",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "MARIE",
+      "Ticker": "-",
+      "Identifier": "BBG000KW30G5",
+      "Weight": "0.082361",
+      "Market Value": "4252286.97",
+      "Shares Held": "291297",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "BODYCOTE PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BD7YV2",
+      "Weight": "0.082289",
+      "Market Value": "4248573.41",
+      "Shares Held": "351094",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "JUROKU FINANCIAL GROUP INC",
+      "Ticker": "-",
+      "Identifier": "BBG0111C1275",
+      "Weight": "0.08226",
+      "Market Value": "4247049.6",
+      "Shares Held": "313614",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "INSILICO MEDICINE CAYMAN TOPCO",
+      "Ticker": "-",
+      "Identifier": "BBG01Z36GZL6",
+      "Weight": "0.082241",
+      "Market Value": "4246097.67",
+      "Shares Held": "1061425",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "SURUGA BANK LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BHXRM9",
+      "Weight": "0.081542",
+      "Market Value": "4209979.63",
+      "Shares Held": "259608",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "COLONIAL SFL SOCIMI SA",
+      "Ticker": "-",
+      "Identifier": "BBG000BR87D9",
+      "Weight": "0.081341",
+      "Market Value": "4199604.43",
+      "Shares Held": "778837",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "BW LPG LTD",
+      "Ticker": "-",
+      "Identifier": "BBG005KMVVV0",
+      "Weight": "0.081327",
+      "Market Value": "4198867.24",
+      "Shares Held": "188983",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "STADLER RAIL AG",
+      "Ticker": "-",
+      "Identifier": "BBG00NNQ2FK8",
+      "Weight": "0.081317",
+      "Market Value": "4198347.08",
+      "Shares Held": "114395",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "DAEDUCKELECTRONICS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG00R0JTH36",
+      "Weight": "0.081123",
+      "Market Value": "4188330.54",
+      "Shares Held": "71831",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "YOSHINOYA HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BLF5V8",
+      "Weight": "0.080877",
+      "Market Value": "4175677.7",
+      "Shares Held": "134501",
       "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "TKMS AG",
       "Ticker": "-",
       "Identifier": "BBG01VPWBFD2",
-      "Weight": "0.080047",
-      "Market Value": "4132807.7",
+      "Weight": "0.080864",
+      "Market Value": "4174966.86",
       "Shares Held": "51179",
       "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SHIKOKU ELECTRIC POWER INC",
-      "Ticker": "-",
-      "Identifier": "BBG000BNCWJ2",
-      "Weight": "0.079977",
-      "Market Value": "4129180.99",
-      "Shares Held": "346685",
-      "Asset Category": "Utilities"
-    },
-    {
-      "Name": "KITRON",
-      "Ticker": "-",
-      "Identifier": "BBG000CHPTC4",
-      "Weight": "0.079522",
-      "Market Value": "4105707.66",
-      "Shares Held": "452220",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "ADDLIFE CLASS B",
-      "Ticker": "-",
-      "Identifier": "BBG00CDXJ7Y3",
-      "Weight": "0.079377",
-      "Market Value": "4098202.79",
-      "Shares Held": "232828",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "NORTH WEST COMPANY INC",
-      "Ticker": "-",
-      "Identifier": "BBG000BY0S46",
-      "Weight": "0.079207",
-      "Market Value": "4089437.1",
-      "Shares Held": "98720",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "WANGUO GOLD GROUP LTD",
-      "Ticker": "-",
-      "Identifier": "BBG0035C8R30",
-      "Weight": "0.079064",
-      "Market Value": "4082054.02",
-      "Shares Held": "3018702",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "PDI GOLD LIMITED LTD",
-      "Ticker": "-",
-      "Identifier": "BBG0017X3YN4",
-      "Weight": "0.079027",
-      "Market Value": "4080161.29",
-      "Shares Held": "1620954",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "SIMMTECH",
-      "Ticker": "-",
-      "Identifier": "BBG0085YRGT6",
-      "Weight": "0.078698",
-      "Market Value": "4063168.81",
-      "Shares Held": "52993",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "JUROKU FINANCIAL GROUP INC",
-      "Ticker": "-",
-      "Identifier": "BBG0111C1275",
-      "Weight": "0.078646",
-      "Market Value": "4060486.82",
-      "Shares Held": "313614",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "NISSUI CORP",
-      "Ticker": "-",
-      "Identifier": "BBG000BH5H33",
-      "Weight": "0.07855",
-      "Market Value": "4055529.45",
-      "Shares Held": "578960",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "AMPLIFON",
-      "Ticker": "-",
-      "Identifier": "BBG000FZG9K6",
-      "Weight": "0.078548",
-      "Market Value": "4055424.55",
-      "Shares Held": "327507",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "VIVA ENERGY GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG00L7QFD85",
-      "Weight": "0.078403",
-      "Market Value": "4047932.8",
-      "Shares Held": "2343661",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "SURUGA BANK LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BHXRM9",
-      "Weight": "0.078258",
-      "Market Value": "4040414.39",
-      "Shares Held": "259608",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "BROOKFIELD BUSINESS CORP CLASS A",
-      "Ticker": "-",
-      "Identifier": "BBG0211B2QM5",
-      "Weight": "0.07806",
-      "Market Value": "4030219.2",
-      "Shares Held": "142570",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "PRIMARIS REAL ESTATE INVESTMENT UN",
-      "Ticker": "PMZ.UN",
-      "Identifier": "BBG0142PQDT4",
-      "Weight": "0.07794",
-      "Market Value": "4024013.39",
-      "Shares Held": "246749",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "TIETO",
-      "Ticker": "-",
-      "Identifier": "BBG000BS1PK6",
-      "Weight": "0.077877",
-      "Market Value": "4020776.5",
-      "Shares Held": "202201",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "SIRIUS REAL ESTATE LIMITED",
-      "Ticker": "-",
-      "Identifier": "BBG000R67HR2",
-      "Weight": "0.077869",
-      "Market Value": "4020328.51",
-      "Shares Held": "3239117",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "SONAE SA",
-      "Ticker": "-",
-      "Identifier": "BBG000BHXD13",
-      "Weight": "0.077818",
-      "Market Value": "4017709.86",
-      "Shares Held": "1657702",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "MONADELPHOUS GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG000BRSFX7",
-      "Weight": "0.077751",
-      "Market Value": "4014237.99",
-      "Shares Held": "196536",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "AIR FRANCE-KLM SA",
-      "Ticker": "-",
-      "Identifier": "BBG000K79P88",
-      "Weight": "0.077667",
-      "Market Value": "4009946.37",
-      "Shares Held": "245690",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "STRATHCONA RESOURCES LTD",
-      "Ticker": "-",
-      "Identifier": "BBG01JM66KS8",
-      "Weight": "0.077629",
-      "Market Value": "4007958.04",
-      "Shares Held": "158289",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "DAEDUCKELECTRONICS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG00R0JTH36",
-      "Weight": "0.077524",
-      "Market Value": "4002546.96",
-      "Shares Held": "71831",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "EQB",
-      "Ticker": "-",
-      "Identifier": "BBG000GT6CT4",
-      "Weight": "0.077206",
-      "Market Value": "3986098.84",
-      "Shares Held": "46836",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "BURCKHARDT COMPRESSION HOLDING AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BSN6D2",
-      "Weight": "0.077187",
-      "Market Value": "3985147.22",
-      "Shares Held": "6385",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "PALADIN ENERGY LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BC8J37",
-      "Weight": "0.077069",
-      "Market Value": "3979041.78",
-      "Shares Held": "987332",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "ELECTROLUX CLASS B",
-      "Ticker": "-",
-      "Identifier": "BBG000BC1188",
-      "Weight": "0.076775",
-      "Market Value": "3963881.36",
-      "Shares Held": "1309692",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "HOLMEN CLASS B",
-      "Ticker": "-",
-      "Identifier": "BBG000BPMSL2",
-      "Weight": "0.07662",
-      "Market Value": "3955891.11",
-      "Shares Held": "139821",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "SAVILLS PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BF7WL2",
-      "Weight": "0.076517",
-      "Market Value": "3950574.26",
-      "Shares Held": "282095",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "CMB.TECH NV",
-      "Ticker": "-",
-      "Identifier": "BBG000QDB5M4",
-      "Weight": "0.076443",
-      "Market Value": "3946715.93",
-      "Shares Held": "232630",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "LEENO INDUSTRIAL INC",
-      "Ticker": "-",
-      "Identifier": "BBG000L56YS3",
-      "Weight": "0.076402",
-      "Market Value": "3944599.98",
-      "Shares Held": "117510",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "BILLERUD AKTIEBOLAG",
-      "Ticker": "-",
-      "Identifier": "BBG000BZ1ZH2",
-      "Weight": "0.07636",
-      "Market Value": "3942438.01",
-      "Shares Held": "453522",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "RENGO LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BK1JH1",
-      "Weight": "0.07633",
-      "Market Value": "3940901.77",
-      "Shares Held": "427511",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "CANAL+ SA",
-      "Ticker": "-",
-      "Identifier": "BBG01R7GPXP9",
-      "Weight": "0.076206",
-      "Market Value": "3934500.75",
-      "Shares Held": "1333309",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "TOKYO KIRABOSHI FINANCIAL GROUP IN",
-      "Ticker": "-",
-      "Identifier": "BBG0072BTJF8",
-      "Weight": "0.076139",
-      "Market Value": "3931009.25",
-      "Shares Held": "479557",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "CHORUS",
-      "Ticker": "-",
-      "Identifier": "BBG00282P8N2",
-      "Weight": "0.076131",
-      "Market Value": "3930605.77",
-      "Shares Held": "884245",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "ALLIED GOLD",
-      "Ticker": "-",
-      "Identifier": "BBG01J3PPY24",
-      "Weight": "0.076126",
-      "Market Value": "3930340.91",
-      "Shares Held": "208763",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "MULLEN GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG000BZH411",
-      "Weight": "0.076075",
-      "Market Value": "3927738.63",
-      "Shares Held": "191717",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "DAIWABO HOLDINGS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BJDFM3",
-      "Weight": "0.075881",
-      "Market Value": "3917719.14",
-      "Shares Held": "174402",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "CHEMRING GROUP PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BDB2P4",
-      "Weight": "0.07556",
-      "Market Value": "3901130.58",
-      "Shares Held": "554523",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "SEABRIDGE GOLD",
-      "Ticker": "-",
-      "Identifier": "BBG000BZVL71",
-      "Weight": "0.075524",
-      "Market Value": "3899297.03",
-      "Shares Held": "200520",
-      "Asset Category": "Materials"
     },
     {
       "Name": "FERROTEC",
       "Ticker": "-",
       "Identifier": "BBG000HDXTQ4",
-      "Weight": "0.075472",
-      "Market Value": "3896583.83",
+      "Weight": "0.08074",
+      "Market Value": "4168582.59",
       "Shares Held": "99337",
       "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "SENKO GROUP HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BQL5G7",
+      "Weight": "0.080506",
+      "Market Value": "4156509.75",
+      "Shares Held": "284839",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "NANKAI",
+      "Ticker": "-",
+      "Identifier": "BBG000BH09Y2",
+      "Weight": "0.080335",
+      "Market Value": "4147694.98",
+      "Shares Held": "218755",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "PDI GOLD LIMITED LTD",
+      "Ticker": "-",
+      "Identifier": "BBG0017X3YN4",
+      "Weight": "0.080289",
+      "Market Value": "4145314.57",
+      "Shares Held": "1620954",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "SHIKOKU ELECTRIC POWER INC",
+      "Ticker": "-",
+      "Identifier": "BBG000BNCWJ2",
+      "Weight": "0.080176",
+      "Market Value": "4139477.37",
+      "Shares Held": "346685",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "US DOLLAR",
+      "Ticker": "USD",
+      "Identifier": "-",
+      "Weight": "0.080173",
+      "Market Value": "4139323.07",
+      "Shares Held": "4124895.46",
+      "Asset Category": "-"
+    },
+    {
+      "Name": "CMB.TECH NV",
+      "Ticker": "-",
+      "Identifier": "BBG000QDB5M4",
+      "Weight": "0.079861",
+      "Market Value": "4123202.13",
+      "Shares Held": "232630",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "MONADELPHOUS GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG000BRSFX7",
+      "Weight": "0.079805",
+      "Market Value": "4120333.93",
+      "Shares Held": "196536",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "NORTH WEST COMPANY INC",
+      "Ticker": "-",
+      "Identifier": "BBG000BY0S46",
+      "Weight": "0.079793",
+      "Market Value": "4119704.39",
+      "Shares Held": "98720",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "SONAE SA",
+      "Ticker": "-",
+      "Identifier": "BBG000BHXD13",
+      "Weight": "0.079707",
+      "Market Value": "4115248.23",
+      "Shares Held": "1657702",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "HPSP LTD",
+      "Ticker": "-",
+      "Identifier": "BBG017YDK0P7",
+      "Weight": "0.079603",
+      "Market Value": "4109863.96",
+      "Shares Held": "133443",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "TRIPLE FLAG PRECIOUS METALS",
+      "Ticker": "-",
+      "Identifier": "BBG00QRZMG78",
+      "Weight": "0.079413",
+      "Market Value": "4100054.02",
+      "Shares Held": "146329",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "DO & CO AKTIENGESELLSCHAFT",
+      "Ticker": "-",
+      "Identifier": "BBG000C3RP77",
+      "Weight": "0.079395",
+      "Market Value": "4099134.53",
+      "Shares Held": "16403",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "EO TECHNICS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BGJ0F4",
+      "Weight": "0.079219",
+      "Market Value": "4090046.24",
+      "Shares Held": "17678",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "TIETO",
+      "Ticker": "-",
+      "Identifier": "BBG000BS1PK6",
+      "Weight": "0.079202",
+      "Market Value": "4089172.99",
+      "Shares Held": "202201",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "PRIMARIS REAL ESTATE INVESTMENT UN",
+      "Ticker": "PMZ.UN",
+      "Identifier": "BBG0142PQDT4",
+      "Weight": "0.079033",
+      "Market Value": "4080452.88",
+      "Shares Held": "246749",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "HOEGH AUTOLINERS",
+      "Ticker": "-",
+      "Identifier": "BBG013NSS1P5",
+      "Weight": "0.079019",
+      "Market Value": "4079733.41",
+      "Shares Held": "253383",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SINCH",
+      "Ticker": "-",
+      "Identifier": "BBG00B0DSW69",
+      "Weight": "0.078949",
+      "Market Value": "4076108.11",
+      "Shares Held": "1048783",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "TOKYO KIRABOSHI FINANCIAL GROUP IN",
+      "Ticker": "-",
+      "Identifier": "BBG0072BTJF8",
+      "Weight": "0.078829",
+      "Market Value": "4069900.42",
+      "Shares Held": "479557",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "TREKOR METALS",
+      "Ticker": "-",
+      "Identifier": "BBG000BTFLR1",
+      "Weight": "0.078557",
+      "Market Value": "4055856.2",
+      "Shares Held": "743666",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "AMPLIFON",
+      "Ticker": "-",
+      "Identifier": "BBG000FZG9K6",
+      "Weight": "0.078353",
+      "Market Value": "4045353.45",
+      "Shares Held": "327507",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "BROOKFIELD BUSINESS CORP CLASS A",
+      "Ticker": "-",
+      "Identifier": "BBG0211B2QM5",
+      "Weight": "0.077566",
+      "Market Value": "4004723.32",
+      "Shares Held": "142570",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "ADDLIFE CLASS B",
+      "Ticker": "-",
+      "Identifier": "BBG00CDXJ7Y3",
+      "Weight": "0.077419",
+      "Market Value": "3997125.3",
+      "Shares Held": "232828",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "SIRIUS REAL ESTATE LIMITED",
+      "Ticker": "-",
+      "Identifier": "BBG000R67HR2",
+      "Weight": "0.077116",
+      "Market Value": "3981452.13",
+      "Shares Held": "3239117",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "HOLMEN CLASS B",
+      "Ticker": "-",
+      "Identifier": "BBG000BPMSL2",
+      "Weight": "0.077107",
+      "Market Value": "3981029.77",
+      "Shares Held": "139821",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "UNITED INTERNET AG",
+      "Ticker": "-",
+      "Identifier": "BBG000F45ZD7",
+      "Weight": "0.077098",
+      "Market Value": "3980536.24",
+      "Shares Held": "144978",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "VIVA ENERGY GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG00L7QFD85",
+      "Weight": "0.077089",
+      "Market Value": "3980068.55",
+      "Shares Held": "2343661",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "NISSUI CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000BH5H33",
+      "Weight": "0.077026",
+      "Market Value": "3976823.22",
+      "Shares Held": "578960",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "MULLEN GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG000BZH411",
+      "Weight": "0.076843",
+      "Market Value": "3967363.59",
+      "Shares Held": "191717",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "KITRON",
+      "Ticker": "-",
+      "Identifier": "BBG000CHPTC4",
+      "Weight": "0.076831",
+      "Market Value": "3966737.64",
+      "Shares Held": "452220",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "PALADIN ENERGY LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BC8J37",
+      "Weight": "0.076668",
+      "Market Value": "3958359.93",
+      "Shares Held": "987332",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "DAIWABO HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BJDFM3",
+      "Weight": "0.076618",
+      "Market Value": "3955769.61",
+      "Shares Held": "174402",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "CANAL+ SA",
+      "Ticker": "-",
+      "Identifier": "BBG01R7GPXP9",
+      "Weight": "0.076604",
+      "Market Value": "3955056.66",
+      "Shares Held": "1333309",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "EQB",
+      "Ticker": "-",
+      "Identifier": "BBG000GT6CT4",
+      "Weight": "0.076603",
+      "Market Value": "3955010.87",
+      "Shares Held": "46836",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "TOMRA SYSTEMS",
+      "Ticker": "-",
+      "Identifier": "BBG000BCQZM0",
+      "Weight": "0.076494",
+      "Market Value": "3949361.65",
+      "Shares Held": "485330",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "MONEY FORWARD",
+      "Ticker": "-",
+      "Identifier": "BBG00HL08535",
+      "Weight": "0.076381",
+      "Market Value": "3943529.51",
+      "Shares Held": "96632",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "STRATHCONA RESOURCES LTD",
+      "Ticker": "-",
+      "Identifier": "BBG01JM66KS8",
+      "Weight": "0.076339",
+      "Market Value": "3941383.71",
+      "Shares Held": "158289",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "CHORUS",
+      "Ticker": "-",
+      "Identifier": "BBG00282P8N2",
+      "Weight": "0.076191",
+      "Market Value": "3933730.96",
+      "Shares Held": "884245",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "BURCKHARDT COMPRESSION HOLDING AG",
+      "Ticker": "-",
+      "Identifier": "BBG000BSN6D2",
+      "Weight": "0.07619",
+      "Market Value": "3933654.5",
+      "Shares Held": "6385",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "BILLERUD AKTIEBOLAG",
+      "Ticker": "-",
+      "Identifier": "BBG000BZ1ZH2",
+      "Weight": "0.076091",
+      "Market Value": "3928541.29",
+      "Shares Held": "453522",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "AIR FRANCE-KLM SA",
+      "Ticker": "-",
+      "Identifier": "BBG000K79P88",
+      "Weight": "0.076067",
+      "Market Value": "3927327.56",
+      "Shares Held": "245690",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "CLAS OHLSON CLASS B",
+      "Ticker": "-",
+      "Identifier": "BBG000C2P138",
+      "Weight": "0.075943",
+      "Market Value": "3920894.09",
+      "Shares Held": "76464",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "CHEMRING GROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BDB2P4",
+      "Weight": "0.075904",
+      "Market Value": "3918878.83",
+      "Shares Held": "554523",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "INTERNATIONAL WORKPLACE GROUP PLC",
       "Ticker": "-",
       "Identifier": "BBG00FH0SS78",
-      "Weight": "0.075437",
-      "Market Value": "3894769.49",
+      "Weight": "0.075799",
+      "Market Value": "3913495.73",
       "Shares Held": "1460559",
       "Asset Category": "Real Estate"
     },
     {
-      "Name": "AUTO1 GROUP",
+      "Name": "CIE AUTOMOTIVE SA",
       "Ticker": "-",
-      "Identifier": "BBG00YVLPGB9",
-      "Weight": "0.075423",
-      "Market Value": "3894069.26",
-      "Shares Held": "237070",
+      "Identifier": "BBG000PM2698",
+      "Weight": "0.075691",
+      "Market Value": "3907894.48",
+      "Shares Held": "134716",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "CAIRN HOMES PLC",
+      "Name": "KYORITSU MAINTENANCE",
       "Ticker": "-",
-      "Identifier": "BBG00H66HKM5",
-      "Weight": "0.075418",
-      "Market Value": "3893824.39",
-      "Shares Held": "1242352",
+      "Identifier": "BBG000DHJB48",
+      "Weight": "0.075554",
+      "Market Value": "3900824.71",
+      "Shares Held": "160550",
       "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "UBE",
       "Ticker": "-",
       "Identifier": "BBG000BCL382",
-      "Weight": "0.075298",
-      "Market Value": "3887622.96",
+      "Weight": "0.075512",
+      "Market Value": "3898665.55",
       "Shares Held": "196533",
       "Asset Category": "Materials"
     },
     {
-      "Name": "SOLVAY SA",
+      "Name": "RENGO LTD",
       "Ticker": "-",
-      "Identifier": "BBG000BQ5Z15",
-      "Weight": "0.075285",
-      "Market Value": "3886940.71",
-      "Shares Held": "150138",
+      "Identifier": "BBG000BK1JH1",
+      "Weight": "0.075209",
+      "Market Value": "3883020.05",
+      "Shares Held": "427511",
       "Asset Category": "Materials"
     },
     {
-      "Name": "SIGNIFY",
+      "Name": "ELECTROLUX CLASS B",
       "Ticker": "-",
-      "Identifier": "BBG00CTZ9MW1",
-      "Weight": "0.07521",
-      "Market Value": "3883059.83",
-      "Shares Held": "237675",
+      "Identifier": "BBG000BC1188",
+      "Weight": "0.075061",
+      "Market Value": "3875384.69",
+      "Shares Held": "1309692",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "WANGUO GOLD GROUP LTD",
+      "Ticker": "-",
+      "Identifier": "BBG0035C8R30",
+      "Weight": "0.074897",
+      "Market Value": "3866927.35",
+      "Shares Held": "3018702",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "NRW HOLDINGS",
+      "Ticker": "-",
+      "Identifier": "BBG000RTG776",
+      "Weight": "0.074643",
+      "Market Value": "3853787.32",
+      "Shares Held": "909861",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "CIE AUTOMOTIVE SA",
+      "Name": "SAVILLS PLC",
       "Ticker": "-",
-      "Identifier": "BBG000PM2698",
-      "Weight": "0.075169",
-      "Market Value": "3880970.14",
-      "Shares Held": "134716",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "COATS GROUP PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BD7JX3",
-      "Weight": "0.075108",
-      "Market Value": "3877827.27",
-      "Shares Held": "3928294",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "5N PLUS",
-      "Ticker": "-",
-      "Identifier": "BBG000TXWMK9",
-      "Weight": "0.075092",
-      "Market Value": "3876979.23",
-      "Shares Held": "179969",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "MONEY FORWARD",
-      "Ticker": "-",
-      "Identifier": "BBG00HL08535",
-      "Weight": "0.074948",
-      "Market Value": "3869535.42",
-      "Shares Held": "96632",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "CURRYS PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000Q950P8",
-      "Weight": "0.074873",
-      "Market Value": "3865654.51",
-      "Shares Held": "1996582",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "ROBOTIS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG00LY9XNG2",
-      "Weight": "0.074744",
-      "Market Value": "3858987.53",
-      "Shares Held": "20889",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "UNITED INTERNET AG",
-      "Ticker": "-",
-      "Identifier": "BBG000F45ZD7",
-      "Weight": "0.074739",
-      "Market Value": "3858766.17",
-      "Shares Held": "144978",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "KYORITSU MAINTENANCE",
-      "Ticker": "-",
-      "Identifier": "BBG000DHJB48",
-      "Weight": "0.074706",
-      "Market Value": "3857034.82",
-      "Shares Held": "160550",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "EO TECHNICS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BGJ0F4",
-      "Weight": "0.074697",
-      "Market Value": "3856558.15",
-      "Shares Held": "17678",
-      "Asset Category": "Information Technology"
+      "Identifier": "BBG000BF7WL2",
+      "Weight": "0.074638",
+      "Market Value": "3853547.6",
+      "Shares Held": "282095",
+      "Asset Category": "Real Estate"
     },
     {
       "Name": "FREEHOLD ROYALTIES",
       "Ticker": "-",
       "Identifier": "BBG000BM2CR0",
-      "Weight": "0.074572",
-      "Market Value": "3850119.81",
+      "Weight": "0.074579",
+      "Market Value": "3850474.14",
       "Shares Held": "337807",
       "Asset Category": "Energy"
     },
     {
-      "Name": "WIHLBORGS FASTIGHETER",
+      "Name": "CAIRN HOMES PLC",
       "Ticker": "-",
-      "Identifier": "BBG000FQP926",
-      "Weight": "0.074337",
-      "Market Value": "3838001.82",
-      "Shares Held": "557711",
-      "Asset Category": "Real Estate"
+      "Identifier": "BBG00H66HKM5",
+      "Weight": "0.07457",
+      "Market Value": "3850047.53",
+      "Shares Held": "1242352",
+      "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "NIPPON SHOKUBAI LTD",
+      "Name": "ANRITSU CORP",
       "Ticker": "-",
-      "Identifier": "BBG000BG3169",
-      "Weight": "0.073807",
-      "Market Value": "3810630.65",
-      "Shares Held": "252722",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "ENDEAVOUR SILVER CORP",
-      "Ticker": "-",
-      "Identifier": "BBG000BZH144",
-      "Weight": "0.073787",
-      "Market Value": "3809581.93",
-      "Shares Held": "613929",
-      "Asset Category": "Materials"
+      "Identifier": "BBG000BLXYF3",
+      "Weight": "0.074471",
+      "Market Value": "3844925.66",
+      "Shares Held": "262127",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "FAGRON NV",
       "Ticker": "-",
       "Identifier": "BBG000TDB9B5",
-      "Weight": "0.073583",
-      "Market Value": "3799063.12",
+      "Weight": "0.074413",
+      "Market Value": "3841940.4",
       "Shares Held": "137939",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "WIHLBORGS FASTIGHETER",
+      "Ticker": "-",
+      "Identifier": "BBG000FQP926",
+      "Weight": "0.074243",
+      "Market Value": "3833130.79",
+      "Shares Held": "557711",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "ALLIED GOLD",
+      "Ticker": "-",
+      "Identifier": "BBG01J3PPY24",
+      "Weight": "0.074208",
+      "Market Value": "3831317.97",
+      "Shares Held": "208763",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "AICHI FINANCIAL GROUP INC",
+      "Ticker": "-",
+      "Identifier": "BBG019G880F9",
+      "Weight": "0.074125",
+      "Market Value": "3827052.15",
+      "Shares Held": "384989",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "BONESUPPORT HOLDING",
+      "Ticker": "-",
+      "Identifier": "BBG00GXCDBZ4",
+      "Weight": "0.074123",
+      "Market Value": "3826970.89",
+      "Shares Held": "113798",
       "Asset Category": "Health Care"
     },
     {
       "Name": "GENUS PLC",
       "Ticker": "-",
       "Identifier": "BBG000CTMKX7",
-      "Weight": "0.07357",
-      "Market Value": "3798390.33",
+      "Weight": "0.07412",
+      "Market Value": "3826788.76",
       "Shares Held": "137161",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "HIAB CORPORATION CLASS B",
+      "Name": "SOLVAY SA",
       "Ticker": "-",
-      "Identifier": "BBG000C3VXP5",
-      "Weight": "0.07331",
-      "Market Value": "3784954.02",
-      "Shares Held": "76044",
+      "Identifier": "BBG000BQ5Z15",
+      "Weight": "0.073823",
+      "Market Value": "3811473.97",
+      "Shares Held": "150138",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "SES SA FDR",
+      "Ticker": "-",
+      "Identifier": "BBG000GXK7D7",
+      "Weight": "0.073814",
+      "Market Value": "3810977.8",
+      "Shares Held": "776173",
+      "Asset Category": "Communication Services"
+    },
+    {
+      "Name": "NIPPON SHOKUBAI LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BG3169",
+      "Weight": "0.073744",
+      "Market Value": "3807396.81",
+      "Shares Held": "252722",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "JENOPTIK N AG",
+      "Ticker": "-",
+      "Identifier": "BBG000BJ5X25",
+      "Weight": "0.073654",
+      "Market Value": "3802714.21",
+      "Shares Held": "106088",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "SAN IN GODO BANK LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BJ1R31",
+      "Weight": "0.073048",
+      "Market Value": "3771426.9",
+      "Shares Held": "295636",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "COATS GROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BD7JX3",
+      "Weight": "0.072996",
+      "Market Value": "3768768.82",
+      "Shares Held": "3928294",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "SIGNIFY",
+      "Ticker": "-",
+      "Identifier": "BBG00CTZ9MW1",
+      "Weight": "0.072927",
+      "Market Value": "3765193.71",
+      "Shares Held": "237675",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "TAMARACK VALLEY ENERGY LTD",
+      "Name": "AUTO1 GROUP",
       "Ticker": "-",
-      "Identifier": "BBG000BC88N9",
-      "Weight": "0.073148",
-      "Market Value": "3776586.53",
-      "Shares Held": "463154",
-      "Asset Category": "Energy"
+      "Identifier": "BBG00YVLPGB9",
+      "Weight": "0.072842",
+      "Market Value": "3760829.19",
+      "Shares Held": "237070",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "SSP GROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG006ND4TY7",
+      "Weight": "0.0728",
+      "Market Value": "3758663.74",
+      "Shares Held": "1575316",
+      "Asset Category": "Consumer Discretionary"
     },
     {
       "Name": "EURAZEO",
       "Ticker": "-",
       "Identifier": "BBG000BC18W6",
-      "Weight": "0.073014",
-      "Market Value": "3769698.09",
+      "Weight": "0.072783",
+      "Market Value": "3757749.62",
       "Shares Held": "70321",
       "Asset Category": "Financials"
     },
     {
-      "Name": "NRW HOLDINGS",
+      "Name": "5N PLUS",
       "Ticker": "-",
-      "Identifier": "BBG000RTG776",
-      "Weight": "0.072673",
-      "Market Value": "3752101.32",
-      "Shares Held": "909861",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "WIENERBERGER AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BW66N1",
-      "Weight": "0.072359",
-      "Market Value": "3735896.72",
-      "Shares Held": "222808",
+      "Identifier": "BBG000TXWMK9",
+      "Weight": "0.072549",
+      "Market Value": "3745699.45",
+      "Shares Held": "179969",
       "Asset Category": "Materials"
     },
     {
-      "Name": "HPSP LTD",
+      "Name": "IONOS GROUP N",
       "Ticker": "-",
-      "Identifier": "BBG017YDK0P7",
-      "Weight": "0.072204",
-      "Market Value": "3727857.94",
-      "Shares Held": "133443",
+      "Identifier": "BBG01DHXXZG8",
+      "Weight": "0.072445",
+      "Market Value": "3740292.99",
+      "Shares Held": "98308",
       "Asset Category": "Information Technology"
     },
     {
       "Name": "PANDOX CLASS B",
       "Ticker": "-",
       "Identifier": "BBG0099X0KH5",
-      "Weight": "0.072179",
-      "Market Value": "3726589.14",
+      "Weight": "0.072424",
+      "Market Value": "3739231.09",
       "Shares Held": "221474",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "HD CONSTRUCTION EQUIPMENT LTD",
+      "Ticker": "-",
+      "Identifier": "BBG00FB27KX1",
+      "Weight": "0.072193",
+      "Market Value": "3727282.56",
+      "Shares Held": "62639",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "DAI DAN LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BKX3P2",
+      "Weight": "0.071915",
+      "Market Value": "3712936.1",
+      "Shares Held": "195565",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "CURRYS PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000Q950P8",
+      "Weight": "0.071911",
+      "Market Value": "3712763.62",
+      "Shares Held": "1996582",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "GREAT PORTLAND ESTATES REIT PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BDKJW9",
+      "Weight": "0.071772",
+      "Market Value": "3705583.84",
+      "Shares Held": "800829",
       "Asset Category": "Real Estate"
     },
     {
       "Name": "NIPPON GAS LTD",
       "Ticker": "-",
       "Identifier": "BBG000BMXFL5",
-      "Weight": "0.072118",
-      "Market Value": "3723419.8",
+      "Weight": "0.071538",
+      "Market Value": "3693464.26",
       "Shares Held": "638286",
       "Asset Category": "Utilities"
     },
     {
-      "Name": "GREAT PORTLAND ESTATES REIT PLC",
+      "Name": "CATENA",
       "Ticker": "-",
-      "Identifier": "BBG000BDKJW9",
-      "Weight": "0.071822",
-      "Market Value": "3708163.2",
-      "Shares Held": "800829",
+      "Identifier": "BBG000GMMB77",
+      "Weight": "0.071511",
+      "Market Value": "3692067.92",
+      "Shares Held": "96655",
       "Asset Category": "Real Estate"
     },
     {
-      "Name": "BET SHEMESH ENGINES HOLDINGS LTD",
+      "Name": "WIENERBERGER AG",
       "Ticker": "-",
-      "Identifier": "BBG000BYG7C6",
-      "Weight": "0.071628",
-      "Market Value": "3698132.56",
-      "Shares Held": "17099",
+      "Identifier": "BBG000BW66N1",
+      "Weight": "0.071311",
+      "Market Value": "3681751.74",
+      "Shares Held": "222808",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "HANDR REAL ESTATE INVESTMENT TRUST",
+      "Ticker": "-",
+      "Identifier": "BBG000C0BTW4",
+      "Weight": "0.071287",
+      "Market Value": "3680523.77",
+      "Shares Held": "559138",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "MAKINO MILLING MACHINE LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BLH591",
+      "Weight": "0.071199",
+      "Market Value": "3675972.07",
+      "Shares Held": "222524",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "AICHI FINANCIAL GROUP INC",
+      "Name": "HIAB CORPORATION CLASS B",
       "Ticker": "-",
-      "Identifier": "BBG019G880F9",
-      "Weight": "0.071599",
-      "Market Value": "3696642.7",
-      "Shares Held": "384989",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "BUFAB",
-      "Ticker": "-",
-      "Identifier": "BBG0060MG5G1",
-      "Weight": "0.071505",
-      "Market Value": "3691782.06",
-      "Shares Held": "277331",
+      "Identifier": "BBG000C3VXP5",
+      "Weight": "0.070955",
+      "Market Value": "3663408.05",
+      "Shares Held": "76044",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "SAN IN GODO BANK LTD",
+      "Name": "EXTENDICARE",
       "Ticker": "-",
-      "Identifier": "BBG000BJ1R31",
-      "Weight": "0.071487",
-      "Market Value": "3690846.79",
-      "Shares Held": "295636",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "BADGER INFRASTRUCTURE SOLUTIONS LT",
-      "Ticker": "-",
-      "Identifier": "BBG000GFD520",
-      "Weight": "0.071462",
-      "Market Value": "3689583.28",
-      "Shares Held": "70064",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "BONESUPPORT HOLDING",
-      "Ticker": "-",
-      "Identifier": "BBG00GXCDBZ4",
-      "Weight": "0.071448",
-      "Market Value": "3688838.53",
-      "Shares Held": "113798",
+      "Identifier": "BBG000DLD4Y8",
+      "Weight": "0.070851",
+      "Market Value": "3658038.68",
+      "Shares Held": "175698",
       "Asset Category": "Health Care"
+    },
+    {
+      "Name": "SEABRIDGE GOLD",
+      "Ticker": "-",
+      "Identifier": "BBG000BZVL71",
+      "Weight": "0.07076",
+      "Market Value": "3653330.83",
+      "Shares Held": "200520",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "TOKAI CARBON LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BL4BL8",
+      "Weight": "0.070622",
+      "Market Value": "3646198.93",
+      "Shares Held": "390456",
+      "Asset Category": "Materials"
     },
     {
       "Name": "TECHNOGYM",
       "Ticker": "-",
       "Identifier": "BBG00CMLWJV1",
-      "Weight": "0.071418",
-      "Market Value": "3687292.49",
+      "Weight": "0.070553",
+      "Market Value": "3642623.64",
       "Shares Held": "224783",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "TKH GROUP",
+      "Name": "BADGER INFRASTRUCTURE SOLUTIONS LT",
       "Ticker": "-",
-      "Identifier": "BBG000BBT7H7",
-      "Weight": "0.071273",
-      "Market Value": "3679796.95",
-      "Shares Held": "73768",
+      "Identifier": "BBG000GFD520",
+      "Weight": "0.070492",
+      "Market Value": "3639470.14",
+      "Shares Held": "70064",
       "Asset Category": "Industrials"
     },
     {
       "Name": "PARAGON BANKING GROUP PLC",
       "Ticker": "-",
       "Identifier": "BBG000BY21W2",
-      "Weight": "0.07122",
-      "Market Value": "3677090.13",
+      "Weight": "0.070477",
+      "Market Value": "3638693.19",
       "Shares Held": "384279",
       "Asset Category": "Financials"
+    },
+    {
+      "Name": "AWA BANK LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BJ3234",
+      "Weight": "0.069941",
+      "Market Value": "3611032.96",
+      "Shares Held": "334206",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "COFACE SA",
+      "Ticker": "-",
+      "Identifier": "BBG006N9XX84",
+      "Weight": "0.069938",
+      "Market Value": "3610853.83",
+      "Shares Held": "206286",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "NISSHINBO HOLDINGS INC",
+      "Ticker": "-",
+      "Identifier": "BBG000BFXDC5",
+      "Weight": "0.06983",
+      "Market Value": "3605287.1",
+      "Shares Held": "309215",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "PER AARSLEFF HOLDING CLASS B",
       "Ticker": "-",
       "Identifier": "BBG000BQHG32",
-      "Weight": "0.071165",
-      "Market Value": "3674220.5",
+      "Weight": "0.069682",
+      "Market Value": "3597684.49",
       "Shares Held": "35763",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "HANDR REAL ESTATE INVESTMENT TRUST",
+      "Name": "LAKEFRONT BIOTHER NV",
       "Ticker": "-",
-      "Identifier": "BBG000C0BTW4",
-      "Weight": "0.071011",
-      "Market Value": "3666278.96",
-      "Shares Held": "559138",
-      "Asset Category": "Real Estate"
+      "Identifier": "BBG000F8Z7J1",
+      "Weight": "0.069582",
+      "Market Value": "3592519.69",
+      "Shares Held": "103008",
+      "Asset Category": "Health Care"
     },
     {
-      "Name": "CATENA",
+      "Name": "LINTEC",
       "Ticker": "-",
-      "Identifier": "BBG000GMMB77",
-      "Weight": "0.070683",
-      "Market Value": "3649316.68",
-      "Shares Held": "96655",
-      "Asset Category": "Real Estate"
+      "Identifier": "BBG000BMKMN2",
+      "Weight": "0.069564",
+      "Market Value": "3591544.92",
+      "Shares Held": "115381",
+      "Asset Category": "Materials"
     },
     {
-      "Name": "IONOS GROUP N",
+      "Name": "BASIC-FIT",
       "Ticker": "-",
-      "Identifier": "BBG01DHXXZG8",
-      "Weight": "0.070398",
-      "Market Value": "3634630.29",
-      "Shares Held": "98308",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "SSP GROUP PLC",
-      "Ticker": "-",
-      "Identifier": "BBG006ND4TY7",
-      "Weight": "0.07032",
-      "Market Value": "3630588.64",
-      "Shares Held": "1575316",
+      "Identifier": "BBG00D0MRK71",
+      "Weight": "0.069449",
+      "Market Value": "3585625.51",
+      "Shares Held": "108351",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "SES SA FDR",
+      "Name": "TKH GROUP",
       "Ticker": "-",
-      "Identifier": "BBG000GXK7D7",
-      "Weight": "0.069957",
-      "Market Value": "3611867.99",
-      "Shares Held": "776173",
-      "Asset Category": "Communication Services"
+      "Identifier": "BBG000BBT7H7",
+      "Weight": "0.069429",
+      "Market Value": "3584622.01",
+      "Shares Held": "73768",
+      "Asset Category": "Industrials"
     },
     {
-      "Name": "EXTENDICARE",
+      "Name": "ALM BRAND",
       "Ticker": "-",
-      "Identifier": "BBG000DLD4Y8",
-      "Weight": "0.06991",
-      "Market Value": "3609443.55",
-      "Shares Held": "175698",
-      "Asset Category": "Health Care"
+      "Identifier": "BBG000BJKJ65",
+      "Weight": "0.069331",
+      "Market Value": "3579517.16",
+      "Shares Held": "1381625",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "BOARDWALK REAL ESTATE INVESTMENT T",
+      "Ticker": "-",
+      "Identifier": "BBG000BBHHT5",
+      "Weight": "0.069307",
+      "Market Value": "3578315.43",
+      "Shares Held": "82344",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "BUFAB",
+      "Ticker": "-",
+      "Identifier": "BBG0060MG5G1",
+      "Weight": "0.069097",
+      "Market Value": "3567456.3",
+      "Shares Held": "277331",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "ENDEAVOUR SILVER CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000BZH144",
+      "Weight": "0.068936",
+      "Market Value": "3559169.59",
+      "Shares Held": "613929",
+      "Asset Category": "Materials"
     },
     {
       "Name": "DNO",
       "Ticker": "-",
       "Identifier": "BBG000BDBM07",
-      "Weight": "0.069867",
-      "Market Value": "3607188.96",
+      "Weight": "0.068625",
+      "Market Value": "3543082.84",
       "Shares Held": "1721487",
       "Asset Category": "Energy"
     },
     {
-      "Name": "ANRITSU CORP",
+      "Name": "KEMIRA",
       "Ticker": "-",
-      "Identifier": "BBG000BLXYF3",
-      "Weight": "0.069534",
-      "Market Value": "3590031.39",
-      "Shares Held": "262127",
-      "Asset Category": "Information Technology"
+      "Identifier": "BBG000BTHTD7",
+      "Weight": "0.06856",
+      "Market Value": "3539728.44",
+      "Shares Held": "216230",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "CHEMOMETEC",
+      "Ticker": "-",
+      "Identifier": "BBG000R59D46",
+      "Weight": "0.068381",
+      "Market Value": "3530477.54",
+      "Shares Held": "34916",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "OKEANIS ECO TANKERS CORP.",
+      "Ticker": "-",
+      "Identifier": "BBG00NK9G9W5",
+      "Weight": "0.068268",
+      "Market Value": "3524653.54",
+      "Shares Held": "44118",
+      "Asset Category": "Energy"
     },
     {
       "Name": "PACIFIC BASIN SHIPPING",
       "Ticker": "-",
       "Identifier": "BBG000BYXFS2",
-      "Weight": "0.069509",
-      "Market Value": "3588752.42",
+      "Weight": "0.068259",
+      "Market Value": "3524215.88",
       "Shares Held": "8579180",
       "Asset Category": "Industrials"
     },
@@ -1421,413 +1538,278 @@
       "Name": "SOFTWAREONE HOLDING AG",
       "Ticker": "-",
       "Identifier": "BBG00QKVNRM2",
-      "Weight": "0.069434",
-      "Market Value": "3584837.04",
+      "Weight": "0.068029",
+      "Market Value": "3512315.41",
       "Shares Held": "356666",
       "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "HOCHSCHILD MINING PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000Q49X82",
-      "Weight": "0.069425",
-      "Market Value": "3584416.54",
-      "Shares Held": "676092",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "MUNTERS GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG00GLM1NH2",
-      "Weight": "0.069424",
-      "Market Value": "3584361.15",
-      "Shares Held": "270358",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "OXFORD INSTRUMENTS PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BDWZZ7",
-      "Weight": "0.069377",
-      "Market Value": "3581903.07",
-      "Shares Held": "107057",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "KEMIRA",
-      "Ticker": "-",
-      "Identifier": "BBG000BTHTD7",
-      "Weight": "0.069347",
-      "Market Value": "3580340.71",
-      "Shares Held": "216230",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "COFACE SA",
-      "Ticker": "-",
-      "Identifier": "BBG006N9XX84",
-      "Weight": "0.069327",
-      "Market Value": "3579313.52",
-      "Shares Held": "206286",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "WALLENIUS WILHELMSEN",
-      "Ticker": "-",
-      "Identifier": "BBG000QHQBV6",
-      "Weight": "0.069165",
-      "Market Value": "3570952.41",
-      "Shares Held": "211320",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "AUMOVIO N",
-      "Ticker": "-",
-      "Identifier": "BBG01X7N6Y16",
-      "Weight": "0.069098",
-      "Market Value": "3567495.69",
-      "Shares Held": "108485",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "CHEMOMETEC",
-      "Ticker": "-",
-      "Identifier": "BBG000R59D46",
-      "Weight": "0.068981",
-      "Market Value": "3561468.22",
-      "Shares Held": "34916",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "ALM BRAND",
-      "Ticker": "-",
-      "Identifier": "BBG000BJKJ65",
-      "Weight": "0.06891",
-      "Market Value": "3557800.42",
-      "Shares Held": "1381625",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "MAKINO MILLING MACHINE LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BLH591",
-      "Weight": "0.068883",
-      "Market Value": "3556400.64",
-      "Shares Held": "222524",
-      "Asset Category": "Industrials"
     },
     {
       "Name": "TRAVIS PERKINS PLC",
       "Ticker": "-",
       "Identifier": "BBG000BFDB86",
-      "Weight": "0.068777",
-      "Market Value": "3550941.81",
+      "Weight": "0.067941",
+      "Market Value": "3507781.89",
       "Shares Held": "432697",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "DAI DAN LTD",
+      "Name": "ARE HOLDINGS",
       "Ticker": "-",
-      "Identifier": "BBG000BKX3P2",
-      "Weight": "0.068681",
-      "Market Value": "3545998.66",
-      "Shares Held": "195565",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "OKEANIS ECO TANKERS CORP.",
-      "Ticker": "-",
-      "Identifier": "BBG00NK9G9W5",
-      "Weight": "0.068611",
-      "Market Value": "3542349.4",
-      "Shares Held": "44118",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "AUTOSTORE HOLDINGS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG0130YK040",
-      "Weight": "0.068603",
-      "Market Value": "3541966.22",
-      "Shares Held": "2224101",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "LAKEFRONT BIOTHER NV",
-      "Ticker": "-",
-      "Identifier": "BBG000F8Z7J1",
-      "Weight": "0.068313",
-      "Market Value": "3526966.97",
-      "Shares Held": "103008",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "BASIC-FIT",
-      "Ticker": "-",
-      "Identifier": "BBG00D0MRK71",
-      "Weight": "0.068157",
-      "Market Value": "3518923.54",
-      "Shares Held": "108351",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "HELLENIQ ENERGY HOLDINGS S A",
-      "Ticker": "-",
-      "Identifier": "BBG000BPN1D9",
-      "Weight": "0.068079",
-      "Market Value": "3514899.86",
-      "Shares Held": "187789",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "HD CONSTRUCTION EQUIPMENT LTD",
-      "Ticker": "-",
-      "Identifier": "BBG00FB27KX1",
-      "Weight": "0.067877",
-      "Market Value": "3504464.83",
-      "Shares Held": "62639",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "BOARDWALK REAL ESTATE INVESTMENT T",
-      "Ticker": "-",
-      "Identifier": "BBG000BBHHT5",
-      "Weight": "0.067773",
-      "Market Value": "3499125.21",
-      "Shares Held": "82344",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "LINTEC",
-      "Ticker": "-",
-      "Identifier": "BBG000BMKMN2",
-      "Weight": "0.067748",
-      "Market Value": "3497804.04",
-      "Shares Held": "115381",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "AWA BANK LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BJ3234",
-      "Weight": "0.067697",
-      "Market Value": "3495168.99",
-      "Shares Held": "334206",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "TOKAI CARBON LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BL4BL8",
-      "Weight": "0.067532",
-      "Market Value": "3486647.44",
-      "Shares Held": "390456",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "KEPPEL INFRA UNIT TRUST",
-      "Ticker": "-",
-      "Identifier": "BBG000QPPML6",
-      "Weight": "0.067385",
-      "Market Value": "3479065.27",
-      "Shares Held": "8984110",
-      "Asset Category": "Utilities"
-    },
-    {
-      "Name": "NOKIAN RENKAAT",
-      "Ticker": "-",
-      "Identifier": "BBG000F93KK3",
-      "Weight": "0.067246",
-      "Market Value": "3471881.71",
-      "Shares Held": "250118",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "LANDIS+GYR GROUP AG",
-      "Ticker": "-",
-      "Identifier": "BBG00H4DZQF7",
-      "Weight": "0.067087",
-      "Market Value": "3463683.1",
-      "Shares Held": "52569",
-      "Asset Category": "Information Technology"
-    },
-    {
-      "Name": "ATTENDO",
-      "Ticker": "-",
-      "Identifier": "BBG00BDZ6WV2",
-      "Weight": "0.067075",
-      "Market Value": "3463073.21",
-      "Shares Held": "263453",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "GRANGES",
-      "Ticker": "-",
-      "Identifier": "BBG0077PSKF0",
-      "Weight": "0.067029",
-      "Market Value": "3460693.28",
-      "Shares Held": "210838",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "INTERNATIONAL PETROLEUM",
-      "Ticker": "-",
-      "Identifier": "BBG00GH7PMR5",
-      "Weight": "0.066983",
-      "Market Value": "3458336.89",
-      "Shares Held": "141660",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "NOVAGOLD RESOURCES INC",
-      "Ticker": "-",
-      "Identifier": "BBG000BC5FP4",
-      "Weight": "0.066926",
-      "Market Value": "3455372.14",
-      "Shares Held": "658363",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "CHARTER HALL LONG WALE REIT STAPLE",
-      "Ticker": "-",
-      "Identifier": "BBG00DY7NVK2",
-      "Weight": "0.06691",
-      "Market Value": "3454527.17",
-      "Shares Held": "1474354",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "NOBA BANK GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG01XFYM7R6",
-      "Weight": "0.066903",
-      "Market Value": "3454169.94",
-      "Shares Held": "354337",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "BOSSARD HOLDING AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BBW6B1",
-      "Weight": "0.066864",
-      "Market Value": "3452161.03",
-      "Shares Held": "11573",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "TSUMURA",
-      "Ticker": "-",
-      "Identifier": "BBG000BCX1Y4",
-      "Weight": "0.066781",
-      "Market Value": "3447905.78",
-      "Shares Held": "136837",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "GRAINGER REIT PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000BDKPY3",
-      "Weight": "0.066678",
-      "Market Value": "3442562.31",
-      "Shares Held": "1509246",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "TITAN SA",
-      "Ticker": "-",
-      "Identifier": "BBG00MRFXXK7",
-      "Weight": "0.066655",
-      "Market Value": "3441392.74",
-      "Shares Held": "71028",
+      "Identifier": "BBG000BXQVY0",
+      "Weight": "0.067867",
+      "Market Value": "3503943.69",
+      "Shares Held": "170143",
       "Asset Category": "Materials"
     },
     {
       "Name": "DOF GROUP",
       "Ticker": "-",
       "Identifier": "BBG01H2PWZ19",
-      "Weight": "0.066538",
-      "Market Value": "3435347.16",
+      "Weight": "0.067805",
+      "Market Value": "3500775.7",
       "Shares Held": "271609",
       "Asset Category": "Energy"
     },
     {
-      "Name": "FIRSTGROUP PLC",
+      "Name": "ATTENDO",
       "Ticker": "-",
-      "Identifier": "BBG000JNDVL2",
-      "Weight": "0.066457",
-      "Market Value": "3431163.03",
-      "Shares Held": "1091651",
-      "Asset Category": "Industrials"
+      "Identifier": "BBG00BDZ6WV2",
+      "Weight": "0.067691",
+      "Market Value": "3494840.46",
+      "Shares Held": "263453",
+      "Asset Category": "Health Care"
     },
     {
-      "Name": "NISSHINBO HOLDINGS INC",
+      "Name": "CHARTER HALL LONG WALE REIT STAPLE",
       "Ticker": "-",
-      "Identifier": "BBG000BFXDC5",
-      "Weight": "0.066205",
-      "Market Value": "3418150.82",
-      "Shares Held": "309215",
-      "Asset Category": "Industrials"
+      "Identifier": "BBG00DY7NVK2",
+      "Weight": "0.067513",
+      "Market Value": "3485665.47",
+      "Shares Held": "1474354",
+      "Asset Category": "Real Estate"
     },
     {
-      "Name": "ALLEIMA",
+      "Name": "NOKIAN RENKAAT",
       "Ticker": "-",
-      "Identifier": "BBG019CG5BR1",
-      "Weight": "0.066174",
-      "Market Value": "3416564",
-      "Shares Held": "401414",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "TECNICAS REUNIDAS SA",
-      "Ticker": "-",
-      "Identifier": "BBG000GB7DX5",
-      "Weight": "0.066119",
-      "Market Value": "3413696.42",
-      "Shares Held": "102605",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "SAIZERIYA LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BH4DD2",
-      "Weight": "0.065896",
-      "Market Value": "3402178.96",
-      "Shares Held": "61168",
+      "Identifier": "BBG000F93KK3",
+      "Weight": "0.067465",
+      "Market Value": "3483200.73",
+      "Shares Held": "250118",
       "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "INTERNATIONAL PETROLEUM",
+      "Ticker": "-",
+      "Identifier": "BBG00GH7PMR5",
+      "Weight": "0.067377",
+      "Market Value": "3478663.34",
+      "Shares Held": "141660",
+      "Asset Category": "Energy"
     },
     {
       "Name": "UACJ",
       "Ticker": "-",
       "Identifier": "BBG000GLVV66",
-      "Weight": "0.065722",
-      "Market Value": "3393227.97",
+      "Weight": "0.067325",
+      "Market Value": "3475976.48",
       "Shares Held": "334395",
       "Asset Category": "Materials"
+    },
+    {
+      "Name": "HELLENIQ ENERGY HOLDINGS S A",
+      "Ticker": "-",
+      "Identifier": "BBG000BPN1D9",
+      "Weight": "0.06727",
+      "Market Value": "3473141.36",
+      "Shares Held": "187789",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "AUTOSTORE HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG0130YK040",
+      "Weight": "0.067113",
+      "Market Value": "3465006.01",
+      "Shares Held": "2224101",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "AUMOVIO N",
+      "Ticker": "-",
+      "Identifier": "BBG01X7N6Y16",
+      "Weight": "0.066851",
+      "Market Value": "3451521.36",
+      "Shares Held": "108485",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "WALLENIUS WILHELMSEN",
+      "Ticker": "-",
+      "Identifier": "BBG000QHQBV6",
+      "Weight": "0.066739",
+      "Market Value": "3445708.25",
+      "Shares Held": "211320",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "JUNGFRAUBAHN HOLDING AG",
+      "Ticker": "-",
+      "Identifier": "BBG000BFH022",
+      "Weight": "0.066656",
+      "Market Value": "3441444.65",
+      "Shares Held": "10896",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "COSMAX",
       "Ticker": "-",
       "Identifier": "BBG005GXTB66",
-      "Weight": "0.065373",
-      "Market Value": "3375181.8",
+      "Weight": "0.066559",
+      "Market Value": "3436407.73",
       "Shares Held": "15770",
       "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "OXFORD INSTRUMENTS PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BDWZZ7",
+      "Weight": "0.06653",
+      "Market Value": "3434921.03",
+      "Shares Held": "107057",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "BOSSARD HOLDING AG",
+      "Ticker": "-",
+      "Identifier": "BBG000BBW6B1",
+      "Weight": "0.066491",
+      "Market Value": "3432897.63",
+      "Shares Held": "11573",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "NOBA BANK GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG01XFYM7R6",
+      "Weight": "0.066481",
+      "Market Value": "3432415.52",
+      "Shares Held": "354337",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "GRAINGER REIT PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000BDKPY3",
+      "Weight": "0.066477",
+      "Market Value": "3432193.45",
+      "Shares Held": "1509246",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "KEPPEL INFRA UNIT TRUST",
+      "Ticker": "-",
+      "Identifier": "BBG000QPPML6",
+      "Weight": "0.066369",
+      "Market Value": "3426630.07",
+      "Shares Held": "8984110",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "NOVAGOLD RESOURCES INC",
+      "Ticker": "-",
+      "Identifier": "BBG000BC5FP4",
+      "Weight": "0.066238",
+      "Market Value": "3419862.53",
+      "Shares Held": "658363",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "LANDIS+GYR GROUP AG",
+      "Ticker": "-",
+      "Identifier": "BBG00H4DZQF7",
+      "Weight": "0.066152",
+      "Market Value": "3415426.37",
+      "Shares Held": "52569",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "MUNTERS GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG00GLM1NH2",
+      "Weight": "0.065973",
+      "Market Value": "3406189.15",
+      "Shares Held": "270358",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "MIRAIT ONE CORP",
       "Ticker": "-",
       "Identifier": "BBG0015NN5P7",
-      "Weight": "0.065331",
-      "Market Value": "3373001.48",
+      "Weight": "0.065957",
+      "Market Value": "3405351.62",
       "Shares Held": "164149",
       "Asset Category": "Industrials"
+    },
+    {
+      "Name": "PREMIER FOODS PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000C0N2L2",
+      "Weight": "0.065935",
+      "Market Value": "3404187.79",
+      "Shares Held": "1344437",
+      "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "TITAN SA",
+      "Ticker": "-",
+      "Identifier": "BBG00MRFXXK7",
+      "Weight": "0.065881",
+      "Market Value": "3401432.61",
+      "Shares Held": "71028",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "HOCHSCHILD MINING PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000Q49X82",
+      "Weight": "0.065763",
+      "Market Value": "3395331.24",
+      "Shares Held": "676092",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "HAYS",
+      "Ticker": "-",
+      "Identifier": "BBG000BKFPY3",
+      "Weight": "0.06552",
+      "Market Value": "3382781.61",
+      "Shares Held": "3259900",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "FIRSTGROUP PLC",
+      "Ticker": "-",
+      "Identifier": "BBG000JNDVL2",
+      "Weight": "0.065503",
+      "Market Value": "3381880.53",
+      "Shares Held": "1091651",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "PIGEON",
+      "Ticker": "-",
+      "Identifier": "BBG000BKSHM0",
+      "Weight": "0.065324",
+      "Market Value": "3372682.79",
+      "Shares Held": "226283",
+      "Asset Category": "Consumer Staples"
     },
     {
       "Name": "MITSUI FUDOSAN ACCOMMODATIONS FUND",
       "Ticker": "-",
       "Identifier": "BBG000PQL4B0",
-      "Weight": "0.065321",
-      "Market Value": "3372507.05",
+      "Weight": "0.065259",
+      "Market Value": "3369289.78",
       "Shares Held": "4808",
       "Asset Category": "Real Estate"
     },
@@ -1835,422 +1817,440 @@
       "Name": "HANWA LTD",
       "Ticker": "-",
       "Identifier": "BBG000BBLGG6",
-      "Weight": "0.065252",
-      "Market Value": "3368934.83",
+      "Weight": "0.065134",
+      "Market Value": "3362824.44",
       "Shares Held": "323706",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "CLARKSON PLC",
+      "Name": "TSUMURA",
       "Ticker": "-",
-      "Identifier": "BBG000BDBJ68",
-      "Weight": "0.065235",
-      "Market Value": "3368067.37",
-      "Shares Held": "56865",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "JUNGFRAUBAHN HOLDING AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BFH022",
-      "Weight": "0.065228",
-      "Market Value": "3367693.4",
-      "Shares Held": "10896",
-      "Asset Category": "Industrials"
+      "Identifier": "BBG000BCX1Y4",
+      "Weight": "0.065097",
+      "Market Value": "3360929",
+      "Shares Held": "136837",
+      "Asset Category": "Health Care"
     },
     {
       "Name": "SCANDIC HOTELS GROUP",
       "Ticker": "-",
       "Identifier": "BBG00BCM34D7",
-      "Weight": "0.065153",
-      "Market Value": "3363836.24",
+      "Weight": "0.064887",
+      "Market Value": "3350085.62",
       "Shares Held": "322347",
       "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "MEIDENSHA CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000BLTX60",
+      "Weight": "0.064788",
+      "Market Value": "3345005.52",
+      "Shares Held": "79223",
+      "Asset Category": "Industrials"
     },
     {
       "Name": "CORBION NV CLASS C",
       "Ticker": "-",
       "Identifier": "BBG000BBZKX3",
-      "Weight": "0.065133",
-      "Market Value": "3362791.99",
+      "Weight": "0.064781",
+      "Market Value": "3344631.36",
       "Shares Held": "119517",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "ARE HOLDINGS",
-      "Ticker": "-",
-      "Identifier": "BBG000BXQVY0",
-      "Weight": "0.065104",
-      "Market Value": "3361285.62",
-      "Shares Held": "170143",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "PREMIER FOODS PLC",
-      "Ticker": "-",
-      "Identifier": "BBG000C0N2L2",
-      "Weight": "0.064983",
-      "Market Value": "3355073.21",
-      "Shares Held": "1344437",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "GEORGIA CAPITAL PLC",
-      "Ticker": "-",
-      "Identifier": "BBG00KTP3406",
-      "Weight": "0.064983",
-      "Market Value": "3355034.79",
-      "Shares Held": "58801",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "DENISON MINES CORP",
-      "Ticker": "-",
-      "Identifier": "BBG000BVXRY5",
-      "Weight": "0.064979",
-      "Market Value": "3354846.11",
-      "Shares Held": "1870001",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "ALTIUS MINERALS CORP",
-      "Ticker": "-",
-      "Identifier": "BBG000BW8HC7",
-      "Weight": "0.064655",
-      "Market Value": "3338119.18",
-      "Shares Held": "104717",
-      "Asset Category": "Materials"
-    },
-    {
-      "Name": "MEITEC GROUP HOLDINGS INC",
-      "Ticker": "-",
-      "Identifier": "BBG000BQ3HB6",
-      "Weight": "0.064595",
-      "Market Value": "3335017.84",
-      "Shares Held": "160468",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "PIGEON",
-      "Ticker": "-",
-      "Identifier": "BBG000BKSHM0",
-      "Weight": "0.064571",
-      "Market Value": "3333760.66",
-      "Shares Held": "226283",
-      "Asset Category": "Consumer Staples"
-    },
-    {
-      "Name": "FINCANTIERI",
-      "Ticker": "-",
-      "Identifier": "BBG006MC6HF5",
-      "Weight": "0.06454",
-      "Market Value": "3332157.16",
-      "Shares Held": "266607",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "PARAMOUNT RESOURCE CLASS A",
-      "Ticker": "-",
-      "Identifier": "BBG000BCBT31",
-      "Weight": "0.064531",
-      "Market Value": "3331717.03",
-      "Shares Held": "158065",
-      "Asset Category": "Energy"
-    },
-    {
-      "Name": "PARTNER COMMUNICATIONS LTD",
-      "Ticker": "-",
-      "Identifier": "BBG000BMVSK0",
-      "Weight": "0.064523",
-      "Market Value": "3331310.91",
-      "Shares Held": "308583",
-      "Asset Category": "Communication Services"
-    },
-    {
-      "Name": "HAZAMA ANDO CORP",
-      "Ticker": "-",
-      "Identifier": "BBG000Q09ZR4",
-      "Weight": "0.064416",
-      "Market Value": "3325800.02",
-      "Shares Held": "303736",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "EAGERS AUTOMOTIVE",
-      "Ticker": "-",
-      "Identifier": "BBG000BT8TY4",
-      "Weight": "0.06437",
-      "Market Value": "3323404.17",
-      "Shares Held": "355869",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "NFI GROUP",
-      "Ticker": "-",
-      "Identifier": "BBG0020B54S6",
-      "Weight": "0.064291",
-      "Market Value": "3319306.8",
-      "Shares Held": "194476",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "FLUIDRA SA",
-      "Ticker": "-",
-      "Identifier": "BBG000TKCTY9",
-      "Weight": "0.064285",
-      "Market Value": "3319022.71",
-      "Shares Held": "163115",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "KARDEX HOLDING AG",
-      "Ticker": "-",
-      "Identifier": "BBG000BC44Q9",
-      "Weight": "0.06417",
-      "Market Value": "3313091.16",
-      "Shares Held": "12374",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "VOLUTION GROUP PLCINARY",
-      "Ticker": "-",
-      "Identifier": "BBG006MJRQF7",
-      "Weight": "0.064142",
-      "Market Value": "3311615.84",
-      "Shares Held": "403858",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "NGEX MINERALS",
-      "Ticker": "-",
-      "Identifier": "BBG00NZJ2JK3",
-      "Weight": "0.064079",
-      "Market Value": "3308361.75",
-      "Shares Held": "282598",
       "Asset Category": "Materials"
     },
     {
       "Name": "MAX",
       "Ticker": "-",
       "Identifier": "BBG000BLRST8",
-      "Weight": "0.063965",
-      "Market Value": "3302474.12",
+      "Weight": "0.064777",
+      "Market Value": "3344397.22",
       "Shares Held": "296877",
-      "Asset Category": "Industrials"
-    },
-    {
-      "Name": "STORSKOGEN GROUP CLASS B",
-      "Ticker": "-",
-      "Identifier": "BBG012JNRV96",
-      "Weight": "0.063872",
-      "Market Value": "3297676.52",
-      "Shares Held": "2975337",
       "Asset Category": "Industrials"
     },
     {
       "Name": "SIENNA SENIOR LIVING INC",
       "Ticker": "-",
       "Identifier": "BBG000QDTB15",
-      "Weight": "0.063859",
-      "Market Value": "3296998.17",
+      "Weight": "0.0647",
+      "Market Value": "3340428.78",
       "Shares Held": "231994",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "APERAM SA",
+      "Name": "ALLEIMA",
       "Ticker": "-",
-      "Identifier": "BBG001D93XQ9",
-      "Weight": "0.063748",
-      "Market Value": "3291264.45",
-      "Shares Held": "91362",
+      "Identifier": "BBG019CG5BR1",
+      "Weight": "0.06468",
+      "Market Value": "3339417.9",
+      "Shares Held": "401414",
       "Asset Category": "Materials"
-    },
-    {
-      "Name": "MODIVO SA",
-      "Ticker": "-",
-      "Identifier": "BBG000QLNJS7",
-      "Weight": "0.063603",
-      "Market Value": "3283827.95",
-      "Shares Held": "111605",
-      "Asset Category": "Consumer Discretionary"
-    },
-    {
-      "Name": "LIECHTENSTEINISCHE LANDESBANK",
-      "Ticker": "-",
-      "Identifier": "BBG000BHCMT6",
-      "Weight": "0.063488",
-      "Market Value": "3277883.07",
-      "Shares Held": "23267",
-      "Asset Category": "Financials"
     },
     {
       "Name": "KONICA MINOLTA",
       "Ticker": "-",
       "Identifier": "BBG000BKYM42",
-      "Weight": "0.063381",
-      "Market Value": "3272365.16",
+      "Weight": "0.064655",
+      "Market Value": "3338109.74",
       "Shares Held": "1003842",
       "Asset Category": "Information Technology"
     },
     {
-      "Name": "ASKER HEALTHCARE GROUP",
+      "Name": "CLARKSON PLC",
       "Ticker": "-",
-      "Identifier": "BBG01SNLMLD0",
-      "Weight": "0.063364",
-      "Market Value": "3271443.61",
-      "Shares Held": "459646",
-      "Asset Category": "Health Care"
+      "Identifier": "BBG000BDBJ68",
+      "Weight": "0.064647",
+      "Market Value": "3337704.53",
+      "Shares Held": "56865",
+      "Asset Category": "Industrials"
     },
     {
-      "Name": "MONTEA NV",
+      "Name": "EAGERS AUTOMOTIVE",
       "Ticker": "-",
-      "Identifier": "BBG000BF7J95",
-      "Weight": "0.063285",
-      "Market Value": "3267364.71",
-      "Shares Held": "43744",
-      "Asset Category": "Real Estate"
-    },
-    {
-      "Name": "IREN",
-      "Ticker": "-",
-      "Identifier": "BBG000D88035",
-      "Weight": "0.063204",
-      "Market Value": "3263193.92",
-      "Shares Held": "1287851",
-      "Asset Category": "Utilities"
-    },
-    {
-      "Name": "ROUND ONE CORP",
-      "Ticker": "-",
-      "Identifier": "BBG000BYDWM3",
-      "Weight": "0.063034",
-      "Market Value": "3254445.75",
-      "Shares Held": "363163",
+      "Identifier": "BBG000BT8TY4",
+      "Weight": "0.064632",
+      "Market Value": "3336939.94",
+      "Shares Held": "355869",
       "Asset Category": "Consumer Discretionary"
     },
     {
-      "Name": "SAM CHUN DANG PHARM LTD",
+      "Name": "PARAMOUNT RESOURCE CLASS A",
       "Ticker": "-",
-      "Identifier": "BBG000CBJVQ4",
-      "Weight": "0.063026",
-      "Market Value": "3254029.49",
-      "Shares Held": "29987",
-      "Asset Category": "Health Care"
+      "Identifier": "BBG000BCBT31",
+      "Weight": "0.064599",
+      "Market Value": "3335241.13",
+      "Shares Held": "158065",
+      "Asset Category": "Energy"
     },
     {
-      "Name": "SALZGITTER AG",
+      "Name": "FLUIDRA SA",
       "Ticker": "-",
-      "Identifier": "BBG000BLLJR6",
-      "Weight": "0.062929",
-      "Market Value": "3249015.3",
-      "Shares Held": "63233",
-      "Asset Category": "Materials"
+      "Identifier": "BBG000TKCTY9",
+      "Weight": "0.064518",
+      "Market Value": "3331047.64",
+      "Shares Held": "163115",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "SAIZERIYA LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BH4DD2",
+      "Weight": "0.06449",
+      "Market Value": "3329621.93",
+      "Shares Held": "61168",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "BET SHEMESH ENGINES HOLDINGS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BYG7C6",
+      "Weight": "0.064467",
+      "Market Value": "3328429.97",
+      "Shares Held": "17099",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "HAZAMA ANDO CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000Q09ZR4",
+      "Weight": "0.064102",
+      "Market Value": "3309589.82",
+      "Shares Held": "303736",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "LIECHTENSTEINISCHE LANDESBANK",
+      "Ticker": "-",
+      "Identifier": "BBG000BHCMT6",
+      "Weight": "0.064078",
+      "Market Value": "3308339.26",
+      "Shares Held": "23267",
+      "Asset Category": "Financials"
     },
     {
       "Name": "INABA DENKISANGYO",
       "Ticker": "-",
       "Identifier": "BBG000BW7Z38",
-      "Weight": "0.062873",
-      "Market Value": "3246093.91",
+      "Weight": "0.064058",
+      "Market Value": "3307285.73",
       "Shares Held": "205020",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "VIRBAC SA",
+      "Name": "OCI HOLDINGS COMPANY LTD",
       "Ticker": "-",
-      "Identifier": "BBG000BSSDN1",
-      "Weight": "0.062818",
-      "Market Value": "3243266.67",
-      "Shares Held": "8583",
-      "Asset Category": "Health Care"
-    },
-    {
-      "Name": "BURE EQUITY",
-      "Ticker": "-",
-      "Identifier": "BBG000BTWRL5",
-      "Weight": "0.062757",
-      "Market Value": "3240104.38",
-      "Shares Held": "110017",
-      "Asset Category": "Financials"
-    },
-    {
-      "Name": "HAYS",
-      "Ticker": "-",
-      "Identifier": "BBG000BKFPY3",
-      "Weight": "0.062744",
-      "Market Value": "3239473.59",
-      "Shares Held": "3259900",
-      "Asset Category": "Industrials"
+      "Identifier": "BBG000BGHVX8",
+      "Weight": "0.063916",
+      "Market Value": "3299948.04",
+      "Shares Held": "26950",
+      "Asset Category": "Materials"
     },
     {
       "Name": "YPSOMED HOLDING AG",
       "Ticker": "-",
       "Identifier": "BBG000BTC8J2",
-      "Weight": "0.062593",
-      "Market Value": "3231644.81",
+      "Weight": "0.063842",
+      "Market Value": "3296129.64",
       "Shares Held": "6190",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "NIPPON KAYAKU LTD",
+      "Name": "NFI GROUP",
       "Ticker": "-",
-      "Identifier": "BBG000BJLSW5",
-      "Weight": "0.062391",
-      "Market Value": "3221205.93",
-      "Shares Held": "285743",
-      "Asset Category": "Materials"
+      "Identifier": "BBG0020B54S6",
+      "Weight": "0.063769",
+      "Market Value": "3292366.49",
+      "Shares Held": "194476",
+      "Asset Category": "Industrials"
     },
     {
-      "Name": "NCC CLASS B",
+      "Name": "MEITEC GROUP HOLDINGS INC",
       "Ticker": "-",
-      "Identifier": "BBG000BD79W6",
-      "Weight": "0.062227",
-      "Market Value": "3212784.42",
-      "Shares Held": "173433",
+      "Identifier": "BBG000BQ3HB6",
+      "Weight": "0.063753",
+      "Market Value": "3291537.63",
+      "Shares Held": "160468",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "IREN",
+      "Ticker": "-",
+      "Identifier": "BBG000D88035",
+      "Weight": "0.063708",
+      "Market Value": "3289248.11",
+      "Shares Held": "1287851",
+      "Asset Category": "Utilities"
+    },
+    {
+      "Name": "DB HITEK LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BCV960",
+      "Weight": "0.063682",
+      "Market Value": "3287858.07",
+      "Shares Held": "61947",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "VOLUTION GROUP PLCINARY",
+      "Ticker": "-",
+      "Identifier": "BBG006MJRQF7",
+      "Weight": "0.063619",
+      "Market Value": "3284620.14",
+      "Shares Held": "403858",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "KARDEX HOLDING AG",
+      "Ticker": "-",
+      "Identifier": "BBG000BC44Q9",
+      "Weight": "0.063609",
+      "Market Value": "3284129.94",
+      "Shares Held": "12374",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "ROUND ONE CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000BYDWM3",
+      "Weight": "0.063578",
+      "Market Value": "3282521.9",
+      "Shares Held": "363163",
+      "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "FINCANTIERI",
+      "Ticker": "-",
+      "Identifier": "BBG006MC6HF5",
+      "Weight": "0.063442",
+      "Market Value": "3275508.81",
+      "Shares Held": "266607",
       "Asset Category": "Industrials"
     },
     {
       "Name": "KINNEVIK CLASS B",
       "Ticker": "-",
       "Identifier": "BBG000BP73C4",
-      "Weight": "0.062025",
-      "Market Value": "3202357",
+      "Weight": "0.063364",
+      "Market Value": "3271484.58",
       "Shares Held": "491126",
       "Asset Category": "Financials"
     },
     {
-      "Name": "DIASORIN",
+      "Name": "ALTIUS MINERALS CORP",
       "Ticker": "-",
-      "Identifier": "BBG000DSFWQ8",
-      "Weight": "0.061947",
-      "Market Value": "3198300.07",
-      "Shares Held": "36814",
+      "Identifier": "BBG000BW8HC7",
+      "Weight": "0.063342",
+      "Market Value": "3270317.55",
+      "Shares Held": "104717",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "MONTEA NV",
+      "Ticker": "-",
+      "Identifier": "BBG000BF7J95",
+      "Weight": "0.063333",
+      "Market Value": "3269876.1",
+      "Shares Held": "43744",
+      "Asset Category": "Real Estate"
+    },
+    {
+      "Name": "VIRBAC SA",
+      "Ticker": "-",
+      "Identifier": "BBG000BSSDN1",
+      "Weight": "0.063231",
+      "Market Value": "3264601.63",
+      "Shares Held": "8583",
       "Asset Category": "Health Care"
     },
     {
-      "Name": "CAREL",
+      "Name": "GEORGIA CAPITAL PLC",
       "Ticker": "-",
-      "Identifier": "BBG00L1C28G8",
-      "Weight": "0.061892",
-      "Market Value": "3195488.69",
-      "Shares Held": "107829",
+      "Identifier": "BBG00KTP3406",
+      "Weight": "0.063176",
+      "Market Value": "3261747.04",
+      "Shares Held": "58801",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "NIPPON KAYAKU LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BJLSW5",
+      "Weight": "0.063115",
+      "Market Value": "3258621.16",
+      "Shares Held": "285743",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "GRANGES",
+      "Ticker": "-",
+      "Identifier": "BBG0077PSKF0",
+      "Weight": "0.0631",
+      "Market Value": "3257853.2",
+      "Shares Held": "210838",
+      "Asset Category": "Materials"
+    },
+    {
+      "Name": "DENISON MINES CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000BVXRY5",
+      "Weight": "0.062968",
+      "Market Value": "3251011.79",
+      "Shares Held": "1870001",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "PINNACLE INVESTMENT MANAGEMENT GRO",
+      "Ticker": "-",
+      "Identifier": "BBG000F8GLK9",
+      "Weight": "0.062907",
+      "Market Value": "3247854.93",
+      "Shares Held": "331309",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "SAM CHUN DANG PHARM LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000CBJVQ4",
+      "Weight": "0.062739",
+      "Market Value": "3239181.63",
+      "Shares Held": "29987",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "ASKER HEALTHCARE GROUP",
+      "Ticker": "-",
+      "Identifier": "BBG01SNLMLD0",
+      "Weight": "0.062672",
+      "Market Value": "3235745.37",
+      "Shares Held": "459646",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "SWCC CORP",
+      "Ticker": "-",
+      "Identifier": "BBG000BBBD83",
+      "Weight": "0.062569",
+      "Market Value": "3230413.68",
+      "Shares Held": "291409",
       "Asset Category": "Industrials"
     },
     {
-      "Name": "PETS AT HOME PLC",
+      "Name": "DAEWOO ENGINEERING & CONSTRUCTION",
       "Ticker": "-",
-      "Identifier": "BBG0060MBRK3",
-      "Weight": "0.061775",
-      "Market Value": "3189429.8",
-      "Shares Held": "917880",
+      "Identifier": "BBG000D5FFV9",
+      "Weight": "0.062449",
+      "Market Value": "3224226.6",
+      "Shares Held": "409992",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "STORSKOGEN GROUP CLASS B",
+      "Ticker": "-",
+      "Identifier": "BBG012JNRV96",
+      "Weight": "0.062209",
+      "Market Value": "3211810.33",
+      "Shares Held": "2975337",
+      "Asset Category": "Industrials"
+    },
+    {
+      "Name": "NEUREN PHARMACEUTICALS",
+      "Ticker": "-",
+      "Identifier": "BBG000CS0GB6",
+      "Weight": "0.06216",
+      "Market Value": "3209323.49",
+      "Shares Held": "227957",
+      "Asset Category": "Health Care"
+    },
+    {
+      "Name": "WONIK IPS LTD",
+      "Ticker": "-",
+      "Identifier": "BBG00CKLFBM9",
+      "Weight": "0.06212",
+      "Market Value": "3207256.97",
+      "Shares Held": "59922",
+      "Asset Category": "Information Technology"
+    },
+    {
+      "Name": "MODIVO SA",
+      "Ticker": "-",
+      "Identifier": "BBG000QLNJS7",
+      "Weight": "0.062001",
+      "Market Value": "3201087.41",
+      "Shares Held": "111605",
       "Asset Category": "Consumer Discretionary"
+    },
+    {
+      "Name": "TECNICAS REUNIDAS SA",
+      "Ticker": "-",
+      "Identifier": "BBG000GB7DX5",
+      "Weight": "0.061959",
+      "Market Value": "3198930.48",
+      "Shares Held": "102605",
+      "Asset Category": "Energy"
+    },
+    {
+      "Name": "OGAKI KYORITSU BANK LTD",
+      "Ticker": "-",
+      "Identifier": "BBG000BHYKC4",
+      "Weight": "0.061822",
+      "Market Value": "3191862.69",
+      "Shares Held": "359403",
+      "Asset Category": "Financials"
+    },
+    {
+      "Name": "NGEX MINERALS",
+      "Ticker": "-",
+      "Identifier": "BBG00NZJ2JK3",
+      "Weight": "0.061814",
+      "Market Value": "3191461.79",
+      "Shares Held": "282598",
+      "Asset Category": "Materials"
     },
     {
       "Name": "ADVANTAGE ENERGY",
       "Ticker": "-",
       "Identifier": "BBG000C3V3J8",
-      "Weight": "0.061716",
-      "Market Value": "3186396.66",
+      "Weight": "0.061769",
+      "Market Value": "3189094.17",
       "Shares Held": "336734",
       "Asset Category": "Energy"
     },
@@ -2258,8 +2258,8 @@
       "Name": "BEFESA SA",
       "Ticker": "-",
       "Identifier": "BBG00HXLMT74",
-      "Weight": "0.061599",
-      "Market Value": "3180363.5",
+      "Weight": "0.06172",
+      "Market Value": "3186606.82",
       "Shares Held": "77086",
       "Asset Category": "Industrials"
     }

@@ -2,7 +2,7 @@
   "ticker": "SCHI",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1790,
+  "totalRows": 1791,
   "headers": [
     "Date",
     "Close",
@@ -4749,6 +4749,12 @@
       "Close": "21.719999313354492",
       "Adj Close": "21.72",
       "Volume": "2237600"
+    },
+    {
+      "Date": "Nov 25 2026",
+      "Close": "21.81999969482422",
+      "Adj Close": "21.82",
+      "Volume": "2435334"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "SCHX",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4291,
+  "totalRows": 4292,
   "headers": [
     "Date",
     "Close",
@@ -1755,6 +1755,12 @@
       "Close": "28.270000457763672",
       "Adj Close": "28.27",
       "Volume": "22878900"
+    },
+    {
+      "Date": "Nov 25 2026",
+      "Close": "28.209999084472656",
+      "Adj Close": "28.21",
+      "Volume": "17551234"
     }
   ]
 }

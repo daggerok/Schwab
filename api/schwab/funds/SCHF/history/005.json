@@ -2,7 +2,7 @@
   "ticker": "SCHF",
   "page": 5,
   "pageSize": 1000,
-  "totalRows": 4291,
+  "totalRows": 4292,
   "headers": [
     "Date",
     "Close",
@@ -1755,6 +1755,12 @@
       "Close": "25.469999313354492",
       "Adj Close": "25.47",
       "Volume": "13533100"
+    },
+    {
+      "Date": "Nov 25 2026",
+      "Close": "25.520000457763672",
+      "Adj Close": "25.52",
+      "Volume": "13091382"
     }
   ]
 }
