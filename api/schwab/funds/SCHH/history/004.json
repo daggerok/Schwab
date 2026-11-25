@@ -2,7 +2,7 @@
   "ticker": "SCHH",
   "page": 4,
   "pageSize": 1000,
-  "totalRows": 3988,
+  "totalRows": 3990,
   "headers": [
     "Date",
     "Close",
@@ -5936,7 +5936,19 @@
       "Date": "Nov 20 2026",
       "Close": "22.780000686645508",
       "Adj Close": "22.78",
-      "Volume": "8855631"
+      "Volume": "8858200"
+    },
+    {
+      "Date": "Nov 23 2026",
+      "Close": "23.049999237060547",
+      "Adj Close": "23.05",
+      "Volume": "11701200"
+    },
+    {
+      "Date": "Nov 24 2026",
+      "Close": "23.290000915527344",
+      "Adj Close": "23.29",
+      "Volume": "10152300"
     }
   ]
 }

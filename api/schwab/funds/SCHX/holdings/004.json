@@ -2,7 +2,7 @@
   "ticker": "SCHX",
   "page": 4,
   "pageSize": 250,
-  "totalRows": 752,
+  "totalRows": 753,
   "headers": [
     "Name",
     "Ticker",
@@ -17,10 +17,19 @@
       "Name": "MCCORMICK & CO VOTING",
       "Ticker": "MKC V",
       "Identifier": "BBG000FJ5648",
-      "Weight": "0.000758",
-      "Market Value": "530180.69",
+      "Weight": "0.000784",
+      "Market Value": "553483.87",
       "Shares Held": "11543",
       "Asset Category": "Consumer Staples"
+    },
+    {
+      "Name": "ANTHROPIC CLASS A",
+      "Ticker": "ANT",
+      "Identifier": "BBG0268ZFTF2",
+      "Weight": "0.00043",
+      "Market Value": "303505.39",
+      "Shares Held": "3466",
+      "Asset Category": "Information Technology"
     },
     {
       "Name": "S&P500 EMINI DEC 26",
@@ -28,7 +37,7 @@
       "Identifier": "BBG012FFK314",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "13500",
+      "Shares Held": "16000",
       "Asset Category": "-"
     }
   ]

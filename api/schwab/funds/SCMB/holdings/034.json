@@ -1,0 +1,41 @@
+{
+  "ticker": "SCMB",
+  "page": 34,
+  "pageSize": 250,
+  "totalRows": 8252,
+  "headers": [
+    "Name",
+    "Ticker",
+    "Identifier",
+    "Weight",
+    "Market Value",
+    "Shares Held",
+    "Asset Category",
+    "Coupon",
+    "Maturity"
+  ],
+  "rows": [
+    {
+      "Name": "NEW YORK ST DORM AUTH ST PERS",
+      "Ticker": "-",
+      "Identifier": "BBG02384NPP6",
+      "Weight": "0.000123",
+      "Market Value": "5039.83",
+      "Shares Held": "5000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3",
+      "Maturity": "03/15/2051"
+    },
+    {
+      "Name": "NEW YORK ST URBAN DEV CORP ST",
+      "Ticker": "-",
+      "Identifier": "BBG0238RX0X0",
+      "Weight": "0.00012",
+      "Market Value": "4934.52",
+      "Shares Held": "5000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "2.625",
+      "Maturity": "03/15/2051"
+    }
+  ]
+}

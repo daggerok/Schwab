@@ -2,7 +2,7 @@
   "ticker": "STCE",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1080,
+  "totalRows": 1082,
   "headers": [
     "Date",
     "Close",
@@ -488,7 +488,19 @@
       "Date": "Nov 20 2026",
       "Close": "34.900001525878906",
       "Adj Close": "34.9",
-      "Volume": "111491"
+      "Volume": "111500"
+    },
+    {
+      "Date": "Nov 23 2026",
+      "Close": "38.04999923706055",
+      "Adj Close": "38.05",
+      "Volume": "70100"
+    },
+    {
+      "Date": "Nov 24 2026",
+      "Close": "35.68000030517578",
+      "Adj Close": "35.68",
+      "Volume": "60300"
     }
   ]
 }
