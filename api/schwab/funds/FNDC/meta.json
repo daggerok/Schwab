@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/fndc",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/fndc",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 24 2026",
+    "productPageAsOf": "Nov 25 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDC/FNDC_FundHoldings_2026-11-24.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDC/FNDC_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDC/FNDC_NAV_History.CSV",
@@ -33,9 +33,9 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$46.73",
-    "value": 46.73,
-    "asOfDate": "Nov 24 2026"
+    "display": "$46.54",
+    "value": 46.54,
+    "asOfDate": "Nov 25 2026"
   },
   "marketPrice": {
     "display": "$46.91",
@@ -50,9 +50,9 @@
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$2.89 B",
-    "value": 2892290056.78,
-    "asOfDate": "Nov 24 2026",
+    "display": "$2.88 B",
+    "value": 2880768099.32,
+    "asOfDate": "Nov 25 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
@@ -67,9 +67,9 @@
     "dividendYieldBasis": "official-trailing-12m",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Oct 31 2026",
     "distributionRate": 3.67,
-    "secYield": 2.34,
-    "secYieldText": "2.34%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 23 2026"
+    "secYield": 2.33,
+    "secYieldText": "2.33%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 24 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",

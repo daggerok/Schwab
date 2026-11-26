@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/schg",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/schg",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 24 2026",
+    "productPageAsOf": "Nov 25 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHG/SCHG_FundHoldings_2026-11-24.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHG/SCHG_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHG/SCHG_NAV_History.CSV",
@@ -33,9 +33,9 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$32.09",
-    "value": 32.09,
-    "asOfDate": "Nov 24 2026"
+    "display": "$31.83",
+    "value": 31.83,
+    "asOfDate": "Nov 25 2026"
   },
   "marketPrice": {
     "display": "$31.84",
@@ -50,13 +50,13 @@
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$57.34 B",
-    "value": 57339147527.53,
-    "asOfDate": "Nov 24 2026",
+    "display": "$56.72 B",
+    "value": 56720263515.11,
+    "asOfDate": "Nov 25 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
-    "sharesOutstanding": 1786700000,
+    "sharesOutstanding": 1781700000,
     "portfolioTurnover": 30.15,
     "publishedTotalHoldings": 191,
     "bidAskMidpoint": 32.1
@@ -69,7 +69,7 @@
     "distributionRate": 0.4,
     "secYield": 0.39,
     "secYieldText": "0.39%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 23 2026"
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 24 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
