@@ -2,7 +2,7 @@
   "ticker": "SCHX",
   "page": 4,
   "pageSize": 250,
-  "totalRows": 753,
+  "totalRows": 754,
   "headers": [
     "Name",
     "Ticker",
@@ -14,11 +14,20 @@
   ],
   "rows": [
     {
+      "Name": "CNA FINANCIAL CORP",
+      "Ticker": "CNA",
+      "Identifier": "BBG000BFYCD5",
+      "Weight": "0.00139",
+      "Market Value": "980969.43",
+      "Shares Held": "20000",
+      "Asset Category": "Financials"
+    },
+    {
       "Name": "MCCORMICK & CO VOTING",
       "Ticker": "MKC V",
       "Identifier": "BBG000FJ5648",
-      "Weight": "0.000806",
-      "Market Value": "569074.83",
+      "Weight": "0.000821",
+      "Market Value": "579569.67",
       "Shares Held": "11543",
       "Asset Category": "Consumer Staples"
     },
@@ -26,8 +35,8 @@
       "Name": "ANTHROPIC CLASS A",
       "Ticker": "ANT",
       "Identifier": "BBG0268ZFTF2",
-      "Weight": "0.000403",
-      "Market Value": "284058.03",
+      "Weight": "0.000407",
+      "Market Value": "287233.98",
       "Shares Held": "3466",
       "Asset Category": "Information Technology"
     },
@@ -37,7 +46,7 @@
       "Identifier": "BBG012FFK314",
       "Weight": "0",
       "Market Value": "0",
-      "Shares Held": "17850",
+      "Shares Held": "13400",
       "Asset Category": "-"
     }
   ]
