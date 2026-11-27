@@ -2,7 +2,7 @@
   "ticker": "SCCR",
   "page": 1,
   "pageSize": 1000,
-  "totalRows": 455,
+  "totalRows": 456,
   "headers": [
     "Date",
     "Close",
@@ -2739,6 +2739,12 @@
       "Close": "24.799999237060547",
       "Adj Close": "24.8",
       "Volume": "270400"
+    },
+    {
+      "Date": "Nov 27 2026",
+      "Close": "24.709999084472656",
+      "Adj Close": "24.71",
+      "Volume": "137583"
     }
   ]
 }

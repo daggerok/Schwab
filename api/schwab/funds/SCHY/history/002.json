@@ -2,7 +2,7 @@
   "ticker": "SCHY",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1402,
+  "totalRows": 1403,
   "headers": [
     "Date",
     "Close",
@@ -2421,6 +2421,12 @@
       "Close": "32.45000076293945",
       "Adj Close": "32.45",
       "Volume": "521900"
+    },
+    {
+      "Date": "Nov 27 2026",
+      "Close": "32.75",
+      "Adj Close": "32.75",
+      "Volume": "331418"
     }
   ]
 }

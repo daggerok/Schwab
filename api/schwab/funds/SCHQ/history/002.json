@@ -2,7 +2,7 @@
   "ticker": "SCHQ",
   "page": 2,
   "pageSize": 1000,
-  "totalRows": 1791,
+  "totalRows": 1792,
   "headers": [
     "Date",
     "Close",
@@ -4755,6 +4755,12 @@
       "Close": "29.899999618530273",
       "Adj Close": "29.9",
       "Volume": "388400"
+    },
+    {
+      "Date": "Nov 27 2026",
+      "Close": "29.6299991607666",
+      "Adj Close": "29.63",
+      "Volume": "473055"
     }
   ]
 }

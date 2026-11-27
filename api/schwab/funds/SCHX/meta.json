@@ -38,14 +38,14 @@
     "asOfDate": "Nov 25 2026"
   },
   "marketPrice": {
-    "display": "$28.21",
-    "value": 28.21,
-    "asOfDate": "Nov 25 2026",
+    "display": "$28.69",
+    "value": 28.69,
+    "asOfDate": "Nov 27 2026",
     "source": "Yahoo Finance last regular-session price (the anonymous product page publishes no closing price)"
   },
   "premiumDiscount": {
-    "display": "0.23%",
-    "value": 0.23,
+    "display": "0.02%",
+    "value": 0.02,
     "asOfDate": "Nov 25 2026",
     "source": "official product page Quote Details"
   },
@@ -80,8 +80,8 @@
       "mo1Text": "-0.93%",
       "mo3": 1.26,
       "mo3Text": "1.26%",
-      "qtd": -5.97,
-      "qtdText": "-5.97%",
+      "qtd": -4.37,
+      "qtdText": "-4.37%",
       "ytd": 11.39,
       "ytdText": "11.39%",
       "yr1": 11.43,
@@ -349,8 +349,8 @@
       "history/005.json"
     ],
     "pageSize": 1000,
-    "totalRows": 4292,
-    "asOf": "Nov 25 2026",
+    "totalRows": 4293,
+    "asOf": "Nov 27 2026",
     "source": "Yahoo Finance public chart API (adjusted close)"
   }
 }
