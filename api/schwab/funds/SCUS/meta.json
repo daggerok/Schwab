@@ -58,7 +58,7 @@
   "fundFacts": {
     "sharesOutstanding": 10500000,
     "portfolioTurnover": 53.64,
-    "publishedTotalHoldings": 132,
+    "publishedTotalHoldings": 137,
     "bidAskMidpoint": 25.09
   },
   "yields": {
@@ -266,12 +266,12 @@
       "holdings/001.json"
     ],
     "pageSize": 250,
-    "totalRows": 132,
+    "totalRows": 137,
     "asOfDate": "2026-11-25",
     "asOf": "Nov 25 2026",
     "source": "schwabassetmanagement.com full holdings CSV export (SCUS_FundHoldings_2026-11-25.CSV, via read-only rendering proxy)",
     "marketValueBasis": "derived: Percent of Assets x Total Net Assets (the issuer CSV publishes weights, not values)",
-    "publishedTotalHoldings": 132
+    "publishedTotalHoldings": 137
   },
   "history": {
     "pages": [

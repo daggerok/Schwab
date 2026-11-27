@@ -2,7 +2,7 @@
   "ticker": "SCUS",
   "page": 1,
   "pageSize": 250,
-  "totalRows": 132,
+  "totalRows": 137,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,17 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "TRI-PARTY BARCLAYS BANK PLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "3.015339",
+      "Market Value": "7946685.66",
+      "Shares Held": "7898717",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.96",
+      "Maturity": "11/27/2026"
+    },
     {
       "Name": "TRI-PARTY WELLS FARGO SECURITIES L",
       "Ticker": "-",
@@ -588,6 +599,17 @@
       "Maturity": "05/01/2037"
     },
     {
+      "Name": "TRI-PARTY NATIXIS SECURITIES AMERI",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.610801",
+      "Market Value": "1609716.75",
+      "Shares Held": "1600000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.98",
+      "Maturity": "11/27/2026"
+    },
+    {
       "Name": "DIGITAL REALTY TRUST LP",
       "Ticker": "-",
       "Identifier": "BBG00L51ZSW0",
@@ -630,6 +652,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "4.18",
       "Maturity": "02/02/2027"
+    },
+    {
+      "Name": "MAINBEACH FUNDING LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.572186",
+      "Market Value": "1507950.31",
+      "Shares Held": "1500000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "0",
+      "Maturity": "12/02/2026"
     },
     {
       "Name": "NATIONAL AUSTRALIA BANK LTD (NEW Y",
@@ -1303,6 +1336,17 @@
       "Maturity": "09/15/2028"
     },
     {
+      "Name": "TRI-PARTY CITIGROUP GLOBAL MARKETS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.139339",
+      "Market Value": "367216.63",
+      "Shares Held": "365000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.95",
+      "Maturity": "11/27/2026"
+    },
+    {
       "Name": "INTERNATIONAL BUSINESS MACHINES CO",
       "Ticker": "-",
       "Identifier": "BBG01DMT8986",
@@ -1422,6 +1466,17 @@
       "Asset Category": "Financials",
       "Coupon": "4.85",
       "Maturity": "01/15/2027"
+    },
+    {
+      "Name": "TRI-PARTY BARCLAYS BANK PLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.047222",
+      "Market Value": "124449.21",
+      "Shares Held": "123698",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
     },
     {
       "Name": "INTEL CORPORATION",

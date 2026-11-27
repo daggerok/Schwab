@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 17,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,17 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "NEW YORK ST DORM AUTH SALES TA",
+      "Ticker": "-",
+      "Identifier": "BBG00M4G6PP2",
+      "Weight": "0.007529",
+      "Market Value": "311101.32",
+      "Shares Held": "300000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "03/15/2034"
+    },
     {
       "Name": "DALLAS TEX",
       "Ticker": "-",
@@ -1866,17 +1877,6 @@
     {
       "Name": "NEW JERSEY ST TRANSN TR FD AUT",
       "Ticker": "-",
-      "Identifier": "BBG00F3BMD78",
-      "Weight": "0.007102",
-      "Market Value": "293472.73",
-      "Shares Held": "290000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "06/15/2030"
-    },
-    {
-      "Name": "NEW JERSEY ST TRANSN TR FD AUT",
-      "Ticker": "-",
       "Identifier": "BBG00LG7JQ11",
       "Weight": "0.007102",
       "Market Value": "293472.73",
@@ -1884,6 +1884,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "06/15/2031"
+    },
+    {
+      "Name": "NEW JERSEY ST TRANSN TR FD AUT",
+      "Ticker": "-",
+      "Identifier": "BBG00F3BMD78",
+      "Weight": "0.007102",
+      "Market Value": "293472.73",
+      "Shares Held": "290000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "06/15/2030"
     },
     {
       "Name": "NEW YORK N Y",
@@ -2753,17 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "03/01/2046"
-    },
-    {
-      "Name": "NEW YORK ST DORM AUTH ST PERS",
-      "Ticker": "-",
-      "Identifier": "BBG01602V7T9",
-      "Weight": "0.006917",
-      "Market Value": "285819.14",
-      "Shares Held": "290000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "4",
-      "Maturity": "03/15/2038"
     }
   ]
 }

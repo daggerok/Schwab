@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 14,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -1415,17 +1415,6 @@
     {
       "Name": "NORTH TEX TWY AUTH REV",
       "Ticker": "-",
-      "Identifier": "BBG0266PCNF2",
-      "Weight": "0.009681",
-      "Market Value": "400015.21",
-      "Shares Held": "395000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "01/01/2032"
-    },
-    {
-      "Name": "NORTH TEX TWY AUTH REV",
-      "Ticker": "-",
       "Identifier": "BBG0266PCCK0",
       "Weight": "0.009681",
       "Market Value": "400015.21",
@@ -1433,6 +1422,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "01/01/2034"
+    },
+    {
+      "Name": "NORTH TEX TWY AUTH REV",
+      "Ticker": "-",
+      "Identifier": "BBG0266PCNF2",
+      "Weight": "0.009681",
+      "Market Value": "400015.21",
+      "Shares Held": "395000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "01/01/2032"
     },
     {
       "Name": "CALIFORNIA ST FOR PREVIOUS ISS",

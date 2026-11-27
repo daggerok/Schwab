@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 19,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,17 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "LOS ANGELES CALIF DEPT WTR & P",
+      "Ticker": "-",
+      "Identifier": "BBG01QVW9ZX3",
+      "Weight": "0.00649",
+      "Market Value": "268185.47",
+      "Shares Held": "250000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "07/01/2039"
+    },
     {
       "Name": "VIRGINIA ST PUB BLDG AUTH PUB",
       "Ticker": "-",
@@ -1294,7 +1305,7 @@
     {
       "Name": "CONNECTICUT ST SPL TAX OBLIG R",
       "Ticker": "-",
-      "Identifier": "BBG01JNF4BW4",
+      "Identifier": "BBG01QXXN2R3",
       "Weight": "0.006319",
       "Market Value": "261111.81",
       "Shares Held": "250000",
@@ -1305,7 +1316,7 @@
     {
       "Name": "CONNECTICUT ST SPL TAX OBLIG R",
       "Ticker": "-",
-      "Identifier": "BBG01QXXN2R3",
+      "Identifier": "BBG01JNF4BW4",
       "Weight": "0.006319",
       "Market Value": "261111.81",
       "Shares Held": "250000",
@@ -1752,6 +1763,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "11/01/2055"
+    },
+    {
+      "Name": "VIRGINIA COLLEGE BLDG AUTH VA",
+      "Ticker": "-",
+      "Identifier": "BBG01GJX90T9",
+      "Weight": "0.006269",
+      "Market Value": "259034.58",
+      "Shares Held": "250000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "02/01/2028"
     },
     {
       "Name": "ILLINOIS ST",
@@ -2742,28 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "08/01/2044"
-    },
-    {
-      "Name": "WASHINGTON ST",
-      "Ticker": "-",
-      "Identifier": "BBG018RDNST5",
-      "Weight": "0.006192",
-      "Market Value": "255867.87",
-      "Shares Held": "250000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "08/01/2047"
-    },
-    {
-      "Name": "WASHINGTON ST FOR ISSUES DTD P",
-      "Ticker": "-",
-      "Identifier": "BBG00J5LKZ33",
-      "Weight": "0.006191",
-      "Market Value": "255798.37",
-      "Shares Held": "250000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "08/01/2029"
     }
   ]
 }

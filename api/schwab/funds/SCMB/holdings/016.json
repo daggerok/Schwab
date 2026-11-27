@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 16,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -2634,6 +2634,17 @@
       "Maturity": "04/01/2034"
     },
     {
+      "Name": "PENNSYLVANIA ST TPK COMMN TPK",
+      "Ticker": "-",
+      "Identifier": "BBG02149FHV3",
+      "Weight": "0.007562",
+      "Market Value": "312478.65",
+      "Shares Held": "300000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "06/01/2028"
+    },
+    {
       "Name": "MASSACHUSETTS ST",
       "Ticker": "-",
       "Identifier": "BBG00BH8MX93",
@@ -2753,17 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "3",
       "Maturity": "02/01/2037"
-    },
-    {
-      "Name": "NEW YORK ST DORM AUTH SALES TA",
-      "Ticker": "-",
-      "Identifier": "BBG00M4G6PP2",
-      "Weight": "0.007529",
-      "Market Value": "311101.32",
-      "Shares Held": "300000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "03/15/2034"
     }
   ]
 }

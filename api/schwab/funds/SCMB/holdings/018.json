@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 18,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,17 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "NEW YORK ST DORM AUTH ST PERS",
+      "Ticker": "-",
+      "Identifier": "BBG01602V7T9",
+      "Weight": "0.006917",
+      "Market Value": "285819.14",
+      "Shares Held": "290000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4",
+      "Maturity": "03/15/2038"
+    },
     {
       "Name": "GROSSMONT CALIF UN HIGH SCH DI",
       "Ticker": "-",
@@ -2753,17 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "12/31/2031"
-    },
-    {
-      "Name": "LOS ANGELES CALIF DEPT WTR & P",
-      "Ticker": "-",
-      "Identifier": "BBG01QVW9ZX3",
-      "Weight": "0.00649",
-      "Market Value": "268185.47",
-      "Shares Held": "250000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "07/01/2039"
     }
   ]
 }

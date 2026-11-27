@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 25,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,94 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "CENTRAL FLA EXPWY AUTH SR LIEN",
+      "Ticker": "-",
+      "Identifier": "BBG01YJMFXV2",
+      "Weight": "0.004045",
+      "Market Value": "167157.19",
+      "Shares Held": "150000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "07/01/2033"
+    },
+    {
+      "Name": "MULTNOMAH CNTY ORE SCH DIST NO",
+      "Ticker": "-",
+      "Identifier": "BBG01ZZWLL66",
+      "Weight": "0.004043",
+      "Market Value": "167070.94",
+      "Shares Held": "160000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "06/15/2028"
+    },
+    {
+      "Name": "OKLAHOMA TRANSN AUTH OK F/K/A",
+      "Ticker": "-",
+      "Identifier": "BBG01RRC5H64",
+      "Weight": "0.004041",
+      "Market Value": "166988.04",
+      "Shares Held": "155000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "01/01/2042"
+    },
+    {
+      "Name": "LOS ANGELES CALIF DEPT WTR & P",
+      "Ticker": "-",
+      "Identifier": "BBG01VF3KMX0",
+      "Weight": "0.004038",
+      "Market Value": "166854.57",
+      "Shares Held": "150000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "07/01/2035"
+    },
+    {
+      "Name": "MINNESOTA ST",
+      "Ticker": "-",
+      "Identifier": "BBG01XFGGLW5",
+      "Weight": "0.004038",
+      "Market Value": "166839.89",
+      "Shares Held": "150000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "08/01/2038"
+    },
+    {
+      "Name": "NEW YORK CITY OF",
+      "Ticker": "-",
+      "Identifier": "BBG024130MH4",
+      "Weight": "0.004037",
+      "Market Value": "166792.74",
+      "Shares Held": "155000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "08/01/2041"
+    },
+    {
+      "Name": "ALAMO TEX CMNTY COLLEGE DIST",
+      "Ticker": "-",
+      "Identifier": "BBG01WRCVC92",
+      "Weight": "0.004036",
+      "Market Value": "166748.92",
+      "Shares Held": "160000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5.25",
+      "Maturity": "08/15/2050"
+    },
+    {
+      "Name": "WASHINGTON ST",
+      "Ticker": "-",
+      "Identifier": "BBG01WCR2YG1",
+      "Weight": "0.004035",
+      "Market Value": "166717.1",
+      "Shares Held": "150000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "08/01/2038"
+    },
     {
       "Name": "BROWARD CNTY FLA SCH DIST",
       "Ticker": "-",
@@ -181,6 +269,17 @@
       "Maturity": "08/01/2035"
     },
     {
+      "Name": "ENERGY NORTHWEST WASH ELEC REV",
+      "Ticker": "-",
+      "Identifier": "BBG01TRL0ZN6",
+      "Weight": "0.004015",
+      "Market Value": "165897.05",
+      "Shares Held": "150000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "07/01/2032"
+    },
+    {
       "Name": "TRIBOROUGH BRDG & TUNL AUTH N",
       "Ticker": "-",
       "Identifier": "BBG01RVC8DW6",
@@ -238,7 +337,7 @@
     {
       "Name": "SALT RIV PROJ AGRIC IMPT & PWR",
       "Ticker": "-",
-      "Identifier": "BBG00XPQZ7G1",
+      "Identifier": "BBG00J5LZSV2",
       "Weight": "0.004008",
       "Market Value": "165614.73",
       "Shares Held": "160000",
@@ -249,7 +348,7 @@
     {
       "Name": "SALT RIV PROJ AGRIC IMPT & PWR",
       "Ticker": "-",
-      "Identifier": "BBG00J5LZSV2",
+      "Identifier": "BBG00XPQZ7G1",
       "Weight": "0.004008",
       "Market Value": "165614.73",
       "Shares Held": "160000",
@@ -2559,7 +2658,7 @@
     {
       "Name": "CONNECTICUT ST SPL TAX OBLIG R",
       "Ticker": "-",
-      "Identifier": "BBG01JNF3K46",
+      "Identifier": "BBG01YRFR9L9",
       "Weight": "0.003716",
       "Market Value": "153540.81",
       "Shares Held": "150000",
@@ -2570,7 +2669,7 @@
     {
       "Name": "CONNECTICUT ST SPL TAX OBLIG R",
       "Ticker": "-",
-      "Identifier": "BBG01YRFR9L9",
+      "Identifier": "BBG01JNF3K46",
       "Weight": "0.003716",
       "Market Value": "153540.81",
       "Shares Held": "150000",
@@ -2665,105 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "3",
       "Maturity": "10/01/2046"
-    },
-    {
-      "Name": "MASSACHUSETTS ST",
-      "Ticker": "-",
-      "Identifier": "BBG01BQJ5HL8",
-      "Weight": "0.003705",
-      "Market Value": "153087.43",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "11/01/2049"
-    },
-    {
-      "Name": "ILLINOIS ST",
-      "Ticker": "-",
-      "Identifier": "BBG017L1DP34",
-      "Weight": "0.003703",
-      "Market Value": "153028.77",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5.5",
-      "Maturity": "03/01/2047"
-    },
-    {
-      "Name": "VIA MET TRAN ADVANCED TRANSN D",
-      "Ticker": "-",
-      "Identifier": "BBG01P7VKYV6",
-      "Weight": "0.003703",
-      "Market Value": "153015.97",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "08/01/2049"
-    },
-    {
-      "Name": "UNIVERSITY CALIF REVS FOR PREV",
-      "Ticker": "-",
-      "Identifier": "BBG00HS87MQ0",
-      "Weight": "0.003701",
-      "Market Value": "152945.53",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "05/15/2032"
-    },
-    {
-      "Name": "LAS VEGAS NEV CONVENTION & VIS",
-      "Ticker": "-",
-      "Identifier": "BBG01HDY5LK8",
-      "Weight": "0.003701",
-      "Market Value": "152926.99",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "07/01/2049"
-    },
-    {
-      "Name": "CENTRAL FLA EXPWY AUTH SR LIEN",
-      "Ticker": "-",
-      "Identifier": "BBG00QT88LR9",
-      "Weight": "0.0037",
-      "Market Value": "152869.74",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "07/01/2044"
-    },
-    {
-      "Name": "MASSACHUSETTS ST",
-      "Ticker": "-",
-      "Identifier": "BBG00P1GHP76",
-      "Weight": "0.0037",
-      "Market Value": "152867",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "05/01/2044"
-    },
-    {
-      "Name": "SAN FRANCISCO CALIF BAY AREA R",
-      "Ticker": "-",
-      "Identifier": "BBG01WT30HS2",
-      "Weight": "0.003699",
-      "Market Value": "152823.78",
-      "Shares Held": "135000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "08/01/2039"
-    },
-    {
-      "Name": "IDAHO HSG & FIN ASSN SALES TAX",
-      "Ticker": "-",
-      "Identifier": "BBG015XV7GB7",
-      "Weight": "0.003698",
-      "Market Value": "152815.88",
-      "Shares Held": "150000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "08/15/2047"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 20,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,28 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "WASHINGTON ST",
+      "Ticker": "-",
+      "Identifier": "BBG018RDNST5",
+      "Weight": "0.006192",
+      "Market Value": "255867.87",
+      "Shares Held": "250000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "08/01/2047"
+    },
+    {
+      "Name": "WASHINGTON ST FOR ISSUES DTD P",
+      "Ticker": "-",
+      "Identifier": "BBG00J5LKZ33",
+      "Weight": "0.006191",
+      "Market Value": "255798.37",
+      "Shares Held": "250000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "08/01/2029"
+    },
     {
       "Name": "CONROE TEX INDPT SCH DIST",
       "Ticker": "-",
@@ -2742,28 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "02/01/2047"
-    },
-    {
-      "Name": "ILLINOIS ST",
-      "Ticker": "-",
-      "Identifier": "BBG00XYHX7S0",
-      "Weight": "0.005773",
-      "Market Value": "238544.13",
-      "Shares Held": "225000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "10/01/2031"
-    },
-    {
-      "Name": "VIRGINIA COLLEGE BLDG AUTH VA",
-      "Ticker": "-",
-      "Identifier": "BBG01MC5NK32",
-      "Weight": "0.005771",
-      "Market Value": "238460.76",
-      "Shares Held": "235000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "02/01/2027"
     }
   ]
 }

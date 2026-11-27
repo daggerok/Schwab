@@ -2,7 +2,7 @@
   "ticker": "SCMB",
   "page": 28,
   "pageSize": 250,
-  "totalRows": 8262,
+  "totalRows": 8278,
   "headers": [
     "Name",
     "Ticker",
@@ -15,6 +15,149 @@
     "Maturity"
   ],
   "rows": [
+    {
+      "Name": "SANTA BARBARA CALIF CMNTY COLL",
+      "Ticker": "-",
+      "Identifier": "BBG01WJX5KK3",
+      "Weight": "0.002946",
+      "Market Value": "121710.34",
+      "Shares Held": "110000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "6",
+      "Maturity": "08/01/2055"
+    },
+    {
+      "Name": "NEW YORK ST TWY AUTH",
+      "Ticker": "-",
+      "Identifier": "BBG01ZG7TYB0",
+      "Weight": "0.002944",
+      "Market Value": "121661.53",
+      "Shares Held": "120000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "01/01/2051"
+    },
+    {
+      "Name": "GEORGIA ST PORTS AUTH REV",
+      "Ticker": "-",
+      "Identifier": "BBG018YWPTV8",
+      "Weight": "0.002944",
+      "Market Value": "121652.12",
+      "Shares Held": "125000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4",
+      "Maturity": "07/01/2040"
+    },
+    {
+      "Name": "NEW YORK N Y CITY TRANSITIONAL",
+      "Ticker": "-",
+      "Identifier": "BBG00GDCW5F0",
+      "Weight": "0.002943",
+      "Market Value": "121603.41",
+      "Shares Held": "120000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "02/01/2034"
+    },
+    {
+      "Name": "NEW YORK N Y",
+      "Ticker": "-",
+      "Identifier": "BBG00ZFBJXY1",
+      "Weight": "0.002942",
+      "Market Value": "121576.61",
+      "Shares Held": "150000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3",
+      "Maturity": "03/01/2041"
+    },
+    {
+      "Name": "HOUSTON TEX",
+      "Ticker": "-",
+      "Identifier": "BBG00CK5D2X4",
+      "Weight": "0.00294",
+      "Market Value": "121493.99",
+      "Shares Held": "120000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "03/01/2027"
+    },
+    {
+      "Name": "NEW YORK ST ENVIRONMENTAL FACS",
+      "Ticker": "-",
+      "Identifier": "BBG01LYJCCW8",
+      "Weight": "0.00294",
+      "Market Value": "121475.63",
+      "Shares Held": "110000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "06/15/2039"
+    },
+    {
+      "Name": "LOS ANGELES CALIF UNI SCH DIST",
+      "Ticker": "-",
+      "Identifier": "BBG00CCP9X84",
+      "Weight": "0.002939",
+      "Market Value": "121442.69",
+      "Shares Held": "125000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.5",
+      "Maturity": "07/01/2036"
+    },
+    {
+      "Name": "NEW YORK N Y",
+      "Ticker": "-",
+      "Identifier": "BBG01M2Y8WS4",
+      "Weight": "0.002939",
+      "Market Value": "121441.02",
+      "Shares Held": "135000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4",
+      "Maturity": "04/01/2045"
+    },
+    {
+      "Name": "TEXAS A & M UNIV REVS",
+      "Ticker": "-",
+      "Identifier": "BBG004NF3FZ7",
+      "Weight": "0.002938",
+      "Market Value": "121409.69",
+      "Shares Held": "130000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4",
+      "Maturity": "05/15/2043"
+    },
+    {
+      "Name": "ILLINOIS ST",
+      "Ticker": "-",
+      "Identifier": "BBG01K8GVSJ4",
+      "Weight": "0.002938",
+      "Market Value": "121406",
+      "Shares Held": "115000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "12/01/2029"
+    },
+    {
+      "Name": "PENNSYLVANIA ST TPK COMMN TPK",
+      "Ticker": "-",
+      "Identifier": "BBG00PXGMDV5",
+      "Weight": "0.002937",
+      "Market Value": "121354.98",
+      "Shares Held": "120000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "12/01/2049"
+    },
+    {
+      "Name": "WASHINGTON ST",
+      "Ticker": "-",
+      "Identifier": "BBG01RQXN4W9",
+      "Weight": "0.002937",
+      "Market Value": "121340.75",
+      "Shares Held": "115000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "5",
+      "Maturity": "02/01/2044"
+    },
     {
       "Name": "DOUGLAS CNTY COLO SCH DIST NO",
       "Ticker": "-",
@@ -1996,6 +2139,17 @@
       "Maturity": "08/01/2049"
     },
     {
+      "Name": "COLORADO SPRINGS COLO UTILS RE",
+      "Ticker": "-",
+      "Identifier": "BBG011XP8MK5",
+      "Weight": "0.002669",
+      "Market Value": "110297.7",
+      "Shares Held": "125000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "4",
+      "Maturity": "11/15/2046"
+    },
+    {
       "Name": "TEXAS PRIVATE ACTIVITY BD SURF",
       "Ticker": "-",
       "Identifier": "BBG00R2JDRH4",
@@ -2610,160 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "5",
       "Maturity": "08/01/2031"
-    },
-    {
-      "Name": "LOS ANGELES CALIF WASTEWATER S",
-      "Ticker": "-",
-      "Identifier": "BBG015W96577",
-      "Weight": "0.002624",
-      "Market Value": "108438.88",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "06/01/2030"
-    },
-    {
-      "Name": "FAIRFAX CNTY VA SWR REV",
-      "Ticker": "-",
-      "Identifier": "BBG01LW49JY0",
-      "Weight": "0.002622",
-      "Market Value": "108349.85",
-      "Shares Held": "105000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "07/15/2049"
-    },
-    {
-      "Name": "KING & SNOHOMISH CNTYS WASH SC",
-      "Ticker": "-",
-      "Identifier": "BBG01M6DLFG1",
-      "Weight": "0.002621",
-      "Market Value": "108300.64",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "12/01/2040"
-    },
-    {
-      "Name": "MASSACHUSETTS ST HEALTH & EDL",
-      "Ticker": "-",
-      "Identifier": "BBG001351C95",
-      "Weight": "0.002619",
-      "Market Value": "108224.28",
-      "Shares Held": "95000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5.5",
-      "Maturity": "07/01/2032"
-    },
-    {
-      "Name": "ALABAMA FED AID HWY FIN AUTH S",
-      "Ticker": "-",
-      "Identifier": "BBG01SX7G9N3",
-      "Weight": "0.002619",
-      "Market Value": "108216.89",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "09/01/2030"
-    },
-    {
-      "Name": "NEW JERSEY ST TRANSN TR FD AUT",
-      "Ticker": "-",
-      "Identifier": "BBG010JCBZR2",
-      "Weight": "0.002618",
-      "Market Value": "108195.41",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "06/15/2031"
-    },
-    {
-      "Name": "UNIVERSITY CALIF REVS",
-      "Ticker": "-",
-      "Identifier": "BBG00L02QVG4",
-      "Weight": "0.002618",
-      "Market Value": "108177.44",
-      "Shares Held": "105000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "05/15/2038"
-    },
-    {
-      "Name": "HOUSTON TEX UTIL SYS REV",
-      "Ticker": "-",
-      "Identifier": "BBG01MBDHMZ4",
-      "Weight": "0.002617",
-      "Market Value": "108120.64",
-      "Shares Held": "105000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "11/15/2027"
-    },
-    {
-      "Name": "NEW YORK N Y CITY MUN WTR FIN",
-      "Ticker": "-",
-      "Identifier": "BBG00XKM2316",
-      "Weight": "0.002616",
-      "Market Value": "108096.06",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "06/15/2032"
-    },
-    {
-      "Name": "DALLAS TEX",
-      "Ticker": "-",
-      "Identifier": "BBG01GK91919",
-      "Weight": "0.002616",
-      "Market Value": "108085.61",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "02/15/2031"
-    },
-    {
-      "Name": "DENVER COLO CITY & CNTY ARPT R",
-      "Ticker": "-",
-      "Identifier": "BBG01BDD8850",
-      "Weight": "0.002616",
-      "Market Value": "108082.01",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "11/15/2030"
-    },
-    {
-      "Name": "CALIFORNIA ST DEPT WTR RES CEN",
-      "Ticker": "-",
-      "Identifier": "BBG01SNGNSR0",
-      "Weight": "0.002615",
-      "Market Value": "108047.4",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "12/01/2029"
-    },
-    {
-      "Name": "OHIO ST WTR DEV AUTH REV",
-      "Ticker": "-",
-      "Identifier": "BBG01NJ3GM23",
-      "Weight": "0.002614",
-      "Market Value": "108003.99",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "12/01/2040"
-    },
-    {
-      "Name": "DALLAS FORT WORTH TEX INTL ARP",
-      "Ticker": "-",
-      "Identifier": "BBG00W6TLT93",
-      "Weight": "0.002613",
-      "Market Value": "107985.31",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "5",
-      "Maturity": "11/01/2030"
     }
   ]
 }

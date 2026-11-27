@@ -2,7 +2,7 @@
   "ticker": "SGVT",
   "page": 1,
   "pageSize": 250,
-  "totalRows": 233,
+  "totalRows": 260,
   "headers": [
     "Name",
     "Ticker",
@@ -16,6 +16,28 @@
   ],
   "rows": [
     {
+      "Name": "TRI-PARTY FICC WELLS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "7.510323",
+      "Market Value": "84671198.07",
+      "Shares Held": "85000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.95",
+      "Maturity": "12/02/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC JPMS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "6.008258",
+      "Market Value": "67736958.45",
+      "Shares Held": "68000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.93",
+      "Maturity": "11/27/2026"
+    },
+    {
       "Name": "TRI-PARTY WELLS FARGO SECURITIES L",
       "Ticker": "-",
       "Identifier": "-",
@@ -24,6 +46,72 @@
       "Shares Held": "56000000",
       "Asset Category": "Fixed Income",
       "Coupon": "3.93",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY WELLS FARGO SECURITIES L",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "4.417837",
+      "Market Value": "49806587.1",
+      "Shares Held": "50000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.95",
+      "Maturity": "12/02/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC WELLS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "3.180843",
+      "Market Value": "35860742.71",
+      "Shares Held": "36000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC WELLS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "2.385632",
+      "Market Value": "26895557.03",
+      "Shares Held": "27000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY JP MORGAN SECURITIES LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "2.297275",
+      "Market Value": "25899425.29",
+      "Shares Held": "26000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY JP MORGAN SECURITIES LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "2.297275",
+      "Market Value": "25899425.29",
+      "Shares Held": "26000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY JP MORGAN SECURITIES LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "2.208918",
+      "Market Value": "24903293.55",
+      "Shares Held": "25000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
       "Maturity": "11/27/2026"
     },
     {
@@ -38,6 +126,72 @@
       "Maturity": "12/11/2026"
     },
     {
+      "Name": "TRI-PARTY FICC BNY",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.767135",
+      "Market Value": "19922634.84",
+      "Shares Held": "20000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC BNY",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.678778",
+      "Market Value": "18926503.1",
+      "Shares Held": "19000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC BOASI",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.502065",
+      "Market Value": "16934239.61",
+      "Shares Held": "17000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC JPMS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.502065",
+      "Market Value": "16934239.61",
+      "Shares Held": "17000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.93",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY GOLDMAN SACHS & CO LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.502065",
+      "Market Value": "16934239.61",
+      "Shares Held": "17000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC BOASI",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.413708",
+      "Market Value": "15938107.87",
+      "Shares Held": "16000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.95",
+      "Maturity": "11/27/2026"
+    },
+    {
       "Name": "TRI-PARTY GOLDMAN SACHS & CO LLC",
       "Ticker": "-",
       "Identifier": "-",
@@ -47,6 +201,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "3.94",
       "Maturity": "12/01/2026"
+    },
+    {
+      "Name": "TRI-PARTY WELLS FARGO SECURITIES L",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.413708",
+      "Market Value": "15938107.87",
+      "Shares Held": "16000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
     },
     {
       "Name": "TRI-PARTY WELLS FARGO SECURITIES L",
@@ -93,6 +258,17 @@
       "Maturity": "02/28/2027"
     },
     {
+      "Name": "TRI-PARTY FICC JPMS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "1.148638",
+      "Market Value": "12949712.65",
+      "Shares Held": "13000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
       "Name": "TRI-PARTY WELLS FARGO BANK NA",
       "Ticker": "-",
       "Identifier": "-",
@@ -137,6 +313,17 @@
       "Maturity": "02/18/2027"
     },
     {
+      "Name": "TRI-PARTY GOLDMAN SACHS & CO LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.795211",
+      "Market Value": "8965185.68",
+      "Shares Held": "9000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.96",
+      "Maturity": "12/02/2026"
+    },
+    {
       "Name": "FHLB FLOAT",
       "Ticker": "-",
       "Identifier": "BBG023MG7414",
@@ -146,6 +333,28 @@
       "Asset Category": "Fixed Income",
       "Coupon": "3.96",
       "Maturity": "02/16/2027"
+    },
+    {
+      "Name": "TRI-PARTY BNP PARIBAS SA",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.618497",
+      "Market Value": "6972922.19",
+      "Shares Held": "7000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY CITIGROUP GLOBAL MARKETS",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.618497",
+      "Market Value": "6972922.19",
+      "Shares Held": "7000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.95",
+      "Maturity": "11/27/2026"
     },
     {
       "Name": "TRI-PARTY FICC WELLS",
@@ -212,6 +421,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "4.045",
       "Maturity": "05/26/2028"
+    },
+    {
+      "Name": "TRI-PARTY SMBC NIKKO SECURITIES AM",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.53014",
+      "Market Value": "5976790.45",
+      "Shares Held": "6000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.93",
+      "Maturity": "11/27/2026"
     },
     {
       "Name": "TRI-PARTY WELLS FARGO BANK NA",
@@ -445,6 +665,17 @@
       "Maturity": "07/21/2028"
     },
     {
+      "Name": "TRI-PARTY SMBC NIKKO SECURITIES AM",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.353427",
+      "Market Value": "3984526.97",
+      "Shares Held": "4000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
       "Name": "FHLB FLOAT",
       "Ticker": "-",
       "Identifier": "BBG025P4V4V3",
@@ -597,6 +828,28 @@
       "Asset Category": "Fixed Income",
       "Coupon": "3.93",
       "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY CREDIT AGRICOLE CIB NEW",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.26507",
+      "Market Value": "2988395.23",
+      "Shares Held": "3000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY FICC BNY",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.26507",
+      "Market Value": "2988395.23",
+      "Shares Held": "3000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.99",
+      "Maturity": "12/02/2026"
     },
     {
       "Name": "FHLB",
@@ -762,6 +1015,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "3.995",
       "Maturity": "04/05/2027"
+    },
+    {
+      "Name": "FFCB",
+      "Ticker": "-",
+      "Identifier": "BBG01Z2F7BW8",
+      "Weight": "0.212094",
+      "Market Value": "2391146.12",
+      "Shares Held": "2420000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "0",
+      "Maturity": "02/04/2027"
     },
     {
       "Name": "TREASURY NOTE",
@@ -1081,6 +1345,17 @@
       "Asset Category": "Fixed Income",
       "Coupon": "4.075",
       "Maturity": "09/22/2028"
+    },
+    {
+      "Name": "TRI-PARTY BARCLAYS BANK PLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.138168",
+      "Market Value": "1557704",
+      "Shares Held": "1563753",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.93",
+      "Maturity": "11/27/2026"
     },
     {
       "Name": "FFCB FLOAT",
@@ -1653,6 +1928,28 @@
       "Asset Category": "Fixed Income",
       "Coupon": "4.005",
       "Maturity": "05/08/2028"
+    },
+    {
+      "Name": "TRI-PARTY BARCLAYS BANK PLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.088357",
+      "Market Value": "996131.74",
+      "Shares Held": "1000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.94",
+      "Maturity": "11/27/2026"
+    },
+    {
+      "Name": "TRI-PARTY JP MORGAN SECURITIES LLC",
+      "Ticker": "-",
+      "Identifier": "-",
+      "Weight": "0.088357",
+      "Market Value": "996131.74",
+      "Shares Held": "1000000",
+      "Asset Category": "Fixed Income",
+      "Coupon": "3.93",
+      "Maturity": "11/27/2026"
     },
     {
       "Name": "FHLMC",
@@ -2467,116 +2764,6 @@
       "Asset Category": "Fixed Income",
       "Coupon": "4.07",
       "Maturity": "09/29/2027"
-    },
-    {
-      "Name": "FFCB FLOAT",
-      "Ticker": "-",
-      "Identifier": "BBG01YLGP935",
-      "Weight": "0.008836",
-      "Market Value": "99616.23",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "4.02",
-      "Maturity": "11/19/2027"
-    },
-    {
-      "Name": "FHLB",
-      "Ticker": "-",
-      "Identifier": "BBG00Z3Y8KJ1",
-      "Weight": "0.008773",
-      "Market Value": "98901.79",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "0.83",
-      "Maturity": "02/10/2027"
-    },
-    {
-      "Name": "TREASURY NOTE",
-      "Ticker": "-",
-      "Identifier": "BBG00SMNNGR3",
-      "Weight": "0.008729",
-      "Market Value": "98408.28",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "0.625",
-      "Maturity": "03/31/2027"
-    },
-    {
-      "Name": "FFCB",
-      "Ticker": "-",
-      "Identifier": "BBG01ZNPGGD3",
-      "Weight": "0.008707",
-      "Market Value": "98164.55",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "0",
-      "Maturity": "03/31/2027"
-    },
-    {
-      "Name": "TREASURY NOTE",
-      "Ticker": "-",
-      "Identifier": "BBG00TFVYW30",
-      "Weight": "0.008694",
-      "Market Value": "98012.19",
-      "Shares Held": "100000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "0.5",
-      "Maturity": "04/30/2027"
-    },
-    {
-      "Name": "FFCB FLOAT",
-      "Ticker": "-",
-      "Identifier": "BBG01VXRPBB0",
-      "Weight": "0.004419",
-      "Market Value": "49816.05",
-      "Shares Held": "50000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "4.005",
-      "Maturity": "07/09/2027"
-    },
-    {
-      "Name": "FHLB FLOAT",
-      "Ticker": "-",
-      "Identifier": "BBG01VKY6PR2",
-      "Weight": "0.004418",
-      "Market Value": "49813.69",
-      "Shares Held": "50000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "4.005",
-      "Maturity": "06/17/2027"
-    },
-    {
-      "Name": "FEDERAL HOME LOAN MORTGAGE CORPORA",
-      "Ticker": "-",
-      "Identifier": "BBG01VYKGKS6",
-      "Weight": "0.004418",
-      "Market Value": "49810.02",
-      "Shares Held": "50000",
-      "Asset Category": "Financials",
-      "Coupon": "3.99",
-      "Maturity": "01/08/2027"
-    },
-    {
-      "Name": "FFCB FLOAT",
-      "Ticker": "-",
-      "Identifier": "BBG01WT1HW41",
-      "Weight": "0.004418",
-      "Market Value": "49809.11",
-      "Shares Held": "50000",
-      "Asset Category": "Fixed Income",
-      "Coupon": "4.05",
-      "Maturity": "08/25/2027"
-    },
-    {
-      "Name": "US DOLLAR",
-      "Ticker": "USD",
-      "Identifier": "-",
-      "Weight": "0",
-      "Market Value": "0.89",
-      "Shares Held": "0.89",
-      "Asset Category": "-",
-      "Coupon": "-",
-      "Maturity": "-"
     }
   ]
 }
