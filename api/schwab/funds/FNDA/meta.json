@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/fnda",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/fnda",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 25 2026",
+    "productPageAsOf": "Nov 27 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDA/FNDA_FundHoldings_2026-11-25.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDA/FNDA_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/FNDA/FNDA_NAV_History.CSV",
@@ -33,9 +33,9 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$35.20",
-    "value": 35.2,
-    "asOfDate": "Nov 25 2026"
+    "display": "$35.69",
+    "value": 35.69,
+    "asOfDate": "Nov 27 2026"
   },
   "marketPrice": {
     "display": "$35.70",
@@ -46,17 +46,17 @@
   "premiumDiscount": {
     "display": "-0.02%",
     "value": -0.02,
-    "asOfDate": "Nov 25 2026",
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$8.70 B",
-    "value": 8696844308.87,
-    "asOfDate": "Nov 25 2026",
+    "display": "$8.81 B",
+    "value": 8812694897.03,
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
-    "sharesOutstanding": 247100000,
+    "sharesOutstanding": 246950000,
     "portfolioTurnover": 23.14,
     "publishedTotalHoldings": 903,
     "bidAskMidpoint": 35.17
@@ -67,9 +67,9 @@
     "dividendYieldBasis": "official-trailing-12m",
     "dividendYieldKind": "Distribution Yield (TTM) published on the official product page as of Oct 31 2026",
     "distributionRate": 1.23,
-    "secYield": 1.25,
-    "secYieldText": "1.25%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 24 2026"
+    "secYield": 1.24,
+    "secYieldText": "1.24%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 25 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",

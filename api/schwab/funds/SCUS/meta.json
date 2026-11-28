@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/scus",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/scus",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 25 2026",
+    "productPageAsOf": "Nov 27 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCUS/SCUS_FundHoldings_2026-11-25.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCUS/SCUS_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCUS/SCUS_NAV_History.CSV",
@@ -35,7 +35,7 @@
   "nav": {
     "display": "$25.10",
     "value": 25.1,
-    "asOfDate": "Nov 25 2026"
+    "asOfDate": "Nov 27 2026"
   },
   "marketPrice": {
     "display": "$25.09",
@@ -46,13 +46,13 @@
   "premiumDiscount": {
     "display": "0.00%",
     "value": 0,
-    "asOfDate": "Nov 25 2026",
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$263.54 M",
-    "value": 263541994.61,
-    "asOfDate": "Nov 25 2026",
+    "display": "$263.58 M",
+    "value": 263583368.22,
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
@@ -69,7 +69,7 @@
     "distributionRate": 3.86,
     "secYield": 4.36,
     "secYieldText": "4.36%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 24 2026"
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 25 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",

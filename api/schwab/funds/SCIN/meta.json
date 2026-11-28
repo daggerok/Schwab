@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/scin",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/scin",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 25 2026",
+    "productPageAsOf": "Nov 27 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_FundHoldings_2026-11-25.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCIN/SCIN_NAV_History.CSV",
@@ -35,7 +35,7 @@
   "nav": {
     "display": "$25.38",
     "value": 25.38,
-    "asOfDate": "Nov 25 2026"
+    "asOfDate": "Nov 27 2026"
   },
   "marketPrice": {
     "display": "$25.45",
@@ -46,13 +46,13 @@
   "premiumDiscount": {
     "display": "0.26%",
     "value": 0.26,
-    "asOfDate": "Nov 25 2026",
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
     "display": "$25.38 M",
-    "value": 25378780.51,
-    "asOfDate": "Nov 25 2026",
+    "value": 25379285.59,
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
@@ -67,17 +67,17 @@
     "dividendYieldBasis": null,
     "dividendYieldKind": "indicated (latest distribution x inferred payments per year / NAV)",
     "distributionRate": null,
-    "secYield": 3.81,
-    "secYieldText": "3.81%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 24 2026"
+    "secYield": 3.79,
+    "secYieldText": "3.79%",
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 25 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
     "performanceAsOf": "2026-10-31",
     "monthEnd": {
       "asOfDate": "Oct 31 2026",
-      "mo1": 1.29,
-      "mo1Text": "1.29%",
+      "mo1": 1.31,
+      "mo1Text": "1.31%",
       "mo3": null,
       "mo3Text": "—",
       "qtd": null,

@@ -7,7 +7,7 @@
     "fundPage": "https://www.schwabassetmanagement.com/products/schx",
     "officialProductPage": "https://www.schwabassetmanagement.com/products/schx",
     "productPageRendering": "read-only rendering proxy (r.jina.ai) of the official product page",
-    "productPageAsOf": "Nov 25 2026",
+    "productPageAsOf": "Nov 27 2026",
     "holdingsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHX/SCHX_FundHoldings_2026-11-25.CSV",
     "distributionsDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHX/SCHX_Fund_Distributions.CSV",
     "navHistoryDownload": "https://www.schwabassetmanagement.com/sites/g/files/eyrktu361/files/product_files/SCHX/SCHX_NAV_History.CSV",
@@ -33,9 +33,9 @@
     "kind": "Total Expense Ratio published on the official product page (net expense ratio in the product finder)"
   },
   "nav": {
-    "display": "$28.20",
-    "value": 28.2,
-    "asOfDate": "Nov 25 2026"
+    "display": "$28.66",
+    "value": 28.66,
+    "asOfDate": "Nov 27 2026"
   },
   "marketPrice": {
     "display": "$28.69",
@@ -46,17 +46,17 @@
   "premiumDiscount": {
     "display": "0.02%",
     "value": 0.02,
-    "asOfDate": "Nov 25 2026",
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Quote Details"
   },
   "aum": {
-    "display": "$70.57 B",
-    "value": 70565831631.47,
-    "asOfDate": "Nov 25 2026",
+    "display": "$71.76 B",
+    "value": 71760846672.01,
+    "asOfDate": "Nov 27 2026",
     "source": "official product page Total Net Assets"
   },
   "fundFacts": {
-    "sharesOutstanding": 2502000000,
+    "sharesOutstanding": 2503950000,
     "portfolioTurnover": 3.49,
     "publishedTotalHoldings": 754,
     "bidAskMidpoint": 28.2
@@ -69,7 +69,7 @@
     "distributionRate": 1.05,
     "secYield": 1.08,
     "secYieldText": "1.08%",
-    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 24 2026"
+    "secYieldKind": "SEC Yield (30 Day) published on the official product page as of Nov 25 2026"
   },
   "returns": {
     "derivedFrom": "official Schwab product-page NAV total returns (month-end) where published; Yahoo adjusted market-price closes for missing values",
